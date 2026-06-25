@@ -66,7 +66,6 @@ flowchart LR
 
 ```text
 portfolio/
-├── docs/
 └── projects/
     ├── egfr-cadd-qsar-admet/
     ├── flame-retardants/
