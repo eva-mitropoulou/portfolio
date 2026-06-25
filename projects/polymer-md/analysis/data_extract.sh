@@ -1,9 +1,4 @@
-Data extraction summary (GROMACS 2022.2, container: c83d877cce7c5defb1d4cf6071d0f0089282f327e2f55978c6641cb19aed1c3a)
-
-Working directory inside container:
-  /root/simulations/MD/GROMACS/pp_melt/05_prod
-Host directory:
-  /mnt/c/Users/evang/simulations/Computational-Chemistry/MD/GROMACS/pp_melt/05_prod
+Data extraction summary (GROMACS 2022.2)
 
 Files used:
   md.edr        (source for energy terms)
@@ -28,21 +23,15 @@ Box size (from .gro last line):
   Delta L per axis: +0.03483 nm
   Delta V: +11.33137 nm^3 (~+1.01%)
 
-GROMACS commands used (inside Docker):
+GROMACS commands used:
   # GROMACS version
-  docker exec <container> /gromacs/bin.AVX2_256/gmx_mpi --version
+  gmx_mpi --version
 
   # Extract energy terms to energy.xvg
-  docker exec -w /root/simulations/MD/GROMACS/pp_melt/05_prod <container> \
-    bash -lc "printf '7\n9\n10\n11\n12\n17\n18\n20\n0\n' | /gromacs/bin.AVX2_256/gmx_mpi energy -f md.edr"
+  gmx_mpi energy -f md.edr -o energy.xvg
 
   # Extract density only
-  docker exec -w /root/simulations/MD/GROMACS/pp_melt/05_prod <container> \
-    bash -lc "printf '18\n0\n' | /gromacs/bin.AVX2_256/gmx_mpi energy -f md.edr"
+  gmx_mpi energy -f md.edr -o density.xvg
 
   # Extract box X/Y/Z to box_xyz.xvg
-  docker exec -w /root/simulations/MD/GROMACS/pp_melt/05_prod <container> \
-    bash -lc "printf '14 15 16\n0\n' | /gromacs/bin.AVX2_256/gmx_mpi energy -f md.edr -o box_xyz.xvg"
-
-Replace <container> with:
-  c83d877cce7c5defb1d4cf6071d0f0089282f327e2f55978c6641cb19aed1c3a
+  gmx_mpi energy -f md.edr -o box_xyz.xvg

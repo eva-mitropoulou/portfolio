@@ -1,7 +1,7 @@
 TGA + NPA/WBI/Bond-Length Insights (Phosphorus_FRs_project)
 
 Sources
-- TGA: C:\Users\evang\Desktop\FRs\combined_txt.txt (5 molecules)
+- TGA: curated combined TGA text table (5 molecules)
 - NPA/WBI: DFT/Phosphorus_FRs_project/optimized_molecules/frequencies/NPA analysis/*.txt
 - Bond lengths: DFT/Phosphorus_FRs_project/optimized_molecules/frequencies/bond_lengths_*_freq2_*.txt
 

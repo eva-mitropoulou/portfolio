@@ -44,6 +44,18 @@ polymer-md/
     └── topol.top
 ```
 
+## Representative Thermodynamic Outputs
+
+The production trajectory was summarized through standard GROMACS energy and box observables. These traces are included as compact evidence that the workflow produced interpretable simulation outputs rather than only setup files.
+
+![Density trace](../../assets/figures/density.png)
+
+![Temperature trace](../../assets/figures/temperature.png)
+
+![Pressure trace](../../assets/figures/pressure.png)
+
+![Volume trace](../../assets/figures/volume.png)
+
 ## Core Competencies Demonstrated
 
 - Designing and executing production-scale molecular dynamics workflows for polymer systems

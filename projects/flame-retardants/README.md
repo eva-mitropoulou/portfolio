@@ -100,11 +100,23 @@ This project demonstrates more than software familiarity:
 - simulation-to-experiment correlation
 - ability to turn raw outputs into materials insight
 
-## Selected Visuals (only parts of the full molecules are shown)
+## Selected Visual Evidence
 
-![Project visual 1](../../assets/images/P1_clean.png)
+Full optimized candidate geometry used for structural interpretation:
 
-![Project visual 2](../../assets/images/P2_clean.png)
+![Full flame-retardant candidate geometry](../../assets/images/Full.png)
+
+Representative bond-length extraction around the phosphorus center:
+
+![Bond-length annotated phosphorus environment, candidate 1](../../assets/images/P1_clean.png)
+
+Representative nonbonded-contact map around the same phosphorus-containing fragment:
+
+![Interaction-distance annotated phosphorus environment, candidate 1](../../assets/images/P1_interactions.png)
+
+Second representative bond-length extraction used for comparison across candidate structures:
+
+![Bond-length annotated phosphorus environment, candidate 2](../../assets/images/P2_clean.png)
 
 ## Core Competencies Demonstrated
 
