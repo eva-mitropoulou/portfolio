@@ -42,26 +42,6 @@ Quantum ESPRESSO workflows for inorganic and crystalline materials, demonstratin
 - **Periodic DFT:** Quantum ESPRESSO.
 - **Programming and research computing:** Python, pandas, NumPy, Matplotlib, Bash, Linux, Git/GitHub, SLURM job scripts.
 
-## Workflow Map
-
-```mermaid
-flowchart LR
-    A[Scientific Question] --> B[Data / Structure Preparation]
-    B --> C[Method Choice]
-    C --> D1[QSAR / RDKit / CADD]
-    C --> D2[ORCA Molecular DFT]
-    C --> D3[GROMACS MD]
-    C --> D4[Quantum ESPRESSO]
-    D1 --> E[Validation / Risk Analysis]
-    D2 --> F[Chemical Descriptors]
-    D3 --> F
-    D4 --> F
-    E --> G[Candidate Prioritization]
-    F --> H[Mechanistic Interpretation]
-    G --> I[Research Decision Support]
-    H --> I
-```
-
 ## Repository Structure
 
 ```text
@@ -72,6 +52,3 @@ portfolio/
 └── polymer-md/
 ```
 
-## Positioning
-
-Eva's background is strongest where molecular science, computation, and experimental chemistry meet. This portfolio presents that foundation while making the computational drug-discovery skills explicit: molecular data curation, RDKit workflows, QSAR validation, applicability-domain thinking, and transparent candidate prioritization.
