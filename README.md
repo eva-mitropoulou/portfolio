@@ -13,22 +13,22 @@ This portfolio is a curated technical record of real computational chemistry wor
 
 ## Selected Projects
 
-### 1. [EGFR QSAR / Drug-Likeness-Aware CADD Pipeline](./projects/egfr-cadd-qsar-admet/README.md)
+### 1. [EGFR QSAR / Drug-Likeness-Aware CADD Pipeline](./egfr-cadd-qsar-admet/README.md)
 A reproducible cheminformatics project for EGFR inhibitor-like compound prioritization. The workflow curates ChEMBL IC50 data, computes RDKit descriptors and Morgan fingerprints, trains baseline QSAR models, compares random versus scaffold splits, analyzes applicability domain, and ranks candidates with explicit model-risk labels.
 
 **Relevant capabilities:** ChEMBL, RDKit, QSAR, scaffold split, applicability domain, physicochemical filtering, model-risk communication.
 
-### 2. [Flame-Retardant Materials Case Study](./projects/flame-retardants/README.md)
+### 2. [Flame-Retardant Materials Case Study](./flame-retardants/README.md)
 Computational analysis of phosphorus-based flame-retardant candidates, linking DFT-derived metrics to decomposition behavior, char formation, and substituent effects.
 
 **Relevant capabilities:** ORCA, molecular DFT, conformer ranking, vibrational analysis, bond metrics, structure-property interpretation.
 
-### 3. [Polymer Molecular Dynamics Case Study](./projects/polymer-md/README.md)
+### 3. [Polymer Molecular Dynamics Case Study](./polymer-md/README.md)
 GROMACS workflow for isotactic polypropylene melt simulations, including staging, run strategy, and representative thermodynamic outputs.
 
 **Relevant capabilities:** GROMACS, polymer melt simulation, staged equilibration, production MD, thermodynamic analysis.
 
-### 4. [Periodic DFT Case Study](./projects/periodic-dft/README.md)
+### 4. [Periodic DFT Case Study](./periodic-dft/README.md)
 Quantum ESPRESSO workflows for inorganic and crystalline materials, demonstrating periodic structure preparation, relaxation, and solid-state modeling practice.
 
 **Relevant capabilities:** Quantum ESPRESSO, periodic DFT, CIF-derived structures, relaxation/SCF workflows, MPI-oriented execution.
@@ -66,11 +66,10 @@ flowchart LR
 
 ```text
 portfolio/
-└── projects/
-    ├── egfr-cadd-qsar-admet/
-    ├── flame-retardants/
-    ├── periodic-dft/
-    └── polymer-md/
+├── egfr-cadd-qsar-admet/
+├── flame-retardants/
+├── periodic-dft/
+└── polymer-md/
 ```
 
 ## Positioning
