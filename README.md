@@ -66,9 +66,6 @@ flowchart LR
 
 ```text
 portfolio/
-├── assets/
-│   ├── figures/
-│   └── images/
 ├── docs/
 └── projects/
     ├── egfr-cadd-qsar-admet/

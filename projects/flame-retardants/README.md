@@ -33,6 +33,7 @@ flame-retardants/
 ├── data/
 │   ├── all_energies_report.txt
 │   └── tga_npa_wbi_bondlength_insights.txt
+├── figures/
 └── inputs/
     ├── melamine_1.inp
     └── melamine_1.slurm.sh
@@ -104,19 +105,19 @@ This project demonstrates more than software familiarity:
 
 Full optimized candidate geometry used for structural interpretation:
 
-![Full flame-retardant candidate geometry](../../assets/images/Full.png)
+![Full flame-retardant candidate geometry](./figures/full_candidate_geometry.png)
 
 Representative bond-length extraction around the phosphorus center:
 
-![Bond-length annotated phosphorus environment, candidate 1](../../assets/images/P1_clean.png)
+![Bond-length annotated phosphorus environment, candidate 1](./figures/phosphorus_bond_lengths_candidate_1.png)
 
 Representative nonbonded-contact map around the same phosphorus-containing fragment:
 
-![Interaction-distance annotated phosphorus environment, candidate 1](../../assets/images/P1_interactions.png)
+![Interaction-distance annotated phosphorus environment, candidate 1](./figures/nonbonded_contacts_candidate_1.png)
 
 Second representative bond-length extraction used for comparison across candidate structures:
 
-![Bond-length annotated phosphorus environment, candidate 2](../../assets/images/P2_clean.png)
+![Bond-length annotated phosphorus environment, candidate 2](./figures/phosphorus_bond_lengths_candidate_2.png)
 
 ## Core Competencies Demonstrated
 

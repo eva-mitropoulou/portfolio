@@ -36,6 +36,7 @@ flowchart LR
 polymer-md/
 ├── analysis/
 │   └── data_extract.sh
+├── figures/
 └── inputs/
     ├── em.mdp
     ├── nvt.mdp
@@ -48,13 +49,13 @@ polymer-md/
 
 The production trajectory was summarized through standard GROMACS energy and box observables. These traces are included as compact evidence that the workflow produced interpretable simulation outputs rather than only setup files.
 
-![Density trace](../../assets/figures/density.png)
+![Density trace](./figures/density_trace.png)
 
-![Temperature trace](../../assets/figures/temperature.png)
+![Temperature trace](./figures/temperature_trace.png)
 
-![Pressure trace](../../assets/figures/pressure.png)
+![Pressure trace](./figures/pressure_trace.png)
 
-![Volume trace](../../assets/figures/volume.png)
+![Volume trace](./figures/volume_trace.png)
 
 ## Core Competencies Demonstrated
 
