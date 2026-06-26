@@ -53,15 +53,6 @@ flowchart TD
     E --> F[Structure / Energy Interpretation]
 ```
 
-## Why This Matters
-
-This project expands the portfolio from molecular chemistry into computational materials science:
-
-- periodic DFT competence
-- crystalline structure handling
-- materials-oriented simulation thinking
-- HPC-aware execution patterns
-
 ## Representative Systems
 
 - Berlinite
