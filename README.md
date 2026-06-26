@@ -16,8 +16,6 @@ This portfolio is a curated technical record of real computational chemistry wor
 ### 1. [EGFR QSAR / Drug-Likeness-Aware CADD Pipeline](./egfr-cadd-qsar-admet/README.md)
 A reproducible cheminformatics project for EGFR inhibitor-like compound prioritization. The workflow curates ChEMBL IC50 data, computes RDKit descriptors and Morgan fingerprints, trains baseline QSAR models, compares random versus scaffold splits, analyzes applicability domain, and ranks candidates with explicit model-risk labels.
 
-**Project signal:** 26,600 raw EGFR IC50 records, 10,593 model-ready molecules, Morgan fingerprint Random Forest performance of MAE 0.516 / R2 0.719 on random split, scaffold-split R2 0.550, and a diverse top-20 ranking with 20 unique scaffolds, 17 low-risk molecules, and 19 Lipinski-clean molecules.
-
 **Relevant capabilities:** ChEMBL, RDKit, QSAR, scaffold split, applicability domain, physicochemical filtering, model-risk communication.
 
 ### 2. [Flame-Retardant Materials Case Study](./flame-retardants/README.md)
