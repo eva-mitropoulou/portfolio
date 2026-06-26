@@ -4,7 +4,7 @@
 
 This project is a reproducible cheminformatics and CADD case study for prioritizing EGFR inhibitor-like small molecules from public ChEMBL bioactivity data. It combines activity curation, RDKit molecular representations, baseline QSAR modeling, scaffold-aware validation, applicability-domain analysis, and drug-likeness-aware candidate ranking.
 
-The goal is not to claim prospective drug-discovery success. The goal is to show a realistic, auditable workflow that asks whether a model is useful, where it is risky, and how those risks should affect candidate prioritization.
+The goal is to show a realistic, auditable workflow that asks whether a model is useful, where it is risky, and how those risks should affect candidate prioritization.
 
 ## At A Glance
 
@@ -192,16 +192,3 @@ python code/analyze_applicability_domain.py
 python code/rank_candidates.py
 python code/create_final_summary.py
 ```
-
-## Limitations
-
-- This is a retrospective ChEMBL portfolio project, not prospective drug discovery.
-- IC50 values come from heterogeneous assays and publications.
-- The ADMET layer is proxy/drug-likeness triage, not true ADMET prediction.
-- Docking was not included.
-- Predictions are less reliable outside the model applicability domain.
-- Ranked molecules are computational hypotheses, not validated drug candidates.
-
-## Why This Matters For CADD Roles
-
-This project demonstrates practical computational drug-discovery skills: public bioactivity curation, RDKit feature generation, QSAR baselines, scaffold-aware validation, applicability-domain analysis, and cautious candidate prioritization. The emphasis is on reproducibility and model-risk communication rather than inflated single-split metrics.
