@@ -91,16 +91,6 @@ The analysis notes in the source workspace point to useful heuristics:
 - aryl-containing systems show more multi-step decomposition and greater residue
 - DFT descriptors can support predictions even for candidates lacking full experimental datasets
 
-## Why This Matters for a Computational Chemistry Portfolio
-
-This project demonstrates more than software familiarity:
-
-- quantum-chemical reasoning
-- chemically informed descriptor selection
-- mechanistic interpretation
-- simulation-to-experiment correlation
-- ability to turn raw outputs into materials insight
-
 ## Selected Visual Evidence
 
 Full optimized candidate geometry used for structural interpretation:
