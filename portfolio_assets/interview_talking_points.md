@@ -7,7 +7,7 @@ Eva is a computational chemist focused on pharma-facing cheminformatics, QSAR an
 ## Antibody Sequence ML
 
 - Emphasize public-data benchmarking, label semantics, and existing-record prioritization.
-- Explain why OAS background records are unknown-target background rather than assayed neutralisation controls.
+- Explain OAS background records as unknown-target natural antibody background.
 - Discuss grouped validation, source-holdout validation, and source-robust model selection as leakage-aware controls.
 - Use the final result: whole-pair k-mer TF-IDF logistic regression was the most defensible broad scorer, with strong grouped validation and modest source-holdout robustness.
 - Explain threshold 0.7 as a high-confidence review cutoff for existing records.
@@ -25,18 +25,18 @@ Eva is a computational chemist focused on pharma-facing cheminformatics, QSAR an
 - Frame this as a synthesis-facing ML benchmark on public high-throughput reaction data.
 - Emphasize reaction-condition features, baseline model comparison, and readable error analysis.
 - Connect the project to pharma workflows through reaction screening, route development support, and validation-aware modeling.
-- Keep the framing explicit: retrospective public-data benchmark with existing-record ranking.
+- Keep the framing focused on retrospective public-data benchmarking with existing-record ranking.
 
 ## Supporting Materials and Simulation Depth
 
 - Explain the system: polypropylene/brucite interface with coated versus uncoated filler surfaces.
 - Discuss contact counts, interaction energies, and density checks as complementary simulation evidence.
 - Use the safe interpretation: surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in the aggregate outputs.
-- State limitations before being asked: force-field dependence, sampling, and need for experimental context.
+- Be ready to discuss force-field dependence, sampling, and experimental context.
 
 ## Questions To Prepare
 
-- How would you redesign the EGFR benchmark for prospective validation?
+- How would you extend the EGFR benchmark for prospective validation?
 - How would you prevent leakage in antibody sequence benchmarks with public labels?
 - What would you need before claiming predictive utility for a QSAR model?
 - How would you evaluate a reaction-yield model before using it to guide experimental prioritization?

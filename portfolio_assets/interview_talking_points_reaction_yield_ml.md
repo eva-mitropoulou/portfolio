@@ -4,26 +4,26 @@
 
 - Retrospective public-data benchmark for reaction-yield modeling from HTE records.
 - Focused on public HTE component-label yield modeling: components, validation leakage, uncertainty, and decision-support ranking over existing records.
-- Project frame: public HTE component-label modeling and existing-record ranking.
+- Portfolio role: reaction-informatics and ML-validation case study.
 
 ## Technical Decisions
 
 - Used the public Buchwald-Hartwig HTE benchmark because it has component columns and measured yields.
 - Treated the workbook as categorical component data because component structures were not available.
-- Evaluated random, grouped, and out-of-component splits so random split performance was not the only evidence.
-- Selected the best model using the reliability-oriented grouped split rather than only the random split.
-- Added uncertainty analysis and conformal interval coverage as diagnostics, not guarantees.
-- Simulated active learning as budgeted selection over existing records only.
+- Evaluated random, grouped, and out-of-component splits to compare interpolation with component generalization.
+- Selected the best model using the reliability-oriented grouped split.
+- Added uncertainty analysis and conformal interval coverage as diagnostics.
+- Simulated active learning as budgeted selection over existing records.
 
-## Evidence To Reference
+## Files To Reference
 
-- Final report: `reaction-yield-ml/reports/final_project_report.md`
-- Model benchmark metrics: `reaction-yield-ml/reports/metrics/model_benchmark_metrics.json`
-- Final quality gate: `reaction-yield-ml/reports/metrics/final_quality_gate_report.json`
-- Reproduction commands: `reaction-yield-ml/Makefile`
+- Final report: `projects/reaction-yield-ml/artifacts/reports/final_project_report.md`
+- Model benchmark metrics: `projects/reaction-yield-ml/artifacts/reports/metrics/model_benchmark_metrics.json`
+- Final quality gate: `projects/reaction-yield-ml/artifacts/reports/metrics/final_quality_gate_report.json`
+- Reproduction commands: `projects/reaction-yield-ml/artifacts/Makefile`
 
-## Risk Status
+## Interview Emphasis
 
-- Safe: retrospective benchmark, existing-record ranking, validation and uncertainty diagnostics.
-- Needs review: any public redistribution of the raw workbook beyond source/citation notes.
-- Unsupported: claims of guaranteed experimental success, operational condition guidance, or generated chemistry.
+- Retrospective benchmark, existing-record ranking, validation, and uncertainty diagnostics.
+- Component-label scope in the current workbook.
+- Extension path through public component structures, RDKit descriptors, and reaction fingerprints.

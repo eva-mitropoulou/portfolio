@@ -78,30 +78,26 @@
         <figcaption>Calibration output used for high-confidence review threshold interpretation.</figcaption>
       </figure>
 
-      <h2>8. Limitations</h2>
+      <h2>8. Interpretation Context</h2>
       <ul>
-        <li>Retrospective public labels.</li>
-        <li>Heterogeneous assays and sources.</li>
-        <li>Source and study effects limit cross-source generalization.</li>
-        <li>Existing-record prioritization frame.</li>
-        <li>Sequence-design and optimization are outside the project scope.</li>
-        <li>Prospective validation remains future work.</li>
-        <li>OAS records are unknown-target background rather than assayed controls.</li>
-        <li>Model scores are used as prioritization signals for existing records.</li>
+        <li>Public antibody labels combine heterogeneous assays, sources, and target annotations.</li>
+        <li>Grouped and source-holdout validation are central to interpreting model behavior across sources.</li>
+        <li>OAS records are unknown-target natural antibody background used for background-enrichment analysis.</li>
+        <li>Model scores are prioritization signals for reviewing existing public records.</li>
       </ul>
 
       <h2>9. Reproducibility</h2>
-      <p>Public-safe reproduction uses cached summaries and report generation. Full reproduction may require raw public-data downloads, embeddings, model weights, and heavier compute.</p>
+      <p>Public-safe reproduction uses cached summaries and report generation. The standalone repository keeps the fuller workflow and project cards.</p>
       <div class="link-row">
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization">Repo</a>
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization/tree/main/reports">Reports</a>
-        <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/notebooks/01_antibody_sequence_ml_workflow.ipynb">Notebook</a>
+        <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/projects/antibody-sequence-ml/notebooks/01_antibody_sequence_ml_workflow.ipynb">Notebook</a>
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization/blob/main/docs/MODEL_CARD.md">Model card</a>
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization/blob/main/docs/DATA_CARD.md">Data card</a>
       </div>
 
       <h2>10. What This Demonstrates</h2>
-      <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, source and study effect diagnosis, practical sequence-feature engineering, calibration-aware thresholding, and disciplined pharma-facing communication.</p>
+      <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, source and study effect diagnosis, practical sequence-feature engineering, calibration-aware thresholding, and pharma-facing communication.</p>
     </main>
     <footer class="footer">This page reports aggregate metrics and public-safe identifiers.</footer>
   </body>
