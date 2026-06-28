@@ -11,11 +11,10 @@
 | Built a validation-aware antibody sequence ML workflow using public CoV-AbDab and OAS data, including strict label curation, k-mer and antibody-language-model benchmarks, CDR analysis, source-holdout validation, calibration analysis, OAS background retrieval, and diversity-aware existing-record prioritization; selected a whole-pair k-mer TF-IDF logistic model as the most defensible broad scorer, with grouped ROC-AUC 0.780 and PR-AUC 0.823 plus source-robust ROC-AUC 0.610 and PR-AUC 0.636, explicitly identifying source and study effects and calibration scope. | `antibody-sequence-ml/reports/final_report.md`, `antibody-sequence-ml/docs/MODEL_CARD.md` | `antibody-sequence-ml/reports/metrics/summary.json` | safe |
 | Framed antibody outputs as retrospective benchmarking and existing-record prioritization, explicitly separating public-label model triage from therapeutic design or prospective validation. | `projects/antibody-sequence-ml.md` | `portfolio_audit/evidence_map.json` | safe |
 
-## Excluded Unsupported Claims
+## Claims Left Out
 
-| Claim | Reason | Risk level |
-|---|---|---|
-| Designed therapeutic antibodies with AI. | No therapeutic design evidence; prohibited framing for this portfolio. | unsupported |
-| Built a production-grade EGFR predictor. | Evidence supports retrospective benchmarking and triage only. | unsupported |
-| Generated operational reaction conditions. | Evidence supports retrospective reaction-yield benchmarking and existing-record ranking only. | unsupported |
-| Demonstrated clinical utility for EGFR or antibody models. | No prospective or clinical validation evidence. | unsupported |
+The recommended bullet set intentionally avoids claims about antibody design,
+production EGFR prediction, operational reaction-condition generation, clinical
+utility, or prospective validation. The committed evidence supports
+retrospective benchmarking, existing-record prioritization, and validation-aware
+model-risk analysis.
