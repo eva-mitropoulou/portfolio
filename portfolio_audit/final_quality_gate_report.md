@@ -1,7 +1,7 @@
 # Final Quality-Gate Report
 
 Audit date: 2026-06-28  
-Branch: `portfolio-professionalization`  
+Branch: `master`  
 Overall status: **pass**
 
 ## Checks
@@ -49,5 +49,4 @@ Overall status: **pass**
 - Confirm preferred public contact email before final publishing.
 - Add a verified LinkedIn URL if Eva wants it public.
 - Review `phd-notes` assets before using unpublished thesis/manuscript content publicly.
-- After merge, update GitHub links from `portfolio-professionalization` to the final deployed branch if desired.
 - Run a browser visual review of the GitHub Pages URL after Pages finishes deployment.

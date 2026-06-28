@@ -1,7 +1,7 @@
 # Evidence Map
 
 Audit date: 2026-06-28  
-Working branch: `portfolio-professionalization`  
+Working branch: `master`  
 GitHub owner resolved through API: `eva-mitropoulou`
 
 This audit treats committed reports, metrics, notebooks, scripts, figures, and cached processed outputs as evidence. Raw biological sequences, raw CSV rows, DOI/source rows, private data, and heavyweight simulation artifacts are not reproduced here.

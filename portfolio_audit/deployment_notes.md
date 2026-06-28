@@ -7,13 +7,13 @@ Audit date: 2026-06-28
 Use GitHub Pages with the static site in `/docs`.
 
 Repository: `eva-mitropoulou/portfolio`  
-Branch: `portfolio-professionalization` during review, then `master` after merge  
+Branch: `master`  
 Pages source path: `/docs`  
-Expected URL after Pages is enabled: `https://eva-mitropoulou.github.io/portfolio/`
+Portfolio URL: `https://eva-mitropoulou.github.io/portfolio/`
 
 ## Deployment Verification
 
-GitHub Pages was enabled from `/docs` on `portfolio-professionalization` on 2026-06-28.
+GitHub Pages was enabled from `/docs` on 2026-06-28 and is now configured to serve from `master` with source path `/docs`.
 
 Verified HTTP 200 URLs:
 
@@ -33,15 +33,14 @@ Verified HTTP 200 URLs:
 
 ## Deployment Steps
 
-1. Push `portfolio-professionalization`.
-2. Enable GitHub Pages for `eva-mitropoulou/portfolio`.
-3. Select source branch `portfolio-professionalization` and folder `/docs` for branch preview, or merge to `master` and select `master` with `/docs`.
-4. After deployment, verify:
+1. Push changes to `master`.
+2. Keep GitHub Pages source set to branch `master` and folder `/docs`.
+3. After deployment, verify:
    - Homepage loads.
    - Project pages load.
    - Figure assets load.
-   - GitHub links point to the branch or final merged branch.
+   - GitHub links point to `master`.
 
 ## Workflow Decision
 
-No `.github/workflows/pages.yml` is required for this branch because the site has no build step. A Pages workflow should be added only if the repository switches to a generated static-site framework or needs automated link checking/build validation.
+No `.github/workflows/pages.yml` is required because the site has no build step. A Pages workflow should be added only if the repository switches to a generated static-site framework or needs automated link checking/build validation.
