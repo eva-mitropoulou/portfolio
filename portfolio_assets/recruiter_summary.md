@@ -2,13 +2,13 @@
 
 Eva Mitropoulou is a computational chemist focused on pharma-facing cheminformatics, QSAR/CADD, antibody/protein informatics, reaction informatics, and ML validation workflows for drug-discovery problems. Molecular simulation and DFT work provide supporting computational chemistry depth.
 
-## Best-Fit Roles
+## Role Fit
 
-- Cheminformatics / QSAR analyst
+- Cheminformatics / QSAR scientist or analyst
 - CADD / computational drug-discovery scientist
-- Antibody/protein informatics analyst
-- Reaction informatics / synthesis-aware ML analyst
-- ML validation analyst for molecular or biological data
+- Antibody/protein informatics scientist or analyst
+- Reaction informatics / synthesis-aware ML scientist or analyst
+- ML validation scientist for molecular or biological data
 - Scientific Python / research-computing specialist
 - Computational chemist with simulation/DFT depth
 
@@ -23,7 +23,7 @@ Eva Mitropoulou is a computational chemist focused on pharma-facing cheminformat
 
 RDKit, ChEMBL, CoV-AbDab, OAS, public HTE reaction data, scikit-learn, pandas, NumPy, matplotlib, GROMACS, ORCA, CREST, Quantum ESPRESSO, Linux, Git, Makefiles, SLURM-oriented workflows.
 
-## Claim Boundaries
+## Scope Notes
 
 - Antibody work is benchmarking and existing-record prioritization, not therapeutic design.
 - EGFR work is retrospective baseline QSAR, not production prediction.
