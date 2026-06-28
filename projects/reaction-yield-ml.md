@@ -2,9 +2,9 @@
 
 ## 1. Overview
 
-Built a retrospective public-data HTE reaction-yield workflow with reaction cleaning, categorical component-based featurization, random and out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking.
+Built a retrospective public-data HTE reaction-yield workflow with reaction cleaning, categorical component-based featurization, random and out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.
 
-## 2. Scientific / Technical Problem
+## 2. Scientific And Technical Problem
 
 Reaction-yield models need validation that tests component generalization, not only random interpolation. This project treats public HTE records as a benchmark for leakage-aware reaction-yield modeling and uncertainty-aware decision support.
 
@@ -12,7 +12,7 @@ Reaction-yield models need validation that tests component generalization, not o
 
 Evidence source: `reaction-yield-ml/data/dataset_manifest.json`.
 
-- Public Buchwald-Hartwig HTE reaction-yield benchmark from the Ahneman/Dreher/Doyle lineage.
+- Public Buchwald-Hartwig HTE reaction-yield benchmark from the Ahneman, Dreher, and Doyle lineage.
 - 3,955 clean records.
 - Component columns: ligand, additive, base, aryl halide.
 - Target: measured yield percentage.
@@ -21,15 +21,15 @@ Evidence source: `reaction-yield-ml/data/dataset_manifest.json`.
 
 - Aggregate-only data audit and reaction cleaning.
 - Categorical component one-hot featurization; no structure-based reaction features are claimed for this workbook.
-- Random split plus out-of-component/grouped splits.
+- Random, grouped, and out-of-component splits.
 - Mean baseline, regularized linear models, random forest, and gradient boosting.
-- Ensemble-variance and conformal-style uncertainty/error diagnostics with empirical coverage analysis.
+- Ensemble-variance and conformal-style uncertainty diagnostics with empirical coverage analysis.
 - Budgeted active-learning simulation over existing records.
 - Existing-record ranking with confidence and domain warnings.
 
 ## 5. Validation Strategy
 
-Primary model selection used an additive-held-out grouped split. In this dataset, the highest-cardinality chemically meaningful grouping is `component_additive`, so `grouped_high_cardinality_component` and `out_of_additive` share the same held-out group design. Random split performance is reported but not treated as sole evidence.
+Primary model selection used an additive-held-out grouped split. In this dataset, additive values form the highest-cardinality chemically meaningful grouping, so the grouped component split and the held-out additive split use the same held-out design. Random split performance is reported but not treated as sole evidence.
 
 ## 6. Key Results
 

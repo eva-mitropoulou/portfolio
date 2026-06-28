@@ -4,13 +4,13 @@
 
 Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization. The work is framed as benchmark evidence and record triage, not therapeutic antibody design.
 
-## 2. Scientific / Technical Problem
+## 2. Scientific And Technical Problem
 
 Public antibody datasets contain heterogeneous assay labels, target annotations, sequence completeness, and source metadata. The technical question was whether sequence-based baseline models, antibody-specific representations, and validation controls could support a reproducible retrospective benchmark without overstating prospective biological utility.
 
 ## 3. Dataset Or System
 
-Evidence source: `Computational-Chemistry/antibody_project/antibody-prioritization`.
+Evidence source: mirrored portfolio artifacts under `antibody-sequence-ml/`, plus the portfolio evidence audit.
 
 - CoV-AbDab-derived public-data workflow.
 - Strict labeled dataset: 5,573 records in `reports/metrics/core_dataset_audit.json`.
@@ -28,7 +28,7 @@ No raw biological sequences are shown in this portfolio layer.
 - Source-holdout validation and source-robust model selection.
 - Calibration and threshold analysis for high-confidence review cutoffs.
 - CDR and region annotation for paired records.
-- Antibody embedding and pretrained antibody/protein model benchmarks, including AbLang2-style embeddings and IgBert/BERT-family benchmark artifacts where present.
+- Antibody embedding and pretrained antibody model benchmarks, including AbLang2-style embeddings and IgBert-family benchmark artifacts where present.
 - OAS background retrieval as a separate background-retrieval analysis with explicit label semantics.
 - Diversity-aware existing-record shortlist from broader prepared records.
 
@@ -36,8 +36,8 @@ No raw biological sequences are shown in this portfolio layer.
 
 - Primary validation used grouped evaluation where the group feature was meaningful.
 - Random-split results were retained as a baseline but not used as the strongest public claim.
-- Matched CDR/region feature comparisons were used to compare whole-pair versus region-local k-mer features on the same paired subset.
-- Source-holdout validation was used as a skeptical control for source/study effects.
+- Matched CDR feature comparisons were used to compare whole-pair versus region-local k-mer features on the same paired subset.
+- Source-holdout validation was used as a skeptical control for source and study effects.
 - Source-robust model selection compared conservative k-mer variants and selected `whole_pair_kmer`.
 - OAS retrieval was kept separate from neutralization benchmarking because OAS records are unknown-target background records, not assay-confirmed non-neutralizers.
 
@@ -64,7 +64,7 @@ No raw biological sequences are shown in this portfolio layer.
 
 - Retrospective public labels only.
 - Heterogeneous assays and sources.
-- Source/study effects limit cross-source generalization.
+- Source and study effects limit cross-source generalization.
 - Existing-record prioritization only.
 - No therapeutic design, sequence generation, mutation, or optimization claim.
 - No prospective validation.
@@ -87,6 +87,6 @@ Public-safe reproduction in this portfolio is limited to a small cached-report p
 ## 10. What This Demonstrates
 
 - Ability to build an evidence-bounded ML benchmark from noisy public biological data.
-- Awareness of leakage, grouping, source/study effects, label semantics, calibration, and benchmark interpretation.
+- Awareness of leakage, grouping, source and study effects, label semantics, calibration, and benchmark interpretation.
 - Practical sequence-feature engineering with k-mer, CDR-local, embedding, and pretrained-model comparisons.
 - Pharma-facing communication discipline: prioritization and benchmarking are kept separate from therapeutic design claims.

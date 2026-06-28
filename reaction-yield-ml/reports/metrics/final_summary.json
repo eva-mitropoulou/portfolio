@@ -8,6 +8,14 @@
     "exploitation_plus_uncertainty",
     "component_diverse_high_score"
   ],
+  "active_learning_strategy_labels": [
+    "Random selection",
+    "Highest predicted yield",
+    "Uncertainty sampling",
+    "Diversity-aware",
+    "Score plus uncertainty",
+    "Diverse high-score"
+  ],
   "best_model": "random_forest",
   "best_model_metrics": {
     "mae": 10.7537,
@@ -22,8 +30,8 @@
   "feature_family": "categorical_onehot",
   "interpretability_primary_split": "grouped_high_cardinality_component",
   "primary_selection_split": "grouped_high_cardinality_component",
-  "primary_selection_split_display": "additive-held-out grouped split",
-  "primary_split_equivalence_note": "In this dataset, grouped_high_cardinality_component uses component_additive; it is therefore the additive-held-out grouped split and shares the same held-out group design as out_of_additive.",
+  "primary_selection_split_display": "Additive held-out grouped split",
+  "primary_split_equivalence_note": "In this dataset, the grouped split holds out additive values, so it uses the same held-out group design as Held-out additive split.",
   "ranking_row_count": 3955,
   "raw_row_count": 3955,
   "safe_scope": [

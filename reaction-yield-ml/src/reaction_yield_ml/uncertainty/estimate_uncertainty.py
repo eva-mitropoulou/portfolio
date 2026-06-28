@@ -21,6 +21,7 @@ from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import read_json, short_float, write_json, write_markdown
 from reaction_yield_ml.uncertainty.calibration import empirical_coverage, uncertainty_error_summary
 from reaction_yield_ml.validation.splits import make_splits
+from reaction_yield_ml.validation.split_labels import split_display_name
 
 
 def parse_args() -> argparse.Namespace:
@@ -201,12 +202,14 @@ def _write_figures(primary_frame: pd.DataFrame) -> None:
 
 def _write_report(metrics: dict[str, Any]) -> None:
     primary_summary = metrics["split_summaries"][metrics["primary_split"]]
+    primary_split_name = split_display_name(metrics["primary_split"])
+    method = metrics["method"].replace("_", " ")
     report = f"""# Uncertainty And Calibration Report
 
 ## Summary
 
-- Method: {metrics['method']}
-- Primary split: {metrics['primary_split']}
+- Method: {method}
+- Primary split: {primary_split_name}
 - Primary split uncertainty-error Spearman: {primary_summary['spearman_abs_error_vs_uncertainty']}
 - Primary split empirical 90% interval coverage: {primary_summary['empirical_coverage_90']}
 - Primary split low-confidence fraction: {primary_summary['low_confidence_fraction']}
@@ -251,4 +254,3 @@ def main(use_fixture: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     args = parse_args()
     main(use_fixture=args.fixture)
-

@@ -1,16 +1,16 @@
-# EGFR QSAR / CADD Benchmark
+# EGFR QSAR and CADD Benchmark
 
 ## 1. Overview
 
-Built a retrospective EGFR QSAR/CADD benchmark from ChEMBL IC50 records using RDKit descriptors, Morgan fingerprints, baseline models, and leakage-aware validation.
+Built a retrospective EGFR QSAR and CADD benchmark from ChEMBL IC50 records using RDKit descriptors, Morgan fingerprints, baseline models, and leakage-aware validation.
 
-## 2. Scientific / Technical Problem
+## 2. Scientific And Technical Problem
 
 Random train/test splits can overstate molecular-property model performance when close chemical analogs appear in both train and test sets. This project uses EGFR pIC50 modeling as a practical baseline to compare random-split performance with Bemis-Murcko scaffold split performance.
 
 ## 3. Dataset Or System
 
-Evidence source: `egfr-cadd-qsar-admet` in the portfolio and `Computational-Chemistry/pharma_project`.
+Evidence source: portfolio artifacts under `egfr-cadd-qsar-admet/`, plus the portfolio evidence audit.
 
 - ChEMBL EGFR IC50 workflow.
 - Cleaned EGFR activity records: 10,834 rows.
@@ -38,7 +38,7 @@ Raw molecule rows are not reproduced in this portfolio summary.
 
 Committed metrics support the following public numbers:
 
-| Model / split | RMSE | R2 |
+| Model and split | RMSE | R2 |
 |---|---:|---:|
 | Morgan random forest, random split | 0.712 | 0.719 |
 | Morgan random forest, scaffold split | 0.871 | 0.550 |

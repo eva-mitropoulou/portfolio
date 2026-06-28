@@ -14,15 +14,15 @@ Retrospective public-data benchmark for reaction-yield modeling and existing-rec
 ## Data And Features
 
 - Dataset: Buchwald-Hartwig HTE yield benchmark (Ahneman/Dreher/Doyle lineage)
-- Source mode: public_benchmark
-- Feature family: categorical_onehot
-- Valid splits: grouped_high_cardinality_component, out_of_additive, out_of_base, out_of_ligand, out_of_substrate, random_split
-- Primary selection split: additive-held-out grouped split
+- Source mode: public benchmark
+- Feature family: categorical one-hot component encoding
+- Valid splits: Grouped component split, Held-out additive split, Held-out base split, Held-out ligand split, Held-out aryl halide split, Random split
+- Primary selection split: Additive held-out grouped split
 
 ## Model
 
-- Selected model: random_forest
-- Selection split: grouped_high_cardinality_component
+- Selected model: Random forest
+- Selection split: Additive held-out grouped split
 
 ## Metrics
 

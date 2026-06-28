@@ -1,8 +1,8 @@
-# EGFR QSAR / Model-Risk-Aware CADD Pipeline
+# EGFR QSAR and Model-Risk-Aware CADD Pipeline
 
 ## Public Portfolio Claim Boundary
 
-This project is presented as a retrospective EGFR QSAR/CADD baseline. It demonstrates ChEMBL curation, RDKit descriptors/fingerprints, baseline modeling, and random-versus-scaffold validation. It is not a production-grade predictor, prospective validation study, clinical-utility claim, or binding-mechanism claim.
+This project is presented as a retrospective EGFR QSAR and CADD baseline. It demonstrates ChEMBL curation, RDKit descriptors and Morgan fingerprints, baseline modeling, and random-versus-scaffold validation. It is not a production-grade predictor, prospective validation study, clinical-utility claim, or binding-mechanism claim.
 
 ## Project Focus
 
@@ -26,7 +26,7 @@ The goal is to show a realistic, auditable workflow that asks whether a model is
 
 ## Scientific Question
 
-Public bioactivity datasets can make QSAR models look stronger than they are when similar analogs leak across train/test splits or when heterogeneous assay values are treated as perfectly comparable. This project asks:
+Public bioactivity datasets can make QSAR models look stronger than they are when similar analogs leak across training and test splits or when heterogeneous assay values are treated as perfectly comparable. This project asks:
 
 > Can an EGFR prioritization workflow be built in a way that is reproducible, chemically interpretable, and honest about model generalization risk?
 

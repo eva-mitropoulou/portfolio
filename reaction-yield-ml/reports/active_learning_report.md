@@ -4,7 +4,7 @@
 
 - Workflow: retrospective budgeted selection over existing public records.
 - Row count: 3955
-- Strategies: random_selection, highest_predicted_yield, uncertainty_sampling, diversity_aware_selection, exploitation_plus_uncertainty, component_diverse_high_score
+- Strategies: Random selection, Highest predicted yield, Uncertainty sampling, Diversity-aware, Score plus uncertainty, Diverse high-score
 - Seed count: 5
 - Initial seed size: 79
 - Batch size: 79

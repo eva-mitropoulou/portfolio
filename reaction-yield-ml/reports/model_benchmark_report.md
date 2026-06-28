@@ -2,10 +2,9 @@
 
 ## Summary
 
-- Models evaluated: mean_baseline, onehot_ridge, onehot_elastic_net, random_forest, gradient_boosting
-- Primary reliability split for model selection: additive-held-out grouped split
-- Internal split id: grouped_high_cardinality_component
-- Selected model: random_forest
+- Models evaluated: Mean baseline, Ridge regression, Elastic net, Random forest, Gradient boosting
+- Primary reliability split for model selection: Additive held-out grouped split
+- Selected model: Random forest
 - Selected model MAE on primary split: 10.7537
 - Selected model RMSE on primary split: 14.2371
 - Selected model R2 on primary split: 0.7262
@@ -14,19 +13,19 @@
 
 ## Optional Models
 
-- xgboost: skipped_not_installed
-- lightgbm: skipped_not_installed
-- neural_baseline: skipped_scope_controlled_reproducibility
+- Xgboost: skipped not installed
+- Lightgbm: skipped not installed
+- Neural Baseline: skipped scope controlled reproducibility
 
 ## Quality Gates
 
-- mean_baseline_included: True
-- grouped_or_out_of_component_split_included: True
-- random_split_not_sole_evidence: True
-- best_model_selected_by_reliability_split: True
-- all_metrics_saved_as_json: True
+- Mean baseline included: True
+- Grouped or out of component split included: True
+- Random split not sole evidence: True
+- Best model selected by reliability split: True
+- All metrics saved as json: True
 
 ## Interpretation Boundary
 
 Random split performance is not presented as sole evidence. Grouped and out-of-component splits are included where possible. Model selection prioritizes the reliability-oriented grouped split.
-{equivalence_note}
+In this dataset, the grouped split holds out additive values, so it uses the same held-out group design as Held-out additive split.

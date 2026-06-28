@@ -163,26 +163,30 @@ def make_splits(use_fixture: bool = False) -> dict[str, Any]:
         "",
         f"- Rows available: {metrics['row_count']}",
         f"- Valid split count: {metrics['valid_split_count']}",
-        f"- Valid splits: {', '.join(metrics['valid_splits'])}",
+        f"- Valid splits: {', '.join(split_display_name(name, valid_splits[name]) for name in sorted(valid_splits))}",
         "",
         "## Split Status",
         "",
     ]
     for name, payload in splits.items():
         if payload.get("is_valid"):
-            lines.append(
-                f"- {name}: valid, label={split_display_name(name, payload)}, train={payload['train_size']}, test={payload['test_size']}, group_column={payload.get('group_column')}"
-            )
+            label = split_display_name(name, payload)
+            design_note = ", held-out groups omitted" if payload.get("group_column") else ""
+            lines.append(f"- {label}: valid, train={payload['train_size']}, test={payload['test_size']}{design_note}")
         else:
-            lines.append(f"- {name}: unavailable, reason={payload.get('unavailable_reason', 'not valid')}")
+            lines.append(f"- {split_display_name(name, payload)}: unavailable, reason={payload.get('unavailable_reason', 'not valid')}")
     if equivalence_note:
         lines.extend(["", "## Split Equivalence Note", "", equivalence_note])
+    quality_gate_lines = [
+        f"- {key.replace('_', ' ').capitalize()}: {value}"
+        for key, value in metrics["quality_gates"].items()
+    ]
     lines.extend(
         [
             "",
             "## Quality Gates",
             "",
-            *[f"- {key}: {value}" for key, value in metrics["quality_gates"].items()],
+            *quality_gate_lines,
             "",
             "Held-out group values are not listed to avoid long component lists.",
         ]

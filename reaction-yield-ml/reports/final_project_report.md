@@ -12,8 +12,8 @@ Reaction-yield modeling helps evaluate whether machine-learning workflows can le
 
 ## 3. Dataset
 
-- Dataset: Buchwald-Hartwig HTE yield benchmark (Ahneman/Dreher/Doyle lineage)
-- Source mode: public_benchmark
+- Dataset: Buchwald-Hartwig HTE yield benchmark (Ahneman, Dreher, and Doyle lineage)
+- Source mode: public benchmark
 - Raw row count: 3955
 - Clean row count: 3955
 - Target: reaction yield percentage
@@ -27,27 +27,26 @@ The pipeline standardizes the target as numeric percentage, normalizes component
 
 - Primary feature family: categorical one-hot component encoding
 - Feature count: 44
-- Molecular descriptors/fingerprints: skipped because the selected workbook provides labels but no component SMILES
+- Molecular descriptors and fingerprints: skipped because the selected workbook provides labels but no component SMILES
 - Leakage audit: yield-derived columns are excluded from predictors
 
 ## 6. Validation Strategy
 
-Valid splits: grouped_high_cardinality_component, out_of_additive, out_of_base, out_of_ligand, out_of_substrate, random_split
+Valid splits: Additive held-out grouped split, Held-out additive split, Held-out base split, Held-out ligand split, Held-out aryl halide split, Random split
 
 The benchmark includes random validation and grouped/out-of-component validation where possible. Random split performance is not treated as sole evidence.
 
 ## 7. Model Benchmark
 
-- Selected model: random_forest
-- Primary selection split: additive-held-out grouped split
-- Internal split id: grouped_high_cardinality_component
+- Selected model: Random forest
+- Primary selection split: Additive held-out grouped split
 - MAE: 10.7537
 - RMSE: 14.2371
 - R2: 0.7262
 - Spearman: 0.8597
 - Top-10% enrichment: 7.3333
 
-Validation note: In this dataset, grouped_high_cardinality_component uses component_additive; it is therefore the additive-held-out grouped split and shares the same held-out group design as out_of_additive.
+Validation note: In this dataset, the grouped split holds out additive values, so it uses the same held-out group design as Held-out additive split.
 
 ## 8. Uncertainty And Calibration
 
@@ -59,7 +58,7 @@ Uncertainty is evaluated against actual errors and low-confidence predictions ar
 
 ## 9. Active-Learning Simulation
 
-The active-learning simulation is a budgeted selection workflow over existing public records. It uses multiple seeds and includes a random baseline. It is not lab automation and does not instruct anyone to run reactions.
+The active-learning simulation is a budgeted selection workflow over existing public records. It uses multiple seeds, includes a random baseline, and compares Random selection, Highest predicted yield, Uncertainty sampling, Diversity-aware, Score plus uncertainty, Diverse high-score. It is not lab automation and does not instruct anyone to run reactions.
 
 ## 10. Existing-Record Ranking
 
@@ -96,4 +95,4 @@ The fixture is synthetic and does not support benchmark claims.
 
 ## 13. Portfolio/CV Wording
 
-Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.
+Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.

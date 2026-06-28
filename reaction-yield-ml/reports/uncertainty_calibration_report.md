@@ -2,8 +2,8 @@
 
 ## Summary
 
-- Method: random_forest_tree_ensemble_std_plus_split_conformal_interval
-- Primary split: grouped_high_cardinality_component
+- Method: random forest tree ensemble std plus split conformal interval
+- Primary split: Grouped component split
 - Primary split uncertainty-error Spearman: 0.6296
 - Primary split empirical 90% interval coverage: 0.7978
 - Primary split low-confidence fraction: 0.2

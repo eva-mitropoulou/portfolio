@@ -17,6 +17,7 @@ from reaction_yield_ml.config import FIGURES_DIR, METRICS_DIR, PROCESSED_DIR, RA
 from reaction_yield_ml.features.build_features import load_clean_data
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import short_float, write_json, write_markdown
+from reaction_yield_ml.validation.split_labels import strategy_display_name
 
 STRATEGIES = [
     "random_selection",
@@ -238,35 +239,36 @@ def _write_figures(summary: pd.DataFrame) -> None:
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     plt.figure(figsize=(8, 5))
     for strategy, group in summary.groupby("strategy"):
-        plt.plot(group["budget"], group["mean_best_yield"], marker="o", label=strategy)
+        plt.plot(group["budget"], group["mean_best_yield"], marker="o", label=strategy_display_name(strategy))
     plt.xlabel("Budgeted existing records selected")
-    plt.ylabel("Best yield discovered (%)")
-    plt.title("Retrospective budget curve")
-    plt.legend(fontsize=7)
+    plt.ylabel("Best observed yield (%)")
+    plt.title("Retrospective selection curve")
+    plt.legend(title="Selection strategy", fontsize=8)
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "active_learning_budget_curve.png", dpi=180)
     plt.close()
 
     plt.figure(figsize=(8, 5))
     for strategy, group in summary.groupby("strategy"):
-        plt.plot(group["budget"], group["mean_top_recovery"], marker="o", label=strategy)
+        plt.plot(group["budget"], group["mean_top_recovery"], marker="o", label=strategy_display_name(strategy))
     plt.xlabel("Budgeted existing records selected")
     plt.ylabel("Fraction of top-yield records recovered")
     plt.title("Top-yield recovery curve")
-    plt.legend(fontsize=7)
+    plt.legend(title="Selection strategy", fontsize=8)
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "top_yield_recovery_curve.png", dpi=180)
     plt.close()
 
 
 def _write_report(metrics: dict[str, Any]) -> None:
+    strategies = [strategy_display_name(strategy) for strategy in metrics["strategies"]]
     report = f"""# Active-Learning Simulation Report
 
 ## Summary
 
 - Workflow: retrospective budgeted selection over existing public records.
 - Row count: {metrics['row_count']}
-- Strategies: {', '.join(metrics['strategies'])}
+- Strategies: {', '.join(strategies)}
 - Seed count: {metrics['seed_count']}
 - Initial seed size: {metrics['initial_seed_size']}
 - Batch size: {metrics['batch_size']}

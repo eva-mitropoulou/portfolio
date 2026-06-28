@@ -15,6 +15,7 @@ from reaction_yield_ml.config import METRICS_DIR, PROCESSED_DIR, RANDOM_STATE, R
 from reaction_yield_ml.features.build_features import load_clean_data
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import short_float, write_json, write_markdown
+from reaction_yield_ml.validation.split_labels import model_display_name
 
 
 def parse_args() -> argparse.Namespace:
@@ -133,12 +134,17 @@ def rank_existing_records(use_fixture: bool = False) -> dict[str, Any]:
 
 
 def _write_report(metrics: dict[str, Any]) -> None:
+    model_names = [model_display_name(name) for name in metrics["models_used"]]
+    quality_gates = [
+        f"- {key.replace('_', ' ').capitalize()}: {value}"
+        for key, value in metrics["quality_gates"].items()
+    ]
     report = f"""# Existing-Record Ranking Report
 
 ## Summary
 
 - Ranking rows: {metrics['row_count']}
-- Models used for out-of-fold predictions: {', '.join(metrics['models_used'])}
+- Models used for out-of-fold predictions: {', '.join(model_names)}
 - Cross-validation folds: {metrics['cross_validation_folds']}
 - Median model agreement standard deviation: {metrics['median_model_agreement_std']}
 - Domain warning count: {metrics['domain_warning_count']}
@@ -149,7 +155,7 @@ This is a retrospective existing-record ranking of public dataset records. It is
 
 ## Quality Gates
 
-""" + "\n".join(f"- {key}: {value}" for key, value in metrics["quality_gates"].items()) + """
+""" + "\n".join(quality_gates) + """
 
 ## Limitations
 
@@ -184,4 +190,3 @@ def main(use_fixture: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     args = parse_args()
     main(use_fixture=args.fixture)
-

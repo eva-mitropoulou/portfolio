@@ -1,4 +1,4 @@
-# Final Report: EGFR QSAR / CADD Benchmark
+# Final Report: EGFR QSAR and CADD Benchmark
 
 ## Purpose
 
@@ -20,7 +20,7 @@ The workflow curated ChEMBL EGFR IC50 records, transformed activity values to pI
 
 ## Key Results
 
-| Model / split | RMSE | R2 |
+| Model and split | RMSE | R2 |
 |---|---:|---:|
 | Morgan random forest, random split | 0.712 | 0.719 |
 | Morgan random forest, scaffold split | 0.871 | 0.550 |

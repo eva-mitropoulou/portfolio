@@ -3,7 +3,7 @@
 ## Summary
 
 - Ranking rows: 3955
-- Models used for out-of-fold predictions: ridge, random_forest, gradient_boosting
+- Models used for out-of-fold predictions: Ridge regression, Random forest, Gradient boosting
 - Cross-validation folds: 5
 - Median model agreement standard deviation: 2.9629
 - Domain warning count: 0
@@ -14,11 +14,11 @@ This is a retrospective existing-record ranking of public dataset records. It is
 
 ## Quality Gates
 
-- ranking_contains_existing_records_only: True
-- uncertainty_or_confidence_included: True
-- domain_warning_included: True
-- limitations_included: True
-- no_lab_ready_claim: True
+- Ranking contains existing records only: True
+- Uncertainty or confidence included: True
+- Domain warning included: True
+- Limitations included: True
+- No lab ready claim: True
 
 ## Limitations
 

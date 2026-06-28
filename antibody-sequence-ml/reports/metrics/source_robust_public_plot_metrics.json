@@ -1,0 +1,42 @@
+{
+  "source": "Aggregate source-robust model comparison metrics derived from the antibody project source-robust model-selection report.",
+  "metric_scope": "Weighted leave-source-out model comparison. Public-safe aggregate metrics only.",
+  "rows": [
+    {
+      "model_id": "rbd_or_target_region_subset_kmer",
+      "display_name": "RBD or target-region k-mer",
+      "weighted_roc_auc": 0.6169958861452407,
+      "weighted_pr_auc": 0.6627546361347892
+    },
+    {
+      "model_id": "whole_pair_kmer",
+      "display_name": "Whole-pair k-mer",
+      "weighted_roc_auc": 0.6094634053339291,
+      "weighted_pr_auc": 0.6363378949678994
+    },
+    {
+      "model_id": "whole_plus_cdr_kmer",
+      "display_name": "Whole pair plus CDR k-mer",
+      "weighted_roc_auc": 0.6059195793285667,
+      "weighted_pr_auc": 0.6344708597375927
+    },
+    {
+      "model_id": "heavy_only_kmer",
+      "display_name": "Heavy-chain k-mer",
+      "weighted_roc_auc": 0.5976821393386553,
+      "weighted_pr_auc": 0.6243423378775359
+    },
+    {
+      "model_id": "cdr_region_kmer",
+      "display_name": "CDR-region k-mer",
+      "weighted_roc_auc": 0.5773150808700014,
+      "weighted_pr_auc": 0.6090749701014218
+    },
+    {
+      "model_id": "paired_only_whole_pair_kmer",
+      "display_name": "Paired-only whole-pair k-mer",
+      "weighted_roc_auc": 0.6060016814219179,
+      "weighted_pr_auc": 0.6022513746829221
+    }
+  ]
+}

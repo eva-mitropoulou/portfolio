@@ -1,0 +1,7 @@
+.venv/
+*.egg-info/
+
+# Keep raw and row-level processed reaction data out of the public portfolio.
+reaction-yield-ml/data/raw/
+reaction-yield-ml/data/external/
+reaction-yield-ml/data/processed/

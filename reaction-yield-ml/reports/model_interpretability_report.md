@@ -2,9 +2,9 @@
 
 ## Summary
 
-- Primary split: grouped_high_cardinality_component
-- Highest tree-importance component role: component_aryl_halide
-- Held-out group column: component_additive
+- Primary split: Additive held-out grouped split
+- Highest tree-importance component role: Aryl Halide
+- Held-out component role: Additive
 - Held-out split MAE for interpreted model: 10.7433
 
 ## Included Analyses
@@ -16,12 +16,12 @@
 
 ## Quality Gates
 
-- permutation_importance_included: True
-- component_contribution_summaries_included: True
-- feature_importance_for_tree_model_included: True
-- error_analysis_by_component_included: True
-- held_out_component_failure_cases_summarized: True
-- no_causality_overclaim: True
+- Permutation importance included: True
+- Component contribution summaries included: True
+- Feature importance for tree model included: True
+- Error analysis by component included: True
+- Held out component failure cases summarized: True
+- No causality overclaim: True
 
 ## Limitations
 

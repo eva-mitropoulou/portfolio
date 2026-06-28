@@ -19,6 +19,7 @@ from reaction_yield_ml.features.build_features import load_clean_data
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import anonymized_id, read_json, short_float, write_json, write_markdown
 from reaction_yield_ml.validation.splits import make_splits
+from reaction_yield_ml.validation.split_labels import component_role_display_name, split_display_name
 
 
 def parse_args() -> argparse.Namespace:
@@ -162,8 +163,9 @@ def interpret_models(use_fixture: bool = False) -> dict[str, Any]:
 def _write_figures(metrics: dict[str, Any]) -> None:
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     role_frame = pd.DataFrame(metrics["tree_importance_by_component_role"])
+    role_frame["component_role_display"] = role_frame["component_role"].map(component_role_display_name)
     plt.figure(figsize=(6, 4))
-    plt.bar(role_frame["component_role"], role_frame["tree_importance"])
+    plt.bar(role_frame["component_role_display"], role_frame["tree_importance"])
     plt.ylabel("Tree importance")
     plt.xlabel("Component role")
     plt.xticks(rotation=25, ha="right")
@@ -174,10 +176,17 @@ def _write_figures(metrics: dict[str, Any]) -> None:
 
     err_frame = pd.DataFrame(metrics["high_error_component_groups_anonymized"]).head(20)
     plt.figure(figsize=(8, 4.5))
-    labels = err_frame["component_anonymized_id"] if not err_frame.empty else []
+    labels = (
+        [
+            f"{component_role_display_name(row.component_role)} {index + 1}"
+            for index, row in enumerate(err_frame.itertuples(index=False))
+        ]
+        if not err_frame.empty
+        else []
+    )
     values = err_frame["mae"] if not err_frame.empty else []
     plt.bar(labels, values)
-    plt.ylabel("MAE")
+    plt.ylabel("Mean absolute error")
     plt.xlabel("Anonymized component group")
     plt.xticks(rotation=45, ha="right", fontsize=7)
     plt.title("Error by anonymized component group")
@@ -189,13 +198,20 @@ def _write_figures(metrics: dict[str, Any]) -> None:
 def _write_report(metrics: dict[str, Any]) -> None:
     heldout = metrics["held_out_component_failure_summary"]
     top_role = metrics["tree_importance_by_component_role"][0]
+    split_name = split_display_name(str(heldout["split_name"]), {"group_column": heldout.get("group_column")})
+    top_role_name = component_role_display_name(top_role["component_role"])
+    heldout_role_name = component_role_display_name(heldout.get("group_column"))
+    quality_gates = [
+        f"- {key.replace('_', ' ').capitalize()}: {value}"
+        for key, value in metrics["quality_gates"].items()
+    ]
     report = f"""# Model Interpretability Report
 
 ## Summary
 
-- Primary split: {metrics['primary_split']}
-- Highest tree-importance component role: {top_role['component_role']}
-- Held-out group column: {heldout['group_column']}
+- Primary split: {split_name}
+- Highest tree-importance component role: {top_role_name}
+- Held-out component role: {heldout_role_name}
 - Held-out split MAE for interpreted model: {heldout['mae']}
 
 ## Included Analyses
@@ -207,7 +223,7 @@ def _write_report(metrics: dict[str, Any]) -> None:
 
 ## Quality Gates
 
-""" + "\n".join(f"- {key}: {value}" for key, value in metrics["quality_gates"].items()) + """
+""" + "\n".join(quality_gates) + """
 
 ## Limitations
 
@@ -243,4 +259,3 @@ def main(use_fixture: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     args = parse_args()
     main(use_fixture=args.fixture)
-

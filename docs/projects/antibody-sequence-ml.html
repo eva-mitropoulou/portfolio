@@ -27,7 +27,7 @@
       <h2>1. Overview</h2>
       <p>Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization with careful claim boundaries around labels, validation, and OAS background semantics.</p>
 
-      <h2>2. Scientific / Technical Problem</h2>
+      <h2>2. Scientific And Technical Problem</h2>
       <p>Public antibody datasets mix assay labels, source records, target annotations, and sequence completeness. The workflow tests whether sequence features and antibody-specific representations can be benchmarked reproducibly without overstating prospective biological utility.</p>
 
       <h2>3. Dataset Or System</h2>
@@ -40,10 +40,10 @@
       </ul>
 
       <h2>4. Methods</h2>
-      <p>Character k-mer TF-IDF baselines, logistic regression, grouped validation, source-holdout validation, source-robust model selection, calibration/threshold analysis, CDR/region annotation, AbLang2-style embeddings, IgBert/BERT-family benchmark artifacts where present, OAS background retrieval, and diversity-aware existing-record prioritization.</p>
+      <p>Character k-mer TF-IDF baselines, logistic regression, grouped validation, source holdout, source-robust model selection, calibration analysis, CDR annotation, AbLang2-style embeddings, IgBert-family benchmark artifacts where present, OAS background retrieval, and diversity-aware existing-record prioritization.</p>
 
       <h2>5. Validation Strategy</h2>
-      <p>Grouped validation is prioritized where group features are meaningful. Random split results are retained as baselines. Matched CDR/region comparisons compare whole-pair and region-local k-mer features on the same paired subset. Source-holdout validation is used as a skeptical control for source/study effects, and source-robust model selection chose <code>whole_pair_kmer</code>.</p>
+      <p>Grouped validation is prioritized where group features are meaningful. Random split results are retained as baselines. Matched CDR comparisons compare whole-pair and region-local k-mer features on the same paired subset. Source-holdout validation is used as a skeptical control for source and study effects, and source-robust model selection chose <code>whole_pair_kmer</code>.</p>
 
       <h2>6. Key Results</h2>
       <div class="table-wrap">
@@ -82,7 +82,7 @@
       <ul>
         <li>Retrospective public labels.</li>
         <li>Heterogeneous assays and sources.</li>
-        <li>Source/study effects limit cross-source generalization.</li>
+        <li>Source and study effects limit cross-source generalization.</li>
         <li>Existing-record prioritization only.</li>
         <li>No therapeutic design, sequence generation, mutation, or optimization claim.</li>
         <li>No prospective validation.</li>
@@ -100,7 +100,7 @@
       </div>
 
       <h2>10. What This Demonstrates</h2>
-      <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, source/study effect diagnosis, practical sequence-feature engineering, calibration-aware thresholding, and disciplined pharma-facing communication.</p>
+      <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, source and study effect diagnosis, practical sequence-feature engineering, calibration-aware thresholding, and disciplined pharma-facing communication.</p>
     </main>
     <footer class="footer">No raw biological sequences are displayed on this page.</footer>
   </body>

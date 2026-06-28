@@ -25,7 +25,11 @@ from reaction_yield_ml.models.evaluate_models import regression_metrics, yield_b
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import read_json, write_json, write_markdown
 from reaction_yield_ml.validation.splits import make_splits
-from reaction_yield_ml.validation.split_labels import equivalent_grouped_split_note, split_display_name
+from reaction_yield_ml.validation.split_labels import (
+    equivalent_grouped_split_note,
+    model_display_name,
+    split_display_name,
+)
 
 
 class MeanRegressor(BaseEstimator, RegressorMixin):
@@ -207,11 +211,20 @@ def _write_figures(
     best_model_name: str,
 ) -> None:
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
-    pivot = metrics_frame.pivot_table(index="split", columns="model", values="mae", aggfunc="mean")
+    plot_frame = metrics_frame.copy()
+    plot_frame["Validation split"] = plot_frame["split"].map(split_display_name)
+    plot_frame["Model"] = plot_frame["model"].map(model_display_name)
+    split_order = [split_display_name(name) for name in metrics_frame["split"].drop_duplicates()]
+    model_order = [model_display_name(name) for name in metrics_frame["model"].drop_duplicates()]
+    plot_frame["Validation split"] = pd.Categorical(plot_frame["Validation split"], split_order, ordered=True)
+    plot_frame["Model"] = pd.Categorical(plot_frame["Model"], model_order, ordered=True)
+    pivot = plot_frame.pivot_table(index="Validation split", columns="Model", values="mae", aggfunc="mean", observed=False)
     ax = pivot.plot(kind="bar", figsize=(11, 5))
-    ax.set_ylabel("MAE")
-    ax.set_title("Model MAE by validation split")
-    ax.legend(loc="best", fontsize=7)
+    ax.set_xlabel("Validation split")
+    ax.set_ylabel("Mean absolute error")
+    ax.set_title("Reaction yield model comparison")
+    ax.legend(title="Model", loc="best", fontsize=8)
+    ax.tick_params(axis="x", labelrotation=25)
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "model_comparison_by_split.png", dpi=180)
     plt.close()
@@ -222,7 +235,7 @@ def _write_figures(
     plt.plot([0, 100], [0, 100], color="black", linewidth=1)
     plt.xlabel("Observed yield (%)")
     plt.ylabel("Predicted yield (%)")
-    plt.title(f"Predicted vs observed ({primary_split}, {best_model_name})")
+    plt.title("Predicted vs observed yields")
     plt.tight_layout()
     plt.savefig(FIGURES_DIR / "predicted_vs_observed.png", dpi=180)
     plt.close()
@@ -243,33 +256,43 @@ def _write_figures(
 def _write_report(metrics: dict[str, Any]) -> None:
     best = metrics["best_model_primary_split_metrics"]
     equivalence_note = metrics.get("primary_split_equivalence_note") or "No equivalent grouped split note was recorded."
-    report = f"""# Model Benchmark Report
-
-## Summary
-
-- Models evaluated: {', '.join(metrics['models_evaluated'])}
-- Primary reliability split for model selection: {metrics.get('primary_selection_split_display', metrics['primary_selection_split'])}
-- Internal split id: {metrics['primary_selection_split']}
-- Selected model: {metrics['best_model']}
-- Selected model MAE on primary split: {best['mae']}
-- Selected model RMSE on primary split: {best['rmse']}
-- Selected model R2 on primary split: {best['r2']}
-- Selected model Spearman correlation on primary split: {best['spearman']}
-- Selected model top-10% enrichment on primary split: {best['top_10pct_enrichment']}
-
-## Optional Models
-
-""" + "\n".join(f"- {name}: {status}" for name, status in metrics["optional_models"].items()) + """
-
-## Quality Gates
-
-""" + "\n".join(f"- {key}: {value}" for key, value in metrics["quality_gates"].items()) + """
-
-## Interpretation Boundary
-
-Random split performance is not presented as sole evidence. Grouped and out-of-component splits are included where possible. Model selection prioritizes the reliability-oriented grouped split.
-{equivalence_note}
-"""
+    model_names = [model_display_name(name) for name in metrics["models_evaluated"]]
+    optional_models = [
+        f"- {name.replace('_', ' ').title()}: {status.replace('_', ' ')}"
+        for name, status in metrics["optional_models"].items()
+    ]
+    quality_gates = [
+        f"- {key.replace('_', ' ').capitalize()}: {value}"
+        for key, value in metrics["quality_gates"].items()
+    ]
+    lines = [
+        "# Model Benchmark Report",
+        "",
+        "## Summary",
+        "",
+        f"- Models evaluated: {', '.join(model_names)}",
+        f"- Primary reliability split for model selection: {metrics.get('primary_selection_split_display', metrics['primary_selection_split'])}",
+        f"- Selected model: {model_display_name(metrics['best_model'])}",
+        f"- Selected model MAE on primary split: {best['mae']}",
+        f"- Selected model RMSE on primary split: {best['rmse']}",
+        f"- Selected model R2 on primary split: {best['r2']}",
+        f"- Selected model Spearman correlation on primary split: {best['spearman']}",
+        f"- Selected model top-10% enrichment on primary split: {best['top_10pct_enrichment']}",
+        "",
+        "## Optional Models",
+        "",
+        *optional_models,
+        "",
+        "## Quality Gates",
+        "",
+        *quality_gates,
+        "",
+        "## Interpretation Boundary",
+        "",
+        "Random split performance is not presented as sole evidence. Grouped and out-of-component splits are included where possible. Model selection prioritizes the reliability-oriented grouped split.",
+        equivalence_note,
+    ]
+    report = "\n".join(lines) + "\n"
     write_markdown(REPORTS_DIR / "model_benchmark_report.md", report)
 
 

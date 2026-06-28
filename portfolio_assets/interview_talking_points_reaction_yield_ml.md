@@ -10,9 +10,9 @@
 
 - Used the public Buchwald-Hartwig HTE benchmark because it has component columns and measured yields.
 - Treated the workbook as categorical component data because component structures were not available.
-- Evaluated random and out-of-component/grouped splits so random split performance was not the only evidence.
+- Evaluated random, grouped, and out-of-component splits so random split performance was not the only evidence.
 - Selected the best model using the reliability-oriented grouped split rather than only the random split.
-- Added uncertainty/error analysis and conformal interval coverage as diagnostics, not guarantees.
+- Added uncertainty analysis and conformal interval coverage as diagnostics, not guarantees.
 - Simulated active learning as budgeted selection over existing records only.
 
 ## Evidence To Reference
@@ -27,4 +27,3 @@
 - Safe: retrospective benchmark, existing-record ranking, validation and uncertainty diagnostics.
 - Needs review: any public redistribution of the raw workbook beyond source/citation notes.
 - Unsupported: claims of guaranteed experimental success, operational condition guidance, or generated chemistry.
-

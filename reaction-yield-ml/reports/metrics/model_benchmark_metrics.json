@@ -352,8 +352,8 @@
     "xgboost": "skipped_not_installed"
   },
   "primary_selection_split": "grouped_high_cardinality_component",
-  "primary_selection_split_display": "additive-held-out grouped split",
-  "primary_split_equivalence_note": "In this dataset, grouped_high_cardinality_component uses component_additive; it is therefore the additive-held-out grouped split and shares the same held-out group design as out_of_additive.",
+  "primary_selection_split_display": "Additive held-out grouped split",
+  "primary_split_equivalence_note": "In this dataset, the grouped split holds out additive values, so it uses the same held-out group design as Held-out additive split.",
   "quality_gates": {
     "all_metrics_saved_as_json": true,
     "best_model_selected_by_reliability_split": true,

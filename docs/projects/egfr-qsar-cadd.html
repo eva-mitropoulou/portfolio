@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EGFR QSAR / CADD | Eva Mitropoulou</title>
+    <title>EGFR QSAR and CADD | Eva Mitropoulou</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
   </head>
   <body>
@@ -21,13 +21,13 @@
     </header>
     <main class="project-detail">
       <p class="eyebrow">Flagship Project</p>
-      <h1>EGFR QSAR / CADD Benchmark</h1>
+      <h1>EGFR QSAR and CADD Benchmark</h1>
       <p class="lead">Retrospective EGFR pIC50 baseline from ChEMBL with RDKit descriptors, Morgan fingerprints, and random versus scaffold split validation.</p>
 
       <h2>1. Overview</h2>
       <p>Built a reproducible EGFR QSAR benchmark to show the difference between conventional random-split performance and scaffold-aware validation.</p>
 
-      <h2>2. Scientific / Technical Problem</h2>
+      <h2>2. Scientific and Technical Problem</h2>
       <p>Random splits can overstate molecular-property model performance when close analogs appear in train and test sets. The scaffold split tests whether the baseline generalizes across chemotypes.</p>
 
       <h2>3. Dataset Or System</h2>
@@ -47,7 +47,7 @@
       <h2>6. Key Results</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Model / split</th><th>RMSE</th><th>R2</th><th>Source</th></tr></thead>
+          <thead><tr><th>Model and split</th><th>RMSE</th><th>R2</th><th>Source</th></tr></thead>
           <tbody>
             <tr><td>Morgan random forest, random split</td><td>0.712</td><td>0.719</td><td>`fingerprint_baseline_metrics.csv`</td></tr>
             <tr><td>Morgan random forest, scaffold split</td><td>0.871</td><td>0.550</td><td>`scaffold_fingerprint_metrics.csv`</td></tr>
@@ -82,7 +82,7 @@
       </div>
 
       <h2>10. What This Demonstrates</h2>
-      <p>Practical RDKit/ChEMBL QSAR construction, leakage-aware validation, and careful interpretation of retrospective baseline models.</p>
+      <p>Practical RDKit and ChEMBL QSAR construction, leakage-aware validation, and careful interpretation of retrospective baseline models.</p>
     </main>
     <footer class="footer">Raw molecule rows are not displayed on this page.</footer>
   </body>

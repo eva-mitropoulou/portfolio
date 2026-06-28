@@ -9,6 +9,7 @@ from reaction_yield_ml.config import METRICS_DIR, PROCESSED_DIR, REPORTS_DIR
 from reaction_yield_ml.data.load_dataset import load_raw_dataset
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import slugify, write_json, write_markdown
+from reaction_yield_ml.validation.split_labels import component_role_display_name
 
 
 def parse_args() -> argparse.Namespace:
@@ -62,6 +63,7 @@ def clean_reactions(use_fixture: bool = False) -> tuple[pd.DataFrame, dict[str, 
         ],
     }
     write_json(METRICS_DIR / "reaction_cleaning_metrics.json", metrics)
+    component_labels = [component_role_display_name(col) for col in component_cols]
     report = f"""# Reaction Cleaning Report
 
 ## Summary
@@ -72,8 +74,8 @@ def clean_reactions(use_fixture: bool = False) -> tuple[pd.DataFrame, dict[str, 
 - Missing target rows removed: {metrics['missing_target_removed']}
 - Impossible yield rows removed: {metrics['impossible_yield_removed']}
 - Duplicate records removed: {metrics['duplicate_records_removed']}
-- Target column: {metrics['target_column']}
-- Component columns: {', '.join(metrics['component_columns'])}
+- Target: reaction yield percentage
+- Component roles: {', '.join(component_labels)}
 
 ## Standardization
 
@@ -120,4 +122,3 @@ def main(use_fixture: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     args = parse_args()
     main(use_fixture=args.fixture)
-

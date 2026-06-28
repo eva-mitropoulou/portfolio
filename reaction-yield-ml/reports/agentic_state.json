@@ -59,7 +59,7 @@
       "repairs_attempted": [],
       "stage": "phase_10_interpretability",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:48:48.673922+00:00"
+      "updated_at": "2026-06-28T13:33:14.646770+00:00"
     },
     "phase_11_final_report": {
       "checks_run": [
@@ -83,7 +83,7 @@
       "repairs_attempted": [],
       "stage": "phase_11_final_report",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:48:49.602579+00:00"
+      "updated_at": "2026-06-28T13:32:26.409626+00:00"
     },
     "phase_12_notebook": {
       "checks_run": [
@@ -200,7 +200,7 @@
       "repairs_attempted": [],
       "stage": "phase_16_final_quality_gate",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:48:49.650035+00:00"
+      "updated_at": "2026-06-28T13:33:16.572924+00:00"
     },
     "phase_1_dataset_selection": {
       "checks_run": [
@@ -278,7 +278,7 @@
       "repairs_attempted": [],
       "stage": "phase_3_reaction_cleaning",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:38:45.660768+00:00"
+      "updated_at": "2026-06-28T13:28:58.573343+00:00"
     },
     "phase_4_component_featurization": {
       "checks_run": [
@@ -305,7 +305,7 @@
       "repairs_attempted": [],
       "stage": "phase_4_component_featurization",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:45:17.557411+00:00"
+      "updated_at": "2026-06-28T13:29:02.478738+00:00"
     },
     "phase_5_validation_design": {
       "checks_run": [
@@ -338,7 +338,7 @@
       "repairs_attempted": [],
       "stage": "phase_5_validation_design",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:45:19.213048+00:00"
+      "updated_at": "2026-06-28T13:31:53.061681+00:00"
     },
     "phase_6_model_benchmark": {
       "checks_run": [
@@ -374,7 +374,7 @@
       "repairs_attempted": [],
       "stage": "phase_6_model_benchmark",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:41:06.663983+00:00"
+      "updated_at": "2026-06-28T13:32:11.956506+00:00"
     },
     "phase_7_uncertainty_calibration": {
       "checks_run": [
@@ -402,7 +402,7 @@
       "repairs_attempted": [],
       "stage": "phase_7_uncertainty_calibration",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:39:05.745603+00:00"
+      "updated_at": "2026-06-28T13:25:36.756788+00:00"
     },
     "phase_8_active_learning_simulation": {
       "checks_run": [
@@ -442,7 +442,7 @@
       "repairs_attempted": [],
       "stage": "phase_8_active_learning_simulation",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:39:57.987903+00:00"
+      "updated_at": "2026-06-28T13:28:12.827917+00:00"
     },
     "phase_9_existing_record_ranking": {
       "checks_run": [
@@ -469,8 +469,8 @@
       "repairs_attempted": [],
       "stage": "phase_9_existing_record_ranking",
       "status": "PASS",
-      "updated_at": "2026-06-28T12:48:42.313289+00:00"
+      "updated_at": "2026-06-28T13:32:25.526733+00:00"
     }
   },
-  "updated_at": "2026-06-28T12:48:49.650035+00:00"
+  "updated_at": "2026-06-28T13:33:16.572924+00:00"
 }

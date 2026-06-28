@@ -8,8 +8,8 @@
 - Missing target rows removed: 0
 - Impossible yield rows removed: 0
 - Duplicate records removed: 0
-- Target column: yield_percent
-- Component columns: component_ligand, component_additive, component_base, component_aryl_halide
+- Target: reaction yield percentage
+- Component roles: Ligand, Additive, Base, Aryl Halide
 
 ## Standardization
 

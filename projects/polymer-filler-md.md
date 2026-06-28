@@ -2,21 +2,21 @@
 
 ## 1. Overview
 
-Built and analyzed molecular simulation workflows for polypropylene/brucite filler interfaces and related flame-retardant molecular modeling assets. The public portfolio focuses on reproducible interface analysis, contact summaries, interaction-energy summaries, and force-field-aware interpretation.
+Built and analyzed molecular simulation workflows for polypropylene and brucite filler interfaces and related flame-retardant molecular modeling assets. The public portfolio focuses on reproducible interface analysis, contact summaries, interaction-energy summaries, and force-field-aware interpretation.
 
-## 2. Scientific / Technical Problem
+## 2. Scientific And Technical Problem
 
 Mineral fillers can alter polymer compatibility and flame-retardant material behavior, but the molecular role of surface treatment must be interpreted carefully. The modeling question was how bare versus surface-coated brucite interfaces change direct polymer-filler contact and interaction patterns.
 
 ## 3. Dataset Or System
 
-Evidence source: `Computational-Chemistry/MD/GROMACS/pp_melt_martini` and curated `polymer-md` assets.
+Evidence source: curated portfolio artifacts under `polymer-md/`, plus the portfolio evidence audit.
 
-- Polypropylene/brucite interface simulations.
+- Polypropylene and brucite interface simulations.
 - Coated and uncoated filler-surface models.
 - Contact-count summary tables.
 - Interaction-energy summary tables.
-- Density/profile and visual-check artifacts.
+- Density and visual-check artifacts.
 - Related DFT and conformer assets for flame-retardant candidate analysis.
 
 ## 4. Methods
@@ -26,13 +26,13 @@ Evidence source: `Computational-Chemistry/MD/GROMACS/pp_melt_martini` and curate
 - Coarse-grained and calibration workflows where available.
 - Contact counts using distance thresholds around brucite and coating groups.
 - Short-range interaction-energy summaries.
-- Density/profile checks and visual inspection figures.
+- Density checks and visual inspection figures.
 - SLURM and shell workflow scripts for HPC execution and restart management.
 
 ## 5. Validation Strategy
 
 - Compared coated versus uncoated contact and energy summaries.
-- Used density/profile outputs and visual checks as simulation sanity checks.
+- Used density outputs and visual checks as simulation sanity checks.
 - Treated results as model-supported interpretation, not standalone experimental proof.
 - Kept force-field and parameterization limits explicit.
 
@@ -66,5 +66,5 @@ Evidence source: `Computational-Chemistry/MD/GROMACS/pp_melt_martini` and curate
 ## 10. What This Demonstrates
 
 - Ability to connect molecular simulation setup, analysis scripts, and scientific interpretation.
-- Practical MD analysis across contacts, energies, density/profile checks, and workflow infrastructure.
+- Practical MD analysis across contacts, energies, density checks, and workflow infrastructure.
 - Materials-facing communication discipline around what simulations can and cannot support.

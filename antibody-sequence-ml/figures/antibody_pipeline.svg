@@ -38,7 +38,7 @@
 
     <rect x="235" y="455" width="300" height="150" rx="8" fill="#e9f3f1" stroke="#b9d9d4" stroke-width="2"/>
     <text x="265" y="498" font-size="24" font-weight="700" fill="#17201b">Benchmark Output</text>
-    <text x="265" y="532" font-size="18" fill="#35413b">k-mer/CDR-local baselines</text>
+    <text x="265" y="532" font-size="18" fill="#35413b">k-mer and CDR baselines</text>
     <text x="265" y="562" font-size="18" fill="#35413b">antibody model comparisons</text>
 
     <rect x="610" y="455" width="300" height="150" rx="8" fill="#f3eadf" stroke="#dec5a5" stroke-width="2"/>

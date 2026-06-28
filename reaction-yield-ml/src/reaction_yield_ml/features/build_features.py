@@ -14,6 +14,7 @@ from reaction_yield_ml.config import METRICS_DIR, PROCESSED_DIR, PROJECT_ROOT, R
 from reaction_yield_ml.data.clean_reactions import clean_reactions
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import read_json, write_json, write_markdown
+from reaction_yield_ml.validation.split_labels import component_role_display_name
 
 
 def parse_args() -> argparse.Namespace:
@@ -106,6 +107,7 @@ def build_features(use_fixture: bool = False) -> dict[str, Any]:
     }
     write_json(feature_dir / "feature_metadata.json", metadata)
     write_json(METRICS_DIR / "feature_engineering_metrics.json", metadata)
+    component_labels = [component_role_display_name(col) for col in component_cols]
     report = f"""# Feature Engineering Report
 
 ## Summary
@@ -113,7 +115,7 @@ def build_features(use_fixture: bool = False) -> dict[str, Any]:
 - Feature family built: categorical baseline one-hot encoding.
 - Feature matrix rows: {matrix.shape[0]}
 - Feature matrix columns: {matrix.shape[1]}
-- Component columns: {', '.join(component_cols)}
+- Component roles: {', '.join(component_labels)}
 
 ## Optional Structure Features
 

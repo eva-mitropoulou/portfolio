@@ -6,6 +6,7 @@ from typing import Any
 from reaction_yield_ml.config import DATA_DIR, DOCS_DIR, METRICS_DIR, REPORTS_DIR
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import read_json, write_json, write_markdown
+from reaction_yield_ml.validation.split_labels import model_display_name, split_display_name, strategy_display_name
 
 
 def parse_args() -> argparse.Namespace:
@@ -41,6 +42,15 @@ def build_final_report() -> dict[str, Any]:
     interp = metrics["model_interpretability_metrics"]
     best = models.get("best_model_primary_split_metrics", {})
     uncertainty_primary = uncertainty.get("split_summaries", {}).get(uncertainty.get("primary_split"), {})
+    valid_split_labels = [split_display_name(name, validation.get("splits", {}).get(name, {})) for name in validation.get("valid_splits", [])]
+    active_strategy_labels = [strategy_display_name(name) for name in active.get("strategies", [])]
+    best_model_label = model_display_name(models.get("best_model", ""))
+    primary_split_label = models.get("primary_selection_split_display") or split_display_name(
+        models.get("primary_selection_split", ""),
+        validation.get("splits", {}).get(models.get("primary_selection_split", ""), {}),
+    )
+    dataset_name = str(dataset.get("dataset_name") or "").replace("Ahneman/Dreher/Doyle", "Ahneman, Dreher, and Doyle")
+    source_mode = str(dataset.get("source_mode") or "").replace("_", " ")
     final_summary = {
         "dataset_name": dataset.get("dataset_name"),
         "source_mode": dataset.get("source_mode"),
@@ -57,6 +67,7 @@ def build_final_report() -> dict[str, Any]:
         "uncertainty_primary": uncertainty_primary,
         "active_learning_seed_count": active.get("seed_count"),
         "active_learning_strategies": active.get("strategies"),
+        "active_learning_strategy_labels": active_strategy_labels,
         "ranking_row_count": ranking.get("row_count"),
         "interpretability_primary_split": interp.get("primary_split"),
         "safe_scope": [
@@ -82,8 +93,8 @@ Reaction-yield modeling helps evaluate whether machine-learning workflows can le
 
 ## 3. Dataset
 
-- Dataset: {final_summary['dataset_name']}
-- Source mode: {final_summary['source_mode']}
+- Dataset: {dataset_name}
+- Source mode: {source_mode}
 - Raw row count: {final_summary['raw_row_count']}
 - Clean row count: {final_summary['clean_row_count']}
 - Target: reaction yield percentage
@@ -97,20 +108,19 @@ The pipeline standardizes the target as numeric percentage, normalizes component
 
 - Primary feature family: categorical one-hot component encoding
 - Feature count: {final_summary['feature_count']}
-- Molecular descriptors/fingerprints: skipped because the selected workbook provides labels but no component SMILES
+- Molecular descriptors and fingerprints: skipped because the selected workbook provides labels but no component SMILES
 - Leakage audit: yield-derived columns are excluded from predictors
 
 ## 6. Validation Strategy
 
-Valid splits: {', '.join(final_summary.get('valid_splits') or [])}
+Valid splits: {', '.join(valid_split_labels)}
 
 The benchmark includes random validation and grouped/out-of-component validation where possible. Random split performance is not treated as sole evidence.
 
 ## 7. Model Benchmark
 
-- Selected model: {final_summary['best_model']}
-- Primary selection split: {final_summary.get('primary_selection_split_display') or final_summary['primary_selection_split']}
-- Internal split id: {final_summary['primary_selection_split']}
+- Selected model: {best_model_label}
+- Primary selection split: {primary_split_label}
 - MAE: {best.get('mae')}
 - RMSE: {best.get('rmse')}
 - R2: {best.get('r2')}
@@ -129,7 +139,7 @@ Uncertainty is evaluated against actual errors and low-confidence predictions ar
 
 ## 9. Active-Learning Simulation
 
-The active-learning simulation is a budgeted selection workflow over existing public records. It uses multiple seeds and includes a random baseline. It is not lab automation and does not instruct anyone to run reactions.
+The active-learning simulation is a budgeted selection workflow over existing public records. It uses multiple seeds, includes a random baseline, and compares {', '.join(active_strategy_labels)}. It is not lab automation and does not instruct anyone to run reactions.
 
 ## 10. Existing-Record Ranking
 
@@ -166,7 +176,7 @@ The fixture is synthetic and does not support benchmark claims.
 
 ## 13. Portfolio/CV Wording
 
-Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.
+Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.
 """
     write_markdown(REPORTS_DIR / "final_project_report.md", report)
     _write_cards(final_summary)
@@ -192,15 +202,15 @@ Retrospective public-data benchmark for reaction-yield modeling and existing-rec
 ## Data And Features
 
 - Dataset: {summary.get('dataset_name')}
-- Source mode: {summary.get('source_mode')}
-- Feature family: {summary.get('feature_family')}
-- Valid splits: {', '.join(summary.get('valid_splits') or [])}
-- Primary selection split: {summary.get('primary_selection_split_display') or summary.get('primary_selection_split')}
+- Source mode: {str(summary.get('source_mode') or '').replace('_', ' ')}
+- Feature family: categorical one-hot component encoding
+- Valid splits: {', '.join(split_display_name(name) for name in summary.get('valid_splits') or [])}
+- Primary selection split: {summary.get('primary_selection_split_display') or split_display_name(summary.get('primary_selection_split') or '')}
 
 ## Model
 
-- Selected model: {summary.get('best_model')}
-- Selection split: {summary.get('primary_selection_split')}
+- Selected model: {model_display_name(summary.get('best_model') or '')}
+- Selection split: {summary.get('primary_selection_split_display') or split_display_name(summary.get('primary_selection_split') or '')}
 
 ## Metrics
 

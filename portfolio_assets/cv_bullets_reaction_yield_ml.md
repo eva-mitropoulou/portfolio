@@ -2,13 +2,13 @@
 
 ## Short Version
 
-- Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.
+- Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.
   - Evidence source: `reaction-yield-ml/reports/final_project_report.md`
   - Risk status: safe
 
 ## Technical Version
 
-- Developed a reproducible categorical component-based reaction-yield modeling benchmark on public HTE records, including leakage-aware split design, mean and ML baselines, uncertainty/error diagnostics with empirical coverage analysis, budgeted existing-record selection simulation, and safe ranking diagnostics for public portfolio review.
+- Developed a reproducible categorical component-based reaction-yield modeling benchmark on public HTE records, including leakage-aware split design, mean and ML baselines, uncertainty diagnostics with empirical coverage analysis, budgeted existing-record selection simulation, and safe ranking diagnostics for public portfolio review.
   - Evidence source: `reaction-yield-ml/reports/metrics/final_summary.json`
   - Risk status: safe
 
