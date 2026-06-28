@@ -16,7 +16,7 @@ Evidence source: mirrored portfolio artifacts under `antibody-sequence-ml/`, plu
 - Strict labeled dataset: 5,573 records in `reports/metrics/core_dataset_audit.json`.
 - Broader prepared records: 11,748 records in `reports/metrics/core_dataset_audit.json`.
 - Annotated paired subset: 5,092 paired CDR-annotated candidates in `reports/metrics/core_dataset_audit.json`.
-- OAS background retrieval was treated as unknown-target background, not true negative neutralization data.
+- OAS background retrieval was treated as unknown-target background rather than assayed neutralization controls.
 
 No raw biological sequences are shown in this portfolio layer.
 
@@ -66,9 +66,9 @@ No raw biological sequences are shown in this portfolio layer.
 - Heterogeneous assays and sources.
 - Source and study effects limit cross-source generalization.
 - Existing-record prioritization only.
-- No therapeutic design, sequence generation, mutation, or optimization claim.
+- Not a sequence-design, mutation, or optimization workflow.
 - No prospective validation.
-- OAS, where used, is unknown-target background and not true negative neutralization data.
+- OAS, where used, is unknown-target background rather than assayed neutralization controls.
 - Model probabilities are prioritization signals, not calibrated prospective neutralisation probabilities.
 
 ## 9. Reproducibility
@@ -90,4 +90,4 @@ Public-safe reproduction in this portfolio is limited to a small cached-report p
 - Ability to build an evidence-bounded ML benchmark from noisy public biological data.
 - Awareness of leakage, grouping, source and study effects, label semantics, calibration, and benchmark interpretation.
 - Practical sequence-feature engineering with k-mer, CDR-local, embedding, and pretrained-model comparisons.
-- Pharma-facing communication discipline: prioritization and benchmarking are kept separate from therapeutic design claims.
+- Pharma-facing communication discipline: prioritization and benchmarking are kept separate from design or optimization claims.

@@ -6,32 +6,30 @@ This public portfolio is organized for computational drug-discovery, cheminforma
 
 ## Pharma-Facing Flagship Projects
 
-### 1. Antibody Sequence ML And Existing-Record Prioritization
+### 1. EGFR CADD And QSAR Decision Workflow
+
+Retrospective EGFR workflow from ChEMBL IC50 records with RDKit descriptors, Morgan fingerprints, scaffold validation, uncertainty checks, SAR and error analysis, ADMET-style triage, and one redocking check.
+
+- Methods: ChEMBL curation, pIC50 aggregation, RDKit descriptors, Morgan fingerprints, random, scaffold, assay, and document validation, conformal-style uncertainty checks, Tanimoto applicability domain, exploratory custom PyTorch GCN benchmarking, active-learning simulation, and Vina redocking on 5UG9 with ligand 8AM.
+- Evidence: standalone repo <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>, portfolio case study `projects/egfr-qsar-cadd.md`, and final report <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet/blob/main/reports/final_egfr_cadd_qsar_report.md>.
+- Key result: Morgan RF scaffold split RMSE 0.871 and R2 0.550; applicability-domain MAE changed from 0.513 for high-similarity chemistry to 0.957 for low-similarity chemistry; 5UG9 redocking recovered the 8AM co-crystal pose at 0.968 A RMSD.
+- Scope: retrospective existing-record benchmarking and triage only; no molecule generation, therapeutic-efficacy claim, clinical claim, or production predictor claim.
+
+### 2. Antibody Sequence ML And Existing-Record Prioritization
 
 Public-data antibody sequence workflow for retrospective benchmarking and existing-record prioritization.
 
 - Methods: CoV-AbDab-derived records, strict and broader dataset handling, grouped validation, source holdout, whole-pair k-mer TF-IDF, CDR analysis, antibody representation benchmarks, calibration analysis, and OAS background retrieval.
-- Evidence: `antibody-sequence-ml/reports/metrics/summary.json`, `antibody-sequence-ml/docs/MODEL_CARD.md`, `projects/antibody-sequence-ml.md`, `notebooks/01_antibody_sequence_ml_workflow.ipynb`.
-- Standalone repo: <https://github.com/eva-mitropoulou/antibody-prioritization>.
+- Evidence: standalone repo <https://github.com/eva-mitropoulou/antibody-prioritization>, model card <https://github.com/eva-mitropoulou/antibody-prioritization/blob/main/docs/MODEL_CARD.md>, portfolio case study `projects/antibody-sequence-ml.md`, and notebook `notebooks/01_antibody_sequence_ml_workflow.ipynb`.
 - Key result: selected `whole_pair_kmer` as the most defensible broad scorer, with grouped ROC-AUC 0.780 and PR-AUC 0.823, plus source-robust ROC-AUC 0.610 and PR-AUC 0.636.
-- Scope: prioritization and benchmarking only; no therapeutic design, sequence generation, mutation optimization, or prospective validation claim.
+- Scope: prioritization and benchmarking only; not a sequence-design, mutation-optimization, or prospective validation workflow.
 
-### 2. EGFR CADD And QSAR Decision Workflow
-
-Retrospective EGFR workflow from ChEMBL IC50 records with RDKit descriptors, Morgan fingerprints, scaffold validation, uncertainty checks, SAR and error analysis, ADMET-style triage, and one redocking check.
-
-- Methods: ChEMBL curation, pIC50 aggregation, RDKit descriptors, Morgan fingerprints, random, scaffold, assay, and document validation, split-conformal intervals, Tanimoto applicability domain, GPU GCN benchmarking, active-learning simulation, and Vina redocking on 5UG9 with ligand 8AM.
-- Evidence: standalone repo <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>, `projects/egfr-qsar-cadd.md`, `egfr-cadd-qsar-admet/reports/final_egfr_cadd_qsar_report.md`.
-- Key result: Morgan RF scaffold split RMSE 0.871 and R2 0.550; applicability-domain MAE changed from 0.513 for high-similarity chemistry to 0.957 for low-similarity chemistry; 5UG9 redocking recovered the 8AM co-crystal pose at 0.968 A RMSD.
-- Scope: retrospective existing-record benchmarking and triage only; no molecule generation, therapeutic-efficacy claim, clinical claim, or production predictor claim.
-
-### 3. Reaction Yield Prediction And Synthesis-Aware ML
+### 3. Reaction Yield Prediction From Public HTE Data
 
 Retrospective public-data HTE reaction-yield workflow for reaction cleaning, categorical component-based featurization, leakage-aware validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.
 
 - Methods: Buchwald-Hartwig public HTE benchmark, component one-hot features, random and out-of-component validation, additive-held-out grouped model selection, mean, linear, and tree baselines, uncertainty diagnostics, and budgeted existing-record selection simulation.
-- Evidence: `reaction-yield-ml/reports/metrics/final_summary.json`, `reaction-yield-ml/reports/final_project_report.md`, `projects/reaction-yield-ml.md`, `notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
-- Standalone repo: <https://github.com/eva-mitropoulou/reaction-yield-prediction>.
+- Evidence: standalone repo <https://github.com/eva-mitropoulou/reaction-yield-prediction>, final report <https://github.com/eva-mitropoulou/reaction-yield-prediction/blob/main/reports/final_project_report.md>, portfolio case study `projects/reaction-yield-ml.md`, and notebook `notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
 - Key result: selected random forest on the additive-held-out grouped split with MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333.
 - Scope: retrospective public-data benchmark only; no wet-lab protocol, no new chemistry generation, and existing-record ranking only.
 

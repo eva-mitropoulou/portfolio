@@ -74,8 +74,30 @@
 
       <section class="section" aria-labelledby="flagships">
         <h2 id="flagships">Pharma-Facing Flagship Projects</h2>
-        <p class="section-intro">Three headline case studies for cheminformatics, AI-assisted drug discovery, antibody and protein informatics, synthesis-aware ML, and validation-focused molecular modeling roles.</p>
+        <p class="section-intro">Three headline case studies for cheminformatics, AI-assisted drug discovery, antibody and protein informatics, public HTE yield modeling, and validation-focused molecular modeling roles.</p>
         <div class="grid three">
+
+          <article class="card">
+            <img class="figure-thumb" src="assets/figures/egfr_random_vs_scaffold.png" alt="EGFR random versus scaffold split performance">
+            <div class="card-body">
+              <h3>EGFR CADD And QSAR Decision Workflow</h3>
+              <p>Retrospective EGFR workflow with ChEMBL curation, Morgan RF baselines, scaffold validation, uncertainty checks, triage, and 5UG9 redocking.</p>
+              <dl class="meta-list">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>RDKit, Morgan fingerprints, scaffold split, assay and document splits, conformal-style uncertainty checks.</dd>
+                </div>
+                <div>
+                  <dt>Key result</dt>
+                  <dd>Morgan RF scaffold split RMSE 0.871 and R2 0.550; 5UG9 redocking recovered the co-crystal ligand at 0.968 A RMSD.</dd>
+                </div>
+              </dl>
+              <div class="link-row">
+                <a href="projects/egfr-qsar-cadd.html">Project page</a>
+                <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet">Repo</a>
+              </div>
+            </div>
+          </article>
           <article class="card">
             <img class="figure-thumb" src="assets/figures/antibody_pipeline.svg" alt="Antibody sequence ML workflow diagram">
             <div class="card-body">
@@ -99,31 +121,9 @@
           </article>
 
           <article class="card">
-            <img class="figure-thumb" src="assets/figures/egfr_random_vs_scaffold.png" alt="EGFR random versus scaffold split performance">
-            <div class="card-body">
-              <h3>EGFR CADD And QSAR Decision Workflow</h3>
-              <p>Retrospective EGFR workflow with ChEMBL curation, Morgan RF baselines, scaffold validation, uncertainty checks, triage, and 5UG9 redocking.</p>
-              <dl class="meta-list">
-                <div>
-                  <dt>Methods</dt>
-                  <dd>RDKit, Morgan fingerprints, scaffold split, assay and document splits, conformal intervals.</dd>
-                </div>
-                <div>
-                  <dt>Key result</dt>
-                  <dd>Morgan RF scaffold split RMSE 0.871 and R2 0.550; 5UG9 redocking recovered the co-crystal ligand at 0.968 A RMSD.</dd>
-                </div>
-              </dl>
-              <div class="link-row">
-                <a href="projects/egfr-qsar-cadd.html">Project page</a>
-                <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet">Repo</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
             <img class="figure-thumb" src="assets/figures/reaction_yield_model_comparison.png" alt="Reaction-yield model comparison by validation split">
             <div class="card-body">
-              <h3>Reaction Yield Prediction And Synthesis-Aware ML</h3>
+              <h3>Reaction Yield Prediction From Public HTE Data</h3>
               <p>Retrospective public-data HTE benchmark with reaction cleaning, categorical component features, out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.</p>
               <dl class="meta-list">
                 <div>

@@ -7,15 +7,15 @@ Eva Mitropoulou is a computational chemist focused on pharma-facing cheminformat
 - Cheminformatics and QSAR scientist or analyst
 - CADD and computational drug-discovery scientist
 - Antibody and protein informatics scientist or analyst
-- Reaction informatics and synthesis-aware ML scientist or analyst
+- Reaction informatics and public HTE yield-modeling scientist or analyst
 - ML validation scientist for molecular or biological data
 - Scientific Python and research-computing specialist
 - Computational chemist with simulation and DFT depth
 
 ## Pharma-Facing Flagship Evidence
 
-1. Antibody sequence ML: public-data retrospective benchmark with strict and broader dataset handling, grouped validation, source holdout, selected whole-pair k-mer scorer, calibration analysis, OAS background-retrieval framing, and existing-record prioritization.
-2. EGFR CADD and QSAR: ChEMBL and RDKit workflow with Morgan RF scaffold validation, assay and document checks, conformal uncertainty, SAR and error analysis, existing-molecule triage, and 5UG9 redocking evidence.
+1. EGFR CADD and QSAR: ChEMBL and RDKit workflow with Morgan RF scaffold validation, assay and document checks, conformal-style uncertainty, SAR and error analysis, existing-molecule triage, and 5UG9 redocking evidence.
+2. Antibody sequence ML: public-data retrospective benchmark with strict and broader dataset handling, grouped validation, source holdout, selected whole-pair k-mer scorer, calibration analysis, OAS background-retrieval framing, and existing-record prioritization.
 3. Reaction yield prediction: public HTE benchmark with reaction cleaning, categorical component featurization, out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.
 4. Supporting simulation depth: GROMACS aggregate contact and interaction-energy analysis for coated versus uncoated polypropylene/brucite interfaces.
 
@@ -25,7 +25,7 @@ RDKit, ChEMBL, CoV-AbDab, OAS, public HTE reaction data, scikit-learn, pandas, N
 
 ## Scope Notes
 
-- Antibody work is benchmarking and existing-record prioritization, not therapeutic design.
+- Antibody work is benchmarking and existing-record prioritization, not sequence design or optimization.
 - EGFR work is retrospective existing-record benchmarking and triage, not production prediction or therapeutic validation.
 - MD and materials work is force-field-dependent computational interpretation, not standalone property prediction.
 - Reaction-yield work is a retrospective public-data benchmark and existing-record ranking workflow, not operational synthesis guidance.

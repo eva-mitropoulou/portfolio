@@ -57,7 +57,7 @@ The scaffold and applicability-domain results are the main takeaways: the model 
 
 - `docs/assets/figures/egfr_random_vs_scaffold.png`: original random versus scaffold split summary.
 - `docs/assets/figures/egfr_validation_contexts.png`: random, scaffold, assay, and document validation contexts.
-- `docs/assets/figures/egfr_conformal_coverage.png`: split-conformal coverage summary.
+- `docs/assets/figures/egfr_conformal_coverage.png`: conformal-style uncertainty coverage summary.
 - `docs/assets/figures/egfr_redocking_overlay.png`: 5UG9 co-crystal versus redocked 8AM pose overlay.
 
 ## 8. Limitations

@@ -1,4 +1,4 @@
-# Reaction Yield Prediction And Synthesis-Aware ML
+# Reaction Yield Prediction From Public HTE Data
 
 ## 1. Overview
 
@@ -74,7 +74,7 @@ The raw public workbook is downloaded during reproduction and is not committed t
 
 ## 10. What This Demonstrates
 
-- Reaction-yield modeling and synthesis-aware ML framing.
+- Reaction-yield ML on public HTE component labels.
 - Data leakage audit and out-of-component validation.
 - Uncertainty-aware prioritization.
 - Active-learning simulation over existing public records.

@@ -1,8 +1,8 @@
-# CV Bullets: Reaction Yield Prediction And Synthesis-Aware ML
+# CV Bullets: Reaction Yield Prediction From Public HTE Data
 
 ## Short Version
 
-- Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.
+- Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.
   - Evidence source: `reaction-yield-ml/reports/final_project_report.md`
   - Risk status: safe
 

@@ -1,9 +1,9 @@
-# Interview Talking Points: Reaction Yield Prediction And Synthesis-Aware ML
+# Interview Talking Points: Reaction Yield Prediction From Public HTE Data
 
 ## Project Framing
 
 - Retrospective public-data benchmark for reaction-yield modeling from HTE records.
-- Focused on synthesis-aware machine learning: components, validation leakage, uncertainty, and decision-support ranking over existing records.
+- Focused on public HTE component-label yield modeling: components, validation leakage, uncertainty, and decision-support ranking over existing records.
 - Safe boundary: no new chemistry generation and no operational synthesis guidance.
 
 ## Technical Decisions

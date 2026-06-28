@@ -23,29 +23,17 @@
       <section class="section">
         <p class="eyebrow">Projects</p>
         <h1>Technical Case Studies</h1>
-        <p class="lead">Portfolio projects are organized for pharma-facing computational chemistry roles first: cheminformatics, QSAR and CADD, antibody and protein informatics, synthesis-aware ML, and leakage-aware validation.</p>
+        <p class="lead">Portfolio projects are organized for pharma-facing computational chemistry roles first: cheminformatics, QSAR and CADD, antibody and protein informatics, public HTE yield modeling, and leakage-aware validation.</p>
       </section>
 
       <section class="section" aria-labelledby="flagship-projects">
         <h2 id="flagship-projects">Pharma-Facing Flagship Projects</h2>
         <div class="grid three">
           <article class="card">
-            <img class="figure-thumb" src="assets/figures/antibody_pipeline.svg" alt="Antibody workflow diagram">
-            <div class="card-body">
-              <h3>Antibody Sequence ML And Existing-Record Prioritization</h3>
-              <p>Retrospective public-data benchmark with final whole-pair k-mer scorer, grouped validation, source holdout, calibration analysis, OAS background retrieval, and existing-record prioritization.</p>
-              <ul class="tag-list"><li>CoV-AbDab</li><li>OAS</li><li>Source holdout</li><li>PR-AUC</li></ul>
-              <div class="link-row">
-                <a href="projects/antibody-sequence-ml.html">Case study</a>
-                <a href="https://github.com/eva-mitropoulou/portfolio">Repo</a>
-              </div>
-            </div>
-          </article>
-          <article class="card">
             <img class="figure-thumb" src="assets/figures/egfr_random_vs_scaffold.png" alt="EGFR QSAR validation figure">
             <div class="card-body">
               <h3>EGFR CADD And QSAR Decision Workflow</h3>
-              <p>ChEMBL EGFR pIC50 curation with scaffold validation, assay and document checks, conformal intervals, SAR error analysis, and redocking evidence.</p>
+              <p>ChEMBL EGFR pIC50 curation with scaffold validation, assay and document checks, conformal-style uncertainty checks, SAR error analysis, and redocking evidence.</p>
               <ul class="tag-list"><li>RDKit</li><li>ChEMBL</li><li>Morgan fingerprints</li><li>Scaffold split</li></ul>
               <div class="link-row">
                 <a href="projects/egfr-qsar-cadd.html">Case study</a>
@@ -54,9 +42,21 @@
             </div>
           </article>
           <article class="card">
+            <img class="figure-thumb" src="assets/figures/antibody_pipeline.svg" alt="Antibody workflow diagram">
+            <div class="card-body">
+              <h3>Antibody Sequence ML And Existing-Record Prioritization</h3>
+              <p>Retrospective public-data benchmark with final whole-pair k-mer scorer, grouped validation, source holdout, calibration analysis, OAS background retrieval, and existing-record prioritization.</p>
+              <ul class="tag-list"><li>CoV-AbDab</li><li>OAS</li><li>Source holdout</li><li>PR-AUC</li></ul>
+              <div class="link-row">
+                <a href="projects/antibody-sequence-ml.html">Case study</a>
+                <a href="https://github.com/eva-mitropoulou/antibody-prioritization">Standalone repo</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
             <img class="figure-thumb" src="assets/figures/reaction_yield_model_comparison.png" alt="Reaction-yield model comparison by validation split">
             <div class="card-body">
-              <h3>Reaction Yield Prediction And Synthesis-Aware ML</h3>
+              <h3>Reaction Yield Prediction From Public HTE Data</h3>
               <p>Retrospective public-data HTE workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.</p>
               <ul class="tag-list"><li>Public HTE</li><li>Reaction yield</li><li>Additive-held-out split</li><li>Uncertainty diagnostics</li></ul>
               <div class="link-row">
