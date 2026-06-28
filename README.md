@@ -1,55 +1,56 @@
-# Evangelia Mitropoulou
+# Eva Mitropoulou
 
-Computational chemist and cheminformatics-oriented researcher with hands-on experience across CADD/QSAR, RDKit molecular-data workflows, molecular DFT, molecular dynamics, periodic DFT, Python automation and Linux-based research computing.
+Computational chemist building reproducible molecular simulation and machine-learning workflows for materials and drug-discovery problems.
 
-This portfolio is a curated technical record of real computational chemistry work. It is organized for computational drug discovery, cheminformatics, and molecular-science roles: each project emphasizes the scientific question, method choices, validation logic, and the evidence produced by the workflow.
+This public portfolio is organized for computational chemistry, molecular simulation, cheminformatics, QSAR/CADD, and ML validation roles. Claims are tied to committed reports, metrics, notebooks, figures, scripts, or audit files.
 
-## Portfolio Highlights
+## Flagship Projects
 
-- **Computational drug discovery:** model-risk-aware EGFR QSAR and drug-likeness-aware prioritization pipeline using ChEMBL, RDKit, scikit-learn, scaffold splits, and applicability-domain analysis.
-- **Molecular DFT:** ORCA workflows for phosphorus-containing flame-retardant candidates, conformer ranking, vibrational analysis, bond metrics, and mechanistic interpretation.
-- **Molecular dynamics:** GROMACS simulations of isotactic polypropylene melt behavior, including staged equilibration, production MD, and thermodynamic analysis.
-- **Periodic materials modeling:** Quantum ESPRESSO workflows for crystalline and inorganic systems.
+### 1. Antibody Sequence ML And Existing-Record Prioritization
 
-## Selected Projects
+Public-data antibody sequence workflow for retrospective benchmarking and existing-record prioritization.
 
-### 1. [EGFR QSAR / Drug-Likeness-Aware CADD Pipeline](./egfr-cadd-qsar-admet/README.md)
-A reproducible cheminformatics project for EGFR inhibitor-like compound prioritization. The workflow curates ChEMBL IC50 data, computes RDKit descriptors and Morgan fingerprints, trains baseline QSAR models, compares random versus scaffold splits, analyzes applicability domain, and ranks candidates with explicit model-risk labels.
+- Methods: CoV-AbDab-derived records, grouped validation, k-mer TF-IDF, CDR annotation, antibody representation benchmarks, OAS background retrieval.
+- Evidence: `antibody-sequence-ml/reports/metrics/summary.json`, `projects/antibody-sequence-ml.md`, `notebooks/01_antibody_sequence_ml_workflow.ipynb`.
+- Boundary: prioritization and benchmarking only; no therapeutic design, sequence generation, mutation optimization, or prospective validation claim.
 
-**Project signal:** 26,600 raw EGFR IC50 records, 10,593 model-ready molecules, Morgan fingerprint Random Forest performance of MAE 0.516 / R2 0.719 on random split, scaffold-split R2 0.550, and a diverse top-20 ranking with 20 unique scaffolds, 17 low-risk molecules, and 19 Lipinski-clean molecules.
+### 2. EGFR QSAR / CADD Benchmark
 
-**Relevant capabilities:** ChEMBL, RDKit, QSAR, scaffold split, applicability domain, physicochemical filtering, model-risk communication.
+Retrospective EGFR pIC50 baseline from ChEMBL using RDKit descriptors, Morgan fingerprints, and random versus Bemis-Murcko scaffold split validation.
 
-### 2. [Flame-Retardant Materials Case Study](./flame-retardants/README.md)
-Computational analysis of phosphorus-based flame-retardant candidates, linking DFT-derived metrics to decomposition behavior, char formation, and substituent effects.
+- Methods: ChEMBL curation, RDKit descriptors, Morgan fingerprints, baseline regressors, scaffold split.
+- Evidence: `egfr-cadd-qsar-admet/reports/metrics/summary.json`, `projects/egfr-qsar-cadd.md`, `notebooks/02_egfr_qsar_cadd_benchmark.ipynb`.
+- Key result: Morgan random forest changed from RMSE 0.712 / R2 0.719 under random split to RMSE 0.871 / R2 0.550 under scaffold split.
+- Boundary: retrospective baseline QSAR only; no production-grade prediction or clinical utility claim.
 
-**Relevant capabilities:** ORCA, molecular DFT, conformer ranking, vibrational analysis, bond metrics, structure-property interpretation.
+### 3. Polymer-Filler MD And Flame-Retardant Molecular Modeling
 
-### 3. [Polymer Molecular Dynamics Case Study](./polymer-md/README.md)
-GROMACS workflow for isotactic polypropylene melt simulations, including staging, run strategy, and representative thermodynamic outputs.
+GROMACS workflow evidence for polypropylene/brucite interface analysis with coated versus uncoated aggregate contact and interaction-energy summaries.
 
-**Relevant capabilities:** GROMACS, polymer melt simulation, staged equilibration, production MD, thermodynamic analysis.
-
-### 4. [Periodic DFT Case Study](./periodic-dft/README.md)
-Quantum ESPRESSO workflows for inorganic and crystalline materials, demonstrating periodic structure preparation, relaxation, and solid-state modeling practice.
-
-**Relevant capabilities:** Quantum ESPRESSO, periodic DFT, CIF-derived structures, relaxation/SCF workflows, MPI-oriented execution.
+- Methods: molecular dynamics, contact counts, short-range interaction energies, density/profile checks, force-field-aware interpretation.
+- Evidence: `polymer-md/reports/metrics/summary.json`, `projects/polymer-filler-md.md`, `notebooks/03_polymer_filler_md_analysis.ipynb`.
+- Interpretation: surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in available aggregate MD outputs.
+- Boundary: force-field-dependent computational model; not standalone property prediction.
 
 ## Technical Stack
 
-- **Cheminformatics / CADD:** RDKit, ChEMBL data curation, QSAR, molecular descriptors, Morgan fingerprints, Tanimoto similarity, scaffold split, physicochemical filtering.
-- **Machine learning:** scikit-learn, Ridge regression, Random Forest, Gradient Boosting, cross-validation, model-risk analysis.
-- **Quantum chemistry:** ORCA, molecular DFT, vibrational analysis, bond metrics, and electronic-structure interpretation.
-- **Molecular simulation:** GROMACS, polymer melt MD, thermodynamic analysis.
-- **Periodic DFT:** Quantum ESPRESSO.
-- **Programming and research computing:** Python, pandas, NumPy, Matplotlib, Bash, Linux, Git/GitHub, SLURM job scripts.
+- Molecular simulation: GROMACS, force fields, MD analysis, polymer/filler interfaces.
+- Quantum chemistry: ORCA, CREST, DFT, conformers, Quantum ESPRESSO utilities.
+- Cheminformatics: RDKit, ChEMBL, QSAR, Morgan fingerprints, descriptors, scaffold splits.
+- ML validation: grouped validation, scaffold split, ROC-AUC, PR-AUC, RMSE, R2.
+- Antibody/protein informatics: CoV-AbDab, OAS, CDR annotation, k-mer features, antibody representation benchmarking.
+- Scientific Python: pandas, NumPy, scikit-learn, matplotlib, notebooks, metrics summaries.
+- Reproducibility: Git, Linux, SLURM, environments, Makefiles, scripts, reports.
 
-## Repository Structure
+## Selected Outputs
 
-```text
-portfolio/
-├── egfr-cadd-qsar-admet/
-├── flame-retardants/
-├── periodic-dft/
-└── polymer-md/
-```
+- GitHub Pages site: `docs/`
+- Evidence audit: `portfolio_audit/evidence_map.md`
+- Recruiter assets: `portfolio_assets/`
+- Flagship notebooks: `notebooks/`
+- Project case studies: `projects/`
+
+## Contact
+
+- Email: evangelia.mitr@gmail.com
+- GitHub: <https://github.com/eva-mitropoulou>
