@@ -1,0 +1,24 @@
+{
+  "date": "2026-06-28",
+  "quality_gate_status": "pass",
+  "checks": {
+    "homepage_sections": "pass",
+    "homepage_visible_language": "pass",
+    "project_page_summary_panels": "pass",
+    "project_page_old_headings": "pass",
+    "internal_links": "pass",
+    "local_images": "pass",
+    "css_braces": "pass",
+    "sequence_like_string_scan": "pass",
+    "stale_string_scan": "pass"
+  },
+  "added_files": [
+    "docs/assets/figures/portfolio_og_card.svg",
+    "docs/assets/figures/favicon.svg",
+    "portfolio_audit/laconic_site_language_audit.md",
+    "portfolio_audit/laconic_site_language_audit.json",
+    "portfolio_audit/laconic_site_polish_report.md",
+    "portfolio_audit/laconic_site_polish_report.json",
+    "portfolio_audit/laconic_manual_review_checklist.md"
+  ]
+}

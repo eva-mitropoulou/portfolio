@@ -9,7 +9,7 @@
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry portfolio</span></a>
+        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry</span></a>
         <div class="nav-links">
           <a href="../index.html">Home</a>
           <a href="../projects.html" aria-current="page">Projects</a>
@@ -20,85 +20,73 @@
       </nav>
     </header>
     <main class="project-detail">
-      <p class="eyebrow">Flagship Project</p>
-      <h1>Antibody Sequence ML And Existing-Record Prioritization</h1>
-      <p class="lead">Public-data antibody sequence workflow for retrospective benchmarking, label-semantics review, calibration, and existing-record prioritization.</p>
+      <p class="eyebrow">Biologics</p>
+      <h1>Antibody sequence ML</h1>
+      <p class="lead">Public antibody sequence-record workflow with k-mer models, CDR/region analysis, source-holdout validation, and existing-record prioritization.</p>
 
-      <h2>1. Overview</h2>
-      <p>Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization with careful handling of labels, validation, and OAS background semantics.</p>
+      <section class="at-a-glance" aria-labelledby="antibody-glance">
+        <h2 id="antibody-glance">At a glance</h2>
+        <div class="glance-item"><strong>Data:</strong> 5,573 strict labeled records</div>
+        <div class="glance-item"><strong>Methods:</strong> k-mer TF-IDF, CDR/region analysis, OAS retrieval</div>
+        <div class="glance-item"><strong>Validation:</strong> grouped and source-holdout</div>
+        <div class="glance-item"><strong>Result:</strong> grouped ROC-AUC 0.780; PR-AUC 0.823</div>
+      </section>
 
-      <h2>2. Scientific And Technical Problem</h2>
-      <p>Public antibody datasets mix assay labels, source records, target annotations, and sequence completeness. The workflow tests whether sequence features and antibody-specific representations can be benchmarked reproducibly without overstating prospective biological utility.</p>
+      <h2>Data</h2>
+      <p>The workflow uses public CoV-AbDab-derived records, a strict labeled subset, a broader prepared-record table, and an annotated paired subset for CDR/region analysis.</p>
 
-      <h2>3. Dataset Or System</h2>
-      <ul>
-        <li>CoV-AbDab-derived public-data workflow.</li>
-        <li>Strict labeled dataset: 5,573 records.</li>
-        <li>Broader prepared-record set: 11,748 records.</li>
-        <li>Paired CDR-annotated subset: 5,092 candidates.</li>
-        <li>OAS background records treated as unknown-target background rather than assayed controls.</li>
-      </ul>
+      <h2>Methods</h2>
+      <p>Character k-mer TF-IDF baselines, logistic regression, CDR/region features, antibody representation benchmarks, calibration analysis, OAS background retrieval, and diversity-aware existing-record ranking.</p>
 
-      <h2>4. Methods</h2>
-      <p>Character k-mer TF-IDF baselines, logistic regression, grouped validation, source holdout, source-robust model selection, calibration analysis, CDR annotation, AbLang2-style embeddings, IgBert-family benchmark artifacts where present, OAS background retrieval, and diversity-aware existing-record prioritization.</p>
-
-      <h2>5. Validation Strategy</h2>
-      <p>Grouped validation is prioritized where group features are meaningful. Random split results are retained as baselines. Matched CDR comparisons compare whole-pair and region-local k-mer features on the same paired subset. Source-holdout validation is used as a skeptical control for source and study effects, and source-robust model selection chose <code>whole_pair_kmer</code>.</p>
-
-      <h2>6. Key Results</h2>
+      <h2>Validation</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Output</th><th>Result</th><th>Source</th></tr></thead>
+          <thead><tr><th>Output</th><th>Result</th></tr></thead>
           <tbody>
-            <tr><td>Final selected model</td><td><code>whole_pair_kmer</code>, compact whole-pair k-mer TF-IDF logistic regression</td><td>`MODEL_CARD.md`</td></tr>
-            <tr><td>V-gene grouped validation</td><td>ROC-AUC 0.7800, PR-AUC 0.8233</td><td>`grouped_validation_metrics.json`</td></tr>
-            <tr><td>Source-robust weighted holdout</td><td>ROC-AUC 0.6095, PR-AUC 0.6363</td><td>`source_robust_model_selection_metrics.json`</td></tr>
-            <tr><td>High-confidence review threshold</td><td>Threshold 0.7: precision 0.8266, recall 0.3062, coverage 0.3051</td><td>`MODEL_CARD.md`</td></tr>
-            <tr><td>Final packaging</td><td>Consistency audit PASS; 8 tests passed; no missing expected artifacts</td><td>`final_consistency_audit.json`</td></tr>
-            <tr><td>Diversity-aware shortlist</td><td>23 existing records</td><td>`diversity_aware_shortlist_summary.json`</td></tr>
+            <tr><td>Broad scorer</td><td>whole-pair k-mer TF-IDF logistic regression</td></tr>
+            <tr><td>Grouped validation</td><td>ROC-AUC 0.7800, PR-AUC 0.8233</td></tr>
+            <tr><td>Source-robust weighted holdout</td><td>ROC-AUC 0.6095, PR-AUC 0.6363</td></tr>
+            <tr><td>Paired-region scorer</td><td>region-only compact k-mer</td></tr>
+            <tr><td>Existing-record shortlist</td><td>23 records</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>7. Figures</h2>
+      <h2>Figures</h2>
       <figure>
         <img src="../assets/figures/antibody_pipeline.svg" alt="Antibody sequence ML workflow diagram">
-        <figcaption>Public-safe antibody workflow diagram generated from project artifacts.</figcaption>
+        <figcaption>Workflow diagram for public antibody sequence records.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/antibody_benchmark_pr_auc.png" alt="Antibody benchmark PR-AUC comparison">
-        <figcaption>Aggregate benchmark figure for public-data model comparison.</figcaption>
+        <figcaption>Aggregate benchmark comparison.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/antibody_source_robust_model_comparison.png" alt="Antibody source-robust model comparison">
-        <figcaption>Source-robust model-selection comparison for conservative k-mer variants.</figcaption>
+        <figcaption>Source-robust comparison for k-mer variants.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/antibody_calibration_curve.png" alt="Antibody calibration curve">
-        <figcaption>Calibration output used for high-confidence review threshold interpretation.</figcaption>
+        <figcaption>Calibration curve used for score review.</figcaption>
       </figure>
 
-      <h2>8. Interpretation Context</h2>
-      <ul>
-        <li>Public antibody labels combine heterogeneous assays, sources, and target annotations.</li>
-        <li>Grouped and source-holdout validation are central to interpreting model behavior across sources.</li>
-        <li>OAS records are unknown-target natural antibody background used for background-enrichment analysis.</li>
-        <li>Model scores are prioritization signals for reviewing existing public records.</li>
-      </ul>
+      <h2>Scope</h2>
+      <p>Scope: retrospective public-record workflow with grouped validation, source-holdout analysis, and existing-record ranking.</p>
 
-      <h2>9. Reproducibility</h2>
-      <p>Public-safe reproduction uses cached summaries and report generation. The standalone repository keeps the fuller workflow and project cards.</p>
+      <h2>Reproducibility</h2>
+      <p>The standalone repository includes reports, metrics, figures, model and data cards, and lightweight checks.</p>
+      <pre><code>make reproduce-small
+make test</code></pre>
       <div class="link-row">
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization">Repo</a>
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization/tree/main/reports">Reports</a>
         <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/projects/antibody-sequence-ml/notebooks/01_antibody_sequence_ml_workflow.ipynb">Notebook</a>
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization/blob/main/docs/MODEL_CARD.md">Model card</a>
-        <a href="https://github.com/eva-mitropoulou/antibody-prioritization/blob/main/docs/DATA_CARD.md">Data card</a>
       </div>
 
-      <h2>10. What This Demonstrates</h2>
-      <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, source and study effect diagnosis, practical sequence-feature engineering, calibration-aware thresholding, and pharma-facing communication.</p>
+      <h2>Technical focus</h2>
+      <p>Sequence-feature engineering, grouped validation, source effects, calibration, and record-prioritization workflow design.</p>
     </main>
-    <footer class="footer">This page reports aggregate metrics and public-safe identifiers.</footer>
+    <footer class="footer">Antibody sequence ML · Eva Mitropoulou</footer>
   </body>
 </html>

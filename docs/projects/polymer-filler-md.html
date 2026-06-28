@@ -9,7 +9,7 @@
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry portfolio</span></a>
+        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry</span></a>
         <div class="nav-links">
           <a href="../index.html">Home</a>
           <a href="../projects.html" aria-current="page">Projects</a>
@@ -20,61 +20,50 @@
       </nav>
     </header>
     <main class="project-detail">
-      <p class="eyebrow">Flagship Project</p>
-      <h1>Polymer-Filler MD And Flame-Retardant Molecular Modeling</h1>
-      <p class="lead">GROMACS polypropylene and brucite interface analysis with coated versus uncoated contact and interaction-energy summaries.</p>
+      <p class="eyebrow">Additional computational chemistry</p>
+      <h1>Polymer-filler MD</h1>
+      <p class="lead">GROMACS analysis of polypropylene and brucite interfaces with coated and uncoated filler configurations.</p>
 
-      <h2>1. Overview</h2>
-      <p>Built and analyzed molecular simulation workflows for polypropylene and brucite filler interfaces, with related flame-retardant molecular modeling assets.</p>
+      <section class="at-a-glance" aria-labelledby="polymer-glance">
+        <h2 id="polymer-glance">At a glance</h2>
+        <div class="glance-item"><strong>System:</strong> polypropylene/brucite interfaces</div>
+        <div class="glance-item"><strong>Methods:</strong> GROMACS MD, contact counts, interaction energies</div>
+        <div class="glance-item"><strong>Comparison:</strong> coated and uncoated filler configurations</div>
+        <div class="glance-item"><strong>Result:</strong> coating shifted interaction toward the surface layer</div>
+      </section>
 
-      <h2>2. Scientific and Technical Problem</h2>
-      <p>Surface treatment can alter polymer-filler compatibility. The modeling question was how coating changes direct polymer-brucite contact and the interaction pattern at the interface.</p>
+      <h2>System</h2>
+      <p>The project covers polypropylene and brucite filler-surface models with coated and uncoated configurations.</p>
 
-      <h2>3. Dataset Or System</h2>
-      <ul>
-        <li>Polypropylene and brucite interface simulations.</li>
-        <li>Coated and uncoated filler-surface models.</li>
-        <li>Contact-count and interaction-energy summaries.</li>
-        <li>Density and visual-check artifacts.</li>
-      </ul>
+      <h2>Methods</h2>
+      <p>GROMACS molecular dynamics, contact analysis, short-range interaction-energy summaries, density checks, shell scripts, and SLURM-oriented workflow management.</p>
 
-      <h2>4. Methods</h2>
-      <p>GROMACS molecular dynamics, atomistic and coarse-grained workflow assets where available, contact analysis, short-range interaction-energy summaries, density checks, shell scripts, and SLURM-oriented workflow management.</p>
+      <h2>Comparison</h2>
+      <p>Coated and uncoated systems were compared with aggregate contact and interaction-energy summaries. The available summaries support a coating-driven shift in the interface interaction pattern.</p>
 
-      <h2>5. Validation Strategy</h2>
-      <p>Compared coated and uncoated contact and energy summaries; used density outputs and visual checks as simulation sanity checks; interpreted results as force-field-dependent computational evidence.</p>
-
-      <h2>6. Key Results</h2>
-      <p>Available contact and interaction-energy summaries support the interpretation that surface coating reduced direct PP-brucite contact and shifted interaction toward the stearic-acid layer.</p>
-
-      <h2>7. Figures</h2>
+      <h2>Figures</h2>
       <figure>
         <img src="../assets/figures/polymer_contact_energy_summary.svg" alt="Polymer filler contact and interaction energy summary">
-        <figcaption>Public-safe aggregate contact and interaction-energy summary generated from committed analysis tables.</figcaption>
+        <figcaption>Aggregate contact and interaction-energy summary.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/polymer_density_trace.png" alt="Polymer MD density trace">
-        <figcaption>Existing polymer MD density trace retained as a simulation sanity-check artifact.</figcaption>
+        <figcaption>Polymer MD density trace used as a simulation check.</figcaption>
       </figure>
 
-      <h2>8. Limitations</h2>
-      <ul>
-        <li>Force-field-dependent computational model.</li>
-        <li>Not standalone property prediction.</li>
-        <li>Does not replace experimental characterization.</li>
-        <li>Conclusions depend on model setup, parameter choices, and sampling.</li>
-      </ul>
+      <h2>Scope</h2>
+      <p>Scope: computational interface analysis connected to materials interpretation and simulation workflow practice.</p>
 
-      <h2>9. Reproducibility</h2>
-      <p>The public portfolio includes summary metrics, a final report, a small reproduction command, and a recruiter notebook. Full MD reproduction may require GROMACS, force-field files, trajectories, large storage, and HPC resources.</p>
+      <h2>Reproducibility</h2>
+      <p>The public portfolio includes summary metrics, figures, a final report, and a small reproduction command. Full MD reproduction uses the original simulation environment.</p>
       <div class="link-row">
-        <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/polymer-md">Project folder</a>
+        <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/projects/polymer-filler-md">Project folder</a>
         <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/projects/polymer-filler-md/notebooks/03_polymer_filler_md_analysis.ipynb">Notebook</a>
       </div>
 
-      <h2>10. What This Demonstrates</h2>
-      <p>Connection between molecular simulation setup, analysis scripts, aggregate metrics, scientific interpretation, and clear materials-facing limitations.</p>
+      <h2>Technical focus</h2>
+      <p>Molecular simulation setup, analysis scripts, aggregate metrics, interface interpretation, and HPC-oriented workflow habits.</p>
     </main>
-    <footer class="footer">Simulation results are presented as computational evidence, not standalone experimental proof.</footer>
+    <footer class="footer">Polymer-filler MD · Eva Mitropoulou</footer>
   </body>
 </html>

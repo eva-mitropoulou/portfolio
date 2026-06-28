@@ -41,7 +41,7 @@ Project source: curated portfolio artifacts in `artifacts/`.
 
 - Available contact and interaction-energy summaries support the interpretation that surface coating reduced direct PP-brucite contact.
 - Coated analyses show substantial PP interaction with the stearic-acid layer, shifting the interface away from direct PP-brucite contact.
-- These outputs support a compatibility interpretation for surface treatment, within force-field and model limitations.
+- These outputs support a compatibility interpretation for surface treatment within the modeled setup.
 
 ## 7. Figures
 
@@ -61,7 +61,7 @@ Project source: curated portfolio artifacts in `artifacts/`.
 - Small command: `make reproduce-small` from `artifacts/`.
 - Recruiter notebook: `notebooks/03_polymer_filler_md_analysis.ipynb`.
 
-## 10. What This Demonstrates
+## 10. Technical Focus
 
 - Ability to connect molecular simulation setup, analysis scripts, and scientific interpretation.
 - Practical MD analysis across contacts, energies, density checks, and workflow infrastructure.

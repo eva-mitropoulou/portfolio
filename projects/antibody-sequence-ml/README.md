@@ -50,8 +50,8 @@ The portfolio layer reports aggregate metrics and public-safe identifiers.
 - Source-robust weighted leave-source-out validation: ROC-AUC 0.6095 and PR-AUC 0.6363.
 - Threshold 0.7 gave precision 0.8266, recall 0.3062, and coverage 0.3051 for high-confidence review.
 - Final consistency audit: PASS, with zero missing expected packaging artifacts.
-- Tests: 8 passed.
-- Pretrained antibody model outputs are retained as benchmark evidence rather than the primary scorer.
+- Lightweight integrity checks passed.
+- Pretrained antibody model outputs are retained as benchmark comparisons rather than the primary scorer.
 - Diversity-aware existing-record prioritization produced a 23-record shortlist in `diversity_aware_shortlist_summary.json`.
 
 ## 7. Figures
@@ -60,7 +60,7 @@ The portfolio layer reports aggregate metrics and public-safe identifiers.
 - `docs/assets/figures/antibody_benchmark_pr_auc.png`: aggregate benchmark figure.
 - `docs/assets/figures/antibody_source_robust_model_comparison.png`: source-robust model-selection comparison.
 - `docs/assets/figures/antibody_calibration_curve.png`: calibration curve.
-- Source evidence includes benchmark and prioritization figures under `reports/figures/` in the antibody project.
+- Source project figures include benchmark and prioritization outputs under `reports/figures/`.
 
 ## 8. Interpretation Context
 
@@ -82,9 +82,9 @@ Public-safe reproduction in this portfolio is limited to a small cached-report p
 - Notebook: `notebooks/01_antibody_sequence_ml_workflow.ipynb`.
 - Small command: `make reproduce-small` from `artifacts/`.
 
-## 10. What This Demonstrates
+## 10. Technical Focus
 
-- Ability to build an evidence-bounded ML benchmark from noisy public biological data.
+- Public biological-sequence ML benchmark construction.
 - Awareness of leakage, grouping, source and study effects, label semantics, calibration, and benchmark interpretation.
 - Practical sequence-feature engineering with k-mer, CDR-local, embedding, and pretrained-model comparisons.
-- Pharma-facing communication discipline around validation, prioritization, and benchmark interpretation.
+- Communication around validation, prioritization, and benchmark interpretation.

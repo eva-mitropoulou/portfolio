@@ -9,7 +9,7 @@
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry portfolio</span></a>
+        <a class="brand" href="index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry</span></a>
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="projects.html" aria-current="page">Projects</a>
@@ -22,21 +22,22 @@
     <main>
       <section class="section">
         <p class="eyebrow">Projects</p>
-        <h1>Technical Case Studies</h1>
-        <p class="lead">Portfolio projects are organized for pharma-facing computational chemistry roles first: cheminformatics, QSAR and CADD, antibody and protein informatics, public HTE yield modeling, and leakage-aware validation.</p>
+        <h1>Project work</h1>
+        <p class="lead">Computational chemistry projects in CADD/QSAR, antibody sequence ML, reaction-yield modeling, molecular simulation, DFT, and HPC workflows.</p>
       </section>
 
-      <section class="section" aria-labelledby="flagship-projects">
-        <h2 id="flagship-projects">Pharma-Facing Flagship Projects</h2>
+      <section class="section" aria-labelledby="main-work-projects">
+        <h2 id="main-work-projects">Main work</h2>
         <div class="grid three">
           <article class="card">
             <img class="figure-thumb" src="assets/figures/egfr_random_vs_scaffold.png" alt="EGFR QSAR validation figure">
             <div class="card-body">
-              <h3>EGFR CADD And QSAR Decision Workflow</h3>
-              <p>ChEMBL EGFR pIC50 curation with scaffold validation, assay and document checks, conformal-style uncertainty checks, SAR error analysis, and redocking evidence.</p>
-              <ul class="tag-list"><li>RDKit</li><li>ChEMBL</li><li>Morgan fingerprints</li><li>Scaffold split</li></ul>
+              <p class="domain-label">Small molecules</p>
+              <h3>EGFR CADD/QSAR</h3>
+              <p>ChEMBL EGFR IC50 curation with RDKit descriptors, Morgan fingerprints, scaffold validation, applicability-domain analysis, ADMET-style triage, and a redocking audit.</p>
+              <ul class="tag-list"><li>RDKit</li><li>ChEMBL</li><li>Scaffold split</li><li>Vina</li></ul>
               <div class="link-row">
-                <a href="projects/egfr-qsar-cadd.html">Case study</a>
+                <a href="projects/egfr-qsar-cadd.html">Project</a>
                 <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet">Repo</a>
               </div>
             </div>
@@ -44,76 +45,77 @@
           <article class="card">
             <img class="figure-thumb" src="assets/figures/antibody_pipeline.svg" alt="Antibody workflow diagram">
             <div class="card-body">
-              <h3>Antibody Sequence ML And Existing-Record Prioritization</h3>
-              <p>Retrospective public-data benchmark with final whole-pair k-mer scorer, grouped validation, source holdout, calibration analysis, OAS background retrieval, and existing-record prioritization.</p>
-              <ul class="tag-list"><li>CoV-AbDab</li><li>OAS</li><li>Source holdout</li><li>PR-AUC</li></ul>
+              <p class="domain-label">Biologics</p>
+              <h3>Antibody sequence ML</h3>
+              <p>Public antibody sequence-record workflow with k-mer baselines, CDR/region analysis, source-holdout validation, OAS background retrieval, and existing-record prioritization.</p>
+              <ul class="tag-list"><li>CoV-AbDab</li><li>OAS</li><li>CDR regions</li><li>PR-AUC</li></ul>
               <div class="link-row">
-                <a href="projects/antibody-sequence-ml.html">Case study</a>
-                <a href="https://github.com/eva-mitropoulou/antibody-prioritization">Standalone repo</a>
+                <a href="projects/antibody-sequence-ml.html">Project</a>
+                <a href="https://github.com/eva-mitropoulou/antibody-prioritization">Repo</a>
               </div>
             </div>
           </article>
           <article class="card">
             <img class="figure-thumb" src="assets/figures/reaction_yield_model_comparison.png" alt="Reaction-yield model comparison by validation split">
             <div class="card-body">
-              <h3>Reaction Yield Prediction From Public HTE Data</h3>
-              <p>Retrospective public-data HTE workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.</p>
-              <ul class="tag-list"><li>Public HTE</li><li>Reaction yield</li><li>Additive-held-out split</li><li>Uncertainty diagnostics</li></ul>
+              <p class="domain-label">Reaction informatics</p>
+              <h3>Reaction-yield prediction</h3>
+              <p>Public Buchwald-Hartwig HTE benchmark with reaction cleaning, categorical component features, out-of-component validation, uncertainty diagnostics, and active-learning simulation.</p>
+              <ul class="tag-list"><li>Public HTE</li><li>Component labels</li><li>Grouped split</li><li>Random forest</li></ul>
               <div class="link-row">
-                <a href="projects/reaction-yield-ml.html">Case study</a>
-                <a href="https://github.com/eva-mitropoulou/reaction-yield-prediction">Standalone repo</a>
+                <a href="projects/reaction-yield-ml.html">Project</a>
+                <a href="https://github.com/eva-mitropoulou/reaction-yield-prediction">Repo</a>
               </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section" id="secondary-projects" aria-labelledby="secondary-title">
-        <h2 id="secondary-title">Supporting Materials And Simulation Depth</h2>
-        <p class="section-intro">These projects show computational chemistry breadth and HPC workflow maturity, but the headline portfolio is intentionally pharma-facing.</p>
+      <section class="section" aria-labelledby="additional-projects">
+        <h2 id="additional-projects">Additional computational chemistry</h2>
+        <p class="section-intro">DFT, MD, periodic calculations, and HPC workflows from Eva's materials and molecular-simulation work.</p>
         <div class="grid four">
           <article class="card">
             <img class="figure-thumb" src="assets/figures/polymer_contact_energy_summary.svg" alt="Polymer filler MD summary figure">
             <div class="card-body">
-              <h3>Polymer-Filler MD And Flame-Retardant Molecular Modeling</h3>
-              <p>GROMACS polymer/brucite interface analysis with coated versus uncoated contact and interaction-energy summaries.</p>
-              <ul class="tag-list"><li>GROMACS</li><li>Force fields</li><li>Contact analysis</li><li>SLURM</li></ul>
+              <h3>Polymer-filler MD</h3>
+              <p>GROMACS polypropylene/brucite interface analysis with coated and uncoated contact and interaction-energy summaries.</p>
               <div class="link-row">
-                <a href="projects/polymer-filler-md.html">Case study</a>
-                <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/polymer-md">Repo folder</a>
+                <a href="projects/polymer-filler-md.html">Project</a>
+                <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/projects/polymer-filler-md">Folder</a>
               </div>
             </div>
           </article>
           <article class="card">
             <div class="card-body">
-              <h3>DFT Flame-Retardant Candidate Analysis</h3>
-              <p>Conformer, bond-length, nonbonded-contact, and ORCA input/output assets for flame-retardant candidate interpretation.</p>
+              <h3>DFT flame-retardant modeling</h3>
+              <p>ORCA and CREST workflows for conformer handling, bond-length analysis, nonbonded contacts, and candidate interpretation.</p>
               <div class="link-row">
-                <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/flame-retardants">Project folder</a>
+                <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/projects/dft-flame-retardants">Folder</a>
               </div>
             </div>
           </article>
           <article class="card">
             <div class="card-body">
-              <h3>HPC, SLURM, And Workflow Infrastructure</h3>
-              <p>Workflow scripts for restart, benchmarking, job setup, and simulation analysis across GROMACS, ORCA, and Quantum ESPRESSO work.</p>
+              <h3>Periodic DFT</h3>
+              <p>Quantum ESPRESSO inputs, CIF conversion utilities, relaxation outputs, phonon setup, and restart scripts.</p>
               <div class="link-row">
-                <a href="skills.html#reproducibility">Evidence links</a>
+                <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/projects/periodic-dft">Folder</a>
               </div>
             </div>
           </article>
           <article class="card">
             <div class="card-body">
-              <h3>Periodic DFT And Quantum ESPRESSO Utilities</h3>
-              <p>QE inputs, CIF-derived structures, relaxation outputs, phonon setup, and restart utilities for periodic inorganic systems.</p>
+              <h3>HPC workflows</h3>
+              <p>SLURM-oriented setup, restart, benchmarking, and simulation-analysis scripts.</p>
               <div class="link-row">
-                <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/periodic-dft">Project folder</a>
+                <a href="skills.html#reproducibility">Skills</a>
               </div>
             </div>
           </article>
         </div>
       </section>
     </main>
-    <footer class="footer">Public claims are tied to committed evidence maps, reports, metrics, figures, notebooks, or scripts.</footer>
+    <footer class="footer">Eva Mitropoulou · computational chemistry</footer>
   </body>
 </html>

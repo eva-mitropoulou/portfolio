@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EGFR CADD and QSAR | Eva Mitropoulou</title>
+    <title>EGFR CADD/QSAR | Eva Mitropoulou</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
   </head>
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry portfolio</span></a>
+        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry</span></a>
         <div class="nav-links">
           <a href="../index.html">Home</a>
           <a href="../projects.html" aria-current="page">Projects</a>
@@ -20,43 +20,43 @@
       </nav>
     </header>
     <main class="project-detail">
-      <p class="eyebrow">Flagship Project</p>
-      <h1>EGFR CADD And QSAR Decision Workflow</h1>
-      <p class="lead">Retrospective EGFR workflow from ChEMBL IC50 records with RDKit features, Morgan fingerprints, scaffold validation, uncertainty checks, triage, and 5UG9 redocking.</p>
+      <p class="eyebrow">Small molecules</p>
+      <h1>EGFR CADD/QSAR</h1>
+      <p class="lead">Public ChEMBL EGFR workflow with RDKit features, scaffold validation, applicability-domain analysis, and one redocking check.</p>
 
-      <h2>1. Overview</h2>
-      <p>I built this as a complete EGFR cheminformatics workflow: curation, pIC50 modeling, validation-risk checks, applicability-domain analysis, uncertainty intervals, existing-molecule triage, SAR-style error analysis, active-learning simulation, a GPU GCN benchmark, and a small structure-based redocking check.</p>
+      <section class="at-a-glance" aria-labelledby="egfr-glance">
+        <h2 id="egfr-glance">At a glance</h2>
+        <div class="glance-item"><strong>Data:</strong> 10,593 EGFR molecules</div>
+        <div class="glance-item"><strong>Methods:</strong> RDKit, Morgan fingerprints, Random Forest, Vina</div>
+        <div class="glance-item"><strong>Validation:</strong> random, scaffold, assay-aware, document-aware</div>
+        <div class="glance-item"><strong>Result:</strong> scaffold R² 0.550; redocking RMSD 0.968 Å</div>
+      </section>
 
-      <h2>2. Dataset</h2>
-      <ul>
-        <li>26,600 raw ChEMBL EGFR IC50 rows.</li>
-        <li>10,834 clean molecule-level pIC50 rows.</li>
-        <li>10,593 model-ready molecules.</li>
-        <li>EGFR target CHEMBL203.</li>
-      </ul>
+      <h2>Data</h2>
+      <p>ChEMBL EGFR IC50 records were curated into molecule-level pIC50 labels. The model-ready set contains 10,593 molecules for baseline QSAR and CADD triage.</p>
 
-      <h2>3. Methods</h2>
-      <p>RDKit descriptors, Morgan fingerprints, Random Forest baselines, scaffold validation, assay and document validation, conformal-style uncertainty checks, Tanimoto applicability-domain analysis, ADMET-style and model-risk triage, SAR-support error analysis, exploratory custom PyTorch GCN benchmarking, active-learning simulation over existing labels, and Vina redocking of 5UG9 with ligand 8AM.</p>
+      <h2>Methods</h2>
+      <p>RDKit descriptors, Morgan fingerprints, Random Forest baselines, Tanimoto applicability-domain analysis, conformal-style uncertainty checks, ADMET-style triage, exploratory custom PyTorch GCN benchmark, and Vina redocking of 5UG9 with ligand 8AM.</p>
 
-      <h2>4. Validation Results</h2>
+      <h2>Validation</h2>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Check</th><th>Result</th></tr></thead>
           <tbody>
-            <tr><td>Morgan RF, random split</td><td>RMSE 0.712, R2 0.719</td></tr>
-            <tr><td>Morgan RF, scaffold split</td><td>RMSE 0.871, R2 0.550</td></tr>
-            <tr><td>Applicability-domain MAE</td><td>0.513 high-similarity vs 0.957 low-similarity</td></tr>
-            <tr><td>Assay/document validation</td><td>completed with zero group overlap</td></tr>
-            <tr><td>GPU GCN scaffold benchmark</td><td>R2 0.198, below the Morgan RF baseline</td></tr>
-            <tr><td>5UG9 redocking with ligand 8AM</td><td>-9.471 kcal/mol, 0.968 A RMSD</td></tr>
+            <tr><td>Morgan RF, random split</td><td>RMSE 0.712, R² 0.719</td></tr>
+            <tr><td>Morgan RF, scaffold split</td><td>RMSE 0.871, R² 0.550</td></tr>
+            <tr><td>Applicability-domain MAE</td><td>0.513 high-similarity; 0.957 low-similarity</td></tr>
+            <tr><td>Assay and document grouping</td><td>completed with zero group overlap</td></tr>
+            <tr><td>Exploratory custom PyTorch GCN benchmark</td><td>scaffold R² 0.198</td></tr>
+            <tr><td>5UG9 redocking</td><td>0.968 Å RMSD</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>5. Figures</h2>
+      <h2>Figures</h2>
       <figure>
         <img src="../assets/figures/egfr_validation_contexts.png" alt="EGFR validation contexts">
-        <figcaption>Validation contexts beyond a random split, including scaffold, assay, and document grouping.</figcaption>
+        <figcaption>Random, scaffold, assay-aware, and document-aware validation contexts.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/egfr_conformal_coverage.png" alt="EGFR conformal coverage">
@@ -67,21 +67,22 @@
         <figcaption>5UG9 co-crystal ligand coordinates compared with the redocked 8AM pose.</figcaption>
       </figure>
 
-      <h2>6. Limitations</h2>
-      <ul>
-        <li>Retrospective public/project record benchmark with existing-molecule triage and model-risk analysis.</li>
-        <li>ADMET-style triage uses simple drug-likeness and model-risk proxy rules.</li>
-        <li>Redocking is used as a retrospective pose-recovery check.</li>
-      </ul>
+      <h2>Scope</h2>
+      <p>Scope: retrospective public-data workflow over existing ChEMBL records, with one co-crystal pose-recovery check.</p>
 
-      <h2>7. Reproducibility</h2>
-      <p>The standalone repository keeps the source, reports, metrics, figures, tests, and structure evidence. Raw ChEMBL-derived tables are local/regenerable artifacts.</p>
+      <h2>Reproducibility</h2>
+      <p>The standalone repository includes reports, metrics, figures, tests, and lightweight checks.</p>
+      <pre><code>make reproduce-small
+make test</code></pre>
       <div class="link-row">
         <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet">Repo</a>
-        <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet/blob/main/reports/final_egfr_cadd_qsar_report.md">Final report</a>
+        <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet/blob/main/reports/final_egfr_cadd_qsar_report.md">Report</a>
         <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet/blob/main/reports/egfr_redocking_audit_report.md">Redocking check</a>
       </div>
+
+      <h2>Technical focus</h2>
+      <p>Cheminformatics curation, validation design, applicability-domain analysis, uncertainty diagnostics, and structure-aware sanity checks.</p>
     </main>
-    <footer class="footer">This page reports aggregate counts, metrics, and figures.</footer>
+    <footer class="footer">EGFR CADD/QSAR · Eva Mitropoulou</footer>
   </body>
 </html>

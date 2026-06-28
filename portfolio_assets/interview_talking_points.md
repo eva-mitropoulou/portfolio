@@ -9,7 +9,7 @@ Eva is a computational chemist focused on pharma-facing cheminformatics, QSAR an
 - Emphasize public-data benchmarking, label semantics, and existing-record prioritization.
 - Explain OAS background records as unknown-target natural antibody background.
 - Discuss grouped validation, source-holdout validation, and source-robust model selection as leakage-aware controls.
-- Use the final result: whole-pair k-mer TF-IDF logistic regression was the most defensible broad scorer, with strong grouped validation and modest source-holdout robustness.
+- Use the final result: whole-pair k-mer TF-IDF logistic regression was the selected broad scorer, with strong grouped validation and modest source-holdout robustness.
 - Explain threshold 0.7 as a high-confidence review cutoff for existing records.
 
 ## EGFR CADD and QSAR
@@ -30,7 +30,7 @@ Eva is a computational chemist focused on pharma-facing cheminformatics, QSAR an
 ## Supporting Materials and Simulation Depth
 
 - Explain the system: polypropylene/brucite interface with coated versus uncoated filler surfaces.
-- Discuss contact counts, interaction energies, and density checks as complementary simulation evidence.
+- Discuss contact counts, interaction energies, and density checks as complementary simulation outputs.
 - Use the safe interpretation: surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in the aggregate outputs.
 - Be ready to discuss force-field dependence, sampling, and experimental context.
 

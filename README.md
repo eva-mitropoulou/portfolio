@@ -1,64 +1,71 @@
 # Eva Mitropoulou
 
-Computational chemist focused on pharma-facing cheminformatics, QSAR and CADD, antibody and protein informatics, reaction informatics, and validation-aware molecular ML.
+Computational chemist working on CADD/QSAR, antibody sequence ML, reaction-yield modeling, molecular simulation, and DFT workflows.
 
-This public portfolio is organized for computational drug-discovery, cheminformatics, molecular ML validation, and scientific Python roles. Molecular simulation and DFT projects are included as supporting computational chemistry depth.
+GitHub Pages site: <https://eva-mitropoulou.github.io/portfolio/>
 
-## Pharma-Facing Flagship Projects
+## Main Work
 
-### 1. EGFR CADD And QSAR Decision Workflow
+### 1. EGFR CADD/QSAR
 
-Retrospective EGFR workflow from ChEMBL IC50 records with RDKit descriptors, Morgan fingerprints, scaffold validation, uncertainty checks, SAR and error analysis, ADMET-style triage, and one redocking check.
+Public ChEMBL EGFR IC50 workflow with RDKit descriptors, Morgan fingerprints, scaffold validation, applicability-domain analysis, ADMET-style triage, and a redocking audit.
 
-- Methods: ChEMBL curation, pIC50 aggregation, RDKit descriptors, Morgan fingerprints, random, scaffold, assay, and document validation, conformal-style uncertainty checks, Tanimoto applicability domain, exploratory custom PyTorch GCN benchmarking, active-learning simulation, and Vina redocking on 5UG9 with ligand 8AM.
-- Links: repo <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>, case study `projects/egfr-cadd-qsar/README.md`, final report <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet/blob/main/reports/final_egfr_cadd_qsar_report.md>, notebook `projects/egfr-cadd-qsar/notebooks/02_egfr_qsar_cadd_benchmark.ipynb`.
-- Key result: Morgan RF scaffold split RMSE 0.871 and R2 0.550; applicability-domain MAE changed from 0.513 for high-similarity chemistry to 0.957 for low-similarity chemistry; 5UG9 redocking recovered the 8AM co-crystal pose at 0.968 A RMSD.
-- What it shows: validation-aware QSAR, applicability-domain analysis, and practical CADD decision support.
+- Repo: <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>
+- Site page: `docs/projects/egfr-qsar-cadd.html`
+- Project folder: `projects/egfr-cadd-qsar/`
+- Notebook: `projects/egfr-cadd-qsar/notebooks/02_egfr_qsar_cadd_benchmark.ipynb`
+- Selected results: 10,593 model-ready molecules; scaffold split R2 0.550; 5UG9 redocking RMSD 0.968 A.
 
-### 2. Antibody Sequence ML And Existing-Record Prioritization
+### 2. Antibody Sequence ML
 
-Public-data antibody sequence workflow for retrospective benchmarking and existing-record prioritization.
+Public antibody sequence-record workflow with k-mer baselines, CDR/region analysis, source-holdout validation, OAS background retrieval, and existing-record prioritization.
 
-- Methods: CoV-AbDab-derived records, strict and broader dataset handling, grouped validation, source holdout, whole-pair k-mer TF-IDF, CDR analysis, antibody representation benchmarks, calibration analysis, and OAS background retrieval.
-- Links: repo <https://github.com/eva-mitropoulou/antibody-prioritization>, case study `projects/antibody-sequence-ml/README.md`, model card <https://github.com/eva-mitropoulou/antibody-prioritization/blob/main/docs/MODEL_CARD.md>, notebook `projects/antibody-sequence-ml/notebooks/01_antibody_sequence_ml_workflow.ipynb`.
-- Key result: selected `whole_pair_kmer` as the most defensible broad scorer, with grouped ROC-AUC 0.780 and PR-AUC 0.823, plus source-robust ROC-AUC 0.610 and PR-AUC 0.636.
-- What it shows: source-aware antibody sequence benchmarking and public-record prioritization.
+- Repo: <https://github.com/eva-mitropoulou/antibody-prioritization>
+- Site page: `docs/projects/antibody-sequence-ml.html`
+- Project folder: `projects/antibody-sequence-ml/`
+- Notebook: `projects/antibody-sequence-ml/notebooks/01_antibody_sequence_ml_workflow.ipynb`
+- Selected results: 5,573 strict labeled records; grouped ROC-AUC 0.780; grouped PR-AUC 0.823.
 
-### 3. Reaction Yield Prediction From Public HTE Data
+### 3. Reaction-Yield Prediction
 
-Retrospective public-data HTE reaction-yield workflow for reaction cleaning, categorical component-based featurization, leakage-aware validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.
+Public Buchwald-Hartwig HTE benchmark with reaction cleaning, categorical component features, out-of-component validation, uncertainty diagnostics, and active-learning simulation.
 
-- Methods: Buchwald-Hartwig public HTE benchmark, component one-hot features, random and out-of-component validation, additive-held-out grouped model selection, mean, linear, and tree baselines, uncertainty diagnostics, and budgeted existing-record selection simulation.
-- Links: repo <https://github.com/eva-mitropoulou/reaction-yield-prediction>, case study `projects/reaction-yield-ml/README.md`, final report <https://github.com/eva-mitropoulou/reaction-yield-prediction/blob/main/reports/final_project_report.md>, notebook `projects/reaction-yield-ml/notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
-- Key result: selected random forest on the additive-held-out grouped split with MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333.
-- What it shows: reaction-yield modeling from public HTE component labels, with grouped validation and ranking diagnostics.
+- Repo: <https://github.com/eva-mitropoulou/reaction-yield-prediction>
+- Site page: `docs/projects/reaction-yield-ml.html`
+- Project folder: `projects/reaction-yield-ml/`
+- Notebook: `projects/reaction-yield-ml/notebooks/04_reaction_yield_ml_walkthrough.ipynb`
+- Selected results: 3,955 public HTE records; additive-held-out R2 0.726; Spearman 0.860.
 
-## Supporting Computational Chemistry Depth
+## Additional Computational Chemistry
 
-### Polymer-Filler MD And Flame-Retardant Molecular Modeling
+### Polymer-Filler MD
 
-GROMACS workflow for polypropylene and brucite interface analysis with coated versus uncoated aggregate contact and interaction-energy summaries.
+GROMACS analysis of polypropylene and brucite interfaces with coated and uncoated filler configurations.
 
-- Methods: molecular dynamics, contact counts, short-range interaction energies, density checks, and force-field-aware interpretation.
-- Links: case study `projects/polymer-filler-md/README.md`, metrics `projects/polymer-filler-md/artifacts/reports/metrics/summary.json`, notebook `projects/polymer-filler-md/notebooks/03_polymer_filler_md_analysis.ipynb`.
-- Interpretation: surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in available aggregate MD outputs.
-- What it shows: molecular simulation depth and careful interpretation of polymer-filler interfaces.
+- Site page: `docs/projects/polymer-filler-md.html`
+- Project folder: `projects/polymer-filler-md/`
+- Notebook: `projects/polymer-filler-md/notebooks/03_polymer_filler_md_analysis.ipynb`
+- Selected result: coating shifted interaction toward the surface layer in the aggregate interface analysis.
 
-## Technical Stack
+### DFT, Periodic DFT, And HPC Workflows
 
-- Cheminformatics and reaction informatics: RDKit, ChEMBL, QSAR, public HTE records, Morgan fingerprints, descriptors, scaffold and out-of-component splits.
-- ML validation: grouped validation, scaffold split, out-of-component validation, ROC-AUC, PR-AUC, RMSE, R2, and uncertainty calibration.
-- Antibody and protein informatics: CoV-AbDab, OAS, CDR annotation, k-mer features, antibody representation benchmarking.
-- Scientific Python: pandas, NumPy, scikit-learn, matplotlib, notebooks, metrics summaries.
-- Molecular simulation: GROMACS, force fields, MD analysis, polymer-filler interfaces.
-- Quantum chemistry: ORCA, CREST, DFT, conformers, Quantum ESPRESSO utilities.
-- Reproducibility: Git, Linux, SLURM, environments, Makefiles, scripts, reports.
+- DFT flame-retardant modeling: `projects/dft-flame-retardants/`
+- Periodic DFT and Quantum ESPRESSO utilities: `projects/periodic-dft/`
+- SLURM and workflow scripts are included with the project folders that use them.
+
+## Methods And Tools
+
+- Cheminformatics: RDKit, ChEMBL, Morgan fingerprints, descriptors, scaffold split, applicability-domain analysis.
+- Biologics: CoV-AbDab, OAS, CDR regions, k-mer features, grouped validation, source holdout.
+- Reaction informatics: public HTE data, component labels, grouped validation, active-learning simulation.
+- Simulation: GROMACS, ORCA, CREST, Quantum ESPRESSO, SLURM.
+- ML validation: scikit-learn, ROC-AUC, PR-AUC, RMSE, R2, uncertainty diagnostics.
 
 ## Repository Layout
 
-- `docs/`: GitHub Pages website files.
-- `projects/`: one folder per project, including case-study text, notebooks, and copied public artifacts where useful.
-- `portfolio_assets/`: CV bullets, recruiter summaries, and interview talking points.
+- `docs/`: GitHub Pages website.
+- `projects/`: project folders with notes, notebooks, and public artifacts.
+- `portfolio_assets/`: CV bullets, summaries, and interview notes.
 
 ## Contact
 

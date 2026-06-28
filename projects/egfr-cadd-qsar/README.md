@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-Built a retrospective EGFR CADD and QSAR workflow from public ChEMBL IC50 records. The project keeps the full path together: activity curation, RDKit descriptors, Morgan fingerprints, baseline QSAR, scaffold-aware validation, uncertainty checks, simple drug-likeness and model-risk triage, SAR-style error analysis, active-learning simulation, a GPU GCN benchmark, and one co-crystal redocking check.
+Built a retrospective EGFR CADD and QSAR workflow from public ChEMBL IC50 records. The project keeps the full path together: activity curation, RDKit descriptors, Morgan fingerprints, baseline QSAR, scaffold-aware validation, uncertainty checks, simple drug-likeness and model-risk triage, SAR-style error analysis, active-learning simulation, an exploratory custom PyTorch GCN benchmark, and one co-crystal redocking check.
 
 Portfolio role: primary pharma-facing QSAR and CADD decision-workflow case study.
 
@@ -48,7 +48,7 @@ The main model comparison uses Morgan fingerprint Random Forest baselines. Rando
 | Assay-aware validation | completed, zero group overlap |
 | Document-aware validation | completed, zero group overlap |
 | Activity-cliff candidates | 607 |
-| GPU GCN benchmark | scaffold-split R2 0.198 |
+| Exploratory custom PyTorch GCN benchmark | scaffold-split R2 0.198 |
 | Redocking | 5UG9 with ligand 8AM, RMSD 0.968 A |
 
 The scaffold and applicability-domain results are the main takeaways: the model is useful in familiar chemistry and less reliable farther from its training domain.
@@ -72,11 +72,11 @@ The scaffold and applicability-domain results are the main takeaways: the model 
 - Portfolio artifacts: `artifacts/`.
 - Final report: `artifacts/reports/final_egfr_cadd_qsar_report.md`.
 - Notebook: `notebooks/02_egfr_qsar_cadd_benchmark.ipynb`.
-- Light reproduction command: `bash scripts/reproduce_egfr_final_reports.sh` in the standalone repo.
+- Light reproduction commands in the standalone repo: `make reproduce-small` and `make test`.
 
-## 10. What This Demonstrates
+## 10. Technical Focus
 
 - RDKit and ChEMBL cheminformatics workflow construction.
 - Model-risk-aware validation beyond one random split.
 - Clear communication of applicability-domain and uncertainty behavior.
-- Structure-based evidence used as a retrospective pose-recovery check.
+- Structure-aware redocking used as a retrospective pose-recovery check.

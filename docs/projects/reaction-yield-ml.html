@@ -9,7 +9,7 @@
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry portfolio</span></a>
+        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry</span></a>
         <div class="nav-links">
           <a href="../index.html">Home</a>
           <a href="../projects.html" aria-current="page">Projects</a>
@@ -20,43 +20,42 @@
       </nav>
     </header>
     <main class="project-detail">
-      <p class="eyebrow">Flagship Project</p>
-      <h1>Reaction Yield Prediction From Public HTE Data</h1>
-      <p class="lead">Retrospective public-data HTE reaction-yield workflow with reaction cleaning, categorical component featurization, out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.</p>
+      <p class="eyebrow">Reaction informatics</p>
+      <h1>Reaction-yield prediction</h1>
+      <p class="lead">Public Buchwald-Hartwig HTE benchmark with component features, grouped validation, uncertainty diagnostics, and active-learning simulation.</p>
 
-      <h2>1. Overview</h2>
-      <p>Built a public-data reaction-yield modeling benchmark around a Buchwald-Hartwig HTE dataset. The project emphasizes leakage-aware validation, uncertainty diagnostics, and existing-record ranking.</p>
+      <section class="at-a-glance" aria-labelledby="reaction-glance">
+        <h2 id="reaction-glance">At a glance</h2>
+        <div class="glance-item"><strong>Data:</strong> 3,955 public HTE records</div>
+        <div class="glance-item"><strong>Methods:</strong> component features, random forest, uncertainty diagnostics</div>
+        <div class="glance-item"><strong>Validation:</strong> additive-held-out grouped split</div>
+        <div class="glance-item"><strong>Result:</strong> R² 0.726; Spearman 0.860</div>
+      </section>
 
-      <h2>2. Scientific And Technical Problem</h2>
-      <p>Reaction-yield models can look strong under random splits while failing to generalize to held-out reaction components. This workflow tests random and out-of-component validation, uncertainty diagnostics, and budgeted existing-record selection.</p>
+      <h2>Data</h2>
+      <p>The workflow uses a public Buchwald-Hartwig HTE benchmark with ligand, additive, base, aryl-halide labels, and measured yield percentage.</p>
 
-      <h2>3. Dataset</h2>
-      <ul>
-        <li>Public Buchwald-Hartwig HTE reaction-yield benchmark from the Ahneman/Dreher/Doyle lineage.</li>
-        <li>3,955 clean public records after target and component checks.</li>
-        <li>Component labels: ligand, additive, base, and aryl halide.</li>
-        <li>Target: measured reaction yield percentage.</li>
-      </ul>
+      <h2>Methods</h2>
+      <p>Reaction cleaning, categorical component features, random forest baselines, grouped component splits, empirical uncertainty checks, active-learning simulation, and ranking diagnostics.</p>
 
-      <h2>4. Methods</h2>
-      <p>Implemented dataset selection, aggregate data audit, cleaning, categorical component featurization, random splits, grouped component splits, mean and ML baselines, uncertainty diagnostics with empirical coverage analysis, active-learning simulation over existing records, ranking diagnostics, and model interpretability.</p>
+      <h2>Validation</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Check</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>Model-ready records</td><td>3,955</td></tr>
+            <tr><td>Primary split</td><td>additive-held-out grouped split</td></tr>
+            <tr><td>Random forest on primary split</td><td>MAE 10.754, RMSE 14.237, R² 0.726</td></tr>
+            <tr><td>Rank correlation</td><td>Spearman 0.860</td></tr>
+            <tr><td>Top-10% enrichment</td><td>7.333</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h2>5. Validation Strategy</h2>
-      <ul>
-        <li>Random split for baseline comparability.</li>
-        <li>Out-of-substrate, out-of-ligand, out-of-base, and out-of-additive splits where possible.</li>
-        <li>Additive-held-out grouped split used as the primary reliability split for model selection.</li>
-        <li>In this dataset, the highest-cardinality chemically meaningful grouping is additive, so the grouped high-cardinality component split and out-of-additive split share the same held-out group design.</li>
-        <li>Data leakage audit excludes target-derived predictors.</li>
-      </ul>
-
-      <h2>6. Key Results</h2>
-      <p>Selected a random forest on the additive-held-out grouped split: MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333. Uncertainty diagnostics reported empirical 90% interval coverage of 0.798 on the primary split.</p>
-
-      <h2>7. Figures</h2>
+      <h2>Figures</h2>
       <figure>
         <img src="../assets/figures/reaction_yield_model_comparison.png" alt="Reaction-yield model comparison by split">
-        <figcaption>Model MAE across random and out-of-component validation splits.</figcaption>
+        <figcaption>Model comparison across random and out-of-component validation splits.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/reaction_yield_active_learning_budget_curve.png" alt="Retrospective active-learning budget curve">
@@ -64,28 +63,25 @@
       </figure>
       <figure>
         <img src="../assets/figures/reaction_yield_uncertainty_vs_error.png" alt="Uncertainty proxy versus absolute error">
-        <figcaption>Tree-ensemble uncertainty proxy evaluated against actual absolute error.</figcaption>
+        <figcaption>Tree-ensemble uncertainty proxy compared with absolute error.</figcaption>
       </figure>
 
-      <h2>8. Limitations</h2>
-      <ul>
-        <li>Retrospective public-data benchmark.</li>
-        <li>Existing-record ranking frame.</li>
-        <li>Component structures are unavailable in the selected workbook, so the public run uses categorical component features.</li>
-        <li>Uncertainty estimates are diagnostic and reported with empirical coverage.</li>
-      </ul>
+      <h2>Scope</h2>
+      <p>Scope: public HTE component-label workflow with retrospective grouped validation and existing-record ranking.</p>
 
-      <h2>9. Reproducibility</h2>
-      <p>The standalone repository includes source code, tests, aggregate reports, metrics, figures, and a small fixture path. The public workbook is downloaded from the source during reproduction.</p>
+      <h2>Reproducibility</h2>
+      <p>The standalone repository includes source code, tests, aggregate reports, metrics, figures, and a small fixture path.</p>
+      <pre><code>make reproduce-small
+make test</code></pre>
       <div class="link-row">
         <a href="https://github.com/eva-mitropoulou/reaction-yield-prediction">Repo</a>
+        <a href="https://github.com/eva-mitropoulou/reaction-yield-prediction/blob/main/reports/final_project_report.md">Report</a>
         <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/projects/reaction-yield-ml/notebooks/04_reaction_yield_ml_walkthrough.ipynb">Notebook</a>
-        <a href="https://github.com/eva-mitropoulou/reaction-yield-prediction/blob/main/reports/final_project_report.md">Final report</a>
       </div>
 
-      <h2>10. What This Demonstrates</h2>
-      <p>Industry-relevant public HTE yield modeling judgment: public-data curation, reaction-component features, validation leakage control, baseline comparisons, uncertainty-aware prioritization, and retrospective existing-record ranking.</p>
+      <h2>Technical focus</h2>
+      <p>Public reaction data handling, grouped validation, component-label modeling, uncertainty diagnostics, and budgeted record selection.</p>
     </main>
-    <footer class="footer">Reaction-yield outputs are retrospective public-data diagnostics.</footer>
+    <footer class="footer">Reaction-yield prediction · Eva Mitropoulou</footer>
   </body>
 </html>
