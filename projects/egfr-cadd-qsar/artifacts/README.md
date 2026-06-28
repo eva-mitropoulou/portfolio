@@ -48,7 +48,8 @@ workflow.
 To rerun the lightweight report path from existing artifacts:
 
 ```bash
-bash scripts/reproduce_egfr_final_reports.sh
+make reproduce-small
+make test
 ```
 
 Full rebuilds require the local Python/RDKit environment and regenerated

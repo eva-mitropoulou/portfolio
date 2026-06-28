@@ -51,7 +51,7 @@ The workflow used public CoV-AbDab-derived records, strict/broader dataset handl
 
 ## Interpretation
 
-Whole-pair k-mer TF-IDF logistic regression remained the most defensible broad scorer. It performed strongly under V-gene grouped validation but only modestly under source-holdout validation, showing that public antibody neutralisation labels contain source/study effects.
+Whole-pair k-mer TF-IDF logistic regression remained the selected broad scorer. It performed strongly under V-gene grouped validation and modestly under source-holdout validation, showing that public antibody neutralisation labels contain source/study effects.
 
 The workflow supports retrospective prioritization and high-confidence review of existing public records.
 

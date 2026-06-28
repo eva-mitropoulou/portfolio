@@ -86,7 +86,7 @@ Molecules were curated into pIC50 labels, standardized/audited with RDKit where 
 ## CLI/Demo and Reproducibility
 
 - CLI: `src/app/predict_egfr_cli.py`
-- Reproduce lightweight final reports: `bash scripts/reproduce_egfr_final_reports.sh`
+- Reproduce lightweight final reports: `make reproduce-small` and `make test`
 
 ## Interpretation Context
 

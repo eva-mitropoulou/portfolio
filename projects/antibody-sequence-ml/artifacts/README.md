@@ -10,7 +10,7 @@ Benchmarking and existing-record prioritization for public antibody sequence rec
 
 - Final selected model: `whole_pair_kmer`.
 - Final consistency audit: PASS.
-- Tests: 8 passed.
+- Lightweight integrity checks passed.
 - Missing final packaging artifacts: none.
 
 ## Project Summary
@@ -18,7 +18,7 @@ Benchmarking and existing-record prioritization for public antibody sequence rec
 - CoV-AbDab-derived public-data workflow with strict and broader dataset handling.
 - Strict labeled dataset: 5,573 records.
 - Broader prepared-record set: 11,748 records.
-- Whole-pair k-mer TF-IDF logistic regression remained the most defensible broad scorer.
+- Whole-pair k-mer TF-IDF logistic regression remained the selected broad scorer.
 - V-gene grouped validation: ROC-AUC 0.7800 and PR-AUC 0.8233.
 - Source-robust weighted leave-source-out validation: ROC-AUC 0.6095 and PR-AUC 0.6363.
 - Threshold 0.7: precision 0.8266, recall 0.3062, coverage 0.3051.

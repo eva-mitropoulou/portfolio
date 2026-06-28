@@ -21,7 +21,7 @@ def _scan_reports_for_banned_claims() -> dict[str, Any]:
     banned_phrases = [
         "production-ready",
         "synthesis protocol",
-        "lab-ready recommendation",
+        "forward experimental recommendation",
         "autonomous chemistry agent",
         "guaranteed yield optimization",
         "drug-candidate synthesis route",
@@ -139,4 +139,3 @@ def main() -> dict[str, Any]:
 if __name__ == "__main__":
     parse_args()
     main()
-

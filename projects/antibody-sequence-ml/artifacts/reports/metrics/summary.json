@@ -7,7 +7,7 @@
     "saved_broad_scorer": "models/kmer_logreg_pair_text.joblib",
     "feature_representation": "compact heavy/light whole-pair character k-mer TF-IDF",
     "classifier": "balanced logistic regression",
-    "selection_reason": "Most defensible broad scorer after matched benchmark, source-holdout, and source-robust model-selection checks."
+    "selection_reason": "Selected broad scorer after matched benchmark, source-holdout, and source-robust model-selection checks."
   },
   "data_scope": {
     "strict_labeled_records": 5573,
@@ -45,7 +45,7 @@
   },
   "prioritization": {
     "diversity_aware_existing_record_shortlist_size": 23,
-    "claim_boundary": "Existing-record prioritization only; no therapeutic design."
+    "claim_boundary": "Existing-record prioritization over public records."
   },
   "packaging": {
     "final_consistency_audit": "PASS",
@@ -67,6 +67,6 @@
     "model probabilities are prioritization signals, not calibrated prospective neutralisation probabilities",
     "OAS is unknown-target background, not true negatives",
     "no prospective validation",
-    "no therapeutic design, sequence generation, mutation, or optimization"
+    "existing-record review and public-data benchmarking scope"
   ]
 }

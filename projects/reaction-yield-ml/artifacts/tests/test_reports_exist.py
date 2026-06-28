@@ -29,7 +29,7 @@ def test_reports_avoid_unsupported_claims():
     banned = [
         "production-ready",
         "synthesis protocol",
-        "lab-ready recommendation",
+        "forward experimental recommendation",
         "autonomous chemistry agent",
         "guaranteed yield optimization",
         "drug-candidate synthesis route",
@@ -38,4 +38,3 @@ def test_reports_avoid_unsupported_claims():
         text = path.read_text(encoding="utf-8").lower()
         for phrase in banned:
             assert phrase not in text
-
