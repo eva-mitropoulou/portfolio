@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eva Mitropoulou | Computational Chemistry Portfolio</title>
+    <meta name="description" content="Eva Mitropoulou portfolio: computational chemistry, molecular simulation, cheminformatics, and ML validation.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">
+          <strong>Eva Mitropoulou</strong>
+          <span>Computational chemistry portfolio</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="cv.html">CV</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Computational chemistry · molecular simulation · cheminformatics · ML validation</p>
+          <h1>Eva Mitropoulou</h1>
+          <p class="lead">Computational chemist building reproducible molecular simulation and machine-learning workflows for materials and drug-discovery problems.</p>
+          <p class="lead">Transitioning into cheminformatics and AI-assisted drug discovery, with hands-on evidence in DFT, molecular dynamics, RDKit workflows, antibody sequence ML, and leakage-aware QSAR validation.</p>
+          <div class="cta-row">
+            <a class="button" href="projects.html">View Projects</a>
+            <a class="button secondary" href="cv.html">CV Summary</a>
+            <a class="button secondary" href="contact.html">Contact</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Availability">
+          <h2>Currently Seeking</h2>
+          <p>Computational chemistry, molecular simulation, cheminformatics, QSAR/CADD, and ML validation roles in materials or pharma-facing teams.</p>
+          <ul class="tag-list">
+            <li>DFT</li>
+            <li>GROMACS</li>
+            <li>RDKit</li>
+            <li>scikit-learn</li>
+            <li>SLURM</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section" aria-labelledby="skill-matrix">
+        <h2 id="skill-matrix">Skill Matrix</h2>
+        <div class="matrix">
+          <div class="matrix-item">
+            <strong>Molecular Simulation</strong>
+            <span>GROMACS, force fields, polymer/filler interfaces, contact and energy analysis.</span>
+          </div>
+          <div class="matrix-item">
+            <strong>Quantum Chemistry</strong>
+            <span>ORCA, CREST, DFT, conformer workflows, periodic Quantum ESPRESSO utilities.</span>
+          </div>
+          <div class="matrix-item">
+            <strong>Cheminformatics</strong>
+            <span>RDKit, ChEMBL, Morgan fingerprints, descriptors, scaffold splits.</span>
+          </div>
+          <div class="matrix-item">
+            <strong>ML Validation</strong>
+            <span>Grouped validation, leakage-aware splits, ROC-AUC, PR-AUC, RMSE, R2.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="flagships">
+        <h2 id="flagships">Flagship Projects</h2>
+        <p class="section-intro">Three case studies chosen for role relevance and evidence quality. Each page includes methods, validation, limitations, reproducibility notes, and artifact links.</p>
+        <div class="grid three">
+          <article class="card">
+            <img class="figure-thumb" src="assets/figures/antibody_pipeline.png" alt="Antibody sequence ML workflow diagram">
+            <div class="card-body">
+              <h3>Antibody Sequence ML And Existing-Record Prioritization</h3>
+              <p>Public-data antibody sequence workflow for retrospective benchmarking and prioritizing existing records.</p>
+              <dl class="meta-list">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>CoV-AbDab, grouped validation, k-mer TF-IDF, CDR annotation, antibody LM benchmarks.</dd>
+                </div>
+                <div>
+                  <dt>Key result</dt>
+                  <dd>Matched validation favored sparse k-mer/CDR-local features over pretrained representations on noisy public labels.</dd>
+                </div>
+                <div>
+                  <dt>Limitation</dt>
+                  <dd>Retrospective public labels only; prioritization, not therapeutic design.</dd>
+                </div>
+              </dl>
+              <div class="link-row">
+                <a href="projects/antibody-sequence-ml.html">Project page</a>
+                <a href="assets/figures/antibody_pipeline.png">Figure</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="figure-thumb" src="assets/figures/egfr_random_vs_scaffold.png" alt="EGFR random versus scaffold split performance">
+            <div class="card-body">
+              <h3>EGFR QSAR / CADD Benchmark</h3>
+              <p>Retrospective EGFR pIC50 baseline using ChEMBL curation, RDKit descriptors, and Morgan fingerprints.</p>
+              <dl class="meta-list">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>RDKit descriptors, Morgan fingerprints, random split, Bemis-Murcko scaffold split.</dd>
+                </div>
+                <div>
+                  <dt>Key result</dt>
+                  <dd>Morgan random forest dropped from RMSE 0.712 / R2 0.719 to RMSE 0.871 / R2 0.550 under scaffold split.</dd>
+                </div>
+                <div>
+                  <dt>Limitation</dt>
+                  <dd>Baseline retrospective QSAR; not a production-grade predictor.</dd>
+                </div>
+              </dl>
+              <div class="link-row">
+                <a href="projects/egfr-qsar-cadd.html">Project page</a>
+                <a href="assets/figures/egfr_random_vs_scaffold.png">Figure</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="figure-thumb" src="assets/figures/polymer_contact_energy_summary.png" alt="Polymer filler contact and interaction energy summary">
+            <div class="card-body">
+              <h3>Polymer-Filler MD And Flame-Retardant Molecular Modeling</h3>
+              <p>GROMACS workflow for polypropylene/brucite interfaces with coated versus uncoated filler analysis.</p>
+              <dl class="meta-list">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>Atomistic and coarse-grained MD, contact counts, interaction energies, density/profile checks.</dd>
+                </div>
+                <div>
+                  <dt>Key result</dt>
+                  <dd>Surface coating reduced direct PP-brucite contact and shifted interactions toward the stearic-acid layer.</dd>
+                </div>
+                <div>
+                  <dt>Limitation</dt>
+                  <dd>Force-field-dependent computational model, not standalone property prediction.</dd>
+                </div>
+              </dl>
+              <div class="link-row">
+                <a href="projects/polymer-filler-md.html">Project page</a>
+                <a href="assets/figures/polymer_contact_energy_summary.png">Figure</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="secondary">
+        <h2 id="secondary">Secondary Projects</h2>
+        <div class="grid three">
+          <article class="card">
+            <div class="card-body">
+              <h3>DFT Flame-Retardant Candidate Analysis</h3>
+              <p>ORCA/CREST-backed conformer and descriptor work for flame-retardant candidate interpretation.</p>
+              <a href="projects.html#secondary-projects">View summary</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>HPC / SLURM / Workflow Infrastructure</h3>
+              <p>Simulation setup, restart, benchmark, and analysis scripts for computational chemistry workflows.</p>
+              <a href="skills.html#reproducibility">View evidence</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>Periodic DFT / Quantum ESPRESSO Utilities</h3>
+              <p>QE inputs, CIF conversion utilities, relaxation outputs, and restart scripts for periodic models.</p>
+              <a href="projects.html#secondary-projects">View summary</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Evidence-backed portfolio for computational chemistry, molecular simulation, cheminformatics, and ML validation.</span>
+    </footer>
+  </body>
+</html>
