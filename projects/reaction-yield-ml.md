@@ -68,6 +68,7 @@ Supported metrics from `reaction-yield-ml/reports/metrics/final_summary.json`:
 - Metrics: `reaction-yield-ml/reports/metrics/`.
 - Notebook: `notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
 - Small command: `make reproduce-small` from `reaction-yield-ml/`.
+- Standalone repo: <https://github.com/eva-mitropoulou/reaction-yield-prediction>.
 
 The raw public workbook is downloaded during reproduction and is not committed to the public portfolio.
 

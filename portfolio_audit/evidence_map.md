@@ -106,6 +106,8 @@ Safety boundaries:
 
 Evidence status: supported with retrospective public-data boundaries.
 
+Standalone source repo: <https://github.com/eva-mitropoulou/reaction-yield-prediction>.
+
 Verified artifact classes:
 
 - Public Buchwald-Hartwig HTE dataset manifest and data card.

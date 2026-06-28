@@ -202,7 +202,7 @@
     },
     {
       "title": "EGFR QSAR / CADD benchmark",
-      "source_repo": "Computational-Chemistry and portfolio",
+      "source_repo": "reaction-yield-prediction standalone repo, Computational-Chemistry, and portfolio",
       "public_portfolio_role": "flagship",
       "evidence_status": "supported",
       "supported_claims": [
@@ -273,6 +273,7 @@
         "Production reaction optimization"
       ],
       "key_evidence_paths": [
+        "https://github.com/eva-mitropoulou/reaction-yield-prediction",
         "reaction-yield-ml/data/dataset_manifest.json",
         "reaction-yield-ml/reports/metrics/final_summary.json",
         "reaction-yield-ml/reports/metrics/model_benchmark_metrics.json",

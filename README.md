@@ -30,6 +30,7 @@ Retrospective public-data HTE reaction-yield workflow for reaction cleaning, cat
 
 - Methods: Buchwald-Hartwig public HTE benchmark, component one-hot features, random and out-of-component validation, additive-held-out grouped model selection, mean, linear, and tree baselines, uncertainty diagnostics, and budgeted existing-record selection simulation.
 - Evidence: `reaction-yield-ml/reports/metrics/final_summary.json`, `reaction-yield-ml/reports/final_project_report.md`, `projects/reaction-yield-ml.md`, `notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
+- Standalone repo: <https://github.com/eva-mitropoulou/reaction-yield-prediction>.
 - Key result: selected random forest on the additive-held-out grouped split with MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333.
 - Scope: retrospective public-data benchmark only; no wet-lab protocol, no new chemistry generation, and existing-record ranking only.
 
