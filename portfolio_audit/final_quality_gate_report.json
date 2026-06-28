@@ -1,11 +1,11 @@
 {
   "audit_date": "2026-06-28",
-  "branch": "master",
+    "branch": "portfolio-hardening-final",
   "overall_status": "pass",
   "headline_flagship_projects": [
-    "antibody-sequence-ml",
-    "egfr-qsar-cadd",
-    "reaction-yield-ml"
+        "egfr-qsar-cadd",
+        "antibody-sequence-ml",
+        "reaction-yield-ml"
   ],
   "supporting_projects": [
     "polymer-filler-md"
@@ -61,15 +61,15 @@
     },
     {
       "id": 9,
-      "name": "No therapeutic-design claims",
-      "status": "pass",
-      "evidence": "Therapeutic design appears only as a prohibited or negated claim boundary."
+            "name": "No sequence-design or optimization claims for antibody work",
+            "status": "pass",
+            "evidence": "Antibody outputs are framed as public-data benchmarking and existing-record prioritization."
     },
     {
       "id": 10,
-      "name": "No production-grade claims for baseline ML projects",
-      "status": "pass",
-      "evidence": "Production-grade appears only as a negated/boundary phrase for EGFR baseline QSAR."
+            "name": "No deployment claims for baseline ML projects",
+            "status": "pass",
+            "evidence": "EGFR and reaction-yield outputs are framed as retrospective benchmarks and triage workflows."
     }
   ],
   "portfolio_asset_status": {
@@ -131,11 +131,11 @@
     "local HTML href/src internal link and asset check after adding reaction-yield pages"
   ],
   "unsupported_claims_removed_or_marked": [
-    "Therapeutic antibody design claims are explicitly excluded.",
-    "Production-grade EGFR predictor claims are explicitly excluded.",
-    "Clinical utility claims are explicitly excluded.",
+        "Antibody sequence-design and optimization claims are explicitly excluded.",
+        "EGFR deployment claims are explicitly excluded.",
+        "Clinical-use claims are explicitly excluded.",
     "Standalone materials property-prediction claims are explicitly excluded.",
-    "OAS-as-true-negative framing is explicitly excluded.",
+        "OAS-as-assayed-control framing is explicitly excluded.",
     "Operational reaction-synthesis guidance is explicitly excluded.",
     "Generated-chemistry and guaranteed-success claims are explicitly excluded."
   ],

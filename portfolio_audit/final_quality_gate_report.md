@@ -1,7 +1,7 @@
 # Final Quality-Gate Report
 
 Audit date: 2026-06-28  
-Branch: `master`  
+Branch: `portfolio-hardening-final`
 Overall status: **pass**
 
 ## Checks
@@ -16,15 +16,15 @@ Overall status: **pass**
 | 6 | Homepage can be understood in 30 seconds | Pass | Identity, skills, tools, and three pharma-facing flagship projects are visible, with materials projects moved to a supporting section. |
 | 7 | Recruiter can identify domain, tools, and outputs in 60 seconds | Pass | Homepage, skills page, CV page, README, and recruiter summary expose domain, tools, outputs, and limits. |
 | 8 | No state-of-the-art claim unless supported | Pass | No state-of-the-art claim is used. |
-| 9 | No therapeutic-design claims | Pass | Therapeutic design appears only as a prohibited/negated claim boundary. |
-| 10 | No production-grade claims for baseline ML projects | Pass | Production-grade appears only as a negated boundary for baseline QSAR. |
+| 9 | No sequence-design or optimization claims for antibody work | Pass | Antibody outputs are framed as public-data benchmarking and existing-record prioritization. |
+| 10 | No deployment claims for baseline ML projects | Pass | EGFR and reaction-yield outputs are framed as retrospective benchmarks and triage workflows. |
 
 ## Portfolio Asset Status
 
 | Role | Project | Page | README | Figure | Metrics | Notebook | Reproducibility |
 |---|---|---|---|---|---|---|---|
-| Headline pharma flagship | Antibody sequence ML | `projects/antibody-sequence-ml.md` | `antibody-sequence-ml/README.md` | `antibody-sequence-ml/figures/antibody_pipeline.svg` | `antibody-sequence-ml/reports/metrics/summary.json` | `notebooks/01_antibody_sequence_ml_workflow.ipynb` | `make reproduce-small` |
 | Headline pharma flagship | EGFR QSAR / CADD | `projects/egfr-qsar-cadd.md` | `egfr-cadd-qsar-admet/README.md` | `docs/assets/figures/egfr_random_vs_scaffold.png` | `egfr-cadd-qsar-admet/reports/metrics/summary.json` | `notebooks/02_egfr_qsar_cadd_benchmark.ipynb` | `make reproduce-small` |
+| Headline pharma flagship | Antibody sequence ML | `projects/antibody-sequence-ml.md` | `antibody-sequence-ml/README.md` | `antibody-sequence-ml/figures/antibody_pipeline.svg` | `antibody-sequence-ml/reports/metrics/summary.json` | `notebooks/01_antibody_sequence_ml_workflow.ipynb` | `make reproduce-small` |
 | Headline pharma flagship | Reaction yield prediction | `projects/reaction-yield-ml.md` | `reaction-yield-ml/README.md` | `docs/assets/figures/reaction_yield_model_comparison.png` | `reaction-yield-ml/reports/metrics/final_summary.json` | `notebooks/04_reaction_yield_ml_walkthrough.ipynb` | `make reproduce-small` |
 | Supporting simulation depth | Polymer-filler MD | `projects/polymer-filler-md.md` | `polymer-md/README.md` | `polymer-md/figures/polymer_contact_energy_summary.svg` | `polymer-md/reports/metrics/summary.json` | `notebooks/03_polymer_filler_md_analysis.ipynb` | `make reproduce-small` |
 
@@ -39,12 +39,12 @@ Overall status: **pass**
 
 ## Unsupported Claims Removed Or Marked
 
-- Therapeutic antibody design claims are explicitly excluded.
-- Production-grade EGFR predictor claims are explicitly excluded.
-- Clinical utility claims are explicitly excluded.
+- Antibody sequence-design and optimization claims are explicitly excluded.
+- EGFR deployment claims are explicitly excluded.
+- Clinical-use claims are explicitly excluded.
 - Standalone materials property-prediction claims are explicitly excluded.
 - Operational reaction-synthesis guidance and generated-chemistry claims are explicitly excluded.
-- OAS-as-true-negative framing is explicitly excluded.
+- OAS-as-assayed-control framing is explicitly excluded.
 
 ## Recommended Manual Review Items
 
