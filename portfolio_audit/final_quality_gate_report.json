@@ -2,6 +2,14 @@
   "audit_date": "2026-06-28",
   "branch": "master",
   "overall_status": "pass",
+  "headline_flagship_projects": [
+    "antibody-sequence-ml",
+    "egfr-qsar-cadd",
+    "reaction-yield-ml"
+  ],
+  "supporting_projects": [
+    "polymer-filler-md"
+  ],
   "checks": [
     {
       "id": 1,
@@ -25,19 +33,19 @@
       "id": 4,
       "name": "All project links work",
       "status": "pass",
-      "evidence": "Local HTML internal links and assets passed. After branch push and Pages build, homepage, flagship project pages, and key figure assets returned HTTP 200."
+      "evidence": "Local HTML internal links and assets passed. After branch push and Pages build, homepage, headline project pages, supporting project pages, and key figure assets returned HTTP 200."
     },
     {
       "id": 5,
-      "name": "Each flagship project has required assets",
+      "name": "Each headline flagship project has required assets",
       "status": "pass",
-      "evidence": "Each flagship has a project page, README, figure, metrics summary, limitations section, and reproducibility section, including reaction-yield ML."
+      "evidence": "Antibody sequence ML, EGFR QSAR/CADD, and reaction-yield ML each have a project page, README, figure, metrics summary, limitations section, and reproducibility section. Polymer-filler MD remains complete as supporting simulation/materials depth."
     },
     {
       "id": 6,
       "name": "Homepage can be understood in 30 seconds",
       "status": "pass",
-      "evidence": "Homepage includes identity, role focus, skill matrix, four flagship cards, selected tools, and contact links without overloading secondary projects."
+      "evidence": "Homepage includes identity, role focus, skill matrix, three pharma-facing flagship cards, selected tools, and contact links, with materials projects moved to a supporting section."
     },
     {
       "id": 7,
@@ -64,8 +72,9 @@
       "evidence": "Production-grade appears only as a negated/boundary phrase for EGFR baseline QSAR."
     }
   ],
-  "flagship_asset_status": {
+  "portfolio_asset_status": {
     "antibody-sequence-ml": {
+      "portfolio_role": "headline pharma flagship",
       "page": "projects/antibody-sequence-ml.md",
       "site_page": "docs/projects/antibody-sequence-ml.html",
       "readme": "antibody-sequence-ml/README.md",
@@ -76,6 +85,7 @@
       "status": "pass"
     },
     "egfr-qsar-cadd": {
+      "portfolio_role": "headline pharma flagship",
       "page": "projects/egfr-qsar-cadd.md",
       "site_page": "docs/projects/egfr-qsar-cadd.html",
       "readme": "egfr-cadd-qsar-admet/README.md",
@@ -86,6 +96,7 @@
       "status": "pass"
     },
     "polymer-filler-md": {
+      "portfolio_role": "supporting simulation and materials depth",
       "page": "projects/polymer-filler-md.md",
       "site_page": "docs/projects/polymer-filler-md.html",
       "readme": "polymer-md/README.md",
@@ -96,6 +107,7 @@
       "status": "pass"
     },
     "reaction-yield-ml": {
+      "portfolio_role": "headline pharma flagship",
       "page": "projects/reaction-yield-ml.md",
       "site_page": "docs/projects/reaction-yield-ml.html",
       "readme": "reaction-yield-ml/README.md",

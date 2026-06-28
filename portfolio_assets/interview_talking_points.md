@@ -2,7 +2,7 @@
 
 ## Positioning
 
-Eva is a computational chemist building reproducible molecular simulation and machine-learning workflows for materials and drug-discovery problems. The strongest pharma-facing framing is a transition into cheminformatics and AI-assisted drug discovery with evidence in DFT, molecular dynamics, RDKit workflows, antibody sequence ML, and leakage-aware QSAR validation.
+Eva is a computational chemist focused on pharma-facing cheminformatics, QSAR/CADD, antibody and protein informatics, reaction informatics, and validation-aware molecular ML. DFT and molecular dynamics provide supporting computational chemistry depth, but the interview narrative should lead with drug-discovery, assay-data, sequence-ML, and synthesis-facing workflows.
 
 ## Antibody Sequence ML
 
@@ -19,7 +19,14 @@ Eva is a computational chemist building reproducible molecular simulation and ma
 - Explain that the performance drop is a good portfolio signal because it shows awareness of scaffold leakage and model risk.
 - Keep the claim retrospective and baseline-oriented.
 
-## Polymer-Filler MD
+## Reaction Yield ML
+
+- Frame this as a synthesis-facing ML benchmark on public high-throughput reaction data.
+- Emphasize reaction-condition features, baseline model comparison, and readable error analysis rather than production prediction.
+- Connect the project to pharma workflows through reaction screening, route development support, and validation-aware modeling.
+- Keep the limitation explicit: retrospective public-data benchmark, not an autonomous synthesis optimizer.
+
+## Supporting Materials / Simulation Depth
 
 - Explain the system: polypropylene/brucite interface with coated versus uncoated filler surfaces.
 - Discuss contact counts, interaction energies, and density/profile checks as complementary simulation evidence.
@@ -31,5 +38,6 @@ Eva is a computational chemist building reproducible molecular simulation and ma
 - How would you redesign the EGFR benchmark for prospective validation?
 - How would you prevent leakage in antibody sequence benchmarks with public labels?
 - What would you need before claiming predictive utility for a QSAR model?
-- How would you validate a force field or coating model for polymer-filler interfaces?
+- How would you evaluate a reaction-yield model before using it to guide experimental prioritization?
 - Which parts of the antibody workflow are reusable for other public protein/sequence datasets?
+- How would you validate a force field or coating model for polymer-filler interfaces?

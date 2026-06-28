@@ -1,10 +1,10 @@
 # Eva Mitropoulou
 
-Computational chemist building reproducible molecular simulation, reaction-informatics, and machine-learning workflows for materials and drug-discovery problems.
+Computational chemist focused on pharma-facing cheminformatics, QSAR/CADD, antibody/protein informatics, reaction informatics, and validation-aware molecular ML.
 
-This public portfolio is organized for computational chemistry, molecular simulation, cheminformatics, QSAR/CADD, and ML validation roles. Claims are tied to committed reports, metrics, notebooks, figures, scripts, or audit files.
+This public portfolio is organized for computational drug-discovery, cheminformatics, molecular ML validation, and scientific Python roles. Molecular simulation and DFT projects are included as supporting computational chemistry depth. Claims are tied to committed reports, metrics, notebooks, figures, scripts, or audit files.
 
-## Flagship Projects
+## Pharma-Facing Flagship Projects
 
 ### 1. Antibody Sequence ML And Existing-Record Prioritization
 
@@ -24,16 +24,7 @@ Retrospective EGFR pIC50 baseline from ChEMBL using RDKit descriptors, Morgan fi
 - Key result: Morgan random forest changed from RMSE 0.712 / R2 0.719 under random split to RMSE 0.871 / R2 0.550 under scaffold split.
 - Boundary: retrospective baseline QSAR only; no production-grade prediction or clinical utility claim.
 
-### 3. Polymer-Filler MD And Flame-Retardant Molecular Modeling
-
-GROMACS workflow evidence for polypropylene/brucite interface analysis with coated versus uncoated aggregate contact and interaction-energy summaries.
-
-- Methods: molecular dynamics, contact counts, short-range interaction energies, density/profile checks, force-field-aware interpretation.
-- Evidence: `polymer-md/reports/metrics/summary.json`, `projects/polymer-filler-md.md`, `notebooks/03_polymer_filler_md_analysis.ipynb`.
-- Interpretation: surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in available aggregate MD outputs.
-- Boundary: force-field-dependent computational model; not standalone property prediction.
-
-### 4. Reaction Yield Prediction And Synthesis-Aware ML
+### 3. Reaction Yield Prediction And Synthesis-Aware ML
 
 Retrospective public-data HTE reaction-yield workflow for reaction cleaning, component featurization, leakage-aware validation, uncertainty calibration, active-learning simulation, and existing-record ranking.
 
@@ -42,14 +33,25 @@ Retrospective public-data HTE reaction-yield workflow for reaction cleaning, com
 - Key result: selected random forest on the grouped high-cardinality component split with MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333.
 - Boundary: retrospective public-data benchmark only; no wet-lab protocol, no new chemistry generation, and existing-record ranking only.
 
+## Supporting Computational Chemistry Depth
+
+### Polymer-Filler MD And Flame-Retardant Molecular Modeling
+
+GROMACS workflow evidence for polypropylene/brucite interface analysis with coated versus uncoated aggregate contact and interaction-energy summaries.
+
+- Methods: molecular dynamics, contact counts, short-range interaction energies, density/profile checks, force-field-aware interpretation.
+- Evidence: `polymer-md/reports/metrics/summary.json`, `projects/polymer-filler-md.md`, `notebooks/03_polymer_filler_md_analysis.ipynb`.
+- Interpretation: surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in available aggregate MD outputs.
+- Boundary: force-field-dependent computational model; not standalone property prediction.
+
 ## Technical Stack
 
-- Molecular simulation: GROMACS, force fields, MD analysis, polymer/filler interfaces.
-- Quantum chemistry: ORCA, CREST, DFT, conformers, Quantum ESPRESSO utilities.
 - Cheminformatics and reaction informatics: RDKit, ChEMBL, QSAR, public HTE records, Morgan fingerprints, descriptors, scaffold and out-of-component splits.
 - ML validation: grouped validation, scaffold split, out-of-component validation, ROC-AUC, PR-AUC, RMSE, R2, uncertainty/error calibration.
 - Antibody/protein informatics: CoV-AbDab, OAS, CDR annotation, k-mer features, antibody representation benchmarking.
 - Scientific Python: pandas, NumPy, scikit-learn, matplotlib, notebooks, metrics summaries.
+- Molecular simulation: GROMACS, force fields, MD analysis, polymer/filler interfaces.
+- Quantum chemistry: ORCA, CREST, DFT, conformers, Quantum ESPRESSO utilities.
 - Reproducibility: Git, Linux, SLURM, environments, Makefiles, scripts, reports.
 
 ## Selected Outputs

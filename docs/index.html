@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Eva Mitropoulou | Computational Chemistry Portfolio</title>
-    <meta name="description" content="Eva Mitropoulou portfolio: computational chemistry, molecular simulation, reaction informatics, cheminformatics, and ML validation.">
+    <meta name="description" content="Eva Mitropoulou portfolio: cheminformatics, QSAR/CADD, antibody sequence ML, reaction informatics, molecular simulation, and ML validation.">
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
@@ -27,10 +27,10 @@
     <main>
       <section class="hero">
         <div>
-          <p class="eyebrow">Computational chemistry · molecular simulation · cheminformatics · ML validation</p>
+          <p class="eyebrow">Cheminformatics · QSAR/CADD · antibody sequence ML · ML validation</p>
           <h1>Eva Mitropoulou</h1>
-          <p class="lead">Computational chemist building reproducible molecular simulation, reaction-informatics, and machine-learning workflows for materials and drug-discovery problems.</p>
-          <p class="lead">Transitioning into cheminformatics and AI-assisted drug discovery, with hands-on evidence in DFT, molecular dynamics, RDKit workflows, antibody sequence ML, reaction-yield modeling, and leakage-aware validation.</p>
+          <p class="lead">Computational chemist focused on pharma-facing cheminformatics, QSAR/CADD, antibody/protein informatics, reaction informatics, and validation-aware molecular ML.</p>
+          <p class="lead">Hands-on evidence spans RDKit and ChEMBL workflows, antibody sequence ML, public HTE reaction-yield modeling, leakage-aware validation, plus DFT and molecular simulation depth.</p>
           <div class="cta-row">
             <a class="button" href="projects.html">View Projects</a>
             <a class="button secondary" href="cv.html">CV Summary</a>
@@ -39,13 +39,13 @@
         </div>
         <aside class="hero-panel" aria-label="Availability">
           <h2>Currently Seeking</h2>
-          <p>Computational chemistry, molecular simulation, cheminformatics, QSAR/CADD, and ML validation roles in materials or pharma-facing teams.</p>
+          <p>Pharma-facing roles in cheminformatics, QSAR/CADD, computational drug discovery, antibody/protein informatics, reaction informatics, and ML validation.</p>
           <ul class="tag-list">
-            <li>DFT</li>
-            <li>GROMACS</li>
             <li>RDKit</li>
+            <li>ChEMBL</li>
+            <li>CoV-AbDab</li>
+            <li>OAS</li>
             <li>scikit-learn</li>
-            <li>SLURM</li>
           </ul>
         </aside>
       </section>
@@ -54,16 +54,16 @@
         <h2 id="skill-matrix">Skill Matrix</h2>
         <div class="matrix">
           <div class="matrix-item">
-            <strong>Molecular Simulation</strong>
-            <span>GROMACS, force fields, polymer/filler interfaces, contact and energy analysis.</span>
+            <strong>Cheminformatics / CADD</strong>
+            <span>RDKit, ChEMBL, QSAR, Morgan fingerprints, descriptors, scaffold splits.</span>
           </div>
           <div class="matrix-item">
-            <strong>Quantum Chemistry</strong>
-            <span>ORCA, CREST, DFT, conformer workflows, periodic Quantum ESPRESSO utilities.</span>
+            <strong>Antibody Informatics</strong>
+            <span>CoV-AbDab, OAS, CDR annotation, k-mer features, source-holdout validation.</span>
           </div>
           <div class="matrix-item">
-            <strong>Cheminformatics</strong>
-              <span>RDKit, ChEMBL, public HTE records, Morgan fingerprints, descriptors, scaffold and component splits.</span>
+            <strong>Reaction Informatics</strong>
+              <span>Public HTE records, component featurization, out-of-component validation, active-learning simulation.</span>
           </div>
           <div class="matrix-item">
             <strong>ML Validation</strong>
@@ -73,9 +73,9 @@
       </section>
 
       <section class="section" aria-labelledby="flagships">
-        <h2 id="flagships">Flagship Projects</h2>
-        <p class="section-intro">Four case studies chosen for role relevance and evidence quality. Each page includes methods, validation, limitations, reproducibility notes, and artifact links.</p>
-        <div class="grid four">
+        <h2 id="flagships">Pharma-Facing Flagship Projects</h2>
+        <p class="section-intro">Three headline case studies for cheminformatics, AI-assisted drug discovery, antibody/protein informatics, synthesis-aware ML, and validation-focused molecular modeling roles.</p>
+        <div class="grid three">
           <article class="card">
             <img class="figure-thumb" src="assets/figures/antibody_pipeline.svg" alt="Antibody sequence ML workflow diagram">
             <div class="card-body">
@@ -129,32 +129,6 @@
           </article>
 
           <article class="card">
-            <img class="figure-thumb" src="assets/figures/polymer_contact_energy_summary.svg" alt="Polymer filler contact and interaction energy summary">
-            <div class="card-body">
-              <h3>Polymer-Filler MD And Flame-Retardant Molecular Modeling</h3>
-              <p>GROMACS workflow for polypropylene/brucite interfaces with coated versus uncoated filler analysis.</p>
-              <dl class="meta-list">
-                <div>
-                  <dt>Methods</dt>
-                  <dd>Atomistic and coarse-grained MD, contact counts, interaction energies, density/profile checks.</dd>
-                </div>
-                <div>
-                  <dt>Key result</dt>
-                  <dd>Surface coating reduced direct PP-brucite contact and shifted interactions toward the stearic-acid layer.</dd>
-                </div>
-                <div>
-                  <dt>Limitation</dt>
-                  <dd>Force-field-dependent computational model, not standalone property prediction.</dd>
-                </div>
-              </dl>
-              <div class="link-row">
-                <a href="projects/polymer-filler-md.html">Project page</a>
-                <a href="assets/figures/polymer_contact_energy_summary.svg">Figure</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
             <img class="figure-thumb" src="assets/figures/reaction_yield_model_comparison.png" alt="Reaction-yield model comparison by validation split">
             <div class="card-body">
               <h3>Reaction Yield Prediction And Synthesis-Aware ML</h3>
@@ -183,8 +157,16 @@
       </section>
 
       <section class="section" aria-labelledby="secondary">
-        <h2 id="secondary">Secondary Projects</h2>
-        <div class="grid three">
+        <h2 id="secondary">Supporting Simulation And Materials Depth</h2>
+        <p class="section-intro">These projects support Eva's computational chemistry foundation without displacing the pharma-facing portfolio narrative.</p>
+        <div class="grid four">
+          <article class="card">
+            <div class="card-body">
+              <h3>Polymer-Filler MD And Flame-Retardant Molecular Modeling</h3>
+              <p>GROMACS polypropylene/brucite interface analysis with coated versus uncoated aggregate contact and interaction-energy summaries.</p>
+              <a href="projects/polymer-filler-md.html">View case study</a>
+            </div>
+          </article>
           <article class="card">
             <div class="card-body">
               <h3>DFT Flame-Retardant Candidate Analysis</h3>
@@ -211,7 +193,7 @@
     </main>
 
     <footer class="footer">
-      <span>Evidence-backed portfolio for computational chemistry, molecular simulation, cheminformatics, and ML validation.</span>
+      <span>Evidence-backed portfolio for pharma-facing cheminformatics, molecular ML validation, antibody informatics, and computational chemistry.</span>
     </footer>
   </body>
 </html>

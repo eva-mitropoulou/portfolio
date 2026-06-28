@@ -57,8 +57,8 @@
       ],
       "available_reports": "High: antibody, EGFR, polymer MD, reaction-yield ML, flame-retardant, and periodic DFT summaries are present.",
       "available_figures": "High: antibody, EGFR, polymer MD, and reaction-yield public-safe figures are present.",
-      "available_metrics": "High: unified metrics summaries are present for all four flagship projects.",
-      "available_notebooks": "Notebook walkthroughs are present for all four flagship projects.",
+      "available_metrics": "High: unified metrics summaries are present for the three headline pharma-facing projects and supporting polymer-filler MD project.",
+      "available_notebooks": "Notebook walkthroughs are present for the three headline pharma-facing projects and supporting polymer-filler MD project.",
       "reproducibility_status": "Partial before this branch; improved by small Makefile commands, environment files, reports, metrics summaries, and notebooks.",
       "public_ready": true,
       "claims_supported": "Suitable as the public presentation layer if claims remain tied to evidence from curated files and private evidence map.",
@@ -168,7 +168,7 @@
       ]
     }
   ],
-  "flagship_projects": [
+  "portfolio_projects": [
     {
       "title": "Antibody sequence ML and existing-record prioritization",
       "source_repo": "Computational-Chemistry",
@@ -228,7 +228,7 @@
     {
       "title": "Polymer-filler MD and flame-retardant molecular modeling",
       "source_repo": "Computational-Chemistry and portfolio",
-      "public_portfolio_role": "flagship",
+      "public_portfolio_role": "supporting computational chemistry depth",
       "evidence_status": "supported with force-field/model limitations",
       "supported_claims": [
         "Polypropylene/brucite interface simulations and coated versus uncoated filler-surface analyses are present.",

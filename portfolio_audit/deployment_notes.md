@@ -20,9 +20,11 @@ Verified HTTP 200 URLs:
 - `https://eva-mitropoulou.github.io/portfolio/`
 - `https://eva-mitropoulou.github.io/portfolio/projects/antibody-sequence-ml.html`
 - `https://eva-mitropoulou.github.io/portfolio/projects/egfr-qsar-cadd.html`
+- `https://eva-mitropoulou.github.io/portfolio/projects/reaction-yield-ml.html`
 - `https://eva-mitropoulou.github.io/portfolio/projects/polymer-filler-md.html`
 - `https://eva-mitropoulou.github.io/portfolio/assets/figures/antibody_pipeline.svg`
 - `https://eva-mitropoulou.github.io/portfolio/assets/figures/egfr_random_vs_scaffold.png`
+- `https://eva-mitropoulou.github.io/portfolio/assets/figures/reaction_yield_model_comparison.png`
 - `https://eva-mitropoulou.github.io/portfolio/assets/figures/polymer_contact_energy_summary.svg`
 
 ## Why `/docs`

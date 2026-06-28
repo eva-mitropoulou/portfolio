@@ -16,7 +16,9 @@ This audit treats committed reports, metrics, notebooks, scripts, figures, and c
 | `phd-notes` | Private thesis/manuscript notes | Python, RDKit, Markdown, LaTeX, Jupyter | No | Use only after public-clearance review | Private/archive |
 | `learning-python` | Python learning exercises | Python, pandas, scikit-learn | No | Supports general Python learning only | Archive |
 
-## Flagship Evidence
+## Portfolio Evidence
+
+Public positioning note: the headline portfolio should lead with three pharma-facing projects: antibody sequence ML, EGFR QSAR/CADD, and reaction-yield ML. Polymer-filler MD and related DFT/materials work remain public, but they are supporting computational chemistry depth rather than the main recruiter-facing narrative.
 
 ### Antibody Sequence ML And Existing-Record Prioritization
 
@@ -75,9 +77,11 @@ Safety boundaries:
 - No clinical utility claim.
 - No binding-mechanism claim unless new evidence is added.
 
-### Polymer-Filler MD And Flame-Retardant Molecular Modeling
+### Supporting Polymer-Filler MD And Flame-Retardant Molecular Modeling
 
 Evidence status: supported with model/force-field limitations.
+
+Recommended public role: supporting molecular simulation and materials depth.
 
 Verified artifact classes:
 
