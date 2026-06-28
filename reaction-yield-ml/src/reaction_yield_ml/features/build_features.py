@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 from typing import Any
 
 import joblib
@@ -9,7 +10,7 @@ import pandas as pd
 from scipy import sparse
 from sklearn.preprocessing import OneHotEncoder
 
-from reaction_yield_ml.config import METRICS_DIR, PROCESSED_DIR, REPORTS_DIR
+from reaction_yield_ml.config import METRICS_DIR, PROCESSED_DIR, PROJECT_ROOT, REPORTS_DIR
 from reaction_yield_ml.data.clean_reactions import clean_reactions
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import read_json, write_json, write_markdown
@@ -39,6 +40,14 @@ def load_clean_data(use_fixture: bool = False) -> tuple[pd.DataFrame, list[str]]
         col for col in frame.columns if col.startswith("component_")
     ]
     return frame, component_cols
+
+
+def _project_relative(path: Any) -> str:
+    path = Path(path) if not hasattr(path, "relative_to") else path
+    try:
+        return str(path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(path)
 
 
 def build_features(use_fixture: bool = False) -> dict[str, Any]:
@@ -90,9 +99,9 @@ def build_features(use_fixture: bool = False) -> dict[str, Any]:
             "no_yield_derived_columns_used": True,
         },
         "outputs": {
-            "matrix": str(feature_dir / "categorical_onehot.npz"),
-            "index": str(feature_dir / "feature_index.csv"),
-            "encoder": str(feature_dir / "categorical_onehot_encoder.joblib"),
+            "matrix": _project_relative(feature_dir / "categorical_onehot.npz"),
+            "index": _project_relative(feature_dir / "feature_index.csv"),
+            "encoder": _project_relative(feature_dir / "categorical_onehot_encoder.joblib"),
         },
     }
     write_json(feature_dir / "feature_metadata.json", metadata)

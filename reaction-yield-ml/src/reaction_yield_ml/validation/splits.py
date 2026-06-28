@@ -11,6 +11,7 @@ from reaction_yield_ml.config import METRICS_DIR, PROCESSED_DIR, RANDOM_STATE, R
 from reaction_yield_ml.features.build_features import build_features, load_clean_data
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import read_json, short_float, write_json, write_markdown
+from reaction_yield_ml.validation.split_labels import equivalent_grouped_split_note, split_display_name
 
 
 def parse_args() -> argparse.Namespace:
@@ -121,6 +122,7 @@ def make_splits(use_fixture: bool = False) -> dict[str, Any]:
     splits["grouped_high_cardinality_component"] = _make_group_split(
         frame, highest, "grouped_high_cardinality_component", "grouped_high_cardinality_component"
     )
+    equivalence_note = equivalent_grouped_split_note("grouped_high_cardinality_component", splits)
     for name, payload in splits.items():
         _write_split(name, payload)
     valid_splits = {name: payload for name, payload in splits.items() if payload.get("is_valid")}
@@ -131,6 +133,7 @@ def make_splits(use_fixture: bool = False) -> dict[str, Any]:
         "valid_split_count": len(valid_splits),
         "valid_splits": sorted(valid_splits.keys()),
         "splits": splits,
+        "split_equivalence_notes": [equivalence_note] if equivalence_note else [],
         "quality_gates": {
             "random_split_available": bool(splits["random_split"].get("is_valid")),
             "grouped_or_out_of_component_available": any(
@@ -168,10 +171,12 @@ def make_splits(use_fixture: bool = False) -> dict[str, Any]:
     for name, payload in splits.items():
         if payload.get("is_valid"):
             lines.append(
-                f"- {name}: valid, train={payload['train_size']}, test={payload['test_size']}, group_column={payload.get('group_column')}"
+                f"- {name}: valid, label={split_display_name(name, payload)}, train={payload['train_size']}, test={payload['test_size']}, group_column={payload.get('group_column')}"
             )
         else:
             lines.append(f"- {name}: unavailable, reason={payload.get('unavailable_reason', 'not valid')}")
+    if equivalence_note:
+        lines.extend(["", "## Split Equivalence Note", "", equivalence_note])
     lines.extend(
         [
             "",
@@ -213,4 +218,3 @@ def main(use_fixture: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     args = parse_args()
     main(use_fixture=args.fixture)
-

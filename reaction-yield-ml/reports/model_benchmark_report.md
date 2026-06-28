@@ -3,7 +3,8 @@
 ## Summary
 
 - Models evaluated: mean_baseline, onehot_ridge, onehot_elastic_net, random_forest, gradient_boosting
-- Primary reliability split for model selection: grouped_high_cardinality_component
+- Primary reliability split for model selection: additive-held-out grouped split
+- Internal split id: grouped_high_cardinality_component
 - Selected model: random_forest
 - Selected model MAE on primary split: 10.7537
 - Selected model RMSE on primary split: 14.2371
@@ -28,3 +29,4 @@
 ## Interpretation Boundary
 
 Random split performance is not presented as sole evidence. Grouped and out-of-component splits are included where possible. Model selection prioritizes the reliability-oriented grouped split.
+{equivalence_note}

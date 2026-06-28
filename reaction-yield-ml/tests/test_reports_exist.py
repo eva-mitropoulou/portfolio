@@ -27,12 +27,12 @@ def test_required_reports_and_figures_exist():
 
 def test_reports_avoid_unsupported_claims():
     banned = [
-        "deployed-system",
-        "procedural synthesis instructions",
-        "operational recommendation",
-        "autonomous chemistry claim",
-        "guaranteed optimization claim",
-        "drug-candidate route claim",
+        "production-ready",
+        "synthesis protocol",
+        "lab-ready recommendation",
+        "autonomous chemistry agent",
+        "guaranteed yield optimization",
+        "drug-candidate synthesis route",
     ]
     for path in Path(PROJECT_ROOT / "reports").glob("*.md"):
         text = path.read_text(encoding="utf-8").lower()

@@ -22,7 +22,7 @@
     <main class="project-detail">
       <p class="eyebrow">Flagship Project</p>
       <h1>Reaction Yield Prediction And Synthesis-Aware ML</h1>
-      <p class="lead">Retrospective public-data HTE reaction-yield workflow with reaction cleaning, component featurization, out-of-component validation, uncertainty calibration, active-learning simulation, and existing-record ranking.</p>
+      <p class="lead">Retrospective public-data HTE reaction-yield workflow with reaction cleaning, categorical component featurization, out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking.</p>
 
       <h2>1. Overview</h2>
       <p>Built a public-data reaction-yield modeling benchmark around a Buchwald-Hartwig HTE dataset. The project emphasizes leakage-aware validation and decision-support diagnostics rather than operational chemistry guidance.</p>
@@ -39,18 +39,19 @@
       </ul>
 
       <h2>4. Methods</h2>
-      <p>Implemented dataset selection, aggregate data audit, cleaning, categorical component featurization, random and grouped/out-of-component splits, mean and ML baselines, uncertainty calibration, active-learning simulation over existing records, ranking diagnostics, and model interpretability.</p>
+      <p>Implemented dataset selection, aggregate data audit, cleaning, categorical component featurization, random and grouped/out-of-component splits, mean and ML baselines, uncertainty/error diagnostics with empirical coverage analysis, active-learning simulation over existing records, ranking diagnostics, and model interpretability.</p>
 
       <h2>5. Validation Strategy</h2>
       <ul>
         <li>Random split for baseline comparability.</li>
         <li>Out-of-substrate, out-of-ligand, out-of-base, and out-of-additive splits where possible.</li>
-        <li>Grouped high-cardinality component split used as the primary reliability split for model selection.</li>
+        <li>Additive-held-out grouped split used as the primary reliability split for model selection.</li>
+        <li>In this dataset, the highest-cardinality chemically meaningful grouping is additive, so the grouped high-cardinality component split and out-of-additive split share the same held-out group design.</li>
         <li>Data leakage audit excludes target-derived predictors.</li>
       </ul>
 
       <h2>6. Key Results</h2>
-      <p>Selected a random forest on the grouped high-cardinality component split: MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333. Uncertainty diagnostics reported empirical 90% interval coverage of 0.798 on the primary split.</p>
+      <p>Selected a random forest on the additive-held-out grouped split: MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333. Uncertainty diagnostics reported empirical 90% interval coverage of 0.798 on the primary split.</p>
 
       <h2>7. Figures</h2>
       <figure>
@@ -89,4 +90,3 @@
     <footer class="footer">Reaction-yield outputs are retrospective public-data diagnostics, not operational chemistry instructions.</footer>
   </body>
 </html>
-

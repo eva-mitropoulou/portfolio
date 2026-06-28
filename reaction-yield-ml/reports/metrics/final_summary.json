@@ -22,6 +22,8 @@
   "feature_family": "categorical_onehot",
   "interpretability_primary_split": "grouped_high_cardinality_component",
   "primary_selection_split": "grouped_high_cardinality_component",
+  "primary_selection_split_display": "additive-held-out grouped split",
+  "primary_split_equivalence_note": "In this dataset, grouped_high_cardinality_component uses component_additive; it is therefore the additive-held-out grouped split and shares the same held-out group design as out_of_additive.",
   "ranking_row_count": 3955,
   "raw_row_count": 3955,
   "safe_scope": [

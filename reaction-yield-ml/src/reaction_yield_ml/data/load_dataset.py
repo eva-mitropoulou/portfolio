@@ -16,6 +16,7 @@ from reaction_yield_ml.config import (
     DATASET_SOURCE,
     EXTERNAL_DIR,
     LICENSE_ACCESS_NOTE,
+    PROJECT_ROOT,
     RAW_DATA_FILE,
     RAW_DIR,
     TARGET_COLUMN_CANDIDATES,
@@ -145,7 +146,7 @@ def summarize_dataset(bundle: DatasetBundle) -> dict[str, Any]:
         "citation_text": CITATION_TEXT,
         "license_access_note": LICENSE_ACCESS_NOTE,
         "source_mode": bundle.source_mode,
-        "source_path": str(bundle.source_path),
+        "source_path": _public_safe_source_path(bundle.source_path),
         "selected_sheet": bundle.sheet_name,
         "row_count": int(len(frame)),
         "raw_columns": [str(col) for col in frame.columns],
@@ -160,6 +161,13 @@ def summarize_dataset(bundle: DatasetBundle) -> dict[str, Any]:
             "The workflow ranks existing public records only and does not generate new reaction conditions.",
         ],
     }
+
+
+def _public_safe_source_path(path: Path) -> str:
+    try:
+        return str(path.resolve().relative_to(PROJECT_ROOT.resolve()))
+    except ValueError:
+        return path.name
 
 
 def write_dataset_selection_outputs(bundle: DatasetBundle) -> dict[str, Any]:
@@ -274,4 +282,3 @@ def main(use_fixture: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     args = parse_args()
     main(use_fixture=args.fixture)
-

@@ -4,13 +4,13 @@ Audit date: 2026-06-28
 
 Only repository names and audit status are listed here. Detailed claim boundaries are in `portfolio_audit/evidence_map.md` and `portfolio_audit/evidence_map.json`.
 
-| Repository | Visibility | Local checkout | Audit status | Public portfolio role |
+| Repository | Visibility | Source note | Audit status | Public portfolio role |
 |---|---|---|---|---|
-| `eva-mitropoulou/Computational-Chemistry` | Private | `/home/dimit/eva/Computational-Chemistry` | Audited | Private evidence base / archive |
-| `eva-mitropoulou/portfolio` | Public | `/home/dimit/eva/github-work/portfolio` | Audited | Flagship public site |
-| `eva-mitropoulou/cv-versions` | Private | `/home/dimit/eva/github-work/cv-versions` | Audited | Secondary private source |
-| `eva-mitropoulou/phd-notes` | Private | `/home/dimit/eva/phd-notes` | Audited | Private/archive |
-| `eva-mitropoulou/learning-python` | Private | `/home/dimit/eva/learning-python` | Audited | Archive |
+| `eva-mitropoulou/Computational-Chemistry` | Private | Private evidence base reviewed locally | Audited | Private evidence base / archive |
+| `eva-mitropoulou/portfolio` | Public | Public portfolio repository | Audited | Flagship public site |
+| `eva-mitropoulou/cv-versions` | Private | Private CV wording source reviewed locally | Audited | Secondary private source |
+| `eva-mitropoulou/phd-notes` | Private | Private/archive notes reviewed locally | Audited | Private/archive |
+| `eva-mitropoulou/learning-python` | Private | Archive repository reviewed locally | Audited | Archive |
 
 ## Inventory Notes
 

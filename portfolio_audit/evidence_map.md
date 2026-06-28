@@ -120,14 +120,14 @@ Verified artifact classes:
 
 Supported public interpretation:
 
-Built a retrospective public-data HTE reaction-yield modeling workflow with reaction cleaning, component featurization, random and out-of-component validation, uncertainty-aware prioritization, active-learning simulation, and existing-record ranking. The final model was selected on a grouped high-cardinality component split, not only random split performance.
+Built a retrospective public-data HTE reaction-yield modeling workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty-aware prioritization, active-learning simulation, and existing-record ranking. The final model was selected on an additive-held-out grouped split, not only random split performance. In this dataset, that split shares the same held-out group design as `out_of_additive`.
 
 Supported metrics:
 
 - Clean public records: 3,955.
 - Categorical feature count: 44.
 - Selected model: random forest.
-- Primary split: grouped high-cardinality component.
+- Primary split: additive-held-out grouped split.
 - Primary split metrics: MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, top-10% enrichment 7.333.
 - Primary split empirical 90% interval coverage: 0.798.
 

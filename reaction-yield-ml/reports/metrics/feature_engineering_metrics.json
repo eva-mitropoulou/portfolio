@@ -25,9 +25,9 @@
     }
   },
   "outputs": {
-    "encoder": "/home/dimit/eva/Computational-Chemistry/reaction_yield_prediction/reaction-yield-ml/data/processed/features/categorical_onehot_encoder.joblib",
-    "index": "/home/dimit/eva/Computational-Chemistry/reaction_yield_prediction/reaction-yield-ml/data/processed/features/feature_index.csv",
-    "matrix": "/home/dimit/eva/Computational-Chemistry/reaction_yield_prediction/reaction-yield-ml/data/processed/features/categorical_onehot.npz"
+    "encoder": "data/processed/features/categorical_onehot_encoder.joblib",
+    "index": "data/processed/features/feature_index.csv",
+    "matrix": "data/processed/features/categorical_onehot.npz"
   },
   "quality_gates": {
     "feature_rows_align_clean_rows": true,

@@ -8,12 +8,16 @@
 
 ## Split Status
 
-- random_split: valid, train=3164, test=791, group_column=None
-- out_of_substrate: valid, train=3164, test=791, group_column=component_aryl_halide
-- out_of_ligand: valid, train=2966, test=989, group_column=component_ligand
-- out_of_base: valid, train=2638, test=1317, group_column=component_base
-- out_of_additive: valid, train=3055, test=900, group_column=component_additive
-- grouped_high_cardinality_component: valid, train=3055, test=900, group_column=component_additive
+- random_split: valid, label=random split, train=3164, test=791, group_column=None
+- out_of_substrate: valid, label=aryl-halide-held-out split, train=3164, test=791, group_column=component_aryl_halide
+- out_of_ligand: valid, label=ligand-held-out split, train=2966, test=989, group_column=component_ligand
+- out_of_base: valid, label=base-held-out split, train=2638, test=1317, group_column=component_base
+- out_of_additive: valid, label=additive-held-out split, train=3055, test=900, group_column=component_additive
+- grouped_high_cardinality_component: valid, label=additive-held-out grouped split, train=3055, test=900, group_column=component_additive
+
+## Split Equivalence Note
+
+In this dataset, grouped_high_cardinality_component uses component_additive; it is therefore the additive-held-out grouped split and shares the same held-out group design as out_of_additive.
 
 ## Quality Gates
 

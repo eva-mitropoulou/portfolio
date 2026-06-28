@@ -112,7 +112,7 @@
       "site_page": "docs/projects/reaction-yield-ml.html",
       "readme": "reaction-yield-ml/README.md",
       "figure": "docs/assets/figures/reaction_yield_model_comparison.png",
-      "metrics": "reaction-yield-ml/reports/metrics/summary.json",
+      "metrics": "reaction-yield-ml/reports/metrics/final_summary.json",
       "notebook": "notebooks/04_reaction_yield_ml_walkthrough.ipynb",
       "makefile_target": "make reproduce-small",
       "status": "pass"

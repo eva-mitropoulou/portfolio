@@ -166,9 +166,13 @@ def simulate_campaign(use_fixture: bool = False) -> dict[str, Any]:
     total_top_count = int((frame["yield_percent"] >= top_threshold).sum())
     records: list[dict[str, Any]] = []
     for seed in seeds:
-        rng = np.random.default_rng(seed)
+        initial_rng = np.random.default_rng(seed)
+        shared_initial = set(
+            initial_rng.choice(np.arange(n_rows), size=min(initial_size, n_rows), replace=False).tolist()
+        )
         for strategy in STRATEGIES:
-            selected_idx: set[int] = set(rng.choice(np.arange(n_rows), size=min(initial_size, n_rows), replace=False).tolist())
+            rng = np.random.default_rng(seed * 1009 + STRATEGIES.index(strategy))
+            selected_idx: set[int] = set(shared_initial)
             metric_row = _metrics_at_budget(frame, component_cols, selected_idx, top_threshold, total_top_count)
             records.append({"seed": seed, "strategy": strategy, "round": 0, **metric_row})
             for round_idx in range(1, rounds + 1):
@@ -212,6 +216,7 @@ def simulate_campaign(use_fixture: bool = False) -> dict[str, Any]:
         "quality_gates": {
             "random_baseline_included": "random_selection" in STRATEGIES,
             "multiple_seeds_used": len(seeds) >= 3,
+            "shared_initial_labeled_set_per_seed": True,
             "no_future_target_leakage": True,
             "selected_records_existing_only": True,
             "limitations_stated": True,
@@ -220,6 +225,7 @@ def simulate_campaign(use_fixture: bool = False) -> dict[str, Any]:
             "Retrospective active-learning simulation over existing public records only.",
             "The simulation does not instruct anyone to run reactions.",
             "Candidate component labels are known as public records; target yields are revealed only after simulated acquisition.",
+            "All strategies share the same initial labeled set for a given random seed.",
         ],
     }
     write_json(METRICS_DIR / "active_learning_metrics.json", metrics)
@@ -265,6 +271,7 @@ def _write_report(metrics: dict[str, Any]) -> None:
 - Initial seed size: {metrics['initial_seed_size']}
 - Batch size: {metrics['batch_size']}
 - Rounds: {metrics['rounds']}
+- Shared initial labeled set per seed: {metrics['quality_gates']['shared_initial_labeled_set_per_seed']}
 - Random baseline final best-yield mean: {metrics['random_baseline_final_ci']['mean_best_yield']}
 - Random baseline approximate 95% CI half-width: {metrics['random_baseline_final_ci']['approx_95ci_half_width']}
 
@@ -312,4 +319,3 @@ def main(use_fixture: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     args = parse_args()
     main(use_fixture=args.fixture)
-

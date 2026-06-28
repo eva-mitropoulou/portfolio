@@ -25,7 +25,7 @@ Overall status: **pass**
 |---|---|---|---|---|---|---|---|
 | Headline pharma flagship | Antibody sequence ML | `projects/antibody-sequence-ml.md` | `antibody-sequence-ml/README.md` | `antibody-sequence-ml/figures/antibody_pipeline.svg` | `antibody-sequence-ml/reports/metrics/summary.json` | `notebooks/01_antibody_sequence_ml_workflow.ipynb` | `make reproduce-small` |
 | Headline pharma flagship | EGFR QSAR / CADD | `projects/egfr-qsar-cadd.md` | `egfr-cadd-qsar-admet/README.md` | `docs/assets/figures/egfr_random_vs_scaffold.png` | `egfr-cadd-qsar-admet/reports/metrics/summary.json` | `notebooks/02_egfr_qsar_cadd_benchmark.ipynb` | `make reproduce-small` |
-| Headline pharma flagship | Reaction yield prediction | `projects/reaction-yield-ml.md` | `reaction-yield-ml/README.md` | `docs/assets/figures/reaction_yield_model_comparison.png` | `reaction-yield-ml/reports/metrics/summary.json` | `notebooks/04_reaction_yield_ml_walkthrough.ipynb` | `make reproduce-small` |
+| Headline pharma flagship | Reaction yield prediction | `projects/reaction-yield-ml.md` | `reaction-yield-ml/README.md` | `docs/assets/figures/reaction_yield_model_comparison.png` | `reaction-yield-ml/reports/metrics/final_summary.json` | `notebooks/04_reaction_yield_ml_walkthrough.ipynb` | `make reproduce-small` |
 | Supporting simulation depth | Polymer-filler MD | `projects/polymer-filler-md.md` | `polymer-md/README.md` | `polymer-md/figures/polymer_contact_energy_summary.svg` | `polymer-md/reports/metrics/summary.json` | `notebooks/03_polymer_filler_md_analysis.ipynb` | `make reproduce-small` |
 
 ## Commands Run

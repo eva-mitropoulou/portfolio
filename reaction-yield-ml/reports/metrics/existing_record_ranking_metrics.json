@@ -4,7 +4,7 @@
   "limitations": [
     "Ranking is based on out-of-fold predictions for existing public records only.",
     "The table omits component labels to avoid recipe-style public output.",
-    "Scores are decision-support diagnostics for retrospective analysis, not operational conditions."
+    "Scores are decision-support diagnostics for retrospective analysis, not lab-ready conditions."
   ],
   "median_model_agreement_std": 2.9629,
   "models_used": [

@@ -124,15 +124,15 @@
             <img class="figure-thumb" src="assets/figures/reaction_yield_model_comparison.png" alt="Reaction-yield model comparison by validation split">
             <div class="card-body">
               <h3>Reaction Yield Prediction And Synthesis-Aware ML</h3>
-              <p>Retrospective public-data HTE benchmark with reaction cleaning, component features, out-of-component validation, uncertainty calibration, active-learning simulation, and existing-record ranking.</p>
+              <p>Retrospective public-data HTE benchmark with reaction cleaning, categorical component features, out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking.</p>
               <dl class="meta-list">
                 <div>
                   <dt>Methods</dt>
-                  <dd>Buchwald-Hartwig HTE data, categorical component features, grouped validation, tree and linear baselines.</dd>
+                  <dd>Buchwald-Hartwig HTE data, categorical component features, additive-held-out validation, tree and linear baselines.</dd>
                 </div>
                 <div>
                   <dt>Key result</dt>
-                  <dd>Selected random forest on grouped validation: MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860.</dd>
+                  <dd>Selected random forest on additive-held-out validation: MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860.</dd>
                 </div>
               </dl>
               <div class="link-row">

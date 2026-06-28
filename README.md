@@ -26,11 +26,11 @@ Retrospective EGFR pIC50 baseline from ChEMBL using RDKit descriptors, Morgan fi
 
 ### 3. Reaction Yield Prediction And Synthesis-Aware ML
 
-Retrospective public-data HTE reaction-yield workflow for reaction cleaning, component featurization, leakage-aware validation, uncertainty calibration, active-learning simulation, and existing-record ranking.
+Retrospective public-data HTE reaction-yield workflow for reaction cleaning, categorical component-based featurization, leakage-aware validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking.
 
-- Methods: Buchwald-Hartwig public HTE benchmark, component one-hot features, random and out-of-component validation, mean/linear/tree baselines, uncertainty/error calibration, budgeted existing-record selection simulation.
-- Evidence: `reaction-yield-ml/reports/metrics/summary.json`, `reaction-yield-ml/reports/final_project_report.md`, `projects/reaction-yield-ml.md`, `notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
-- Key result: selected random forest on the grouped high-cardinality component split with MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333.
+- Methods: Buchwald-Hartwig public HTE benchmark, component one-hot features, random and out-of-component validation, additive-held-out grouped model selection, mean/linear/tree baselines, uncertainty/error diagnostics, budgeted existing-record selection simulation.
+- Evidence: `reaction-yield-ml/reports/metrics/final_summary.json`, `reaction-yield-ml/reports/final_project_report.md`, `projects/reaction-yield-ml.md`, `notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
+- Key result: selected random forest on the additive-held-out grouped split with MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333.
 - Scope: retrospective public-data benchmark only; no wet-lab protocol, no new chemistry generation, and existing-record ranking only.
 
 ## Supporting Computational Chemistry Depth

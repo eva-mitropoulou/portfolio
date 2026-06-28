@@ -17,6 +17,7 @@ Retrospective public-data benchmark for reaction-yield modeling and existing-rec
 - Source mode: public_benchmark
 - Feature family: categorical_onehot
 - Valid splits: grouped_high_cardinality_component, out_of_additive, out_of_base, out_of_ligand, out_of_substrate, random_split
+- Primary selection split: additive-held-out grouped split
 
 ## Model
 

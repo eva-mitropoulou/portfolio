@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary
 
-Reaction Yield Prediction and Synthesis-Aware Triage from Public HTE Data is a retrospective public-data benchmark for reaction-yield modeling. It covers data curation, component featurization, leakage-aware validation, uncertainty-aware prioritization, active-learning simulation, and existing-record ranking only.
+Reaction Yield Prediction and Synthesis-Aware Triage from Public HTE Data is a retrospective public-data benchmark for reaction-yield modeling. It covers data curation, categorical component featurization, leakage-aware validation, uncertainty-aware prioritization, active-learning simulation, and existing-record ranking only.
 
 This is not a wet-lab protocol, not a guarantee of experimental success, includes no new chemistry generation, and does not provide operational condition guidance.
 
@@ -39,12 +39,15 @@ The benchmark includes random validation and grouped/out-of-component validation
 ## 7. Model Benchmark
 
 - Selected model: random_forest
-- Primary selection split: grouped_high_cardinality_component
+- Primary selection split: additive-held-out grouped split
+- Internal split id: grouped_high_cardinality_component
 - MAE: 10.7537
 - RMSE: 14.2371
 - R2: 0.7262
 - Spearman: 0.8597
 - Top-10% enrichment: 7.3333
+
+Validation note: In this dataset, grouped_high_cardinality_component uses component_additive; it is therefore the additive-held-out grouped split and shares the same held-out group design as out_of_additive.
 
 ## 8. Uncertainty And Calibration
 
@@ -68,7 +71,7 @@ The ranking table contains existing records only. It includes predicted yield, c
 - Categorical features cannot support mechanistic claims.
 - Out-of-component validation is more reliable than random split performance for generalization claims.
 - Active-learning curves are retrospective simulations over existing records.
-- Existing-record ranking is decision-support analysis, not operational condition recommendation.
+- Existing-record ranking is decision-support analysis, not lab-ready condition recommendation.
 
 ## 12. Reproducibility
 
@@ -93,4 +96,4 @@ The fixture is synthetic and does not support benchmark claims.
 
 ## 13. Portfolio/CV Wording
 
-Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, component featurization, random and out-of-component validation, uncertainty calibration, active-learning simulation, and existing-record ranking for synthesis-aware ML.
+Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.

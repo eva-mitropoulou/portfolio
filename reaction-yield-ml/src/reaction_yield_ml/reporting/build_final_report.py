@@ -51,6 +51,8 @@ def build_final_report() -> dict[str, Any]:
         "valid_splits": validation.get("valid_splits"),
         "best_model": models.get("best_model"),
         "primary_selection_split": models.get("primary_selection_split"),
+        "primary_selection_split_display": models.get("primary_selection_split_display"),
+        "primary_split_equivalence_note": models.get("primary_split_equivalence_note"),
         "best_model_metrics": best,
         "uncertainty_primary": uncertainty_primary,
         "active_learning_seed_count": active.get("seed_count"),
@@ -70,7 +72,7 @@ def build_final_report() -> dict[str, Any]:
 
 ## 1. Executive Summary
 
-Reaction Yield Prediction and Synthesis-Aware Triage from Public HTE Data is a retrospective public-data benchmark for reaction-yield modeling. It covers data curation, component featurization, leakage-aware validation, uncertainty-aware prioritization, active-learning simulation, and existing-record ranking only.
+Reaction Yield Prediction and Synthesis-Aware Triage from Public HTE Data is a retrospective public-data benchmark for reaction-yield modeling. It covers data curation, categorical component featurization, leakage-aware validation, uncertainty-aware prioritization, active-learning simulation, and existing-record ranking only.
 
 This is not a wet-lab protocol, not a guarantee of experimental success, includes no new chemistry generation, and does not provide operational condition guidance.
 
@@ -107,12 +109,15 @@ The benchmark includes random validation and grouped/out-of-component validation
 ## 7. Model Benchmark
 
 - Selected model: {final_summary['best_model']}
-- Primary selection split: {final_summary['primary_selection_split']}
+- Primary selection split: {final_summary.get('primary_selection_split_display') or final_summary['primary_selection_split']}
+- Internal split id: {final_summary['primary_selection_split']}
 - MAE: {best.get('mae')}
 - RMSE: {best.get('rmse')}
 - R2: {best.get('r2')}
 - Spearman: {best.get('spearman')}
 - Top-10% enrichment: {best.get('top_10pct_enrichment')}
+
+Validation note: {final_summary.get('primary_split_equivalence_note') or 'No equivalent grouped split note was recorded.'}
 
 ## 8. Uncertainty And Calibration
 
@@ -136,7 +141,7 @@ The ranking table contains existing records only. It includes predicted yield, c
 - Categorical features cannot support mechanistic claims.
 - Out-of-component validation is more reliable than random split performance for generalization claims.
 - Active-learning curves are retrospective simulations over existing records.
-- Existing-record ranking is decision-support analysis, not operational condition recommendation.
+- Existing-record ranking is decision-support analysis, not lab-ready condition recommendation.
 
 ## 12. Reproducibility
 
@@ -161,7 +166,7 @@ The fixture is synthetic and does not support benchmark claims.
 
 ## 13. Portfolio/CV Wording
 
-Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, component featurization, random and out-of-component validation, uncertainty calibration, active-learning simulation, and existing-record ranking for synthesis-aware ML.
+Built a retrospective public-data HTE reaction-yield prediction workflow with reaction cleaning, categorical component featurization, random and out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking for synthesis-aware ML.
 """
     write_markdown(REPORTS_DIR / "final_project_report.md", report)
     _write_cards(final_summary)
@@ -190,6 +195,7 @@ Retrospective public-data benchmark for reaction-yield modeling and existing-rec
 - Source mode: {summary.get('source_mode')}
 - Feature family: {summary.get('feature_family')}
 - Valid splits: {', '.join(summary.get('valid_splits') or [])}
+- Primary selection split: {summary.get('primary_selection_split_display') or summary.get('primary_selection_split')}
 
 ## Model
 

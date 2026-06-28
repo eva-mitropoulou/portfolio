@@ -258,8 +258,8 @@
       "evidence_status": "supported with retrospective public-data boundaries",
       "supported_claims": [
         "Public Buchwald-Hartwig HTE reaction-yield benchmark with documented source, citation, and access notes.",
-        "Aggregate-only data audit, reaction cleaning, component one-hot featurization, target-leakage checks, random and out-of-component validation, model benchmarking, uncertainty calibration, active-learning simulation, existing-record ranking, and interpretability reports are evidenced by committed reports and metrics.",
-        "Final selected model is random_forest, selected on the grouped high-cardinality component split rather than only random split performance.",
+        "Aggregate-only data audit, reaction cleaning, categorical component one-hot featurization, target-leakage checks, random and out-of-component validation, model benchmarking, uncertainty/error diagnostics, active-learning simulation, existing-record ranking, and interpretability reports are evidenced by committed reports and metrics.",
+        "Final selected model is random_forest, selected on the additive-held-out grouped split rather than only random split performance; in this dataset it shares the same held-out group design as out_of_additive.",
         "Primary split metrics are MAE 10.7537, RMSE 14.2371, R2 0.7262, Spearman 0.8597, and top-10% enrichment 7.3333.",
         "Primary split empirical 90% interval coverage is 0.7978.",
         "Final quality gate is PASS and pytest reports 8 passed."
@@ -274,7 +274,7 @@
       ],
       "key_evidence_paths": [
         "reaction-yield-ml/data/dataset_manifest.json",
-        "reaction-yield-ml/reports/metrics/summary.json",
+        "reaction-yield-ml/reports/metrics/final_summary.json",
         "reaction-yield-ml/reports/metrics/model_benchmark_metrics.json",
         "reaction-yield-ml/reports/metrics/uncertainty_calibration_metrics.json",
         "reaction-yield-ml/reports/metrics/active_learning_metrics.json",

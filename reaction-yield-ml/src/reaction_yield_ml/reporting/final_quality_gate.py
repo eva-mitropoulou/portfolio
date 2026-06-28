@@ -19,12 +19,12 @@ def _file_exists(path: str) -> bool:
 
 def _scan_reports_for_banned_claims() -> dict[str, Any]:
     banned_phrases = [
-        "deployed-system",
-        "procedural synthesis instructions",
-        "operational recommendation",
-        "autonomous chemistry claim",
-        "guaranteed optimization claim",
-        "drug-candidate route claim",
+        "production-ready",
+        "synthesis protocol",
+        "lab-ready recommendation",
+        "autonomous chemistry agent",
+        "guaranteed yield optimization",
+        "drug-candidate synthesis route",
         "step-by-step wet-lab",
         "gram-scale",
         "mmol",

@@ -16,7 +16,7 @@ Eva Mitropoulou is a computational chemist focused on pharma-facing cheminformat
 
 1. Antibody sequence ML: public-data retrospective benchmark with strict/broader dataset handling, grouped and source-holdout validation, selected whole-pair k-mer scorer, calibration/threshold analysis, OAS background-retrieval framing, and existing-record prioritization.
 2. EGFR QSAR / CADD: ChEMBL/RDKit baseline with random split and Bemis-Murcko scaffold split validation; scaffold split performance drop is documented.
-3. Reaction yield prediction: public HTE benchmark with reaction cleaning, component featurization, out-of-component validation, uncertainty calibration, active-learning simulation, and existing-record ranking.
+3. Reaction yield prediction: public HTE benchmark with reaction cleaning, categorical component featurization, out-of-component validation, uncertainty/error diagnostics, active-learning simulation, and existing-record ranking.
 4. Supporting simulation depth: GROMACS aggregate contact and interaction-energy analysis for coated versus uncoated polypropylene/brucite interfaces.
 
 ## Technical Stack

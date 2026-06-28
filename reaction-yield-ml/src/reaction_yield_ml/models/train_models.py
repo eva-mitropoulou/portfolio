@@ -25,6 +25,7 @@ from reaction_yield_ml.models.evaluate_models import regression_metrics, yield_b
 from reaction_yield_ml.reporting.agentic import update_agentic_state
 from reaction_yield_ml.reporting.io import read_json, write_json, write_markdown
 from reaction_yield_ml.validation.splits import make_splits
+from reaction_yield_ml.validation.split_labels import equivalent_grouped_split_note, split_display_name
 
 
 class MeanRegressor(BaseEstimator, RegressorMixin):
@@ -166,6 +167,8 @@ def train_and_evaluate(use_fixture: bool = False) -> dict[str, Any]:
             representative_predictions[f"{split_name}::{spec.name}"] = pred_frame
     metrics_frame = pd.DataFrame(all_metrics)
     primary = _primary_split(valid_splits)
+    primary_display = split_display_name(primary, valid_splits[primary])
+    primary_equivalence_note = equivalent_grouped_split_note(primary, valid_splits)
     eligible = metrics_frame[(metrics_frame["split"] == primary) & (metrics_frame["model"] != "mean_baseline")]
     best_row = eligible.sort_values(["mae", "rmse"]).iloc[0].to_dict()
     best_model_name = str(best_row["model"])
@@ -178,6 +181,8 @@ def train_and_evaluate(use_fixture: bool = False) -> dict[str, Any]:
         "models_evaluated": [spec.name for spec in specs],
         "optional_models": optional_status,
         "primary_selection_split": primary,
+        "primary_selection_split_display": primary_display,
+        "primary_split_equivalence_note": primary_equivalence_note,
         "best_model": best_model_name,
         "best_model_primary_split_metrics": {key: best_row[key] for key in ["mae", "rmse", "r2", "spearman", "top_10pct_enrichment"]},
         "metrics": all_metrics,
@@ -237,12 +242,14 @@ def _write_figures(
 
 def _write_report(metrics: dict[str, Any]) -> None:
     best = metrics["best_model_primary_split_metrics"]
+    equivalence_note = metrics.get("primary_split_equivalence_note") or "No equivalent grouped split note was recorded."
     report = f"""# Model Benchmark Report
 
 ## Summary
 
 - Models evaluated: {', '.join(metrics['models_evaluated'])}
-- Primary reliability split for model selection: {metrics['primary_selection_split']}
+- Primary reliability split for model selection: {metrics.get('primary_selection_split_display', metrics['primary_selection_split'])}
+- Internal split id: {metrics['primary_selection_split']}
 - Selected model: {metrics['best_model']}
 - Selected model MAE on primary split: {best['mae']}
 - Selected model RMSE on primary split: {best['rmse']}
@@ -261,6 +268,7 @@ def _write_report(metrics: dict[str, Any]) -> None:
 ## Interpretation Boundary
 
 Random split performance is not presented as sole evidence. Grouped and out-of-component splits are included where possible. Model selection prioritizes the reliability-oriented grouped split.
+{equivalence_note}
 """
     write_markdown(REPORTS_DIR / "model_benchmark_report.md", report)
 
@@ -300,4 +308,3 @@ def main(use_fixture: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     args = parse_args()
     main(use_fixture=args.fixture)
-
