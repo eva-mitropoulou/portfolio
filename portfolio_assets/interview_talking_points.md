@@ -12,12 +12,13 @@ Eva is a computational chemist focused on pharma-facing cheminformatics, QSAR an
 - Use the final result: whole-pair k-mer TF-IDF logistic regression was the most defensible broad scorer, with strong grouped validation and modest source-holdout robustness.
 - Explain threshold 0.7 as a high-confidence review cutoff, not a calibrated prospective neutralisation probability.
 
-## EGFR QSAR and CADD
+## EGFR CADD/QSAR
 
-- Lead with validation discipline: random split versus scaffold split.
-- Use the supported metric pair: random split Morgan random forest RMSE 0.712 and R2 0.719; scaffold split RMSE 0.871 and R2 0.550.
-- Explain that the performance drop is a good portfolio signal because it shows awareness of scaffold leakage and model risk.
-- Keep the claim retrospective and baseline-oriented.
+- Lead with validation discipline: random split versus scaffold split, then assay/document-aware checks.
+- Use the supported metric pair: random split Morgan RF RMSE 0.712 and R2 0.719; scaffold split RMSE 0.871 and R2 0.550.
+- Explain applicability domain: high-similarity chemistry had MAE 0.513, while low-similarity chemistry had MAE 0.957.
+- Mention structure work carefully: 5UG9 / 8AM redocking recovered the co-crystal ligand pose at 0.968 A RMSD, but this is not a binding free-energy or efficacy claim.
+- Keep the claim retrospective and existing-record oriented.
 
 ## Reaction Yield ML
 

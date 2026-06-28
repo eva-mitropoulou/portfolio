@@ -15,14 +15,14 @@ Public-data antibody sequence workflow for retrospective benchmarking and existi
 - Key result: selected `whole_pair_kmer` as the most defensible broad scorer, with grouped ROC-AUC 0.780 and PR-AUC 0.823, plus source-robust ROC-AUC 0.610 and PR-AUC 0.636.
 - Scope: prioritization and benchmarking only; no therapeutic design, sequence generation, mutation optimization, or prospective validation claim.
 
-### 2. EGFR QSAR And CADD Benchmark
+### 2. EGFR CADD/QSAR Decision Workflow
 
-Retrospective EGFR pIC50 baseline from ChEMBL using RDKit descriptors, Morgan fingerprints, and random versus Bemis-Murcko scaffold split validation.
+Retrospective EGFR workflow from ChEMBL IC50 records with RDKit descriptors, Morgan fingerprints, scaffold validation, uncertainty checks, SAR/error analysis, ADMET-style triage, and one redocking check.
 
-- Methods: ChEMBL curation, RDKit descriptors, Morgan fingerprints, baseline regressors, scaffold split.
-- Evidence: `egfr-cadd-qsar-admet/reports/metrics/summary.json`, `projects/egfr-qsar-cadd.md`, `notebooks/02_egfr_qsar_cadd_benchmark.ipynb`.
-- Key result: Morgan random forest changed from RMSE 0.712 and R2 0.719 under random split to RMSE 0.871 and R2 0.550 under scaffold split.
-- Scope: retrospective baseline QSAR only; no production-grade prediction or clinical utility claim.
+- Methods: ChEMBL curation, pIC50 aggregation, RDKit descriptors, Morgan fingerprints, random/scaffold/assay/document validation, split-conformal intervals, Tanimoto applicability domain, and Vina redocking on 5UG9 / 8AM.
+- Evidence: standalone repo <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>, `projects/egfr-qsar-cadd.md`, `egfr-cadd-qsar-admet/reports/final_egfr_cadd_qsar_report.md`.
+- Key result: Morgan RF scaffold split RMSE 0.871 and R2 0.550; applicability-domain MAE changed from 0.513 for high-similarity chemistry to 0.957 for low-similarity chemistry; 5UG9 / 8AM redocking recovered the co-crystal pose at 0.968 A RMSD.
+- Scope: retrospective existing-record benchmarking and triage only; no molecule generation, therapeutic-efficacy claim, clinical claim, or production predictor claim.
 
 ### 3. Reaction Yield Prediction And Synthesis-Aware ML
 

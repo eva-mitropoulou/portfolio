@@ -1,75 +1,82 @@
-# EGFR QSAR and CADD Benchmark
+# EGFR CADD/QSAR Decision Workflow
 
 ## 1. Overview
 
-Built a retrospective EGFR QSAR and CADD benchmark from ChEMBL IC50 records using RDKit descriptors, Morgan fingerprints, baseline models, and leakage-aware validation.
+Built a retrospective EGFR CADD/QSAR workflow from public ChEMBL IC50 records. The project keeps the full path together: activity curation, RDKit descriptors, Morgan fingerprints, baseline QSAR, scaffold-aware validation, uncertainty checks, simple drug-likeness/model-risk triage, SAR-style error analysis, and one co-crystal redocking check.
+
+This is existing-record benchmarking and triage. It does not generate molecules or claim therapeutic efficacy.
 
 ## 2. Scientific And Technical Problem
 
-Random train/test splits can overstate molecular-property model performance when close chemical analogs appear in both train and test sets. This project uses EGFR pIC50 modeling as a practical baseline to compare random-split performance with Bemis-Murcko scaffold split performance.
+Random molecular train/test splits can look better than they should when close analogs appear in both train and test sets. Public ChEMBL activities also combine measurements from different assays and papers. The useful question was not only whether a QSAR model can fit EGFR pIC50, but where that model becomes risky.
 
 ## 3. Dataset Or System
 
-Evidence source: portfolio artifacts under `egfr-cadd-qsar-admet/`, plus the portfolio evidence audit.
+- Target: EGFR, ChEMBL target CHEMBL203.
+- Raw ChEMBL EGFR IC50 rows: 26,600.
+- Clean molecule-level pIC50 rows: 10,834.
+- Model-ready molecules after broad sanity filters: 10,593.
+- Main structure check: EGFR PDB 5UG9 with ligand 8AM.
 
-- ChEMBL EGFR IC50 workflow.
-- Cleaned EGFR activity records: 10,834 rows.
-- Model-ready records: 10,593 rows.
-- RDKit descriptor table: 10,834 rows.
-
-Raw molecule rows are not reproduced in this portfolio summary.
+Raw molecule-level rows are not reproduced in the portfolio page.
 
 ## 4. Methods
 
-- ChEMBL EGFR IC50 activity retrieval and curation.
-- pIC50 transformation and model-ready filtering.
-- RDKit physicochemical descriptors.
-- Morgan fingerprints.
-- Baseline models including random forest, gradient boosting, ridge regression, and dummy mean baselines.
-- Applicability-domain summary using similarity bins where available.
+- ChEMBL IC50 retrieval and curation.
+- Exact nM IC50 filtering, pIC50 conversion, and molecule-level median aggregation.
+- RDKit descriptors, Morgan fingerprints, and combined features.
+- Random split, scaffold split, random KFold, scaffold GroupKFold, assay-aware split, and document-aware split.
+- Split-conformal pIC50 intervals.
+- Applicability-domain analysis using max Tanimoto similarity.
+- SAR-support/error analysis: descriptor importance, Morgan bit importance, activity cliffs, and scaffold-level errors.
+- ADMET-style/model-risk triage over existing molecules.
+- EGFR co-crystal contact analysis and Vina redocking for 5UG9 / 8AM.
 
 ## 5. Validation Strategy
 
-- Random split baseline for conventional retrospective comparison.
-- Bemis-Murcko scaffold split to test generalization across chemical scaffolds.
-- Model comparisons are reported as retrospective baselines, not production predictors.
+The main model comparison uses Morgan fingerprint Random Forest baselines. Random split is retained as a conventional reference, while scaffold split, assay grouping, and document grouping are used to show how performance changes under harder validation contexts.
 
 ## 6. Key Results
 
-Committed metrics support the following public numbers:
+| Check | Result |
+|---|---:|
+| Morgan RF, random split | RMSE 0.712, R2 0.719 |
+| Morgan RF, scaffold split | RMSE 0.871, R2 0.550 |
+| High-similarity applicability-domain MAE | 0.513 |
+| Low-similarity applicability-domain MAE | 0.957 |
+| Assay-aware validation | completed, zero group overlap |
+| Document-aware validation | completed, zero group overlap |
+| Activity-cliff candidates | 607 |
+| Redocking | 5UG9 / 8AM, RMSD 0.968 A |
 
-| Model and split | RMSE | R2 |
-|---|---:|---:|
-| Morgan random forest, random split | 0.712 | 0.719 |
-| Morgan random forest, scaffold split | 0.871 | 0.550 |
-
-The scaffold split drop is the key portfolio result because it demonstrates leakage-aware validation practice.
+The scaffold and applicability-domain results are the main takeaways: the model is useful in familiar chemistry and less reliable farther from its training domain.
 
 ## 7. Figures
 
-- `docs/assets/figures/egfr_random_vs_scaffold.png`: random versus scaffold split performance.
-- `docs/assets/figures/egfr_predicted_vs_actual.png`: predicted versus experimental pIC50 for the scaffold baseline.
-- Source evidence includes `egfr-cadd-qsar-admet/figures/random_vs_scaffold_validation.png` and `egfr-cadd-qsar-admet/figures/scaffold_fingerprint_predicted_vs_actual.png`.
+- `docs/assets/figures/egfr_random_vs_scaffold.png`: original random versus scaffold split summary.
+- `docs/assets/figures/egfr_validation_contexts.png`: random, scaffold, assay, and document validation contexts.
+- `docs/assets/figures/egfr_conformal_coverage.png`: split-conformal coverage summary.
+- `docs/assets/figures/egfr_redocking_overlay.png`: 5UG9 / 8AM co-crystal versus redocked pose overlay.
 
 ## 8. Limitations
 
-- Baseline retrospective QSAR.
-- No production-grade model claim.
-- No prospective validation.
-- No clinical utility claim.
-- No binding-mechanism claim without additional structure or mechanistic evidence.
+- Retrospective public/project records only.
+- ChEMBL IC50 values are heterogeneous across assays and papers.
+- ADMET-style triage is a simple drug-likeness/model-risk proxy, not true ADMET prediction.
+- Redocking is a co-crystal pose-recovery check, not a binding free-energy calculation.
+- No prospective discovery, therapeutic efficacy, clinical relevance, or production predictor claim.
 
 ## 9. Reproducibility
 
-- Summary metrics: `egfr-cadd-qsar-admet/reports/metrics/summary.json`.
-- Final report: `egfr-cadd-qsar-admet/reports/final_report.md`.
-- Small command: `make reproduce-small` from `egfr-cadd-qsar-admet/`.
-- Recruiter notebook: `notebooks/02_egfr_qsar_cadd_benchmark.ipynb`.
-- Full reproduction may require network access to ChEMBL and the original data-curation path; the public portfolio includes cached summaries.
+- Standalone repo: <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>
+- Portfolio summary folder: `egfr-cadd-qsar-admet/`
+- Final report: `egfr-cadd-qsar-admet/reports/final_egfr_cadd_qsar_report.md`
+- Hardening status: `egfr-cadd-qsar-admet/reports/egfr_final_hardening_status.md`
+- Light reproduction command: `bash scripts/reproduce_egfr_final_reports.sh` in the standalone repo.
 
 ## 10. What This Demonstrates
 
-- Practical cheminformatics workflow construction with RDKit and ChEMBL.
-- Clear distinction between random split and scaffold split validation.
-- Ability to communicate model performance drops as evidence of validation rigor rather than as a failure.
-- Pharma-facing caution around retrospective QSAR baselines.
+- RDKit and ChEMBL cheminformatics workflow construction.
+- Model-risk-aware validation beyond one random split.
+- Clear communication of applicability-domain and uncertainty limits.
+- Structure-based evidence used carefully as a retrospective check rather than a binding claim.

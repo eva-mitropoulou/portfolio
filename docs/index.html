@@ -101,21 +101,21 @@
           <article class="card">
             <img class="figure-thumb" src="assets/figures/egfr_random_vs_scaffold.png" alt="EGFR random versus scaffold split performance">
             <div class="card-body">
-              <h3>EGFR QSAR and CADD Benchmark</h3>
-              <p>Retrospective EGFR pIC50 baseline using ChEMBL curation, RDKit descriptors, and Morgan fingerprints.</p>
+              <h3>EGFR CADD/QSAR Decision Workflow</h3>
+              <p>Retrospective EGFR workflow with ChEMBL curation, Morgan RF baselines, scaffold validation, uncertainty checks, triage, and 5UG9 redocking.</p>
               <dl class="meta-list">
                 <div>
                   <dt>Methods</dt>
-                  <dd>RDKit descriptors, Morgan fingerprints, random split, Bemis-Murcko scaffold split.</dd>
+                  <dd>RDKit, Morgan fingerprints, scaffold split, assay/document split, conformal intervals.</dd>
                 </div>
                 <div>
                   <dt>Key result</dt>
-                  <dd>Morgan random forest changed from RMSE 0.712 and R2 0.719 to RMSE 0.871 and R2 0.550 under scaffold split.</dd>
+                  <dd>Morgan RF scaffold split RMSE 0.871/R2 0.550; 5UG9 redocking recovered the co-crystal ligand at 0.968 A RMSD.</dd>
                 </div>
               </dl>
               <div class="link-row">
                 <a href="projects/egfr-qsar-cadd.html">Project page</a>
-                <a href="assets/figures/egfr_random_vs_scaffold.png">Figure</a>
+                <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet">Repo</a>
               </div>
             </div>
           </article>

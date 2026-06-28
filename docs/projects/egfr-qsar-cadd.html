@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EGFR QSAR and CADD | Eva Mitropoulou</title>
+    <title>EGFR CADD/QSAR | Eva Mitropoulou</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
   </head>
   <body>
@@ -21,68 +21,67 @@
     </header>
     <main class="project-detail">
       <p class="eyebrow">Flagship Project</p>
-      <h1>EGFR QSAR and CADD Benchmark</h1>
-      <p class="lead">Retrospective EGFR pIC50 baseline from ChEMBL with RDKit descriptors, Morgan fingerprints, and random versus scaffold split validation.</p>
+      <h1>EGFR CADD/QSAR Decision Workflow</h1>
+      <p class="lead">Retrospective EGFR workflow from ChEMBL IC50 records with RDKit features, Morgan fingerprints, scaffold validation, uncertainty checks, triage, and 5UG9 redocking.</p>
 
       <h2>1. Overview</h2>
-      <p>Built a reproducible EGFR QSAR benchmark to show the difference between conventional random-split performance and scaffold-aware validation.</p>
+      <p>I built this as a complete EGFR cheminformatics workflow: curation, pIC50 modeling, validation-risk checks, applicability-domain analysis, uncertainty intervals, existing-molecule triage, SAR-style error analysis, and a small structure-based redocking check.</p>
 
-      <h2>2. Scientific and Technical Problem</h2>
-      <p>Random splits can overstate molecular-property model performance when close analogs appear in train and test sets. The scaffold split tests whether the baseline generalizes across chemotypes.</p>
-
-      <h2>3. Dataset Or System</h2>
+      <h2>2. Dataset</h2>
       <ul>
-        <li>ChEMBL EGFR IC50 workflow.</li>
-        <li>Cleaned EGFR activity records: 10,834 rows.</li>
-        <li>Model-ready records: 10,593 rows.</li>
-        <li>RDKit descriptor table: 10,834 rows.</li>
+        <li>26,600 raw ChEMBL EGFR IC50 rows.</li>
+        <li>10,834 clean molecule-level pIC50 rows.</li>
+        <li>10,593 model-ready molecules.</li>
+        <li>EGFR target CHEMBL203.</li>
       </ul>
 
-      <h2>4. Methods</h2>
-      <p>ChEMBL retrieval and curation, pIC50 transformation, RDKit descriptors, Morgan fingerprints, random forest, gradient boosting, ridge regression, dummy mean baselines, and applicability-domain summaries.</p>
+      <h2>3. Methods</h2>
+      <p>RDKit descriptors, Morgan fingerprints, Random Forest baselines, scaffold validation, assay/document-aware validation, split-conformal intervals, Tanimoto applicability-domain analysis, ADMET-style/model-risk triage, SAR-support error analysis, and Vina redocking of 5UG9 / 8AM.</p>
 
-      <h2>5. Validation Strategy</h2>
-      <p>Random split was used as a conventional retrospective baseline. Bemis-Murcko scaffold split was used as the stronger validation test for scaffold generalization.</p>
-
-      <h2>6. Key Results</h2>
+      <h2>4. Validation Results</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Model and split</th><th>RMSE</th><th>R2</th><th>Source</th></tr></thead>
+          <thead><tr><th>Check</th><th>Result</th></tr></thead>
           <tbody>
-            <tr><td>Morgan random forest, random split</td><td>0.712</td><td>0.719</td><td>`fingerprint_baseline_metrics.csv`</td></tr>
-            <tr><td>Morgan random forest, scaffold split</td><td>0.871</td><td>0.550</td><td>`scaffold_fingerprint_metrics.csv`</td></tr>
+            <tr><td>Morgan RF, random split</td><td>RMSE 0.712, R2 0.719</td></tr>
+            <tr><td>Morgan RF, scaffold split</td><td>RMSE 0.871, R2 0.550</td></tr>
+            <tr><td>Applicability-domain MAE</td><td>0.513 high-similarity vs 0.957 low-similarity</td></tr>
+            <tr><td>Assay/document validation</td><td>completed with zero group overlap</td></tr>
+            <tr><td>5UG9 / 8AM redocking</td><td>-9.471 kcal/mol, 0.968 A RMSD</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>7. Figures</h2>
+      <h2>5. Figures</h2>
       <figure>
-        <img src="../assets/figures/egfr_random_vs_scaffold.png" alt="EGFR random versus scaffold split performance">
-        <figcaption>Random versus scaffold split performance highlights the validation gap.</figcaption>
+        <img src="../assets/figures/egfr_validation_contexts.png" alt="EGFR validation contexts">
+        <figcaption>Validation contexts beyond a random split, including scaffold, assay, and document grouping.</figcaption>
       </figure>
       <figure>
-        <img src="../assets/figures/egfr_predicted_vs_actual.png" alt="EGFR scaffold split predicted versus experimental pIC50">
-        <figcaption>Predicted versus experimental pIC50 for the scaffold baseline.</figcaption>
+        <img src="../assets/figures/egfr_conformal_coverage.png" alt="EGFR conformal coverage">
+        <figcaption>Split-conformal interval coverage summary.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/figures/egfr_redocking_overlay.png" alt="EGFR 5UG9 8AM redocking overlay">
+        <figcaption>5UG9 / 8AM co-crystal ligand coordinates compared with the redocked pose.</figcaption>
       </figure>
 
-      <h2>8. Limitations</h2>
+      <h2>6. Limitations</h2>
       <ul>
-        <li>Baseline retrospective QSAR.</li>
-        <li>No production-grade model claim.</li>
-        <li>No prospective validation.</li>
-        <li>No clinical utility claim.</li>
-        <li>No binding-mechanism claim without additional evidence.</li>
+        <li>Retrospective public/project records only.</li>
+        <li>No new molecule generation.</li>
+        <li>No therapeutic-efficacy or clinical claim.</li>
+        <li>ADMET-style triage is not true ADMET prediction.</li>
+        <li>Redocking is a pose-recovery check, not a binding free-energy calculation.</li>
       </ul>
 
-      <h2>9. Reproducibility</h2>
-      <p>The public portfolio includes cached metrics, figures, scripts, a final report, and a recruiter-readable notebook. Full reproduction may require ChEMBL network access.</p>
+      <h2>7. Reproducibility</h2>
+      <p>The standalone repository keeps the source, reports, metrics, figures, tests, and structure evidence. Raw ChEMBL-derived tables are local/regenerable artifacts.</p>
       <div class="link-row">
-        <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/egfr-cadd-qsar-admet">Project folder</a>
-        <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/notebooks/02_egfr_qsar_cadd_benchmark.ipynb">Notebook</a>
+        <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet">Standalone repo</a>
+        <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet/blob/main/reports/final_egfr_cadd_qsar_report.md">Final report</a>
+        <a href="https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet/blob/main/reports/egfr_redocking_audit_report.md">Redocking audit</a>
       </div>
-
-      <h2>10. What This Demonstrates</h2>
-      <p>Practical RDKit and ChEMBL QSAR construction, leakage-aware validation, and careful interpretation of retrospective baseline models.</p>
     </main>
     <footer class="footer">Raw molecule rows are not displayed on this page.</footer>
   </body>
