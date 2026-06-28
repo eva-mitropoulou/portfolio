@@ -76,6 +76,7 @@ No raw biological sequences are shown in this portfolio layer.
 Public-safe reproduction in this portfolio is limited to a small cached-report path.
 
 - Summary metrics: `antibody-sequence-ml/reports/metrics/summary.json`.
+- Standalone repo: <https://github.com/eva-mitropoulou/antibody-prioritization>.
 - Final report: `antibody-sequence-ml/reports/final_report.md`.
 - Data card: `antibody-sequence-ml/docs/DATA_CARD.md`.
 - Model card: `antibody-sequence-ml/docs/MODEL_CARD.md`.

@@ -15,7 +15,7 @@ Eva Mitropoulou is a computational chemist focused on pharma-facing cheminformat
 ## Pharma-Facing Flagship Evidence
 
 1. Antibody sequence ML: public-data retrospective benchmark with strict and broader dataset handling, grouped validation, source holdout, selected whole-pair k-mer scorer, calibration analysis, OAS background-retrieval framing, and existing-record prioritization.
-2. EGFR CADD/QSAR: ChEMBL and RDKit workflow with Morgan RF scaffold validation, assay/document-aware checks, conformal uncertainty, SAR/error analysis, existing-molecule triage, and 5UG9 redocking evidence.
+2. EGFR CADD and QSAR: ChEMBL and RDKit workflow with Morgan RF scaffold validation, assay and document checks, conformal uncertainty, SAR and error analysis, existing-molecule triage, and 5UG9 redocking evidence.
 3. Reaction yield prediction: public HTE benchmark with reaction cleaning, categorical component featurization, out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.
 4. Supporting simulation depth: GROMACS aggregate contact and interaction-energy analysis for coated versus uncoated polypropylene/brucite interfaces.
 

@@ -12,16 +12,17 @@ Public-data antibody sequence workflow for retrospective benchmarking and existi
 
 - Methods: CoV-AbDab-derived records, strict and broader dataset handling, grouped validation, source holdout, whole-pair k-mer TF-IDF, CDR analysis, antibody representation benchmarks, calibration analysis, and OAS background retrieval.
 - Evidence: `antibody-sequence-ml/reports/metrics/summary.json`, `antibody-sequence-ml/docs/MODEL_CARD.md`, `projects/antibody-sequence-ml.md`, `notebooks/01_antibody_sequence_ml_workflow.ipynb`.
+- Standalone repo: <https://github.com/eva-mitropoulou/antibody-prioritization>.
 - Key result: selected `whole_pair_kmer` as the most defensible broad scorer, with grouped ROC-AUC 0.780 and PR-AUC 0.823, plus source-robust ROC-AUC 0.610 and PR-AUC 0.636.
 - Scope: prioritization and benchmarking only; no therapeutic design, sequence generation, mutation optimization, or prospective validation claim.
 
-### 2. EGFR CADD/QSAR Decision Workflow
+### 2. EGFR CADD And QSAR Decision Workflow
 
-Retrospective EGFR workflow from ChEMBL IC50 records with RDKit descriptors, Morgan fingerprints, scaffold validation, uncertainty checks, SAR/error analysis, ADMET-style triage, and one redocking check.
+Retrospective EGFR workflow from ChEMBL IC50 records with RDKit descriptors, Morgan fingerprints, scaffold validation, uncertainty checks, SAR and error analysis, ADMET-style triage, and one redocking check.
 
-- Methods: ChEMBL curation, pIC50 aggregation, RDKit descriptors, Morgan fingerprints, random/scaffold/assay/document validation, split-conformal intervals, Tanimoto applicability domain, and Vina redocking on 5UG9 / 8AM.
+- Methods: ChEMBL curation, pIC50 aggregation, RDKit descriptors, Morgan fingerprints, random, scaffold, assay, and document validation, split-conformal intervals, Tanimoto applicability domain, GPU GCN benchmarking, active-learning simulation, and Vina redocking on 5UG9 with ligand 8AM.
 - Evidence: standalone repo <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>, `projects/egfr-qsar-cadd.md`, `egfr-cadd-qsar-admet/reports/final_egfr_cadd_qsar_report.md`.
-- Key result: Morgan RF scaffold split RMSE 0.871 and R2 0.550; applicability-domain MAE changed from 0.513 for high-similarity chemistry to 0.957 for low-similarity chemistry; 5UG9 / 8AM redocking recovered the co-crystal pose at 0.968 A RMSD.
+- Key result: Morgan RF scaffold split RMSE 0.871 and R2 0.550; applicability-domain MAE changed from 0.513 for high-similarity chemistry to 0.957 for low-similarity chemistry; 5UG9 redocking recovered the 8AM co-crystal pose at 0.968 A RMSD.
 - Scope: retrospective existing-record benchmarking and triage only; no molecule generation, therapeutic-efficacy claim, clinical claim, or production predictor claim.
 
 ### 3. Reaction Yield Prediction And Synthesis-Aware ML

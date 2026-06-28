@@ -1,8 +1,8 @@
-# EGFR CADD/QSAR Decision Workflow
+# EGFR CADD And QSAR Decision Workflow
 
 ## 1. Overview
 
-Built a retrospective EGFR CADD/QSAR workflow from public ChEMBL IC50 records. The project keeps the full path together: activity curation, RDKit descriptors, Morgan fingerprints, baseline QSAR, scaffold-aware validation, uncertainty checks, simple drug-likeness/model-risk triage, SAR-style error analysis, and one co-crystal redocking check.
+Built a retrospective EGFR CADD and QSAR workflow from public ChEMBL IC50 records. The project keeps the full path together: activity curation, RDKit descriptors, Morgan fingerprints, baseline QSAR, scaffold-aware validation, uncertainty checks, simple drug-likeness and model-risk triage, SAR-style error analysis, active-learning simulation, a GPU GCN benchmark, and one co-crystal redocking check.
 
 This is existing-record benchmarking and triage. It does not generate molecules or claim therapeutic efficacy.
 
@@ -29,8 +29,9 @@ Raw molecule-level rows are not reproduced in the portfolio page.
 - Split-conformal pIC50 intervals.
 - Applicability-domain analysis using max Tanimoto similarity.
 - SAR-support/error analysis: descriptor importance, Morgan bit importance, activity cliffs, and scaffold-level errors.
-- ADMET-style/model-risk triage over existing molecules.
-- EGFR co-crystal contact analysis and Vina redocking for 5UG9 / 8AM.
+- ADMET-style and model-risk triage over existing molecules.
+- EGFR co-crystal contact analysis across 1M17, 2ITY, 4HJO, and 5UG9.
+- Vina redocking for 5UG9 with ligand 8AM.
 
 ## 5. Validation Strategy
 
@@ -47,7 +48,8 @@ The main model comparison uses Morgan fingerprint Random Forest baselines. Rando
 | Assay-aware validation | completed, zero group overlap |
 | Document-aware validation | completed, zero group overlap |
 | Activity-cliff candidates | 607 |
-| Redocking | 5UG9 / 8AM, RMSD 0.968 A |
+| GPU GCN benchmark | scaffold-split R2 0.198 |
+| Redocking | 5UG9 with ligand 8AM, RMSD 0.968 A |
 
 The scaffold and applicability-domain results are the main takeaways: the model is useful in familiar chemistry and less reliable farther from its training domain.
 
@@ -56,7 +58,7 @@ The scaffold and applicability-domain results are the main takeaways: the model 
 - `docs/assets/figures/egfr_random_vs_scaffold.png`: original random versus scaffold split summary.
 - `docs/assets/figures/egfr_validation_contexts.png`: random, scaffold, assay, and document validation contexts.
 - `docs/assets/figures/egfr_conformal_coverage.png`: split-conformal coverage summary.
-- `docs/assets/figures/egfr_redocking_overlay.png`: 5UG9 / 8AM co-crystal versus redocked pose overlay.
+- `docs/assets/figures/egfr_redocking_overlay.png`: 5UG9 co-crystal versus redocked 8AM pose overlay.
 
 ## 8. Limitations
 
