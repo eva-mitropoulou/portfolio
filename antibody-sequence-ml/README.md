@@ -4,7 +4,7 @@ Public-data antibody sequence ML workflow for retrospective benchmarking and exi
 
 ## Claim Boundary
 
-This project is a benchmarking and triage workflow. It does not claim therapeutic antibody design, sequence generation, mutation optimization, prospective validation, or clinical utility.
+This project is a benchmarking and triage workflow. It makes no therapeutic antibody design, sequence generation, mutation optimization, prospective validation, or clinical utility claim.
 
 ## Evidence Summary
 
