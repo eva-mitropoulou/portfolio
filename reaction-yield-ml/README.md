@@ -31,6 +31,8 @@ Small fixture path for fast checks:
 make reproduce-small
 ```
 
+The portfolio GitHub Actions workflow runs this small fixture path and the test suite on project changes.
+
 The small fixture is synthetic and exists only to test code paths. It is not used to claim benchmark performance.
 
 ## Project Layout
@@ -54,4 +56,3 @@ The workflow records source, citation, access notes, row count, columns, and lim
 - `data/DATA_CARD.md`
 - `data/dataset_manifest.json`
 - `reports/dataset_selection_report.md`
-
