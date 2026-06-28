@@ -11,6 +11,20 @@ Branch: `portfolio-professionalization` during review, then `master` after merge
 Pages source path: `/docs`  
 Expected URL after Pages is enabled: `https://eva-mitropoulou.github.io/portfolio/`
 
+## Deployment Verification
+
+GitHub Pages was enabled from `/docs` on `portfolio-professionalization` on 2026-06-28.
+
+Verified HTTP 200 URLs:
+
+- `https://eva-mitropoulou.github.io/portfolio/`
+- `https://eva-mitropoulou.github.io/portfolio/projects/antibody-sequence-ml.html`
+- `https://eva-mitropoulou.github.io/portfolio/projects/egfr-qsar-cadd.html`
+- `https://eva-mitropoulou.github.io/portfolio/projects/polymer-filler-md.html`
+- `https://eva-mitropoulou.github.io/portfolio/assets/figures/antibody_pipeline.svg`
+- `https://eva-mitropoulou.github.io/portfolio/assets/figures/egfr_random_vs_scaffold.png`
+- `https://eva-mitropoulou.github.io/portfolio/assets/figures/polymer_contact_energy_summary.svg`
+
 ## Why `/docs`
 
 - The site is static HTML/CSS with no build step.

@@ -11,7 +11,7 @@ Overall status: **pass**
 | 1 | No unsupported claims | Pass | Unsafe-phrase scan passed with explicit allowance for negative contexts such as `must_not_claim`, `unsupported`, and no/not claim boundaries. |
 | 2 | No raw private data committed | Pass | Changed-file scan found no added raw-data or large-artifact extensions. |
 | 3 | No raw sequence strings shown on public pages | Pass | Long amino-acid-like sequence pattern scan passed across public pages, summaries, reports, and notebooks. |
-| 4 | All project links work | Pass with note | Local HTML internal links and assets passed. GitHub branch links target `portfolio-professionalization` and should resolve after branch push. |
+| 4 | All project links work | Pass | Local HTML internal links and assets passed. After branch push and Pages build, homepage, flagship project pages, and key figure assets returned HTTP 200. |
 | 5 | Each flagship has page, README, figure, metrics table, limitations, reproducibility | Pass | Verified for antibody, EGFR QSAR, and polymer-filler MD. |
 | 6 | Homepage can be understood in 30 seconds | Pass | Identity, skills, tools, and exactly three flagship projects are visible without secondary-project overload. |
 | 7 | Recruiter can identify domain, tools, and outputs in 60 seconds | Pass | Homepage, skills page, CV page, README, and recruiter summary expose domain, tools, outputs, and limits. |
@@ -49,5 +49,5 @@ Overall status: **pass**
 - Confirm preferred public contact email before final publishing.
 - Add a verified LinkedIn URL if Eva wants it public.
 - Review `phd-notes` assets before using unpublished thesis/manuscript content publicly.
-- After merge or deployment, update GitHub links from `portfolio-professionalization` to the final deployed branch if desired.
+- After merge, update GitHub links from `portfolio-professionalization` to the final deployed branch if desired.
 - Run a browser visual review of the GitHub Pages URL after Pages finishes deployment.

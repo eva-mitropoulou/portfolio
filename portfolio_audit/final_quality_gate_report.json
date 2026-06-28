@@ -24,8 +24,8 @@
     {
       "id": 4,
       "name": "All project links work",
-      "status": "pass_with_note",
-      "evidence": "Local HTML internal links and assets passed. GitHub branch links point to portfolio-professionalization and should resolve after branch push."
+      "status": "pass",
+      "evidence": "Local HTML internal links and assets passed. After branch push and Pages build, homepage, flagship project pages, and key figure assets returned HTTP 200."
     },
     {
       "id": 5,
@@ -117,7 +117,7 @@
     "Confirm preferred public contact email before final publishing.",
     "Add verified LinkedIn URL if Eva wants it public.",
     "Review phd-notes assets before using unpublished thesis/manuscript content publicly.",
-    "After merge or deployment, update GitHub links from portfolio-professionalization to the final deployed branch if desired.",
+    "After merge, update GitHub links from portfolio-professionalization to the final deployed branch if desired.",
     "Run a browser visual review of the GitHub Pages URL after Pages finishes deployment."
   ]
 }
