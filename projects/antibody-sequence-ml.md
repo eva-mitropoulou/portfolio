@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization. The work is framed as benchmark evidence and record triage, not therapeutic antibody design.
+Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization. The project centers on validation quality, label semantics, calibration, and record triage.
 
 ## 2. Scientific And Technical Problem
 
@@ -10,7 +10,7 @@ Public antibody datasets contain heterogeneous assay labels, target annotations,
 
 ## 3. Dataset Or System
 
-Evidence source: mirrored portfolio artifacts under `antibody-sequence-ml/`, plus the portfolio evidence audit.
+Project sources: mirrored portfolio artifacts under `antibody-sequence-ml/`, plus the standalone antibody repository.
 
 - CoV-AbDab-derived public-data workflow.
 - Strict labeled dataset: 5,573 records in `reports/metrics/core_dataset_audit.json`.
@@ -18,7 +18,7 @@ Evidence source: mirrored portfolio artifacts under `antibody-sequence-ml/`, plu
 - Annotated paired subset: 5,092 paired CDR-annotated candidates in `reports/metrics/core_dataset_audit.json`.
 - OAS background retrieval was treated as unknown-target background rather than assayed neutralization controls.
 
-No raw biological sequences are shown in this portfolio layer.
+The portfolio layer reports aggregate metrics and public-safe identifiers.
 
 ## 4. Methods
 
@@ -35,11 +35,11 @@ No raw biological sequences are shown in this portfolio layer.
 ## 5. Validation Strategy
 
 - Primary validation used grouped evaluation where the group feature was meaningful.
-- Random-split results were retained as a baseline but not used as the strongest public claim.
+- Random-split results were retained as a baseline; grouped and source-holdout results carry the main interpretation.
 - Matched CDR feature comparisons were used to compare whole-pair versus region-local k-mer features on the same paired subset.
 - Source-holdout validation was used as a skeptical control for source and study effects.
 - Source-robust model selection compared conservative k-mer variants and selected `whole_pair_kmer`.
-- OAS retrieval was kept separate from neutralization benchmarking because OAS records are unknown-target background records, not assay-confirmed non-neutralizers.
+- OAS retrieval was kept separate from neutralization benchmarking because OAS records are unknown-target background records.
 
 ## 6. Key Results
 
@@ -65,18 +65,18 @@ No raw biological sequences are shown in this portfolio layer.
 - Retrospective public labels only.
 - Heterogeneous assays and sources.
 - Source and study effects limit cross-source generalization.
-- Existing-record prioritization only.
-- Not a sequence-design, mutation, or optimization workflow.
-- No prospective validation.
+- Existing-record prioritization frame.
+- Sequence-design and optimization are outside the project scope.
+- Prospective validation remains future work.
 - OAS, where used, is unknown-target background rather than assayed neutralization controls.
-- Model probabilities are prioritization signals, not calibrated prospective neutralisation probabilities.
+- Model probabilities are used as prioritization signals for existing records.
 
 ## 9. Reproducibility
 
 Public-safe reproduction in this portfolio is limited to a small cached-report path.
 
 - Summary metrics: `antibody-sequence-ml/reports/metrics/summary.json`.
-- Standalone repo: <https://github.com/eva-mitropoulou/antibody-prioritization>.
+- Repo: <https://github.com/eva-mitropoulou/antibody-prioritization>.
 - Final report: `antibody-sequence-ml/reports/final_report.md`.
 - Data card: `antibody-sequence-ml/docs/DATA_CARD.md`.
 - Model card: `antibody-sequence-ml/docs/MODEL_CARD.md`.
@@ -90,4 +90,4 @@ Public-safe reproduction in this portfolio is limited to a small cached-report p
 - Ability to build an evidence-bounded ML benchmark from noisy public biological data.
 - Awareness of leakage, grouping, source and study effects, label semantics, calibration, and benchmark interpretation.
 - Practical sequence-feature engineering with k-mer, CDR-local, embedding, and pretrained-model comparisons.
-- Pharma-facing communication discipline: prioritization and benchmarking are kept separate from design or optimization claims.
+- Pharma-facing communication discipline around validation, prioritization, and benchmark interpretation.

@@ -12,7 +12,7 @@ Eva Mitropoulou is a computational chemist focused on pharma-facing cheminformat
 - Scientific Python and research-computing specialist
 - Computational chemist with simulation and DFT depth
 
-## Pharma-Facing Flagship Evidence
+## Pharma-Facing Flagship Projects
 
 1. EGFR CADD and QSAR: ChEMBL and RDKit workflow with Morgan RF scaffold validation, assay and document checks, conformal-style uncertainty, SAR and error analysis, existing-molecule triage, and 5UG9 redocking evidence.
 2. Antibody sequence ML: public-data retrospective benchmark with strict and broader dataset handling, grouped validation, source holdout, selected whole-pair k-mer scorer, calibration analysis, OAS background-retrieval framing, and existing-record prioritization.
@@ -23,9 +23,9 @@ Eva Mitropoulou is a computational chemist focused on pharma-facing cheminformat
 
 RDKit, ChEMBL, CoV-AbDab, OAS, public HTE reaction data, scikit-learn, pandas, NumPy, matplotlib, GROMACS, ORCA, CREST, Quantum ESPRESSO, Linux, Git, Makefiles, SLURM-oriented workflows.
 
-## Scope Notes
+## Project Frames
 
-- Antibody work is benchmarking and existing-record prioritization, not sequence design or optimization.
-- EGFR work is retrospective existing-record benchmarking and triage, not production prediction or therapeutic validation.
-- MD and materials work is force-field-dependent computational interpretation, not standalone property prediction.
-- Reaction-yield work is a retrospective public-data benchmark and existing-record ranking workflow, not operational synthesis guidance.
+- Antibody work: public-data benchmarking, calibration, source-aware validation, and existing-record prioritization.
+- EGFR work: retrospective existing-record benchmarking, scaffold-aware QSAR validation, and model-risk triage.
+- MD and materials work: force-field-dependent computational interpretation for polymer-filler interfaces.
+- Reaction-yield work: retrospective public HTE component-label modeling and existing-record ranking.

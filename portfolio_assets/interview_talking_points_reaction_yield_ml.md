@@ -4,7 +4,7 @@
 
 - Retrospective public-data benchmark for reaction-yield modeling from HTE records.
 - Focused on public HTE component-label yield modeling: components, validation leakage, uncertainty, and decision-support ranking over existing records.
-- Safe boundary: no new chemistry generation and no operational synthesis guidance.
+- Project frame: public HTE component-label modeling and existing-record ranking.
 
 ## Technical Decisions
 

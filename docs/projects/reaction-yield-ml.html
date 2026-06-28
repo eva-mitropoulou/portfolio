@@ -25,7 +25,7 @@
       <p class="lead">Retrospective public-data HTE reaction-yield workflow with reaction cleaning, categorical component featurization, out-of-component validation, uncertainty diagnostics, active-learning simulation, and existing-record ranking.</p>
 
       <h2>1. Overview</h2>
-      <p>Built a public-data reaction-yield modeling benchmark around a Buchwald-Hartwig HTE dataset. The project emphasizes leakage-aware validation and decision-support diagnostics rather than operational chemistry guidance.</p>
+      <p>Built a public-data reaction-yield modeling benchmark around a Buchwald-Hartwig HTE dataset. The project emphasizes leakage-aware validation, uncertainty diagnostics, and existing-record ranking.</p>
 
       <h2>2. Scientific And Technical Problem</h2>
       <p>Reaction-yield models can look strong under random splits while failing to generalize to held-out reaction components. This workflow tests random and out-of-component validation, uncertainty diagnostics, and budgeted existing-record selection.</p>
@@ -60,7 +60,7 @@
       </figure>
       <figure>
         <img src="../assets/figures/reaction_yield_active_learning_budget_curve.png" alt="Retrospective active-learning budget curve">
-        <figcaption>Budgeted selection curve over existing public records only.</figcaption>
+        <figcaption>Budgeted selection curve over existing public records.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/reaction_yield_uncertainty_vs_error.png" alt="Uncertainty proxy versus absolute error">
@@ -69,24 +69,23 @@
 
       <h2>8. Limitations</h2>
       <ul>
-        <li>Retrospective public-data benchmark only.</li>
-        <li>No new chemistry generation.</li>
-        <li>No wet-lab protocol or operational synthesis guidance.</li>
+        <li>Retrospective public-data benchmark.</li>
+        <li>Existing-record ranking frame.</li>
         <li>Component structures are unavailable in the selected workbook, so the public run uses categorical component features.</li>
-        <li>Uncertainty estimates are diagnostic and not guarantees.</li>
+        <li>Uncertainty estimates are diagnostic and reported with empirical coverage.</li>
       </ul>
 
       <h2>9. Reproducibility</h2>
-      <p>The standalone repository includes source code, tests, aggregate reports, metrics, figures, and a small fixture path. The raw workbook is downloaded from the public source during reproduction and is not committed.</p>
+      <p>The standalone repository includes source code, tests, aggregate reports, metrics, figures, and a small fixture path. The public workbook is downloaded from the source during reproduction.</p>
       <div class="link-row">
-        <a href="https://github.com/eva-mitropoulou/reaction-yield-prediction">Standalone repo</a>
+        <a href="https://github.com/eva-mitropoulou/reaction-yield-prediction">Repo</a>
         <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/notebooks/04_reaction_yield_ml_walkthrough.ipynb">Notebook</a>
         <a href="https://github.com/eva-mitropoulou/reaction-yield-prediction/blob/main/reports/final_project_report.md">Final report</a>
       </div>
 
       <h2>10. What This Demonstrates</h2>
-      <p>Industry-relevant public HTE yield modeling judgment: public-data curation, reaction-component features, validation leakage control, baseline comparisons, uncertainty-aware prioritization, and clear boundaries around retrospective existing-record ranking.</p>
+      <p>Industry-relevant public HTE yield modeling judgment: public-data curation, reaction-component features, validation leakage control, baseline comparisons, uncertainty-aware prioritization, and retrospective existing-record ranking.</p>
     </main>
-    <footer class="footer">Reaction-yield outputs are retrospective public-data diagnostics, not operational chemistry instructions.</footer>
+    <footer class="footer">Reaction-yield outputs are retrospective public-data diagnostics.</footer>
   </body>
 </html>

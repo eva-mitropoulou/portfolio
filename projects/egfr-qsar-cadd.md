@@ -4,7 +4,7 @@
 
 Built a retrospective EGFR CADD and QSAR workflow from public ChEMBL IC50 records. The project keeps the full path together: activity curation, RDKit descriptors, Morgan fingerprints, baseline QSAR, scaffold-aware validation, uncertainty checks, simple drug-likeness and model-risk triage, SAR-style error analysis, active-learning simulation, a GPU GCN benchmark, and one co-crystal redocking check.
 
-This is existing-record benchmarking and triage. It does not generate molecules or claim therapeutic efficacy.
+Project frame: retrospective existing-record benchmarking and model-risk triage for EGFR QSAR and CADD decision support.
 
 ## 2. Scientific And Technical Problem
 
@@ -18,7 +18,7 @@ Random molecular train/test splits can look better than they should when close a
 - Model-ready molecules after broad sanity filters: 10,593.
 - Main structure check: EGFR PDB 5UG9 with ligand 8AM.
 
-Raw molecule-level rows are not reproduced in the portfolio page.
+The portfolio page reports aggregate counts and figures.
 
 ## 4. Methods
 
@@ -26,7 +26,7 @@ Raw molecule-level rows are not reproduced in the portfolio page.
 - Exact nM IC50 filtering, pIC50 conversion, and molecule-level median aggregation.
 - RDKit descriptors, Morgan fingerprints, and combined features.
 - Random split, scaffold split, random KFold, scaffold GroupKFold, assay-aware split, and document-aware split.
-- Split-conformal pIC50 intervals.
+- Conformal-style pIC50 uncertainty checks.
 - Applicability-domain analysis using max Tanimoto similarity.
 - SAR-support/error analysis: descriptor importance, Morgan bit importance, activity cliffs, and scaffold-level errors.
 - ADMET-style and model-risk triage over existing molecules.
@@ -64,13 +64,13 @@ The scaffold and applicability-domain results are the main takeaways: the model 
 
 - Retrospective public/project records only.
 - ChEMBL IC50 values are heterogeneous across assays and papers.
-- ADMET-style triage is a simple drug-likeness/model-risk proxy, not true ADMET prediction.
-- Redocking is a co-crystal pose-recovery check, not a binding free-energy calculation.
-- No prospective discovery, therapeutic efficacy, clinical relevance, or production predictor claim.
+- ADMET-style triage uses simple drug-likeness and model-risk proxy rules.
+- Redocking is a co-crystal pose-recovery check.
+- Prospective experimental validation remains future work.
 
 ## 9. Reproducibility
 
-- Standalone repo: <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>
+- Repo: <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>
 - Portfolio summary folder: `egfr-cadd-qsar-admet/`
 - Final report: `egfr-cadd-qsar-admet/reports/final_egfr_cadd_qsar_report.md`
 - Hardening status: `egfr-cadd-qsar-admet/reports/egfr_final_hardening_status.md`
@@ -81,4 +81,4 @@ The scaffold and applicability-domain results are the main takeaways: the model 
 - RDKit and ChEMBL cheminformatics workflow construction.
 - Model-risk-aware validation beyond one random split.
 - Clear communication of applicability-domain and uncertainty limits.
-- Structure-based evidence used carefully as a retrospective check rather than a binding claim.
+- Structure-based evidence used as a retrospective pose-recovery check.

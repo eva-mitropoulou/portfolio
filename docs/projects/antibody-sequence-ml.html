@@ -22,10 +22,10 @@
     <main class="project-detail">
       <p class="eyebrow">Flagship Project</p>
       <h1>Antibody Sequence ML And Existing-Record Prioritization</h1>
-      <p class="lead">Public-data antibody sequence workflow for retrospective benchmarking and existing-record prioritization. This is benchmark and triage work, not therapeutic antibody design.</p>
+      <p class="lead">Public-data antibody sequence workflow for retrospective benchmarking, label-semantics review, calibration, and existing-record prioritization.</p>
 
       <h2>1. Overview</h2>
-      <p>Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization with careful claim boundaries around labels, validation, and OAS background semantics.</p>
+      <p>Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization with careful handling of labels, validation, and OAS background semantics.</p>
 
       <h2>2. Scientific And Technical Problem</h2>
       <p>Public antibody datasets mix assay labels, source records, target annotations, and sequence completeness. The workflow tests whether sequence features and antibody-specific representations can be benchmarked reproducibly without overstating prospective biological utility.</p>
@@ -48,7 +48,7 @@
       <h2>6. Key Results</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Evidence</th><th>Result</th><th>Source</th></tr></thead>
+          <thead><tr><th>Output</th><th>Result</th><th>Source</th></tr></thead>
           <tbody>
             <tr><td>Final selected model</td><td><code>whole_pair_kmer</code>, compact whole-pair k-mer TF-IDF logistic regression</td><td>`MODEL_CARD.md`</td></tr>
             <tr><td>V-gene grouped validation</td><td>ROC-AUC 0.7800, PR-AUC 0.8233</td><td>`grouped_validation_metrics.json`</td></tr>
@@ -63,11 +63,11 @@
       <h2>7. Figures</h2>
       <figure>
         <img src="../assets/figures/antibody_pipeline.svg" alt="Antibody sequence ML workflow diagram">
-        <figcaption>Public-safe antibody workflow diagram generated from committed project evidence.</figcaption>
+        <figcaption>Public-safe antibody workflow diagram generated from project artifacts.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/antibody_benchmark_pr_auc.png" alt="Antibody benchmark PR-AUC comparison">
-        <figcaption>Aggregate benchmark figure; no raw sequences are shown.</figcaption>
+        <figcaption>Aggregate benchmark figure for public-data model comparison.</figcaption>
       </figure>
       <figure>
         <img src="../assets/figures/antibody_source_robust_model_comparison.png" alt="Antibody source-robust model comparison">
@@ -83,17 +83,17 @@
         <li>Retrospective public labels.</li>
         <li>Heterogeneous assays and sources.</li>
         <li>Source and study effects limit cross-source generalization.</li>
-        <li>Existing-record prioritization only.</li>
-        <li>Not a sequence-design, mutation, or optimization workflow.</li>
-        <li>No prospective validation.</li>
+        <li>Existing-record prioritization frame.</li>
+        <li>Sequence-design and optimization are outside the project scope.</li>
+        <li>Prospective validation remains future work.</li>
         <li>OAS records are unknown-target background rather than assayed controls.</li>
-        <li>Model scores are prioritization signals, not calibrated prospective neutralisation probabilities.</li>
+        <li>Model scores are used as prioritization signals for existing records.</li>
       </ul>
 
       <h2>9. Reproducibility</h2>
       <p>Public-safe reproduction uses cached summaries and report generation. Full reproduction may require raw public-data downloads, embeddings, model weights, and heavier compute.</p>
       <div class="link-row">
-        <a href="https://github.com/eva-mitropoulou/antibody-prioritization">Standalone repo</a>
+        <a href="https://github.com/eva-mitropoulou/antibody-prioritization">Repo</a>
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization/tree/main/reports">Reports</a>
         <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/notebooks/01_antibody_sequence_ml_workflow.ipynb">Notebook</a>
         <a href="https://github.com/eva-mitropoulou/antibody-prioritization/blob/main/docs/MODEL_CARD.md">Model card</a>
@@ -103,6 +103,6 @@
       <h2>10. What This Demonstrates</h2>
       <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, source and study effect diagnosis, practical sequence-feature engineering, calibration-aware thresholding, and disciplined pharma-facing communication.</p>
     </main>
-    <footer class="footer">No raw biological sequences are displayed on this page.</footer>
+    <footer class="footer">This page reports aggregate metrics and public-safe identifiers.</footer>
   </body>
 </html>

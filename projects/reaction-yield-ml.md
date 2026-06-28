@@ -10,7 +10,7 @@ Reaction-yield models need validation that tests component generalization, not o
 
 ## 3. Dataset
 
-Evidence source: `reaction-yield-ml/data/dataset_manifest.json`.
+Project source: `reaction-yield-ml/data/dataset_manifest.json`.
 
 - Public Buchwald-Hartwig HTE reaction-yield benchmark from the Ahneman, Dreher, and Doyle lineage.
 - 3,955 clean records.
@@ -20,7 +20,7 @@ Evidence source: `reaction-yield-ml/data/dataset_manifest.json`.
 ## 4. Methods
 
 - Aggregate-only data audit and reaction cleaning.
-- Categorical component one-hot featurization; no structure-based reaction features are claimed for this workbook.
+- Categorical component one-hot featurization from the labels available in this workbook.
 - Random, grouped, and out-of-component splits.
 - Mean baseline, regularized linear models, random forest, and gradient boosting.
 - Ensemble-variance and conformal-style uncertainty diagnostics with empirical coverage analysis.
@@ -29,7 +29,7 @@ Evidence source: `reaction-yield-ml/data/dataset_manifest.json`.
 
 ## 5. Validation Strategy
 
-Primary model selection used an additive-held-out grouped split. In this dataset, additive values form the highest-cardinality chemically meaningful grouping, so the grouped component split and the held-out additive split use the same held-out design. Random split performance is reported but not treated as sole evidence.
+Primary model selection used an additive-held-out grouped split. In this dataset, additive values form the highest-cardinality chemically meaningful grouping, so the grouped component split and the held-out additive split use the same held-out design. Random split performance is reported alongside out-of-component validation.
 
 ## 6. Key Results
 
@@ -37,7 +37,7 @@ Selected model: random forest.
 
 Primary split: additive-held-out grouped split.
 
-Supported metrics from `reaction-yield-ml/reports/metrics/final_summary.json`:
+Metrics from `reaction-yield-ml/reports/metrics/final_summary.json`:
 
 - MAE: 10.754
 - RMSE: 14.237
@@ -54,12 +54,10 @@ Supported metrics from `reaction-yield-ml/reports/metrics/final_summary.json`:
 
 ## 8. Limitations
 
-- Retrospective public-data benchmark only.
-- No wet-lab protocol or operational synthesis guidance.
-- No new chemistry generation.
-- Existing-record ranking only.
+- Retrospective public-data benchmark.
+- Existing-record ranking frame.
 - Component structures are unavailable in the selected workbook, so structure-based featurization is explicitly limited.
-- Uncertainty diagnostics are evaluated against observed errors but are not guarantees.
+- Uncertainty diagnostics are evaluated against observed errors and reported with empirical coverage.
 
 ## 9. Reproducibility
 
@@ -68,9 +66,9 @@ Supported metrics from `reaction-yield-ml/reports/metrics/final_summary.json`:
 - Metrics: `reaction-yield-ml/reports/metrics/`.
 - Notebook: `notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
 - Small command: `make reproduce-small` from `reaction-yield-ml/`.
-- Standalone repo: <https://github.com/eva-mitropoulou/reaction-yield-prediction>.
+- Repo: <https://github.com/eva-mitropoulou/reaction-yield-prediction>.
 
-The raw public workbook is downloaded during reproduction and is not committed to the public portfolio.
+The public workbook is downloaded during reproduction; the portfolio keeps reports, figures, and aggregate metrics.
 
 ## 10. What This Demonstrates
 
@@ -78,4 +76,4 @@ The raw public workbook is downloaded during reproduction and is not committed t
 - Data leakage audit and out-of-component validation.
 - Uncertainty-aware prioritization.
 - Active-learning simulation over existing public records.
-- Clear public-portfolio boundaries around benchmark evidence and limitations.
+- Clear benchmark framing around data scope, validation design, and existing-record ranking.
