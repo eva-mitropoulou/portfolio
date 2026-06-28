@@ -84,15 +84,15 @@
               <dl class="meta-list">
                 <div>
                   <dt>Methods</dt>
-                  <dd>CoV-AbDab, grouped validation, k-mer TF-IDF, CDR annotation, antibody LM benchmarks.</dd>
+                  <dd>CoV-AbDab, grouped/source-holdout validation, k-mer TF-IDF, CDR annotation, antibody LM benchmarks.</dd>
                 </div>
                 <div>
                   <dt>Key result</dt>
-                  <dd>Matched validation favored sparse k-mer/CDR-local features over pretrained representations on noisy public labels.</dd>
+                  <dd>Selected whole-pair k-mer TF-IDF logistic regression as the defensible broad scorer: grouped ROC-AUC 0.780 / PR-AUC 0.823; source-robust ROC-AUC 0.610 / PR-AUC 0.636.</dd>
                 </div>
                 <div>
                   <dt>Limitation</dt>
-                  <dd>Retrospective public labels only; prioritization, not therapeutic design.</dd>
+                  <dd>Retrospective public labels with source/study effects; prioritization, not therapeutic design or prospective prediction.</dd>
                 </div>
               </dl>
               <div class="link-row">

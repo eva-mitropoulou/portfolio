@@ -174,14 +174,18 @@
       "supported_claims": [
         "Public CoV-AbDab-derived workflow for retrospective antibody sequence benchmarking.",
         "Strict labeled dataset and broader prepared-record set are available as committed processed artifacts.",
-        "Grouped validation, k-mer TF-IDF baselines, antibody embedding/model benchmarks, CDR annotation, OAS background retrieval, and diversity-aware existing-record prioritization are evidenced by committed reports and metrics.",
-        "Sparse k-mer/CDR-local features were more robust than pretrained antibody language-model representations in the matched/noisy public-label benchmark context."
+        "Grouped validation, source-holdout validation, source-robust model selection, calibration/threshold analysis, k-mer TF-IDF baselines, antibody embedding/model benchmarks, CDR annotation, OAS background retrieval, and diversity-aware existing-record prioritization are evidenced by committed reports and metrics.",
+        "Final selected model is whole_pair_kmer, a whole-pair k-mer TF-IDF logistic-regression scorer.",
+        "Grouped validation reached ROC-AUC 0.7800 and PR-AUC 0.8233; source-robust weighted validation reached ROC-AUC 0.6095 and PR-AUC 0.6363.",
+        "Final consistency audit is PASS and test suite reports 8 passed.",
+        "Sparse k-mer/CDR-local features were more robust than pretrained antibody language-model representations in the matched/noisy public-label benchmark context, but the final broad scorer remains whole-pair k-mer."
       ],
       "must_not_claim": [
         "Therapeutic antibody design",
         "Prospective neutralization prediction",
         "Sequence generation or mutation optimization",
-        "OAS records as true negatives"
+        "OAS records as true negatives",
+        "Calibrated prospective neutralisation prediction"
       ],
       "key_evidence_paths": [
         "antibody_project/antibody-prioritization/reports/metrics/core_dataset_audit.json",

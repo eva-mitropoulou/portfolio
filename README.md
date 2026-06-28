@@ -10,8 +10,9 @@ This public portfolio is organized for computational chemistry, molecular simula
 
 Public-data antibody sequence workflow for retrospective benchmarking and existing-record prioritization.
 
-- Methods: CoV-AbDab-derived records, grouped validation, k-mer TF-IDF, CDR annotation, antibody representation benchmarks, OAS background retrieval.
-- Evidence: `antibody-sequence-ml/reports/metrics/summary.json`, `projects/antibody-sequence-ml.md`, `notebooks/01_antibody_sequence_ml_workflow.ipynb`.
+- Methods: CoV-AbDab-derived records, strict/broader dataset handling, grouped and source-holdout validation, whole-pair k-mer TF-IDF, CDR/region analysis, antibody representation benchmarks, calibration/threshold analysis, OAS background retrieval.
+- Evidence: `antibody-sequence-ml/reports/metrics/summary.json`, `antibody-sequence-ml/docs/MODEL_CARD.md`, `projects/antibody-sequence-ml.md`, `notebooks/01_antibody_sequence_ml_workflow.ipynb`.
+- Key result: selected `whole_pair_kmer` as the most defensible broad scorer, with grouped ROC-AUC 0.780 / PR-AUC 0.823 and source-robust ROC-AUC 0.610 / PR-AUC 0.636.
 - Boundary: prioritization and benchmarking only; no therapeutic design, sequence generation, mutation optimization, or prospective validation claim.
 
 ### 2. EGFR QSAR / CADD Benchmark

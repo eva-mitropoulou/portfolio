@@ -8,8 +8,9 @@ Eva is a computational chemist building reproducible molecular simulation and ma
 
 - Emphasize public-data benchmarking and existing-record prioritization, not therapeutic design.
 - Explain why OAS background records are unknown-target background and not true negatives.
-- Discuss grouped validation and matched feature comparisons as leakage-aware controls.
-- Use the cautious result: k-mer/CDR-local baselines were robust in noisy public-label validation; pretrained representations are benchmark evidence, not a therapeutic scoring engine.
+- Discuss grouped validation, source-holdout validation, and source-robust model selection as leakage-aware controls.
+- Use the final result: whole-pair k-mer TF-IDF logistic regression was the most defensible broad scorer, with strong grouped validation and modest source-holdout robustness.
+- Explain threshold 0.7 as a high-confidence review cutoff, not a calibrated prospective neutralisation probability.
 
 ## EGFR QSAR / CADD
 

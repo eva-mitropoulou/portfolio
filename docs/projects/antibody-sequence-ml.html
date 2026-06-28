@@ -40,19 +40,21 @@
       </ul>
 
       <h2>4. Methods</h2>
-      <p>Character k-mer TF-IDF baselines, logistic regression, grouped validation, CDR/region annotation, AbLang2-style embeddings, IgBert/BERT-family benchmark artifacts where present, OAS background retrieval, and diversity-aware existing-record prioritization.</p>
+      <p>Character k-mer TF-IDF baselines, logistic regression, grouped validation, source-holdout validation, source-robust model selection, calibration/threshold analysis, CDR/region annotation, AbLang2-style embeddings, IgBert/BERT-family benchmark artifacts where present, OAS background retrieval, and diversity-aware existing-record prioritization.</p>
 
       <h2>5. Validation Strategy</h2>
-      <p>Grouped validation is prioritized where group features are meaningful. Random split results are retained as baselines. Matched CDR/region comparisons compare whole-pair and region-local k-mer features on the same paired subset.</p>
+      <p>Grouped validation is prioritized where group features are meaningful. Random split results are retained as baselines. Matched CDR/region comparisons compare whole-pair and region-local k-mer features on the same paired subset. Source-holdout validation is used as a skeptical control for source/study effects, and source-robust model selection chose <code>whole_pair_kmer</code>.</p>
 
       <h2>6. Key Results</h2>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Evidence</th><th>Result</th><th>Source</th></tr></thead>
           <tbody>
-            <tr><td>Grouped k-mer pair-text baseline</td><td>PR-AUC 0.824, ROC-AUC 0.781</td><td>`grouped_validation_metrics.json`</td></tr>
-            <tr><td>Matched region-local k-mers</td><td>+0.044 PR-AUC and +0.042 ROC-AUC versus whole-pair k-mers</td><td>`matched_kmer_benchmark_audit.json`</td></tr>
-            <tr><td>Frozen pretrained representation benchmarks</td><td>Did not beat grouped k-mer reference on both primary metrics</td><td>`pretrained_frozen_baseline_metrics.json`</td></tr>
+            <tr><td>Final selected model</td><td><code>whole_pair_kmer</code>, compact whole-pair k-mer TF-IDF logistic regression</td><td>`MODEL_CARD.md`</td></tr>
+            <tr><td>V-gene grouped validation</td><td>ROC-AUC 0.7800, PR-AUC 0.8233</td><td>`grouped_validation_metrics.json`</td></tr>
+            <tr><td>Source-robust weighted holdout</td><td>ROC-AUC 0.6095, PR-AUC 0.6363</td><td>`source_robust_model_selection_metrics.json`</td></tr>
+            <tr><td>High-confidence review threshold</td><td>Threshold 0.7: precision 0.8266, recall 0.3062, coverage 0.3051</td><td>`MODEL_CARD.md`</td></tr>
+            <tr><td>Final packaging</td><td>Consistency audit PASS; 8 tests passed; no missing expected artifacts</td><td>`final_consistency_audit.json`</td></tr>
             <tr><td>Diversity-aware shortlist</td><td>23 existing records</td><td>`diversity_aware_shortlist_summary.json`</td></tr>
           </tbody>
         </table>
@@ -67,15 +69,25 @@
         <img src="../assets/figures/antibody_benchmark_pr_auc.png" alt="Antibody benchmark PR-AUC comparison">
         <figcaption>Aggregate benchmark figure; no raw sequences are shown.</figcaption>
       </figure>
+      <figure>
+        <img src="../assets/figures/antibody_source_robust_model_comparison.png" alt="Antibody source-robust model comparison">
+        <figcaption>Source-robust model-selection comparison for conservative k-mer variants.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/figures/antibody_calibration_curve.png" alt="Antibody calibration curve">
+        <figcaption>Calibration output used for high-confidence review threshold interpretation.</figcaption>
+      </figure>
 
       <h2>8. Limitations</h2>
       <ul>
         <li>Retrospective public labels.</li>
         <li>Heterogeneous assays and sources.</li>
+        <li>Source/study effects limit cross-source generalization.</li>
         <li>Existing-record prioritization only.</li>
         <li>No therapeutic design, sequence generation, mutation, or optimization claim.</li>
         <li>No prospective validation.</li>
         <li>OAS records are unknown-target background, not true negatives.</li>
+        <li>Model scores are prioritization signals, not calibrated prospective neutralisation probabilities.</li>
       </ul>
 
       <h2>9. Reproducibility</h2>
@@ -83,10 +95,12 @@
       <div class="link-row">
         <a href="https://github.com/eva-mitropoulou/portfolio/tree/master/antibody-sequence-ml">Project folder</a>
         <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/notebooks/01_antibody_sequence_ml_workflow.ipynb">Notebook</a>
+        <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/antibody-sequence-ml/docs/MODEL_CARD.md">Model card</a>
+        <a href="https://github.com/eva-mitropoulou/portfolio/blob/master/antibody-sequence-ml/docs/DATA_CARD.md">Data card</a>
       </div>
 
       <h2>10. What This Demonstrates</h2>
-      <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, practical sequence-feature engineering, and disciplined pharma-facing communication.</p>
+      <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, source/study effect diagnosis, practical sequence-feature engineering, calibration-aware thresholding, and disciplined pharma-facing communication.</p>
     </main>
     <footer class="footer">No raw biological sequences are displayed on this page.</footer>
   </body>

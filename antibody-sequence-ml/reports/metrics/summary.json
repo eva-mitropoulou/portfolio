@@ -1,31 +1,70 @@
 {
   "project": "Antibody sequence ML and existing-record prioritization",
-  "status": "public-safe cached summary",
+  "status": "final flagship package",
   "source_repository": "Computational-Chemistry/antibody_project/antibody-prioritization",
+  "final_selected_model": {
+    "model_id": "whole_pair_kmer",
+    "saved_broad_scorer": "models/kmer_logreg_pair_text.joblib",
+    "feature_representation": "compact heavy/light whole-pair character k-mer TF-IDF",
+    "classifier": "balanced logistic regression",
+    "selection_reason": "Most defensible broad scorer after matched benchmark, source-holdout, and source-robust model-selection checks."
+  },
   "data_scope": {
     "strict_labeled_records": 5573,
+    "strict_label_counts": {
+      "non_neutralising_or_negative_class": 2292,
+      "neutralising_or_positive_class": 3281
+    },
     "broader_prepared_records": 11748,
     "paired_cdr_annotated_candidates": 5092
   },
   "validation": {
-    "primary_strategy": "grouped validation where group features are meaningful",
-    "grouped_kmer_pair_text_pr_auc": 0.824,
-    "grouped_kmer_pair_text_roc_auc": 0.781,
-    "matched_region_local_delta_pr_auc_vs_whole_pair": 0.044,
-    "matched_region_local_delta_roc_auc_vs_whole_pair": 0.042
+    "v_gene_grouped_whole_pair_kmer_roc_auc": 0.7800,
+    "v_gene_grouped_whole_pair_kmer_pr_auc": 0.8233,
+    "source_holdout_macro_roc_auc": 0.5605,
+    "source_holdout_macro_pr_auc": 0.6454,
+    "source_robust_weighted_roc_auc": 0.6095,
+    "source_robust_weighted_pr_auc": 0.6363,
+    "valid_heldout_source_groups": 11,
+    "interpretation": "Performance was strong under V-gene grouped validation but modest under source-holdout validation, indicating public-label source/study effects."
   },
-  "benchmark_interpretation": {
-    "frozen_pretrained_beats_grouped_kmer_on_both_primary_metrics": false,
-    "pretrained_models_beat_matched_kmer_baselines": false,
-    "safe_public_interpretation": "Sparse k-mer/CDR-local features were more robust than pretrained representation benchmarks in the matched/noisy public-label context."
+  "calibration_and_thresholds": {
+    "brier_score": 0.2637,
+    "high_confidence_threshold": 0.7,
+    "threshold_precision": 0.8266,
+    "threshold_recall": 0.3062,
+    "threshold_coverage": 0.3051,
+    "interpretation": "Threshold 0.7 is a high-confidence review cutoff for existing records, not a calibrated guarantee of future assay outcome."
+  },
+  "oas_background_retrieval": {
+    "broad_oas_roc_auc": 0.9921,
+    "broad_oas_pr_auc": 0.9897,
+    "matched_oas_roc_auc": 0.9911,
+    "matched_oas_pr_auc": 0.9893,
+    "interpretation": "OAS retrieval measures separability from unknown-target natural antibody background and is not binder-vs-non-binder prediction."
   },
   "prioritization": {
     "diversity_aware_existing_record_shortlist_size": 23,
     "claim_boundary": "Existing-record prioritization only; no therapeutic design."
   },
+  "packaging": {
+    "final_consistency_audit": "PASS",
+    "missing_expected_artifacts": 0,
+    "tests_passed": 8,
+    "reproduce_final_reports_script": "PASS",
+    "public_safe_artifacts": [
+      "docs/DATA_CARD.md",
+      "docs/MODEL_CARD.md",
+      "reports/final_artifact_map.md",
+      "reports/final_consistency_audit.md",
+      "reports/final_flagship_project_report.md"
+    ]
+  },
   "limitations": [
     "retrospective public labels",
     "heterogeneous assays and sources",
+    "source/study effects limit cross-source generalization",
+    "model probabilities are prioritization signals, not calibrated prospective neutralisation probabilities",
     "OAS is unknown-target background, not true negatives",
     "no prospective validation",
     "no therapeutic design, sequence generation, mutation, or optimization"

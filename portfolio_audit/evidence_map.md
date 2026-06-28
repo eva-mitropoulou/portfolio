@@ -27,16 +27,18 @@ Verified artifact classes:
 - Public CoV-AbDab-derived workflow reports and processed-data audit.
 - Strict labeled dataset and broader prepared-record dataset counts in `core_dataset_audit.json`.
 - Grouped validation and k-mer TF-IDF baseline metrics.
+- Source-holdout validation and source-robust model selection.
+- Calibration and threshold analysis.
 - Matched k-mer/CDR benchmark audit.
 - Antibody embedding and language-model benchmark registry.
 - CDR/region annotation reports.
 - OAS background retrieval reports, with explicit unknown-target-background semantics.
 - Diversity-aware existing-record shortlist summary.
-- Public-safe benchmark and prioritization figures.
+- Final data card, model card, artifact map, consistency audit, tests, benchmark figures, and prioritization figures.
 
 Supported public interpretation:
 
-Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization. In the matched validation context, sparse k-mer/CDR-local features were more robust than pretrained antibody language-model representations on noisy public labels.
+Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization. Whole-pair k-mer TF-IDF logistic regression remained the most defensible broad scorer: strong under V-gene grouped validation and modest under source-holdout validation, exposing source/study effects in public antibody neutralisation labels.
 
 Safety boundaries:
 
@@ -45,6 +47,7 @@ Safety boundaries:
 - No prospective validation claim.
 - No clinical utility claim.
 - OAS, where used, is an unknown-target background set, not true negatives.
+- Model scores are prioritization signals, not calibrated prospective neutralisation probabilities.
 
 ### EGFR QSAR / CADD Benchmark
 
