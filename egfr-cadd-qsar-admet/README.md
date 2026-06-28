@@ -1,5 +1,9 @@
 # EGFR QSAR / Model-Risk-Aware CADD Pipeline
 
+## Public Portfolio Claim Boundary
+
+This project is presented as a retrospective EGFR QSAR/CADD baseline. It demonstrates ChEMBL curation, RDKit descriptors/fingerprints, baseline modeling, and random-versus-scaffold validation. It is not a production-grade predictor, prospective validation study, clinical-utility claim, or binding-mechanism claim.
+
 ## Project Focus
 
 This project is a reproducible cheminformatics and CADD case study for prioritizing EGFR inhibitor-like small molecules from public ChEMBL bioactivity data. It combines activity curation, RDKit molecular representations, baseline QSAR modeling, scaffold-aware validation, applicability-domain analysis, and drug-likeness-aware candidate ranking.
