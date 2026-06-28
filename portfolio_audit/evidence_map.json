@@ -55,10 +55,10 @@
         "static HTML/CSS",
         "GitHub Pages-compatible docs"
       ],
-      "available_reports": "Medium before this branch: EGFR, polymer MD, flame-retardant, and periodic DFT summaries existed.",
-      "available_figures": "Medium before this branch: EGFR and materials figures existed; antibody public-safe figures were missing.",
-      "available_metrics": "Medium before this branch: EGFR metrics CSVs existed; no unified metrics summaries for all flagships.",
-      "available_notebooks": "Missing before this branch.",
+      "available_reports": "High: antibody, EGFR, polymer MD, reaction-yield ML, flame-retardant, and periodic DFT summaries are present.",
+      "available_figures": "High: antibody, EGFR, polymer MD, and reaction-yield public-safe figures are present.",
+      "available_metrics": "High: unified metrics summaries are present for all four flagship projects.",
+      "available_notebooks": "Notebook walkthroughs are present for all four flagship projects.",
       "reproducibility_status": "Partial before this branch; improved by small Makefile commands, environment files, reports, metrics summaries, and notebooks.",
       "public_ready": true,
       "claims_supported": "Suitable as the public presentation layer if claims remain tied to evidence from curated files and private evidence map.",
@@ -75,7 +75,10 @@
         "egfr-cadd-qsar-admet",
         "polymer-md",
         "flame-retardants",
-        "periodic-dft"
+        "periodic-dft",
+        "reaction-yield-ml",
+        "docs/projects/reaction-yield-ml.html",
+        "projects/reaction-yield-ml.md"
       ]
     },
     {
@@ -237,7 +240,7 @@
         "Standalone property prediction",
         "Experimental proof from simulation alone",
         "Force-field-independent conclusion",
-        "Final production-ready materials screening platform"
+        "Final deployed-system materials screening platform"
       ],
       "key_evidence_paths": [
         "MD/GROMACS/pp_melt_martini/aa_interface_targets",
@@ -246,6 +249,39 @@
         "polymer-md",
         "flame-retardants",
         "periodic-dft"
+      ]
+    },
+    {
+      "title": "Reaction Yield Prediction and Synthesis-Aware ML",
+      "source_repo": "Computational-Chemistry and portfolio",
+      "public_portfolio_role": "flagship",
+      "evidence_status": "supported with retrospective public-data boundaries",
+      "supported_claims": [
+        "Public Buchwald-Hartwig HTE reaction-yield benchmark with documented source, citation, and access notes.",
+        "Aggregate-only data audit, reaction cleaning, component one-hot featurization, target-leakage checks, random and out-of-component validation, model benchmarking, uncertainty calibration, active-learning simulation, existing-record ranking, and interpretability reports are evidenced by committed reports and metrics.",
+        "Final selected model is random_forest, selected on the grouped high-cardinality component split rather than only random split performance.",
+        "Primary split metrics are MAE 10.7537, RMSE 14.2371, R2 0.7262, Spearman 0.8597, and top-10% enrichment 7.3333.",
+        "Primary split empirical 90% interval coverage is 0.7978.",
+        "Final quality gate is PASS and pytest reports 8 passed."
+      ],
+      "must_not_claim": [
+        "Wet-lab protocol generation",
+        "Operational synthesis guidance",
+        "Generated chemistry",
+        "Guaranteed experimental success",
+        "Lab-ready reaction conditions",
+        "Production reaction optimization"
+      ],
+      "key_evidence_paths": [
+        "reaction-yield-ml/data/dataset_manifest.json",
+        "reaction-yield-ml/reports/metrics/summary.json",
+        "reaction-yield-ml/reports/metrics/model_benchmark_metrics.json",
+        "reaction-yield-ml/reports/metrics/uncertainty_calibration_metrics.json",
+        "reaction-yield-ml/reports/metrics/active_learning_metrics.json",
+        "reaction-yield-ml/reports/final_project_report.md",
+        "reaction-yield-ml/reports/final_quality_gate_report.md",
+        "docs/projects/reaction-yield-ml.html",
+        "notebooks/04_reaction_yield_ml_walkthrough.ipynb"
       ]
     }
   ]

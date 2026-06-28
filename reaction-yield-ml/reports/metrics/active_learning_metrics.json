@@ -1,0 +1,361 @@
+{
+  "batch_size": 79,
+  "initial_seed_size": 79,
+  "limitations": [
+    "Retrospective active-learning simulation over existing public records only.",
+    "The simulation does not instruct anyone to run reactions.",
+    "Candidate component labels are known as public records; target yields are revealed only after simulated acquisition."
+  ],
+  "quality_gates": {
+    "limitations_stated": true,
+    "multiple_seeds_used": true,
+    "no_future_target_leakage": true,
+    "random_baseline_included": true,
+    "selected_records_existing_only": true
+  },
+  "random_baseline_final_ci": {
+    "approx_95ci_half_width": 1.7106,
+    "mean_best_yield": 97.9582,
+    "seed_count": 5,
+    "std_best_yield": 1.9516
+  },
+  "rounds": 5,
+  "row_count": 3955,
+  "seed_count": 5,
+  "source_mode": "public_benchmark",
+  "strategies": [
+    "random_selection",
+    "highest_predicted_yield",
+    "uncertainty_sampling",
+    "diversity_aware_selection",
+    "exploitation_plus_uncertainty",
+    "component_diverse_high_score"
+  ],
+  "summary_records": [
+    {
+      "budget": 79,
+      "mean_average_yield": 35.68256,
+      "mean_best_yield": 94.59400000000001,
+      "mean_diversity_coverage": 0.99092,
+      "mean_top_recovery": 0.02478,
+      "std_best_yield": 2.7590611772847695,
+      "strategy": "component_diverse_high_score"
+    },
+    {
+      "budget": 158,
+      "mean_average_yield": 50.05606,
+      "mean_best_yield": 97.87446,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.11614,
+      "std_best_yield": 3.1787598411959292,
+      "strategy": "component_diverse_high_score"
+    },
+    {
+      "budget": 237,
+      "mean_average_yield": 60.20242,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.2778,
+      "std_best_yield": 0.0,
+      "strategy": "component_diverse_high_score"
+    },
+    {
+      "budget": 316,
+      "mean_average_yield": 65.438,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.43987999999999994,
+      "std_best_yield": 0.0,
+      "strategy": "component_diverse_high_score"
+    },
+    {
+      "budget": 395,
+      "mean_average_yield": 67.4426,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.57678,
+      "std_best_yield": 0.0,
+      "strategy": "component_diverse_high_score"
+    },
+    {
+      "budget": 474,
+      "mean_average_yield": 68.19685999999999,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.67778,
+      "std_best_yield": 0.0,
+      "strategy": "component_diverse_high_score"
+    },
+    {
+      "budget": 79,
+      "mean_average_yield": 35.1053,
+      "mean_best_yield": 89.89222,
+      "mean_diversity_coverage": 0.98636,
+      "mean_top_recovery": 0.019700000000000002,
+      "std_best_yield": 6.944824705995107,
+      "strategy": "diversity_aware_selection"
+    },
+    {
+      "budget": 158,
+      "mean_average_yield": 36.37006,
+      "mean_best_yield": 92.50464,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.04294,
+      "std_best_yield": 4.463744475549643,
+      "strategy": "diversity_aware_selection"
+    },
+    {
+      "budget": 237,
+      "mean_average_yield": 35.75002,
+      "mean_best_yield": 92.54314000000001,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.05352,
+      "std_best_yield": 4.396453103696198,
+      "strategy": "diversity_aware_selection"
+    },
+    {
+      "budget": 316,
+      "mean_average_yield": 35.820640000000004,
+      "mean_best_yield": 92.90728,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.07474,
+      "std_best_yield": 3.7977332827622265,
+      "strategy": "diversity_aware_selection"
+    },
+    {
+      "budget": 395,
+      "mean_average_yield": 36.7679,
+      "mean_best_yield": 92.90728,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.09698,
+      "std_best_yield": 3.7977332827622265,
+      "strategy": "diversity_aware_selection"
+    },
+    {
+      "budget": 474,
+      "mean_average_yield": 37.048199999999994,
+      "mean_best_yield": 92.90728,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.11262000000000001,
+      "std_best_yield": 3.7977332827622265,
+      "strategy": "diversity_aware_selection"
+    },
+    {
+      "budget": 79,
+      "mean_average_yield": 32.6579,
+      "mean_best_yield": 93.78038000000001,
+      "mean_diversity_coverage": 0.98636,
+      "mean_top_recovery": 0.025259999999999998,
+      "std_best_yield": 5.261744268491198,
+      "strategy": "exploitation_plus_uncertainty"
+    },
+    {
+      "budget": 158,
+      "mean_average_yield": 50.85080000000001,
+      "mean_best_yield": 98.51971999999999,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.13788,
+      "std_best_yield": 2.801644814568755,
+      "strategy": "exploitation_plus_uncertainty"
+    },
+    {
+      "budget": 237,
+      "mean_average_yield": 56.450919999999996,
+      "mean_best_yield": 99.76984,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.24242,
+      "std_best_yield": 0.5146534057013531,
+      "strategy": "exploitation_plus_uncertainty"
+    },
+    {
+      "budget": 316,
+      "mean_average_yield": 59.2048,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.36162,
+      "std_best_yield": 0.0,
+      "strategy": "exploitation_plus_uncertainty"
+    },
+    {
+      "budget": 395,
+      "mean_average_yield": 58.3956,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.43838,
+      "std_best_yield": 0.0,
+      "strategy": "exploitation_plus_uncertainty"
+    },
+    {
+      "budget": 474,
+      "mean_average_yield": 60.74924000000001,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.56314,
+      "std_best_yield": 0.0,
+      "strategy": "exploitation_plus_uncertainty"
+    },
+    {
+      "budget": 79,
+      "mean_average_yield": 34.591860000000004,
+      "mean_best_yield": 91.66672,
+      "mean_diversity_coverage": 0.98184,
+      "mean_top_recovery": 0.019700000000000002,
+      "std_best_yield": 5.067723250829703,
+      "strategy": "highest_predicted_yield"
+    },
+    {
+      "budget": 158,
+      "mean_average_yield": 54.618359999999996,
+      "mean_best_yield": 98.17370000000001,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.14596,
+      "std_best_yield": 3.418931305247293,
+      "strategy": "highest_predicted_yield"
+    },
+    {
+      "budget": 237,
+      "mean_average_yield": 60.94936,
+      "mean_best_yield": 99.92382,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.2808,
+      "std_best_yield": 0.1703436585259332,
+      "strategy": "highest_predicted_yield"
+    },
+    {
+      "budget": 316,
+      "mean_average_yield": 64.85362,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.42222,
+      "std_best_yield": 0.0,
+      "strategy": "highest_predicted_yield"
+    },
+    {
+      "budget": 395,
+      "mean_average_yield": 67.49682,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.56464,
+      "std_best_yield": 0.0,
+      "strategy": "highest_predicted_yield"
+    },
+    {
+      "budget": 474,
+      "mean_average_yield": 67.7553,
+      "mean_best_yield": 100.0,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.65656,
+      "std_best_yield": 0.0,
+      "strategy": "highest_predicted_yield"
+    },
+    {
+      "budget": 79,
+      "mean_average_yield": 33.499739999999996,
+      "mean_best_yield": 93.80872,
+      "mean_diversity_coverage": 0.97726,
+      "mean_top_recovery": 0.02324,
+      "std_best_yield": 3.782516338629618,
+      "strategy": "random_selection"
+    },
+    {
+      "budget": 158,
+      "mean_average_yield": 32.57254,
+      "mean_best_yield": 94.22874,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.037880000000000004,
+      "std_best_yield": 3.7908658460831886,
+      "strategy": "random_selection"
+    },
+    {
+      "budget": 237,
+      "mean_average_yield": 33.21054,
+      "mean_best_yield": 94.29476,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.05606,
+      "std_best_yield": 3.8007167768724908,
+      "strategy": "random_selection"
+    },
+    {
+      "budget": 316,
+      "mean_average_yield": 33.530240000000006,
+      "mean_best_yield": 96.23954,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.07877999999999999,
+      "std_best_yield": 3.9331988041541948,
+      "strategy": "random_selection"
+    },
+    {
+      "budget": 395,
+      "mean_average_yield": 33.35774,
+      "mean_best_yield": 97.32660000000001,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.10154,
+      "std_best_yield": 2.2986897387424845,
+      "strategy": "random_selection"
+    },
+    {
+      "budget": 474,
+      "mean_average_yield": 33.65098,
+      "mean_best_yield": 97.95824,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.11766000000000001,
+      "std_best_yield": 1.9515608632579216,
+      "strategy": "random_selection"
+    },
+    {
+      "budget": 79,
+      "mean_average_yield": 32.58708,
+      "mean_best_yield": 94.47152,
+      "mean_diversity_coverage": 0.9954599999999999,
+      "mean_top_recovery": 0.020220000000000002,
+      "std_best_yield": 3.841391174691793,
+      "strategy": "uncertainty_sampling"
+    },
+    {
+      "budget": 158,
+      "mean_average_yield": 26.274400000000004,
+      "mean_best_yield": 94.47152,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.024759999999999997,
+      "std_best_yield": 3.841391174691793,
+      "strategy": "uncertainty_sampling"
+    },
+    {
+      "budget": 237,
+      "mean_average_yield": 32.34084,
+      "mean_best_yield": 99.02952,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.07778,
+      "std_best_yield": 0.8032079413203055,
+      "strategy": "uncertainty_sampling"
+    },
+    {
+      "budget": 316,
+      "mean_average_yield": 34.13172,
+      "mean_best_yield": 99.02952,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.12323999999999999,
+      "std_best_yield": 0.8032079413203055,
+      "strategy": "uncertainty_sampling"
+    },
+    {
+      "budget": 395,
+      "mean_average_yield": 35.01994,
+      "mean_best_yield": 99.02952,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.16162,
+      "std_best_yield": 0.8032079413203055,
+      "strategy": "uncertainty_sampling"
+    },
+    {
+      "budget": 474,
+      "mean_average_yield": 35.69012,
+      "mean_best_yield": 99.30745999999999,
+      "mean_diversity_coverage": 1.0,
+      "mean_top_recovery": 0.19948000000000002,
+      "std_best_yield": 0.4836702626790315,
+      "strategy": "uncertainty_sampling"
+    }
+  ],
+  "top_yield_threshold_percentile": 0.9
+}

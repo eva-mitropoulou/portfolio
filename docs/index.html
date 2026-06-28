@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Eva Mitropoulou | Computational Chemistry Portfolio</title>
-    <meta name="description" content="Eva Mitropoulou portfolio: computational chemistry, molecular simulation, cheminformatics, and ML validation.">
+    <meta name="description" content="Eva Mitropoulou portfolio: computational chemistry, molecular simulation, reaction informatics, cheminformatics, and ML validation.">
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
@@ -29,8 +29,8 @@
         <div>
           <p class="eyebrow">Computational chemistry · molecular simulation · cheminformatics · ML validation</p>
           <h1>Eva Mitropoulou</h1>
-          <p class="lead">Computational chemist building reproducible molecular simulation and machine-learning workflows for materials and drug-discovery problems.</p>
-          <p class="lead">Transitioning into cheminformatics and AI-assisted drug discovery, with hands-on evidence in DFT, molecular dynamics, RDKit workflows, antibody sequence ML, and leakage-aware QSAR validation.</p>
+          <p class="lead">Computational chemist building reproducible molecular simulation, reaction-informatics, and machine-learning workflows for materials and drug-discovery problems.</p>
+          <p class="lead">Transitioning into cheminformatics and AI-assisted drug discovery, with hands-on evidence in DFT, molecular dynamics, RDKit workflows, antibody sequence ML, reaction-yield modeling, and leakage-aware validation.</p>
           <div class="cta-row">
             <a class="button" href="projects.html">View Projects</a>
             <a class="button secondary" href="cv.html">CV Summary</a>
@@ -63,19 +63,19 @@
           </div>
           <div class="matrix-item">
             <strong>Cheminformatics</strong>
-            <span>RDKit, ChEMBL, Morgan fingerprints, descriptors, scaffold splits.</span>
+              <span>RDKit, ChEMBL, public HTE records, Morgan fingerprints, descriptors, scaffold and component splits.</span>
           </div>
           <div class="matrix-item">
             <strong>ML Validation</strong>
-            <span>Grouped validation, leakage-aware splits, ROC-AUC, PR-AUC, RMSE, R2.</span>
+              <span>Grouped validation, leakage-aware splits, uncertainty diagnostics, ROC-AUC, PR-AUC, RMSE, R2.</span>
           </div>
         </div>
       </section>
 
       <section class="section" aria-labelledby="flagships">
         <h2 id="flagships">Flagship Projects</h2>
-        <p class="section-intro">Three case studies chosen for role relevance and evidence quality. Each page includes methods, validation, limitations, reproducibility notes, and artifact links.</p>
-        <div class="grid three">
+        <p class="section-intro">Four case studies chosen for role relevance and evidence quality. Each page includes methods, validation, limitations, reproducibility notes, and artifact links.</p>
+        <div class="grid four">
           <article class="card">
             <img class="figure-thumb" src="assets/figures/antibody_pipeline.svg" alt="Antibody sequence ML workflow diagram">
             <div class="card-body">
@@ -150,6 +150,32 @@
               <div class="link-row">
                 <a href="projects/polymer-filler-md.html">Project page</a>
                 <a href="assets/figures/polymer_contact_energy_summary.svg">Figure</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="figure-thumb" src="assets/figures/reaction_yield_model_comparison.png" alt="Reaction-yield model comparison by validation split">
+            <div class="card-body">
+              <h3>Reaction Yield Prediction And Synthesis-Aware ML</h3>
+              <p>Retrospective public-data HTE benchmark with reaction cleaning, component features, out-of-component validation, uncertainty calibration, active-learning simulation, and existing-record ranking.</p>
+              <dl class="meta-list">
+                <div>
+                  <dt>Methods</dt>
+                  <dd>Buchwald-Hartwig HTE data, categorical component features, grouped validation, tree and linear baselines.</dd>
+                </div>
+                <div>
+                  <dt>Key result</dt>
+                  <dd>Selected random forest on grouped validation: MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860.</dd>
+                </div>
+                <div>
+                  <dt>Limitation</dt>
+                  <dd>Retrospective public-data benchmark only; existing-record ranking, not operational synthesis guidance.</dd>
+                </div>
+              </dl>
+              <div class="link-row">
+                <a href="projects/reaction-yield-ml.html">Project page</a>
+                <a href="assets/figures/reaction_yield_active_learning_budget_curve.png">Figure</a>
               </div>
             </div>
           </article>

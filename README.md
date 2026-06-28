@@ -1,6 +1,6 @@
 # Eva Mitropoulou
 
-Computational chemist building reproducible molecular simulation and machine-learning workflows for materials and drug-discovery problems.
+Computational chemist building reproducible molecular simulation, reaction-informatics, and machine-learning workflows for materials and drug-discovery problems.
 
 This public portfolio is organized for computational chemistry, molecular simulation, cheminformatics, QSAR/CADD, and ML validation roles. Claims are tied to committed reports, metrics, notebooks, figures, scripts, or audit files.
 
@@ -33,12 +33,21 @@ GROMACS workflow evidence for polypropylene/brucite interface analysis with coat
 - Interpretation: surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in available aggregate MD outputs.
 - Boundary: force-field-dependent computational model; not standalone property prediction.
 
+### 4. Reaction Yield Prediction And Synthesis-Aware ML
+
+Retrospective public-data HTE reaction-yield workflow for reaction cleaning, component featurization, leakage-aware validation, uncertainty calibration, active-learning simulation, and existing-record ranking.
+
+- Methods: Buchwald-Hartwig public HTE benchmark, component one-hot features, random and out-of-component validation, mean/linear/tree baselines, uncertainty/error calibration, budgeted existing-record selection simulation.
+- Evidence: `reaction-yield-ml/reports/metrics/summary.json`, `reaction-yield-ml/reports/final_project_report.md`, `projects/reaction-yield-ml.md`, `notebooks/04_reaction_yield_ml_walkthrough.ipynb`.
+- Key result: selected random forest on the grouped high-cardinality component split with MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, and top-10% enrichment 7.333.
+- Boundary: retrospective public-data benchmark only; no wet-lab protocol, no new chemistry generation, and existing-record ranking only.
+
 ## Technical Stack
 
 - Molecular simulation: GROMACS, force fields, MD analysis, polymer/filler interfaces.
 - Quantum chemistry: ORCA, CREST, DFT, conformers, Quantum ESPRESSO utilities.
-- Cheminformatics: RDKit, ChEMBL, QSAR, Morgan fingerprints, descriptors, scaffold splits.
-- ML validation: grouped validation, scaffold split, ROC-AUC, PR-AUC, RMSE, R2.
+- Cheminformatics and reaction informatics: RDKit, ChEMBL, QSAR, public HTE records, Morgan fingerprints, descriptors, scaffold and out-of-component splits.
+- ML validation: grouped validation, scaffold split, out-of-component validation, ROC-AUC, PR-AUC, RMSE, R2, uncertainty/error calibration.
 - Antibody/protein informatics: CoV-AbDab, OAS, CDR annotation, k-mer features, antibody representation benchmarking.
 - Scientific Python: pandas, NumPy, scikit-learn, matplotlib, notebooks, metrics summaries.
 - Reproducibility: Git, Linux, SLURM, environments, Makefiles, scripts, reports.

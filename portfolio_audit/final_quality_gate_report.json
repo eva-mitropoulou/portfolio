@@ -31,13 +31,13 @@
       "id": 5,
       "name": "Each flagship project has required assets",
       "status": "pass",
-      "evidence": "Each flagship has a project page, README, figure, metrics summary, limitations section, and reproducibility section."
+      "evidence": "Each flagship has a project page, README, figure, metrics summary, limitations section, and reproducibility section, including reaction-yield ML."
     },
     {
       "id": 6,
       "name": "Homepage can be understood in 30 seconds",
       "status": "pass",
-      "evidence": "Homepage includes identity, role focus, skill matrix, three flagship cards, selected tools, and contact links without overloading secondary projects."
+      "evidence": "Homepage includes identity, role focus, skill matrix, four flagship cards, selected tools, and contact links without overloading secondary projects."
     },
     {
       "id": 7,
@@ -94,6 +94,16 @@
       "notebook": "notebooks/03_polymer_filler_md_analysis.ipynb",
       "makefile_target": "make reproduce-small",
       "status": "pass"
+    },
+    "reaction-yield-ml": {
+      "page": "projects/reaction-yield-ml.md",
+      "site_page": "docs/projects/reaction-yield-ml.html",
+      "readme": "reaction-yield-ml/README.md",
+      "figure": "docs/assets/figures/reaction_yield_model_comparison.png",
+      "metrics": "reaction-yield-ml/reports/metrics/summary.json",
+      "notebook": "notebooks/04_reaction_yield_ml_walkthrough.ipynb",
+      "makefile_target": "make reproduce-small",
+      "status": "pass"
     }
   },
   "commands_run": [
@@ -104,19 +114,24 @@
     "local HTML href/src internal link and asset check",
     "long amino-acid-like sequence pattern scan",
     "unsafe-phrase context scan",
-    "changed-file raw/large artifact extension scan"
+    "changed-file raw/large artifact extension scan",
+    "python JSON validity check for reaction-yield notebook and metrics",
+    "local HTML href/src internal link and asset check after adding reaction-yield pages"
   ],
   "unsupported_claims_removed_or_marked": [
     "Therapeutic antibody design claims are explicitly excluded.",
     "Production-grade EGFR predictor claims are explicitly excluded.",
     "Clinical utility claims are explicitly excluded.",
     "Standalone materials property-prediction claims are explicitly excluded.",
-    "OAS-as-true-negative framing is explicitly excluded."
+    "OAS-as-true-negative framing is explicitly excluded.",
+    "Operational reaction-synthesis guidance is explicitly excluded.",
+    "Generated-chemistry and guaranteed-success claims are explicitly excluded."
   ],
   "recommended_manual_review_items": [
     "Confirm preferred public contact email before final publishing.",
     "Add verified LinkedIn URL if Eva wants it public.",
     "Review phd-notes assets before using unpublished thesis/manuscript content publicly.",
-    "Run a browser visual review of the GitHub Pages URL after Pages finishes deployment."
+    "Run a browser visual review of the GitHub Pages URL after Pages finishes deployment.",
+    "Review raw-source license terms before publicly redistributing any raw reaction-yield workbook or full row-level table."
   ]
 }

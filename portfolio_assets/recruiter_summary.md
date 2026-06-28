@@ -1,6 +1,6 @@
 # Recruiter Summary
 
-Eva Mitropoulou is a computational chemist focused on reproducible molecular simulation, cheminformatics, and ML validation workflows for materials and drug-discovery problems.
+Eva Mitropoulou is a computational chemist focused on reproducible molecular simulation, reaction informatics, cheminformatics, and ML validation workflows for materials and drug-discovery problems.
 
 ## Best-Fit Roles
 
@@ -16,13 +16,15 @@ Eva Mitropoulou is a computational chemist focused on reproducible molecular sim
 1. Antibody sequence ML: public-data retrospective benchmark with strict/broader dataset handling, grouped and source-holdout validation, selected whole-pair k-mer scorer, calibration/threshold analysis, OAS background-retrieval framing, and existing-record prioritization.
 2. EGFR QSAR / CADD: ChEMBL/RDKit baseline with random split and Bemis-Murcko scaffold split validation; scaffold split performance drop is documented.
 3. Polymer-filler MD: GROMACS aggregate contact and interaction-energy analysis for coated versus uncoated polypropylene/brucite interfaces.
+4. Reaction yield prediction: public HTE benchmark with reaction cleaning, component featurization, out-of-component validation, uncertainty calibration, active-learning simulation, and existing-record ranking.
 
 ## Technical Stack
 
-GROMACS, ORCA, CREST, Quantum ESPRESSO, RDKit, ChEMBL, scikit-learn, pandas, NumPy, matplotlib, Linux, Git, Makefiles, SLURM-oriented workflows.
+GROMACS, ORCA, CREST, Quantum ESPRESSO, RDKit, ChEMBL, public HTE reaction data, scikit-learn, pandas, NumPy, matplotlib, Linux, Git, Makefiles, SLURM-oriented workflows.
 
 ## Claim Boundaries
 
 - Antibody work is benchmarking and existing-record prioritization, not therapeutic design.
 - EGFR work is retrospective baseline QSAR, not production prediction.
 - MD/materials work is force-field-dependent computational interpretation, not standalone property prediction.
+- Reaction-yield work is a retrospective public-data benchmark and existing-record ranking workflow, not operational synthesis guidance.

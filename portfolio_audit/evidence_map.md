@@ -4,7 +4,7 @@ Audit date: 2026-06-28
 Working branch: `master`  
 GitHub owner resolved through API: `eva-mitropoulou`
 
-This audit treats committed reports, metrics, notebooks, scripts, figures, and cached processed outputs as evidence. Raw biological sequences, raw CSV rows, DOI/source rows, private data, and heavyweight simulation artifacts are not reproduced here.
+This audit treats committed reports, metrics, notebooks, scripts, figures, and cached processed outputs as evidence. Raw biological sequences, raw CSV rows, DOI/source rows, private data, wet-lab procedural instructions, and heavyweight simulation artifacts are not reproduced here.
 
 ## Repository-Level Evidence
 
@@ -98,9 +98,48 @@ Safety boundaries:
 - Not standalone property prediction.
 - Simulation supports interpretation; it does not replace experimental validation.
 
+### Reaction Yield Prediction And Synthesis-Aware ML
+
+Evidence status: supported with retrospective public-data boundaries.
+
+Verified artifact classes:
+
+- Public Buchwald-Hartwig HTE dataset manifest and data card.
+- Aggregate-only data audit and reaction-cleaning reports.
+- Component one-hot feature metadata with target-leakage checks.
+- Random and out-of-component validation split metrics.
+- Mean baseline, regularized linear, random forest, and gradient boosting benchmark metrics.
+- Uncertainty calibration report with empirical coverage and uncertainty/error diagnostics.
+- Retrospective active-learning simulation over existing records with random baseline and multiple seeds.
+- Existing-record ranking report with confidence and domain-warning fields.
+- Final project report, model card, data card, tests, figures, and recruiter notebook.
+
+Supported public interpretation:
+
+Built a retrospective public-data HTE reaction-yield modeling workflow with reaction cleaning, component featurization, random and out-of-component validation, uncertainty-aware prioritization, active-learning simulation, and existing-record ranking. The final model was selected on a grouped high-cardinality component split, not only random split performance.
+
+Supported metrics:
+
+- Clean public records: 3,955.
+- Categorical feature count: 44.
+- Selected model: random forest.
+- Primary split: grouped high-cardinality component.
+- Primary split metrics: MAE 10.754, RMSE 14.237, R2 0.726, Spearman 0.860, top-10% enrichment 7.333.
+- Primary split empirical 90% interval coverage: 0.798.
+
+Safety boundaries:
+
+- Retrospective public-data benchmark only.
+- Existing-record ranking only.
+- No wet-lab protocol or operational synthesis guidance.
+- No generated chemistry claim.
+- No guarantee of experimental success.
+- Component structures are unavailable in the selected workbook, so structure-based featurization is limited.
+
 ## Missing Or Review-Required Assets
 
 - Confirm which contact/energy figures from the MD work should be public versus regenerated from sanitized summary tables.
+- Review raw-source redistribution terms before committing any raw reaction-yield workbook or full row-level public tables.
 - Review `phd-notes` before using any unpublished thesis/manuscript content publicly.
 - Decide whether the public `portfolio` repo should include any code copied from private repos or only curated summaries.
 - Confirm the preferred contact email before publishing the Contact page.
