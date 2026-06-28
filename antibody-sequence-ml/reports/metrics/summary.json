@@ -1,0 +1,33 @@
+{
+  "project": "Antibody sequence ML and existing-record prioritization",
+  "status": "public-safe cached summary",
+  "source_repository": "Computational-Chemistry/antibody_project/antibody-prioritization",
+  "data_scope": {
+    "strict_labeled_records": 5573,
+    "broader_prepared_records": 11748,
+    "paired_cdr_annotated_candidates": 5092
+  },
+  "validation": {
+    "primary_strategy": "grouped validation where group features are meaningful",
+    "grouped_kmer_pair_text_pr_auc": 0.824,
+    "grouped_kmer_pair_text_roc_auc": 0.781,
+    "matched_region_local_delta_pr_auc_vs_whole_pair": 0.044,
+    "matched_region_local_delta_roc_auc_vs_whole_pair": 0.042
+  },
+  "benchmark_interpretation": {
+    "frozen_pretrained_beats_grouped_kmer_on_both_primary_metrics": false,
+    "pretrained_models_beat_matched_kmer_baselines": false,
+    "safe_public_interpretation": "Sparse k-mer/CDR-local features were more robust than pretrained representation benchmarks in the matched/noisy public-label context."
+  },
+  "prioritization": {
+    "diversity_aware_existing_record_shortlist_size": 23,
+    "claim_boundary": "Existing-record prioritization only; no therapeutic design."
+  },
+  "limitations": [
+    "retrospective public labels",
+    "heterogeneous assays and sources",
+    "OAS is unknown-target background, not true negatives",
+    "no prospective validation",
+    "no therapeutic design, sequence generation, mutation, or optimization"
+  ]
+}

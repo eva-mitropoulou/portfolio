@@ -1,0 +1,123 @@
+{
+  "audit_date": "2026-06-28",
+  "branch": "portfolio-professionalization",
+  "overall_status": "pass",
+  "checks": [
+    {
+      "id": 1,
+      "name": "No unsupported claims",
+      "status": "pass",
+      "evidence": "Unsafe-phrase scan passed after allowing explicit negative contexts such as must_not_claim, unsupported, excluded, and no/not claim boundaries."
+    },
+    {
+      "id": 2,
+      "name": "No raw private data committed",
+      "status": "pass",
+      "evidence": "Changed-file scan found no added raw-data or large-artifact extensions among branch changes."
+    },
+    {
+      "id": 3,
+      "name": "No raw sequence strings shown on public pages",
+      "status": "pass",
+      "evidence": "Long amino-acid-like sequence pattern scan passed across docs, projects, notebooks, reports, and public summaries."
+    },
+    {
+      "id": 4,
+      "name": "All project links work",
+      "status": "pass",
+      "evidence": "Local HTML internal links and assets passed. After branch push and Pages build, homepage, flagship project pages, and key figure assets returned HTTP 200."
+    },
+    {
+      "id": 5,
+      "name": "Each flagship project has required assets",
+      "status": "pass",
+      "evidence": "Each flagship has a project page, README, figure, metrics summary, limitations section, and reproducibility section."
+    },
+    {
+      "id": 6,
+      "name": "Homepage can be understood in 30 seconds",
+      "status": "pass",
+      "evidence": "Homepage includes identity, role focus, skill matrix, three flagship cards, selected tools, and contact links without overloading secondary projects."
+    },
+    {
+      "id": 7,
+      "name": "Recruiter can identify domain, tools, and outputs in 60 seconds",
+      "status": "pass",
+      "evidence": "Homepage, skills page, CV page, README, and recruiter summary expose domain, methods, tools, outputs, and limitations."
+    },
+    {
+      "id": 8,
+      "name": "No state-of-the-art claim unless supported",
+      "status": "pass",
+      "evidence": "No state-of-the-art claim is used."
+    },
+    {
+      "id": 9,
+      "name": "No therapeutic-design claims",
+      "status": "pass",
+      "evidence": "Therapeutic design appears only as a prohibited or negated claim boundary."
+    },
+    {
+      "id": 10,
+      "name": "No production-grade claims for baseline ML projects",
+      "status": "pass",
+      "evidence": "Production-grade appears only as a negated/boundary phrase for EGFR baseline QSAR."
+    }
+  ],
+  "flagship_asset_status": {
+    "antibody-sequence-ml": {
+      "page": "projects/antibody-sequence-ml.md",
+      "site_page": "docs/projects/antibody-sequence-ml.html",
+      "readme": "antibody-sequence-ml/README.md",
+      "figure": "antibody-sequence-ml/figures/antibody_pipeline.svg",
+      "metrics": "antibody-sequence-ml/reports/metrics/summary.json",
+      "notebook": "notebooks/01_antibody_sequence_ml_workflow.ipynb",
+      "makefile_target": "make reproduce-small",
+      "status": "pass"
+    },
+    "egfr-qsar-cadd": {
+      "page": "projects/egfr-qsar-cadd.md",
+      "site_page": "docs/projects/egfr-qsar-cadd.html",
+      "readme": "egfr-cadd-qsar-admet/README.md",
+      "figure": "docs/assets/figures/egfr_random_vs_scaffold.png",
+      "metrics": "egfr-cadd-qsar-admet/reports/metrics/summary.json",
+      "notebook": "notebooks/02_egfr_qsar_cadd_benchmark.ipynb",
+      "makefile_target": "make reproduce-small",
+      "status": "pass"
+    },
+    "polymer-filler-md": {
+      "page": "projects/polymer-filler-md.md",
+      "site_page": "docs/projects/polymer-filler-md.html",
+      "readme": "polymer-md/README.md",
+      "figure": "polymer-md/figures/polymer_contact_energy_summary.svg",
+      "metrics": "polymer-md/reports/metrics/summary.json",
+      "notebook": "notebooks/03_polymer_filler_md_analysis.ipynb",
+      "makefile_target": "make reproduce-small",
+      "status": "pass"
+    }
+  },
+  "commands_run": [
+    "jq empty portfolio_audit/evidence_map.json antibody-sequence-ml/reports/metrics/summary.json egfr-cadd-qsar-admet/reports/metrics/summary.json polymer-md/reports/metrics/summary.json notebooks/*.ipynb",
+    "make reproduce-small / make figures / make report for antibody-sequence-ml",
+    "make reproduce-small / make figures / make report for egfr-cadd-qsar-admet",
+    "make reproduce-small / make figures / make report for polymer-md",
+    "local HTML href/src internal link and asset check",
+    "long amino-acid-like sequence pattern scan",
+    "unsafe-phrase context scan",
+    "changed-file raw/large artifact extension scan"
+  ],
+  "unsupported_claims_removed_or_marked": [
+    "Therapeutic antibody design claims are explicitly excluded.",
+    "Production-grade EGFR predictor claims are explicitly excluded.",
+    "Clinical utility claims are explicitly excluded.",
+    "Standalone materials property-prediction claims are explicitly excluded.",
+    "OAS-as-true-negative framing is explicitly excluded."
+  ],
+  "recommended_manual_review_items": [
+    "Confirm preferred public contact email before final publishing.",
+    "Add verified LinkedIn URL if Eva wants it public.",
+    "Review phd-notes assets before using unpublished thesis/manuscript content publicly.",
+    "After merge, update GitHub links from portfolio-professionalization to the final deployed branch if desired.",
+    "Run a browser visual review of the GitHub Pages URL after Pages finishes deployment."
+  ]
+}

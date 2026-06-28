@@ -1,5 +1,11 @@
 # Polymer Molecular Dynamics Case Study
 
+## Public Portfolio Flagship Layer
+
+This project is now used as the public-facing entry point for polymer-filler molecular simulation evidence. The flagship framing focuses on polypropylene/brucite interface modeling, coated versus uncoated aggregate contact and interaction-energy summaries, force-field-aware limitations, and reproducible cached artifacts under `reports/` and `figures/`.
+
+The public interpretation is limited to computational evidence: surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in available aggregate MD outputs. It is not a standalone property-prediction claim.
+
 ## Project Focus
 
 This case study showcases an end-to-end molecular dynamics workflow for an isotactic polypropylene melt using GROMACS and the L-OPLS force field. The project is useful as a portfolio piece because it demonstrates practical simulation staging, reproducibility, and interpretation of thermodynamic outputs in a polymer context.

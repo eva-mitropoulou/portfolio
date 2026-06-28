@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antibody Sequence ML | Eva Mitropoulou</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../index.html"><strong>Eva Mitropoulou</strong><span>Computational chemistry portfolio</span></a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../projects.html" aria-current="page">Projects</a>
+          <a href="../skills.html">Skills</a>
+          <a href="../cv.html">CV</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main class="project-detail">
+      <p class="eyebrow">Flagship Project</p>
+      <h1>Antibody Sequence ML And Existing-Record Prioritization</h1>
+      <p class="lead">Public-data antibody sequence workflow for retrospective benchmarking and existing-record prioritization. This is benchmark and triage work, not therapeutic antibody design.</p>
+
+      <h2>1. Overview</h2>
+      <p>Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization with careful claim boundaries around labels, validation, and OAS background semantics.</p>
+
+      <h2>2. Scientific / Technical Problem</h2>
+      <p>Public antibody datasets mix assay labels, source records, target annotations, and sequence completeness. The workflow tests whether sequence features and antibody-specific representations can be benchmarked reproducibly without overstating prospective biological utility.</p>
+
+      <h2>3. Dataset Or System</h2>
+      <ul>
+        <li>CoV-AbDab-derived public-data workflow.</li>
+        <li>Strict labeled dataset: 5,573 records.</li>
+        <li>Broader prepared-record set: 11,748 records.</li>
+        <li>Paired CDR-annotated subset: 5,092 candidates.</li>
+        <li>OAS background records treated as unknown-target background, not true negatives.</li>
+      </ul>
+
+      <h2>4. Methods</h2>
+      <p>Character k-mer TF-IDF baselines, logistic regression, grouped validation, CDR/region annotation, AbLang2-style embeddings, IgBert/BERT-family benchmark artifacts where present, OAS background retrieval, and diversity-aware existing-record prioritization.</p>
+
+      <h2>5. Validation Strategy</h2>
+      <p>Grouped validation is prioritized where group features are meaningful. Random split results are retained as baselines. Matched CDR/region comparisons compare whole-pair and region-local k-mer features on the same paired subset.</p>
+
+      <h2>6. Key Results</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Evidence</th><th>Result</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Grouped k-mer pair-text baseline</td><td>PR-AUC 0.824, ROC-AUC 0.781</td><td>`grouped_validation_metrics.json`</td></tr>
+            <tr><td>Matched region-local k-mers</td><td>+0.044 PR-AUC and +0.042 ROC-AUC versus whole-pair k-mers</td><td>`matched_kmer_benchmark_audit.json`</td></tr>
+            <tr><td>Frozen pretrained representation benchmarks</td><td>Did not beat grouped k-mer reference on both primary metrics</td><td>`pretrained_frozen_baseline_metrics.json`</td></tr>
+            <tr><td>Diversity-aware shortlist</td><td>23 existing records</td><td>`diversity_aware_shortlist_summary.json`</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>7. Figures</h2>
+      <figure>
+        <img src="../assets/figures/antibody_pipeline.svg" alt="Antibody sequence ML workflow diagram">
+        <figcaption>Public-safe antibody workflow diagram generated from committed project evidence.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/figures/antibody_benchmark_pr_auc.png" alt="Antibody benchmark PR-AUC comparison">
+        <figcaption>Aggregate benchmark figure; no raw sequences are shown.</figcaption>
+      </figure>
+
+      <h2>8. Limitations</h2>
+      <ul>
+        <li>Retrospective public labels.</li>
+        <li>Heterogeneous assays and sources.</li>
+        <li>Existing-record prioritization only.</li>
+        <li>No therapeutic design, sequence generation, mutation, or optimization claim.</li>
+        <li>No prospective validation.</li>
+        <li>OAS records are unknown-target background, not true negatives.</li>
+      </ul>
+
+      <h2>9. Reproducibility</h2>
+      <p>Public-safe reproduction uses cached summaries and report generation. Full reproduction may require raw public-data downloads, embeddings, model weights, and heavier compute.</p>
+      <div class="link-row">
+        <a href="https://github.com/eva-mitropoulou/portfolio/tree/portfolio-professionalization/antibody-sequence-ml">Project folder</a>
+        <a href="https://github.com/eva-mitropoulou/portfolio/blob/portfolio-professionalization/notebooks/01_antibody_sequence_ml_workflow.ipynb">Notebook</a>
+      </div>
+
+      <h2>10. What This Demonstrates</h2>
+      <p>Evidence-bounded ML benchmarking from noisy public biological data, leakage-aware validation instincts, practical sequence-feature engineering, and disciplined pharma-facing communication.</p>
+    </main>
+    <footer class="footer">No raw biological sequences are displayed on this page.</footer>
+  </body>
+</html>

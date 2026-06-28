@@ -1,0 +1,22 @@
+{
+  "project": "Polymer-filler MD and flame-retardant molecular modeling",
+  "status": "public-safe cached summary",
+  "source_repository": "Computational-Chemistry/MD/GROMACS/pp_melt_martini and portfolio/polymer-md",
+  "aggregate_contact_counts": {
+    "uncoated_direct_pp_brc_contacts_0p60_nm_mean_atoms": 6827.0,
+    "coated_direct_pp_brc_contacts_0p60_nm_mean_atoms": 1676.9,
+    "coated_pp_coating_unk_contacts_0p60_nm_mean_atoms": 57322.8
+  },
+  "aggregate_lj_energies_kj_mol": {
+    "uncoated_direct_pp_brc": -6030.6,
+    "coated_direct_pp_brc": -1388.4,
+    "coated_pp_coating_unk": -32703.9
+  },
+  "safe_public_interpretation": "Surface coating reduced direct PP-brucite contact and shifted interaction toward the coating layer in available aggregate MD outputs.",
+  "limitations": [
+    "force-field-dependent computational model",
+    "not standalone property prediction",
+    "does not replace experimental characterization",
+    "depends on model setup, parameter choices, and sampling"
+  ]
+}

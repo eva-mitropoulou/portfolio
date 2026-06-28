@@ -1,0 +1,26 @@
+{
+  "project": "EGFR QSAR / CADD benchmark",
+  "status": "public-safe cached summary",
+  "source_repository": "portfolio/egfr-cadd-qsar-admet and Computational-Chemistry/pharma_project",
+  "data_scope": {
+    "cleaned_egfr_activity_records": 10834,
+    "model_ready_records": 10593,
+    "descriptor_rows": 10834
+  },
+  "random_split_morgan_random_forest": {
+    "rmse": 0.712,
+    "r2": 0.719
+  },
+  "scaffold_split_morgan_random_forest": {
+    "rmse": 0.871,
+    "r2": 0.55
+  },
+  "validation_interpretation": "Scaffold split performance drop is used as evidence of leakage-aware QSAR validation.",
+  "limitations": [
+    "baseline retrospective QSAR",
+    "not a production-grade predictor",
+    "no prospective validation",
+    "no clinical utility",
+    "no binding-mechanism claim"
+  ]
+}
