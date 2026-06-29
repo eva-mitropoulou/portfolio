@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-Built a public-data antibody sequence ML workflow for retrospective benchmarking and existing-record prioritization. The project centers on validation quality, label semantics, calibration, and record triage.
+Built a public-data antibody sequence ML workflow for retrospective benchmarking, unsupervised sequence-space analysis, and existing-record prioritization. The project centers on validation quality, label semantics, calibration, representation checks, and record triage.
 
 Portfolio role: primary pharma-facing antibody and protein-informatics case study.
 
@@ -19,6 +19,7 @@ Project sources: the standalone antibody repository and copied public artifacts 
 - Broader prepared records: 11,748 records in `reports/metrics/core_dataset_audit.json`.
 - Annotated paired subset: 5,092 paired CDR-annotated candidates in `reports/metrics/core_dataset_audit.json`.
 - OAS retrieval used unknown-target natural antibody background records.
+- Unsupervised landscape analysis used cached pair embeddings for the strict labeled records, with labels overlaid after clustering.
 
 The portfolio layer reports aggregate metrics and public-safe identifiers.
 
@@ -31,6 +32,7 @@ The portfolio layer reports aggregate metrics and public-safe identifiers.
 - Calibration and threshold analysis for high-confidence review cutoffs.
 - CDR and region annotation for paired records.
 - Antibody embedding and pretrained antibody model benchmarks, including AbLang2-style embeddings and IgBert-family benchmark artifacts where present.
+- Unsupervised antibody sequence-landscape analysis from cached pair embeddings, with label/source metadata used after clustering for interpretation.
 - OAS background retrieval as a separate background-retrieval analysis with explicit label semantics.
 - Diversity-aware existing-record shortlist from broader prepared records.
 
@@ -41,6 +43,7 @@ The portfolio layer reports aggregate metrics and public-safe identifiers.
 - Matched CDR feature comparisons were used to compare whole-pair versus region-local k-mer features on the same paired subset.
 - Source-holdout validation was used as a skeptical control for source and study effects.
 - Source-robust model selection compared conservative k-mer variants and selected `whole_pair_kmer`.
+- Unsupervised clustering did not use neutralisation labels; labels were overlaid after clustering to inspect enrichment and possible representation artifacts.
 - OAS retrieval was analyzed as a separate unknown-target background enrichment task.
 
 ## 6. Key Results
@@ -52,6 +55,7 @@ The portfolio layer reports aggregate metrics and public-safe identifiers.
 - Final consistency audit: PASS, with zero missing expected packaging artifacts.
 - Lightweight integrity checks passed.
 - Pretrained antibody model outputs are retained as benchmark comparisons rather than the primary scorer.
+- Unsupervised sequence-landscape analysis produced 9 clusters from cached pair embeddings, with labels used only after clustering for enrichment summaries.
 - Diversity-aware existing-record prioritization produced a 23-record shortlist in `diversity_aware_shortlist_summary.json`.
 
 ## 7. Figures
@@ -60,6 +64,7 @@ The portfolio layer reports aggregate metrics and public-safe identifiers.
 - `docs/assets/figures/antibody_benchmark_pr_auc.png`: aggregate benchmark figure.
 - `docs/assets/figures/antibody_source_robust_model_comparison.png`: source-robust model-selection comparison.
 - `docs/assets/figures/antibody_calibration_curve.png`: calibration curve.
+- `docs/assets/figures/antibody_unsupervised_landscape.png`: unsupervised sequence-space landscape from cached pair embeddings.
 - Source project figures include benchmark and prioritization outputs under `reports/figures/`.
 
 ## 8. Interpretation Context
@@ -74,6 +79,8 @@ The portfolio layer reports aggregate metrics and public-safe identifiers.
 Public-safe reproduction in this portfolio is limited to a small cached-report path.
 
 - Summary metrics: `artifacts/reports/metrics/summary.json`.
+- Unsupervised landscape metrics: `artifacts/reports/metrics/unsupervised_antibody_landscape_metrics.json`.
+- Unsupervised landscape report: `artifacts/reports/unsupervised_antibody_landscape_report.md`.
 - Repo: <https://github.com/eva-mitropoulou/antibody-prioritization>.
 - Final report: `artifacts/reports/final_report.md`.
 - Data card: `artifacts/docs/DATA_CARD.md`.
@@ -86,5 +93,5 @@ Public-safe reproduction in this portfolio is limited to a small cached-report p
 
 - Public biological-sequence ML benchmark construction.
 - Awareness of leakage, grouping, source and study effects, label semantics, calibration, and benchmark interpretation.
-- Practical sequence-feature engineering with k-mer, CDR-local, embedding, and pretrained-model comparisons.
+- Practical sequence-feature engineering with k-mer, CDR-local, embedding, pretrained-model, and unsupervised sequence-landscape comparisons.
 - Communication around validation, prioritization, and benchmark interpretation.

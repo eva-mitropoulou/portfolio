@@ -58,7 +58,7 @@
             <h3 class="result-title">Antibody ML</h3>
             <p class="result-line">5,573 strict labeled records</p>
             <p class="result-line">Grouped ROC-AUC 0.780</p>
-            <p class="result-line">Grouped PR-AUC 0.823</p>
+            <p class="result-line">9-cluster sequence landscape</p>
           </article>
           <article class="result-card">
             <h3 class="result-title">Reaction yield</h3>
@@ -99,12 +99,12 @@
           <article class="work-card">
             <span class="domain-label">Biologics</span>
             <h3>Antibody sequence ML</h3>
-            <p>Public antibody sequence-record workflow with k-mer baselines, CDR/region analysis, source-holdout validation, OAS background retrieval, and existing-record prioritization.</p>
-            <p>The selected broad scorer is a whole-pair k-mer model; the paired-region analysis uses region-only k-mers.</p>
+            <p>Public antibody sequence-record workflow with k-mer baselines, CDR/region analysis, unsupervised embedding-space clustering, source-holdout validation, OAS background retrieval, and existing-record prioritization.</p>
+            <p>The selected broad scorer is supervised whole-pair k-mer logistic regression; the landscape module clusters cached pair embeddings without using labels.</p>
             <div class="metric-row">
               <span class="mini-metric">5,573 records</span>
               <span class="mini-metric">ROC-AUC 0.780</span>
-              <span class="mini-metric">PR-AUC 0.823</span>
+              <span class="mini-metric">9 clusters</span>
             </div>
             <div class="link-row">
               <a href="projects/antibody-sequence-ml.html">Project</a>
@@ -178,7 +178,7 @@
           </div>
           <div class="tool-group">
             <h3>Biologics</h3>
-            <p>CoV-AbDab · OAS · CDR regions · k-mer features · source holdout</p>
+            <p>CoV-AbDab · OAS · CDR regions · k-mer features · embedding landscapes · source holdout</p>
           </div>
           <div class="tool-group">
             <h3>Reaction informatics</h3>

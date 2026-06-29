@@ -22,21 +22,21 @@
     <main class="project-detail">
       <p class="eyebrow">Biologics</p>
       <h1>Antibody sequence ML</h1>
-      <p class="lead">Public antibody sequence-record workflow with k-mer models, CDR/region analysis, source-holdout validation, and existing-record prioritization.</p>
+      <p class="lead">Public antibody sequence-record workflow with supervised neutralisation benchmarking, unsupervised sequence-space analysis, source-holdout validation, and existing-record prioritization.</p>
 
       <section class="at-a-glance" aria-labelledby="antibody-glance">
         <h2 id="antibody-glance">At a glance</h2>
         <div class="glance-item"><strong>Data:</strong> 5,573 strict labeled records</div>
-        <div class="glance-item"><strong>Methods:</strong> k-mer TF-IDF, CDR/region analysis, OAS retrieval</div>
+        <div class="glance-item"><strong>Methods:</strong> k-mer TF-IDF, CDR/region analysis, embedding landscape, OAS retrieval</div>
         <div class="glance-item"><strong>Validation:</strong> grouped and source-holdout</div>
-        <div class="glance-item"><strong>Result:</strong> grouped ROC-AUC 0.780; PR-AUC 0.823</div>
+        <div class="glance-item"><strong>Result:</strong> grouped ROC-AUC 0.780; PR-AUC 0.823; 9 unsupervised clusters</div>
       </section>
 
       <h2>Data</h2>
       <p>The workflow uses public CoV-AbDab-derived records, a strict labeled subset, a broader prepared-record table, and an annotated paired subset for CDR/region analysis.</p>
 
       <h2>Methods</h2>
-      <p>Character k-mer TF-IDF baselines, logistic regression, CDR/region features, antibody representation benchmarks, calibration analysis, OAS background retrieval, and diversity-aware existing-record ranking.</p>
+      <p>Character k-mer TF-IDF baselines, logistic regression, CDR/region features, antibody representation benchmarks, unsupervised cached-embedding landscape analysis, calibration analysis, OAS background retrieval, and diversity-aware existing-record ranking.</p>
 
       <h2>Validation</h2>
       <div class="table-wrap">
@@ -46,6 +46,7 @@
             <tr><td>Broad scorer</td><td>whole-pair k-mer TF-IDF logistic regression</td></tr>
             <tr><td>Grouped validation</td><td>ROC-AUC 0.7800, PR-AUC 0.8233</td></tr>
             <tr><td>Source-robust weighted holdout</td><td>ROC-AUC 0.6095, PR-AUC 0.6363</td></tr>
+            <tr><td>Unsupervised landscape</td><td>KMeans over cached pair embeddings; 9 clusters; labels overlaid after clustering</td></tr>
             <tr><td>Paired-region scorer</td><td>region-only compact k-mer</td></tr>
             <tr><td>Existing-record shortlist</td><td>23 records</td></tr>
           </tbody>
@@ -69,9 +70,13 @@
         <img src="../assets/figures/antibody_calibration_curve.png" alt="Antibody calibration curve">
         <figcaption>Calibration curve used for score review.</figcaption>
       </figure>
+      <figure>
+        <img src="../assets/figures/antibody_unsupervised_landscape.png" alt="Unsupervised antibody sequence landscape">
+        <figcaption>Unsupervised sequence-space landscape built from cached pair embeddings; labels were overlaid only after clustering.</figcaption>
+      </figure>
 
       <h2>Scope</h2>
-      <p>Scope: retrospective public-record workflow with grouped validation, source-holdout analysis, and existing-record ranking.</p>
+      <p>Scope: retrospective public-record workflow with grouped validation, source-holdout analysis, unsupervised representation analysis, and existing-record ranking. It does not design, generate, or optimize new antibody sequences.</p>
 
       <h2>Reproducibility</h2>
       <p>The standalone repository includes reports, metrics, figures, model and data cards, and lightweight checks.</p>
@@ -85,7 +90,7 @@ make test</code></pre>
       </div>
 
       <h2>Technical focus</h2>
-      <p>Sequence-feature engineering, grouped validation, source effects, calibration, and record-prioritization workflow design.</p>
+      <p>Sequence-feature engineering, unsupervised embedding-space analysis, grouped validation, source effects, calibration, and record-prioritization workflow design.</p>
     </main>
     <footer class="footer">Antibody sequence ML · Eva Mitropoulou</footer>
   </body>

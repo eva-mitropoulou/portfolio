@@ -18,13 +18,13 @@ Public ChEMBL EGFR IC50 workflow with RDKit descriptors, Morgan fingerprints, sc
 
 ### 2. Antibody Sequence ML
 
-Public antibody sequence-record workflow with k-mer baselines, CDR/region analysis, source-holdout validation, OAS background retrieval, and existing-record prioritization.
+Public antibody sequence-record workflow with supervised neutralisation benchmarking, unsupervised sequence-space analysis, source-holdout validation, OAS background retrieval, and existing-record prioritization.
 
 - Repo: <https://github.com/eva-mitropoulou/antibody-prioritization>
 - Site page: `docs/projects/antibody-sequence-ml.html`
 - Project folder: `projects/antibody-sequence-ml/`
 - Notebook: `projects/antibody-sequence-ml/notebooks/01_antibody_sequence_ml_workflow.ipynb`
-- Selected results: 5,573 strict labeled records; grouped ROC-AUC 0.780; grouped PR-AUC 0.823.
+- Selected results: 5,573 strict labeled records; grouped ROC-AUC 0.780; grouped PR-AUC 0.823; 9-cluster unsupervised sequence landscape from cached pair embeddings.
 
 ### 3. Reaction-Yield Prediction
 
@@ -56,7 +56,7 @@ GROMACS analysis of polypropylene and brucite interfaces with coated and uncoate
 ## Methods And Tools
 
 - Cheminformatics: RDKit, ChEMBL, Morgan fingerprints, descriptors, scaffold split, applicability-domain analysis.
-- Biologics: CoV-AbDab, OAS, CDR regions, k-mer features, grouped validation, source holdout.
+- Biologics: CoV-AbDab, OAS, CDR regions, k-mer features, antibody embedding landscapes, grouped validation, source holdout.
 - Reaction informatics: public HTE data, component labels, grouped validation, active-learning simulation.
 - Simulation: GROMACS, ORCA, CREST, Quantum ESPRESSO, SLURM.
 - ML validation: scikit-learn, ROC-AUC, PR-AUC, RMSE, R2, uncertainty diagnostics.
