@@ -8,33 +8,29 @@ GitHub Pages site: <https://eva-mitropoulou.github.io/portfolio/>
 
 ### 1. EGFR CADD/QSAR
 
-Public ChEMBL EGFR IC50 workflow with RDKit descriptors, Morgan fingerprints, scaffold validation, applicability-domain analysis, ADMET-style triage, and a redocking audit.
+This project builds an EGFR CADD/QSAR workflow using public ChEMBL IC50 records. I curated molecule-level activity data, standardized molecules, generated RDKit descriptor and Morgan fingerprint features, benchmarked QSAR models under multiple validation settings, and used the trained scoring workflow to review existing EGFR inhibitor-like records.
+
+This project tests how much useful modeling can be done from public EGFR IC50 data, while also checking where the model becomes unreliable.
 
 - Repo: <https://github.com/eva-mitropoulou/egfr-cadd-qsar-admet>
-- Site page: `docs/projects/egfr-qsar-cadd.html`
 - Project folder: `projects/egfr-cadd-qsar/`
-- Notebook: `projects/egfr-cadd-qsar/notebooks/02_egfr_qsar_cadd_benchmark.ipynb`
-- Selected results: 10,593 model-ready molecules; scaffold split R2 0.550; 5UG9 redocking RMSD 0.968 A.
+
 
 ### 2. Antibody Sequence ML
 
-Public antibody sequence-record workflow with supervised neutralisation benchmarking, antibody representation checks, unsupervised sequence-space analysis, source-holdout validation, OAS background retrieval, and existing-record prioritization.
+This project builds an antibody sequence ML pipeline using public SARS-CoV-2 antibody records. I curated labeled public records, trained ML models to learn patterns associated with neutralising versus non-neutralising sequences, and then used the trained model scoring workflow to prioritize existing OAS antibody records that look most similar to known neutralizing antibodies. The goal is finding existing records that may be worth closer expert review.
 
 - Repo: <https://github.com/eva-mitropoulou/antibody-prioritization>
-- Site page: `docs/projects/antibody-sequence-ml.html`
 - Project folder: `projects/antibody-sequence-ml/`
-- Notebook: `projects/antibody-sequence-ml/notebooks/01_antibody_sequence_ml_workflow.ipynb`
-- Selected results: 5,573 strict labeled records; grouped ROC-AUC 0.780; grouped PR-AUC 0.823; 9-cluster unsupervised sequence landscape from cached pair embeddings; 17,882 OAS rows scored into a top-25 diverse review shortlist.
 
 ### 3. Reaction-Yield Prediction
 
-Public Buchwald-Hartwig HTE benchmark with reaction cleaning, categorical component features, out-of-component validation, uncertainty diagnostics, and active-learning simulation.
+This project builds a reaction-yield modeling workflow using public high-throughput experimentation (HTE) data. I curated public Buchwald-Hartwig reaction-yield records, built categorical component-label features, benchmarked simple ML models, and tested whether performance holds when reaction components are held out rather than only shuffling rows.
+
+The goal is to evaluate how far public HTE records can support yield prediction, uncertainty checks, out-of-component validation, active-learning simulation, and existing-record ranking without generating new chemistry or claiming experimental success.
 
 - Repo: <https://github.com/eva-mitropoulou/reaction-yield-prediction>
-- Site page: `docs/projects/reaction-yield-ml.html`
 - Project folder: `projects/reaction-yield-ml/`
-- Notebook: `projects/reaction-yield-ml/notebooks/04_reaction_yield_ml_walkthrough.ipynb`
-- Selected results: 3,955 public HTE records; additive-held-out R2 0.726; Spearman 0.860.
 
 ## Additional Computational Chemistry
 
@@ -55,11 +51,10 @@ GROMACS analysis of polypropylene and brucite interfaces with coated and uncoate
 
 ## Methods And Tools
 
-- Cheminformatics: RDKit, ChEMBL, Morgan fingerprints, descriptors, scaffold split, applicability-domain analysis.
-- Biologics: CoV-AbDab, OAS, CDR regions, k-mer features, antibody embedding landscapes, grouped validation, source holdout.
-- Reaction informatics: public HTE data, component labels, grouped validation, active-learning simulation.
-- Simulation: GROMACS, ORCA, CREST, Quantum ESPRESSO, SLURM.
-- ML validation: scikit-learn, ROC-AUC, PR-AUC, RMSE, R2, uncertainty diagnostics.
+- **Cheminformatics:** RDKit, ChEMBL, Morgan fingerprints, molecular descriptors, scaffold-aware splitting, applicability-domain analysis.
+- **Antibody / biologics ML:** CoV-AbDab, OAS, antibody sequence curation, CDR-region features, k-mer TF-IDF features, AbLang2 and IgBERT representation benchmarks, IgBERT fine-tuning, grouped validation, source/study holdout, calibration and threshold analysis.
+- **Molecular simulation and electronic structure:** GROMACS, ORCA, CREST, Quantum ESPRESSO, SLURM-based HPC workflows.
+- **Machine learning and evaluation:** scikit-learn, PyTorch, logistic regression, random forest, ROC-AUC, PR-AUC, RMSE, R², calibration and uncertainty diagnostics.
 
 ## Repository Layout
 
