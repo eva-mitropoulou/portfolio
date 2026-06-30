@@ -1,7 +1,7 @@
 {
   "project": "Antibody sequence ML and existing-record prioritization",
   "status": "final flagship package",
-  "source_repository": "Computational-Chemistry/antibody_project/antibody-prioritization",
+  "source_repository": "https://github.com/eva-mitropoulou/antibody-prioritization",
   "final_selected_model": {
     "model_id": "whole_pair_kmer",
     "saved_broad_scorer": "models/kmer_logreg_pair_text.joblib",
@@ -45,6 +45,9 @@
   },
   "prioritization": {
     "diversity_aware_existing_record_shortlist_size": 23,
+    "oas_existing_record_rows_scored": 17882,
+    "oas_existing_record_top25_shortlist_size": 25,
+    "oas_existing_record_top100_table_size": 100,
     "claim_boundary": "Existing-record prioritization over public records."
   },
   "packaging": {

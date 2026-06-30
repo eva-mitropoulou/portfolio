@@ -1,67 +1,134 @@
-# Final Report: Antibody Sequence ML And Existing-Record Prioritization
+# Final Project Report
 
-## Purpose
+## Project Goal
 
-Create a public-data antibody sequence ML workflow for retrospective benchmarking, source-aware validation, calibration analysis, OAS background retrieval, and existing-record prioritization.
+Build a public-data antibody sequence-record ML workflow for neutralisation classification benchmarking, sequence-space analysis, retrospective selection simulation, and prioritization of existing records.
 
-## Final Status
+The workflow preserves source sequence fields and supports retrospective
+benchmarking, review prioritization, and background retrieval analysis.
 
-| Packaging item | Status |
-|---|---|
-| Final selected model | `whole_pair_kmer` |
-| Final consistency audit | PASS |
-| Missing final packaging artifacts | 0 |
-| Tests | 8 passed |
-| Final report reproduction script | PASS |
+## Datasets
 
-## Artifacts Used
+| Dataset | Rows | Columns | Label 0 | Label 1 |
+|---|---:|---:|---:|---:|
+| Strict labeled ML table | 5573 | 31 | 2292 | 3281 |
+| Broader prepared table | 11748 | 27 | 2292 | 5646 |
 
-- `docs/DATA_CARD.md`
-- `docs/MODEL_CARD.md`
-- `reports/final_artifact_map.md`
-- `reports/final_consistency_audit.md`
-- `reports/final_flagship_project_report.md`
-- `reports/metrics/source_robust_model_selection_metrics.json`
-- `reports/metrics/final_consistency_audit.json`
-- `reports/metrics/oas_matched_background_retrieval_metrics.json`
+## Cleaning And Labels
 
-## Methods
+Labels were used as existing binary record metadata. Missing-label and conflict-label records were preserved for prioritization rather than discarded from the broader scoring table.
 
-The workflow used public CoV-AbDab-derived records, strict/broader dataset handling, k-mer TF-IDF baselines, pretrained antibody-model benchmarking, CDR/region analysis, source-holdout validation, source-robust model selection, calibration/threshold analysis, OAS broad and matched background retrieval, and diversity-aware existing-record prioritization.
+## Paired/Light-Missing Handling
 
-## Key Results
+Strict paired/light-missing counts: {'light_missing_or_single_chain': 481, 'paired': 5092}. Broader paired/light-missing counts: {'light_missing_or_single_chain': 1762, 'paired': 9986}.
 
-| Result | Value |
-|---|---:|
-| Strict labeled records | 5,573 |
-| Broader prepared records | 11,748 |
-| Selected broad scorer | `whole_pair_kmer` |
-| V-gene grouped ROC-AUC | 0.7800 |
-| V-gene grouped PR-AUC | 0.8233 |
-| Source-holdout macro ROC-AUC | 0.5605 |
-| Source-holdout macro PR-AUC | 0.6454 |
-| Source-robust weighted ROC-AUC | 0.6095 |
-| Source-robust weighted PR-AUC | 0.6363 |
-| Threshold 0.7 precision | 0.8266 |
-| Threshold 0.7 recall | 0.3062 |
-| Threshold 0.7 coverage | 0.3051 |
-| Matched OAS retrieval ROC-AUC | 0.9911 |
-| Matched OAS retrieval PR-AUC | 0.9893 |
-| Diversity-aware shortlist size | 23 |
+## Domain-Region Annotation
 
-## Interpretation
+Annotation status: available. Paired annotated rows: 5092. Single-chain/light-missing rows: 0.
 
-Whole-pair k-mer TF-IDF logistic regression remained the selected broad scorer. It performed strongly under V-gene grouped validation and modestly under source-holdout validation, showing that public antibody neutralisation labels contain source/study effects.
+## Target-Region Metadata Analysis
 
-The workflow supports retrospective prioritization and high-confidence review of existing public records.
+Target-region analysis status: available. Unknown broader count: 10. Useful for subgroup analysis: True.
 
-## OAS Background Retrieval
+## Matched Benchmark Results
 
-OAS retrieval showed that curated coronavirus antibody records were highly separable from sampled unknown-target natural antibody background, including matched controls. This module measures background enrichment and domain separation.
+Matched k-mer baselines used compact character strings, grouped splits, zero group overlap, and separate full strict versus paired annotated subsets.
 
-## Interpretation Context
+Region features improved paired matched ROC-AUC: True; improved paired matched PR-AUC: True.
 
-- Public labels combine heterogeneous assays and source records.
-- Source and study effects shape cross-source generalization.
-- Scores are ranking and prioritization signals for reviewing existing records.
-- OAS records are unknown-target natural antibody background.
+## Pretrained Sequence-Model Benchmarks
+
+Pretrained and embedding models were treated as benchmark evidence, not automatic primary scorers. Same-row-count matched k-mer comparisons were used when available.
+
+Pretrained models beat matched k-mer baselines on both primary metrics: False.
+
+## Final Model Selection
+
+Primary broad scorer: kmer_tfidf_logreg_pair_text on Full strict labeled dataset; whole-pair compact k-mer input. (ROC-AUC 0.7800, PR-AUC 0.8233).
+
+Primary paired/region scorer: kmer_tfidf_logreg__paired_annotated_subset__region_only_compact_kmer on Paired annotated subset; whole-pair, region-only, and combined compact k-mer inputs. (ROC-AUC 0.6629, PR-AUC 0.6330).
+
+## Skeptical Validation Controls
+
+### Leave-Source/Leave-Study-Out Validation
+
+Detected source groups: 84. Valid held-out source groups: 11. Macro source-holdout ROC-AUC: 0.5605. Macro source-holdout PR-AUC: 0.6454.
+
+Source-grouped fallback ROC-AUC: 0.5247. Source-grouped fallback PR-AUC: 0.8189.
+
+Leave-source-out validation is weaker than the matched grouped benchmark, so source/study effects may materially affect apparent model performance.
+
+### Calibration And Threshold Analysis
+
+Brier score: 0.2636. Expected calibration error: 0.3034. High-confidence review threshold: 0.7000 with precision 0.8187 and recall 0.2998.
+
+Scores are more reliable for ranking than as absolute probabilities; thresholds should be treated as review cutoffs rather than calibrated risk estimates.
+
+### Source-Robust Model Selection
+
+Selected source-robust model: whole_pair_kmer. Meaningful improvement over previous source-holdout baseline: False.
+
+Source-robust selection chose `whole_pair_kmer` and did not materially improve cross-source performance. CDR/region features were competitive for source robustness. Scores remain ranking and prioritization signals for existing records.
+
+Selected weighted leave-source-out ROC-AUC: 0.6095. Selected weighted leave-source-out PR-AUC: 0.6363. High-confidence threshold: 0.7000 with precision 0.8266, recall 0.3062, and coverage 0.3051.
+
+## Existing-Record Prioritization
+
+Broader scored records: 11747. Missing-label records: 3810. Diversity groups: 73.
+
+## Diversity-Aware Shortlist
+
+Shortlist size: 23 from 1094 candidate records before diversity filtering.
+
+## Unsupervised Landscape
+
+Landscape status: available. Feature source: cached_pair_embeddings. Cluster count: 9.
+
+## Background Retrieval Status
+
+Background retrieval status: available. Background retrieval metrics were kept separate from the main classification task.
+
+### Broad OAS Retrieval
+
+Broad OAS retrieval used OAS paired rows as unknown-target background. Project rows: 11748. OAS rows after overlap removal: 17877. Exact overlaps removed: 5. ROC-AUC: 0.9921. PR-AUC: 0.9897.
+
+### Hard Matched OAS Retrieval
+
+Matched OAS retrieval used coarse heavy-length, light-length, total-length, and light-status bins. Matched project rows: 7192. Matched OAS rows: 7192. Skipped project rows: 1818. Exact overlaps removed: 5. ROC-AUC: 0.9911. PR-AUC: 0.9893.
+
+### OAS Existing-Record Retrieval Shortlist
+
+The OAS existing-record retrieval shortlist identifies existing OAS background records that are sequence-similar to curated project-positive records. OAS records are unknown-target natural antibody background, and the output is an existing-record shortlist for expert review.
+
+OAS rows scored: 17882. Project-positive reference rows: 3281. Top-25 diverse shortlist size: 25. Top-100 ranked table size: 100. Diversity clusters: 25.
+
+The shortlist score is a computational prioritization score, not a binding probability. Shortlisted records are not validated binders or therapeutics, and the module does not generate or modify sequences.
+
+### Interpretation
+
+OAS records are unknown-target natural antibody background. The OAS retrieval task is a background/enrichment diagnostic kept separate from the main neutralisation benchmark. High OAS retrieval separability likely reflects source/domain differences between project records and natural repertoire background.
+
+## Retrospective Selection-Loop Simulation
+
+Best strategy: highest_score. Best beats random mean: True.
+
+## Structure Metadata
+
+Structure metadata available in shortlist: 3. Docking was not run by default.
+
+## Limitations
+
+- Public source labels are heterogeneous and retrospective.
+- Model probabilities are prioritization signals for existing-record review.
+- Subset-specific metrics are not directly comparable across row subsets.
+- Diversity and sequence-risk features are heuristic.
+- Background retrieval is optional and local-data dependent.
+- The OAS existing-record shortlist is an expert-review queue, not antibody design or therapeutic discovery.
+- Docking remains a separate future validation workflow.
+
+## Next Steps
+
+- Curate clearer target-region and structure metadata where available.
+- Add prospective-style validation only when new external records are available.
+- Keep benchmark comparisons matched by row subset and split strategy.
+- Use the shortlist as an inspection queue for existing records.

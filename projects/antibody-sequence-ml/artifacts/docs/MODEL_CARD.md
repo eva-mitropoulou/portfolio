@@ -22,15 +22,25 @@ It represents compact heavy/light sequence-pair text with character k-mer TF-IDF
 | Source-robust model selection | Compare conservative k-mer variants on the same source groups | selected `whole_pair_kmer`, weighted ROC-AUC 0.6095, weighted PR-AUC 0.6363 |
 | Calibration/threshold analysis | Estimate score reliability for review thresholds | Brier 0.2637; threshold 0.7 precision 0.8266, recall 0.3062, coverage 0.3051 |
 | OAS background retrieval | Unknown-target natural antibody background enrichment diagnostic | broad ROC-AUC 0.9921, PR-AUC 0.9897 |
+| OAS existing-record retrieval shortlist | Existing-record shortlist for expert review from OAS unknown-target background | 17,882 OAS rows scored; top 25 diverse records |
 
-Pretrained antibody language-model representations were benchmarked; matched k-mer baselines remained the stronger public-label reference on this task.
+Pretrained antibody language-model representations were benchmarked alongside simpler matched k-mer baselines on this noisy public-label task.
 
-## Best Use
+## Intended Use
 
 - Retrospective public-record prioritization.
 - Model-family comparison under matched row subsets and split strategies.
 - Existing-record review queues with confidence, target-region, risk, diversity, and structure metadata.
-- Educational portfolio demonstration of rigorous ML reporting for biological sequence records.
+- Reproducible comparison of sequence-record models and validation controls.
+- OAS existing-record retrieval shortlist for expert review of unknown-target natural antibody background records.
+
+## Project Role
+
+- Retrospective public-record prioritization.
+- Matched model-family comparison across row subsets and validation strategies.
+- Existing-record review queues with confidence, metadata, and diversity context.
+- OAS retrieval as unknown-target natural background enrichment analysis.
+- OAS existing-record retrieval shortlist as computational prioritization, not antibody design or therapeutic discovery.
 
 ## Threshold 0.7 Interpretation
 
@@ -41,5 +51,8 @@ In source-robust analysis, threshold 0.7 selected about 30.5% of held-out record
 - Source-holdout performance is weaker than V-gene grouped validation.
 - Public labels and source metadata are heterogeneous.
 - Probabilities are more useful for ranking than absolute risk estimation.
-- Region/CDR variants did not clearly replace the whole-pair k-mer scorer.
+- Region-only compact k-mer is the primary paired-region scorer on the paired annotated subset; the full strict whole-pair k-mer remains the broad scorer.
 - OAS retrieval is a background enrichment diagnostic and remains separate from the neutralisation benchmark.
+- High OAS retrieval separability likely reflects source/domain differences between project records and natural repertoire background.
+- The OAS existing-record shortlist contains unknown-target natural antibody background records that are sequence-similar to curated project-positive records. Its score is not a binding probability, and records are not validated binders or therapeutics.
+- The OAS shortlist module does not generate, mutate, design, optimize, or propose sequences.

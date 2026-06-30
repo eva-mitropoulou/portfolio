@@ -18,13 +18,13 @@ Public ChEMBL EGFR IC50 workflow with RDKit descriptors, Morgan fingerprints, sc
 
 ### 2. Antibody Sequence ML
 
-Public antibody sequence-record workflow with supervised neutralisation benchmarking, unsupervised sequence-space analysis, source-holdout validation, OAS background retrieval, and existing-record prioritization.
+Public antibody sequence-record workflow with supervised neutralisation benchmarking, antibody representation checks, unsupervised sequence-space analysis, source-holdout validation, OAS background retrieval, and existing-record prioritization.
 
 - Repo: <https://github.com/eva-mitropoulou/antibody-prioritization>
 - Site page: `docs/projects/antibody-sequence-ml.html`
 - Project folder: `projects/antibody-sequence-ml/`
 - Notebook: `projects/antibody-sequence-ml/notebooks/01_antibody_sequence_ml_workflow.ipynb`
-- Selected results: 5,573 strict labeled records; grouped ROC-AUC 0.780; grouped PR-AUC 0.823; 9-cluster unsupervised sequence landscape from cached pair embeddings.
+- Selected results: 5,573 strict labeled records; grouped ROC-AUC 0.780; grouped PR-AUC 0.823; 9-cluster unsupervised sequence landscape from cached pair embeddings; 17,882 OAS rows scored into a top-25 diverse review shortlist.
 
 ### 3. Reaction-Yield Prediction
 

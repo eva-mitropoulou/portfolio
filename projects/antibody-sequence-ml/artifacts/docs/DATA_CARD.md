@@ -10,7 +10,7 @@ This repository uses local public-record artifacts only. Key files include:
 - `data/processed/oas/oas_paired_standardized.csv`
 - `data/raw/oas/*.csv.gz`
 
-Reports use aggregate counts, metrics, and public-safe identifiers.
+Reports use aggregate counts, key fields, and hashed or public-safe identifiers.
 
 ## Strict Labeled Dataset
 
@@ -30,12 +30,14 @@ Publication/source metadata are heterogeneous. Source fields may combine multipl
 
 ## Label Heterogeneity
 
-Neutralisation labels are public record labels from heterogeneous assays. Label definitions, assay conditions, target-region annotations, and sequence completeness vary across records. Metrics are interpreted as retrospective record-classification evidence.
+Neutralisation labels are public record labels from heterogeneous sources. Label definitions, assay conditions, target-region annotations, and sequence completeness vary across records. Metrics support retrospective record-classification review.
 
 ## OAS Background Semantics
 
-OAS paired records are treated as unknown-target natural antibody background. OAS retrieval reports measure whether project records are distinguishable from local natural background under broad and matched controls.
+OAS paired records are treated as unknown-target natural antibody background. The OAS retrieval task is a background/enrichment diagnostic kept separate from the main neutralisation benchmark.
+
+High OAS retrieval separability likely reflects source/domain differences between project records and natural repertoire background.
 
 ## Record Handling
 
-The workflow uses public records and preserves source sequence fields in the underlying data pipeline. Public reports use aggregate summaries and figures.
+The workflow uses public records for benchmarking and existing-record prioritization. Source sequence fields are preserved by the reporting workflow.
