@@ -10,7 +10,7 @@
 
 ## Safety Scope
 
-This is a retrospective existing-record ranking of public dataset records.
+This is a retrospective existing-record ranking of public dataset records with model-agreement and domain-warning diagnostics.
 
 ## Quality Gates
 
@@ -20,7 +20,7 @@ This is a retrospective existing-record ranking of public dataset records.
 - Limitations included: True
 - No lab ready claim: True
 
-## Limitations
+## Interpretation Context
 
 - Ranking is based on out-of-fold predictions for existing public records only.
 - The table omits component labels to avoid recipe-style public output.
