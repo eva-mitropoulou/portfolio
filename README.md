@@ -1,8 +1,8 @@
 # Eva Mitropoulou
 
-Computational chemist working on CADD/QSAR, antibody sequence ML, reaction-yield modeling, molecular simulation, and DFT workflows.
+Chemistry PhD candidate focused on molecular machine learning for antibody and drug-discovery datasets. Builds end-to-end Python workflows for sequence and bioactivity-data curation, protein language model embeddings, PyTorch/scikit-learn modeling, and validation on grouped or held-out data. Portfolio includes antibody neutralisation benchmarking, antibody-record prioritization, and ChEMBL/RDKit QSAR work, supported by computational chemistry and molecular simulation experience.
 
-GitHub Pages site: <https://eva-mitropoulou.github.io/portfolio/>
+website: <https://eva-mitropoulou.github.io/>
 
 ## Main Work
 
@@ -49,17 +49,12 @@ GROMACS analysis of polypropylene and brucite interfaces with coated and uncoate
 - Periodic DFT and Quantum ESPRESSO utilities: `projects/periodic-dft/`
 - SLURM and workflow scripts are included with the project folders that use them.
 
-## Methods And Tools
+## Skills
 
-- **Cheminformatics:** RDKit, ChEMBL, Morgan fingerprints, molecular descriptors, scaffold-aware splitting, applicability-domain analysis.
-- **Antibody / biologics ML:** CoV-AbDab, OAS, antibody sequence curation, CDR-region features, k-mer TF-IDF features, AbLang2 and IgBERT representation benchmarks, IgBERT fine-tuning, grouped validation, source/study holdout, calibration and threshold analysis.
-- **Molecular simulation and electronic structure:** GROMACS, ORCA, CREST, Quantum ESPRESSO, SLURM-based HPC workflows.
-- **Machine learning and evaluation:** scikit-learn, PyTorch, logistic regression, random forest, ROC-AUC, PR-AUC, RMSE, R², calibration and uncertainty diagnostics.
-
-## Repository Layout
-
-- `docs/`: GitHub Pages website.
-- `projects/`: project folders with notes, notebooks, and public artifacts.
+* **Machine Learning & Model Evaluation:** supervised and unsupervised learning, neural networks, model fine-tuning, molecular/biological data curation, benchmark design, model validation, and held-out testing.
+* **Protein & Antibody Sequence ML:** antibody/protein sequence ML, protein language models (PLMs), sequence embeddings, and Hugging Face Transformers.
+* **Cheminformatics & CADD:** RDKit, ChEMBL, molecular descriptors, molecular fingerprints, QSAR modeling, scaffold-aware validation, drug-likeness/ADMET filtering, limited docking/redocking sanity checks, and compound ranking/prioritization.
+* **Scientific Python & Research Computing:** Python, PyTorch, scikit-learn, pandas, NumPy, SciPy, Matplotlib, Linux, Bash, SLURM, Git/GitHub, Docker, and cloud/VM environments.
 
 ## Contact
 
