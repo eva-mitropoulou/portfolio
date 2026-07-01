@@ -186,18 +186,15 @@ h3 {
   padding: 22px;
 }
 
-.portrait-mark {
-  display: grid;
+.portrait-photo {
+  display: block;
   width: 100%;
   aspect-ratio: 1;
-  place-items: center;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: linear-gradient(135deg, #eef4f2, #f7f8f6);
-  color: var(--accent-3);
-  font-size: 3.6rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  border-radius: 50%;
+  background: var(--soft);
+  object-fit: cover;
+  object-position: 58% 48%;
 }
 
 .profile-card h2 {
