@@ -52,7 +52,7 @@ Full per-model, per-split metrics are in `artifacts/reports/model_quality_review
 | Features | 44 one-hot component-label features | Categorical component-based representation |
 | Best random split model | random forest, MAE 8.9717, RMSE 11.6171, R2 0.8266 | Easier shuffled-row benchmark |
 | Selected out-of-component model | random forest on additive-held-out grouped split, MAE 10.7537, RMSE 14.2371, R2 0.7262 | Harder component-generalization check |
-| Mean-baseline comparison | primary split MAE improves from 22.9984 to 10.7537 | The selected model clearly beats a naive yield-average baseline |
+| Mean-baseline comparison | primary split MAE drops from 22.9984 to 10.7537 | The selected model clearly beats a naive yield-average baseline |
 | Uncertainty check | empirical 90% coverage 0.7978, uncertainty-error Spearman 0.6296 | Useful diagnostic signal, but undercalibrated |
 | Active-learning simulation | component-diverse high-score top-yield recovery 0.6762 at final budget; random baseline 0.1232 | Tests prioritization behavior over existing records |
 | Ranked outputs | `artifacts/reports/existing_record_ranking_report.md`, 3,955 records | Existing-record review report |

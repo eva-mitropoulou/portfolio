@@ -171,8 +171,8 @@
     }
   },
   "region_feature_comparison": {
-    "region_features_improved_pr_auc": true,
-    "region_features_improved_roc_auc": true,
+    "region_features_raised_pr_auc": true,
+    "region_features_raised_roc_auc": true,
     "region_only_delta_pr_auc_vs_whole_pair": 0.04416485588562169,
     "region_only_delta_roc_auc_vs_whole_pair": 0.04204076958314229,
     "row_subset": "paired_annotated_subset",

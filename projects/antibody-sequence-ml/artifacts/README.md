@@ -41,7 +41,7 @@ The OAS analysis is kept separate from the neutralisation benchmark. OAS records
 
 The main supervised benchmark compared sequence models on the strict labelled CoV AbDab table. The simplest model used amino acid k mer TF IDF features with logistic regression, while the pretrained model experiments tested antibody language model representations, including AbLang2 embeddings and IgBERT fine tuning.
 
-The first comparison showed that the whole pair k mer model and IgBERT fine tuning were close. The k mer model reached ROC AUC 0.7800 and PR AUC 0.8233, while the best single IgBERT fine tuning run reached ROC AUC 0.7695 and PR AUC 0.8317. IgBERT improved PR AUC slightly, but did not improve ROC AUC.
+The first comparison showed that the whole pair k mer model and IgBERT fine tuning were close. The k mer model reached ROC AUC 0.7800 and PR AUC 0.8233, while the best single IgBERT fine tuning run reached ROC AUC 0.7695 and PR AUC 0.8317. IgBERT raised PR AUC slightly, but did not raise ROC AUC.
 
 <p align="center">
   <img src="docs/assets/broad_model_benchmark.png" alt="Broad model benchmark on the full strict labelled dataset" width="100%">
@@ -49,7 +49,7 @@ The first comparison showed that the whole pair k mer model and IgBERT fine tuni
 
 This same-subset benchmark shows why the first comparison was close, but not a clear win for IgBERT on both primary metrics.
 
-Because this was not a clear win, I ran additional checks instead of selecting the fine-tuned IgBERT model from one strong run. A five seed IgBERT fine tuning check gave lower mean performance, with ROC AUC 0.7443 and PR AUC 0.8151. Later IgBERT variants also did not consistently improve over the k mer baseline.
+Because this was not a clear win, I ran additional checks instead of selecting the fine-tuned IgBERT model from one strong run. A five seed IgBERT fine tuning check gave lower mean performance, with ROC AUC 0.7443 and PR AUC 0.8151. Later IgBERT variants also did not consistently outperform the k mer baseline.
 
 <p align="center">
   <img src="docs/assets/kmer_vs_igbert_followup.png" alt="K-mer and IgBERT follow-up model comparison" width="100%">
@@ -57,7 +57,7 @@ Because this was not a clear win, I ran additional checks instead of selecting t
 
 The seed-averaged follow-up supports retaining the k mer model rather than selecting the fine-tuned IgBERT model from one strong run.
 
-The final broad scorer was therefore the whole pair k mer model. It was retained because it performed strongly on the full strict labelled dataset, remained simpler and easier to reproduce, and no same subset pretrained alternative clearly improved both primary metrics.
+The final broad scorer was therefore the whole pair k mer model. It was retained because it performed strongly on the full strict labelled dataset, remained simpler and easier to reproduce, and no same subset pretrained alternative clearly raised both primary metrics.
 
 I then tested the selected model under stricter validation. Grouped validation reduced sequence family leakage, while source and study holdout tested whether performance survived publication level shifts. The source holdout result was lower, with weighted ROC AUC 0.6095 and weighted PR AUC 0.6363, so model scores are treated as ranking signals for review rather than final biological labels.
 

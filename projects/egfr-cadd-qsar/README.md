@@ -43,7 +43,7 @@ The models were tested with both random and scaffold splits. The random split me
 
 I also ran assay-group and document-group splits to test robustness against public-data context. These splits hold out assay or publication groups and therefore better reflect the heterogeneity of public IC50 records.
 
-The selected practical baseline is a Morgan fingerprint Random Forest. It was the strongest practical scorer across the final benchmark reports, including the stricter scaffold split. The GCN model is kept as an exploratory benchmark, not the selected scorer, because it did not improve over the Morgan Random Forest in this run.
+The selected practical baseline is a Morgan fingerprint Random Forest. It was the strongest practical scorer across the final benchmark reports, including the stricter scaffold split. The GCN model is kept as an exploratory benchmark, not the selected scorer, because it did not outperform the Morgan Random Forest in this run.
 
 <p align="center">
   <img src="artifacts/docs/assets/egfr_model_benchmark.png" alt="EGFR QSAR model validation summary across random, scaffold, assay, and document splits" width="100%">
@@ -78,7 +78,7 @@ The uncertainty checks use residual intervals from validation results together w
 
 QED and Lipinski features are used as medicinal-chemistry review aids. They summarize simple property constraints and help separate molecules that are easier to inspect from molecules that need more caution.
 
-PAINS and Brenk flags are also review annotations. They identify molecules that may need chemistry caution because of known problematic substructure patterns, but they are not automatic proof that a molecule is inactive, invalid, or an assay artifact.
+PAINS and Brenk flags are also review annotations. They identify molecules that may need chemistry caution because of known problematic substructure patterns, but they are not automatic labels that a molecule is inactive, invalid, or an assay artifact.
 
 This layer adds transparent triage information to the QSAR ranking table, using simple drug-likeness and alert checks rather than a full ADMET model.
 

@@ -34,7 +34,7 @@ Target-region analysis status: available. Unknown broader count: 10. Useful for 
 
 Matched k-mer baselines used compact character strings, grouped splits, zero group overlap, and separate full strict versus paired annotated subsets.
 
-Region features improved paired matched ROC-AUC: True; improved paired matched PR-AUC: True.
+Region features raised paired matched ROC-AUC: True; raised paired matched PR-AUC: True.
 
 ## Pretrained Sequence-Model Benchmarks
 
@@ -66,9 +66,9 @@ Scores are more reliable for ranking than as absolute probabilities; thresholds 
 
 ### Source-Robust Model Selection
 
-Selected source-robust model: whole_pair_kmer. Meaningful improvement over previous source-holdout baseline: False.
+Selected source-robust model: whole_pair_kmer. Meaningful gain over previous source-holdout baseline: False.
 
-Source-robust selection chose `whole_pair_kmer` and did not materially improve cross-source performance. CDR/region features were competitive for source robustness. Scores remain ranking and prioritization signals for existing records.
+Source-robust selection chose `whole_pair_kmer` and did not materially raise cross-source performance. CDR/region features were competitive for source robustness. Scores remain ranking and prioritization signals for existing records.
 
 Selected weighted leave-source-out ROC-AUC: 0.6095. Selected weighted leave-source-out PR-AUC: 0.6363. High-confidence threshold: 0.7000 with precision 0.8266, recall 0.3062, and coverage 0.3051.
 

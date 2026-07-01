@@ -87,14 +87,14 @@ Selected model: random_forest
 
 Assessment: not random-only, but aryl-halide held-out performance is substantially weaker.
 
-## Baseline improvement on primary split
+## Baseline gain on primary split
 
 - Selected model: random_forest
 - Primary split: Additive held-out grouped split
 - Selected MAE/RMSE: 10.7537 / 14.2371
 - Mean baseline MAE/RMSE: 22.9984 / 27.2166
-- Absolute MAE/RMSE improvement: 12.2447 / 12.9795
-- Relative MAE/RMSE improvement: 0.5324 / 0.4769
+- Absolute MAE/RMSE gain: 12.2447 / 12.9795
+- Relative MAE/RMSE gain: 0.5324 / 0.4769
 - Barely beats baseline: False
 
 ## Leakage check
@@ -147,4 +147,4 @@ This is a retrospective budgeted selection simulation over existing public recor
 
 ## Final judgment
 
-PASS: ready for portfolio use with conservative wording. The strongest evidence is the additive-held-out primary split and other held-out component splits where the selected model improves over the mean baseline. The aryl-halide held-out split is the weakest generalization case and should remain visible. The project should be described as a retrospective public-data benchmark using categorical component-label one-hot features, not as structure-aware reaction modeling or operational reaction optimization.
+PASS: ready for portfolio use with conservative wording. The main support is the additive-held-out primary split and other held-out component splits where the selected model beats the mean baseline. The aryl-halide held-out split is the weakest generalization case and should remain visible. The project should be described as a retrospective public-data benchmark using categorical component-label one-hot features, not as structure-aware reaction modeling or operational reaction optimization.

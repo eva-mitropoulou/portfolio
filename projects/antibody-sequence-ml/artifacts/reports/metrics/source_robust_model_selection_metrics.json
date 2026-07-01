@@ -6777,11 +6777,11 @@
     "vectorizer": "TfidfVectorizer(analyzer=\"char\", ngram_range=(3,5), min_df=2, max_features=50000)"
   },
   "model_selection": {
-    "improvement_over_previous": {
+    "gain_over_previous": {
       "weighted_pr_auc_minus_previous_macro_pr_auc": -0.00909687836975992,
       "weighted_roc_auc_minus_previous_macro_roc_auc": 0.048979485442148474
     },
-    "meaningful_improvement_over_previous": false,
+    "meaningful_gain_over_previous": false,
     "previous_source_holdout_baseline": {
       "macro_pr_auc": 0.6454347733376593,
       "macro_roc_auc": 0.5604839198917806,
