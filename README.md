@@ -60,9 +60,7 @@ GROMACS analysis of polypropylene and brucite interfaces with coated and uncoate
 
 - `docs/`: GitHub Pages website.
 - `projects/`: project folders with notes, notebooks, and public artifacts.
-- `portfolio_assets/`: CV bullets, summaries, and interview notes.
 
 ## Contact
 
 - Email: evangelia.mitr@gmail.com
-- GitHub: <https://github.com/eva-mitropoulou>
