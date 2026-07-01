@@ -38,7 +38,6 @@ The goal is to evaluate how far public HTE records can support yield prediction,
 
 GROMACS analysis of polypropylene and brucite interfaces with coated and uncoated filler configurations.
 
-- Site page: `docs/projects/polymer-filler-md.html`
 - Project folder: `projects/polymer-filler-md/`
 - Notebook: `projects/polymer-filler-md/notebooks/03_polymer_filler_md_analysis.ipynb`
 - Selected result: coating shifted interaction toward the surface layer in the aggregate interface analysis.
